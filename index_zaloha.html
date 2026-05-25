@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosteme spolu — Komunita žen v podnikání</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Rosteme Spolu na sítích je komunita podnikavých žen a maminek, které se rozhodly vytvořit něco svého. Aktivní podpora na sociálních sítích i mimo ně — vznikají tu přátelství i spolupráce.">
+  <meta name="keywords" content="komunita tvůrkyň, handmade, podnikání, podnikání na rodičovské dovolené, maminky podnikatelky">
+  <meta property="og:title" content="Rosteme spolu — Komunita žen v podnikání">
+  <meta property="og:description" content="Komunita podnikavých žen a maminek. Bez tlaku, bez křiku, spolu.">
+  <meta property="og:image" content="og-image.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --ink:       #3D2D3A;
+      --ink2:      #7A5C6E;
+      --muted:     #A08898;
+      --pink:      #C0A0A5;
+      --pink-l:    #E8D8DC;
+      --pink-ll:   #F8F1F2;
+      --green:     #4E7A60;
+      --green-l:   #D4EDE0;
+      --mint:      #9FD4B0;
+      --off:       #FAF6F0;
+      --white:     #FFFFFF;
+      --border:    #E8E0DC;
+
+      --serif:  'Playfair Display', Georgia, serif;
+      --hand:   'Great Vibes', cursive;
+      --sans:   'Source Sans 3', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 1px 0 var(--border); }
+
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--green); margin-top: -3px; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; font-weight: 400; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+
+    /* ── HAMBURGER ── */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--white);
+      z-index: 99; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .mobile-menu.open { display: flex; opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--pink); }
+    .mobile-menu .mcta { color: var(--pink) !important; border-bottom: 1px solid var(--pink); }
+    .mobile-menu-close { position: absolute; top: 1.4rem; right: 2rem; background: none; border: none; font-size: 1.4rem; color: var(--ink); cursor: pointer; }
+    .mobile-menu-logo { position: absolute; top: 1.2rem; left: 2rem; }
+    .mobile-menu-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .mobile-menu-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--green); display: block; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 8rem 4rem 5rem;
+      gap: 6rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink);
+      margin-bottom: 1.8rem; display: block;
+    }
+
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(3rem, 5vw, 5.5rem);
+      font-weight: 400; line-height: 1.05; color: var(--ink);
+      margin-bottom: 1.8rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--pink); }
+    .hero h1 .hand-word { font-family: var(--hand); font-style: normal; font-size: 1.2em; color: var(--green); display: block; }
+
+    .hero-sub { font-size: 1rem; line-height: 1.8; color: var(--ink2); max-width: 420px; margin-bottom: 3rem; }
+
+    .hero-actions { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--pink); color: var(--white);
+      padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--ink); }
+
+    .btn-ghost {
+      color: var(--ink2); font-family: var(--sans); font-size: 0.82rem;
+      letter-spacing: 0.06em; text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--pink); border-color: var(--pink); }
+
+    .hero-visual {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .hero-img-wrap {
+      width: 100%; aspect-ratio: 4/5; background: var(--pink-ll);
+      position: relative; overflow: hidden;
+    }
+    .hero-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-img-placeholder {
+      width: 100%; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 1rem;
+    }
+    .hero-img-placeholder svg { opacity: 0.3; }
+    .hero-img-placeholder p { font-family: var(--serif); font-size: 0.9rem; font-style: italic; color: var(--muted); }
+
+    /* Accent line */
+    .hero-visual::before {
+      content: ''; position: absolute; top: -2rem; right: -2rem;
+      width: 1px; height: 60%; background: var(--pink-l); z-index: -1;
+    }
+
+    /* ── TAGLINE ── */
+    .marquee { background: var(--ink); padding: 0.9rem 0; overflow: hidden; }
+    .marquee-track { display: flex; gap: 4rem; animation: scroll 25s linear infinite; white-space: nowrap; }
+    .marquee-track span { font-family: var(--serif); font-size: 0.9rem; font-style: italic; color: rgba(249,247,245,0.6); flex-shrink: 0; }
+    .marquee-track span.dot { color: var(--pink); font-style: normal; font-size: 0.5rem; vertical-align: middle; }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 4rem; }
+
+    .eyebrow {
+      font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink);
+      margin-bottom: 1.2rem; display: block;
+    }
+
+    .section-h {
+      font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.2rem;
+    }
+    .section-h em { font-style: italic; color: var(--pink); }
+    .section-h .hw { font-family: var(--hand); font-style: normal; font-size: 1.1em; color: var(--green); }
+
+    .section-intro { font-size: 0.95rem; line-height: 1.8; color: var(--ink2); max-width: 480px; }
+
+    /* ── ABOUT ── */
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid var(--border); }
+
+    .about-quote {
+      font-family: var(--serif); font-size: 1.4rem; font-weight: 400;
+      font-style: italic; line-height: 1.6; color: var(--ink);
+      border-left: 1px solid var(--pink); padding-left: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .about-body { font-size: 0.95rem; line-height: 1.85; color: var(--ink2); }
+
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 3rem; border: 1px solid var(--border); }
+    .value-item { padding: 1.4rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .value-item:nth-child(even) { border-right: none; }
+    .value-item:nth-child(3), .value-item:nth-child(4) { border-bottom: none; }
+    .value-item h4 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .value-item p { font-size: 0.82rem; line-height: 1.6; color: var(--muted); }
+
+    .about-photo { position: relative; }
+    .about-photo-wrap { aspect-ratio: 3/4; overflow: hidden; background: var(--pink-ll); max-height: 480px; }
+    .about-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
+    .about-photo-placeholder p { font-family: var(--serif); font-size: 0.85rem; font-style: italic; color: var(--muted); }
+
+    /* Accent number */
+    .about-photo::after { display: none; }
+
+    /* ── START / ARTICLES ── */
+    .start { background: var(--off); border-bottom: 1px solid var(--border); }
+    .start-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3.5rem; gap: 2rem; flex-wrap: wrap; }
+
+    .start-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--border); }
+    .start-card {
+      padding: 2rem 1.8rem; border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border); background: var(--white);
+      cursor: pointer; transition: background 0.2s;
+      position: relative; overflow: hidden;
+    }
+    .start-card:nth-child(3n) { border-right: none; }
+    .start-card:nth-child(4), .start-card:nth-child(5), .start-card:nth-child(6), .start-card:nth-child(7) { border-bottom: none; }
+    .start-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--pink); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .start-card:hover { background: var(--pink-ll); }
+    .start-card:hover::before { transform: scaleX(1); }
+
+    .card-num { font-family: var(--serif); font-size: 2.5rem; font-weight: 400; color: var(--pink-l); line-height: 1; margin-bottom: 1.2rem; }
+    .start-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
+    .start-card p { font-size: 0.85rem; line-height: 1.7; color: var(--muted); }
+    .card-link { display: inline-flex; align-items: center; gap: 0.3rem; margin-top: 1.2rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pink); text-decoration: none; transition: gap 0.2s; }
+    .card-link:hover { gap: 0.6rem; }
+    .start-card-last { background: var(--pink-ll) !important; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+    .start-card-last h3 { color: var(--pink); }
+
+    /* ── FREEBIE ── */
+    .freebie { background: var(--ink); border-bottom: 1px solid #2E2030; }
+    .freebie-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .freebie .eyebrow { color: var(--green); }
+    .freebie .section-h { color: var(--white); }
+    .freebie .section-h em { color: var(--pink-l); }
+    .freebie p { font-size: 0.95rem; line-height: 1.8; color: rgba(249,247,245,0.6); margin-bottom: 2rem; }
+    .freebie-form { display: flex; flex-direction: column; gap: 0.8rem; }
+    .freebie-form input {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.85rem 1.2rem; font-family: var(--sans); font-size: 0.9rem; color: var(--white); outline: none;
+      transition: border-color 0.2s;
+    }
+    .freebie-form input::placeholder { color: rgba(255,255,255,0.3); }
+    .freebie-form input:focus { border-color: var(--pink); }
+    .freebie-form button {
+      background: var(--pink); color: var(--white); border: none;
+      padding: 0.9rem 2rem; font-family: var(--sans); font-size: 0.82rem;
+      font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.2s; margin-top: 0.3rem;
+    }
+    .freebie-form button:hover { background: var(--green); }
+    .freebie-form .fnote { font-size: 0.72rem !important; color: rgba(255,255,255,0.25) !important; text-align: center; margin: 0 !important; }
+
+    .freebie-visual { display: flex; justify-content: center; }
+    .freebie-mockup {
+      width: 260px; background: var(--white); padding: 2rem;
+      transform: rotate(2deg); transition: transform 0.3s;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .freebie-mockup:hover { transform: rotate(0deg) scale(1.02); }
+    .mockup-badge { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .mockup-h { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+    .mockup-hw { font-family: var(--hand); font-size: 1.6rem; color: var(--green); display: block; margin-bottom: 0.5rem; }
+    .mockup-sub { font-size: 0.75rem; color: var(--muted); margin-bottom: 1.5rem; }
+    .mockup-lines { display: flex; flex-direction: column; gap: 0.4rem; }
+    .mockup-line { height: 5px; background: var(--pink-l); }
+    .mockup-line:nth-child(2) { width: 80%; background: var(--green-l); }
+    .mockup-line:nth-child(3) { width: 90%; }
+    .mockup-line:nth-child(4) { width: 60%; background: var(--green-l); }
+
+    /* ── MEMBERS ── */
+    .members { border-bottom: 1px solid var(--border); }
+    .members-header { max-width: 560px; margin-bottom: 3rem; }
+    .members-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 3rem; border: 1px solid var(--border); }
+    .members-intro-box { padding: 1.5rem; }
+    .members-intro-box:first-child { border-right: 1px solid var(--border); }
+    .members-intro-box h4 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .members-intro-box p { font-size: 0.82rem; line-height: 1.7; color: var(--muted); }
+
+    .members-notice { padding: 1rem 1.5rem; border: 1px solid var(--pink-l); margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem; }
+    .members-notice p { font-size: 0.85rem; line-height: 1.6; color: var(--ink2); }
+    .members-notice a { color: var(--pink); text-decoration: none; border-bottom: 1px solid var(--pink-l); }
+
+    .members-tabs { display: flex; gap: 0; margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); }
+    .tab-btn {
+      background: transparent; border: none; border-bottom: 2px solid transparent;
+      color: var(--muted); font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+      padding: 0.6rem 1.5rem; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; margin-bottom: -1px; transition: all 0.2s;
+    }
+    .tab-btn:hover { color: var(--ink); }
+    .tab-btn.active { border-bottom-color: var(--pink); color: var(--pink); }
+
+    .members-group { display: none; }
+    .members-group.active { display: block; }
+    .members-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+
+    .member-card { background: var(--white); cursor: pointer; transition: background 0.2s; position: relative; }
+    .member-card:hover { background: var(--pink-ll); }
+    .member-card:hover .member-overlay { opacity: 1; }
+
+    .member-thumb { width: 100%; aspect-ratio: 1; background: var(--off); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; gap: 0.5rem; position: relative; overflow: hidden; }
+    .thumb-phone { width: 56px; height: 80px; background: var(--white); border: 1px solid var(--border); overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .thumb-phone img { width: 100%; height: 100%; object-fit: cover; }
+    .thumb-phone-placeholder { width: 100%; height: 100%; background: var(--pink-ll); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.2rem; color: var(--pink); }
+    .thumb-ig-handle { font-family: var(--sans); font-size: 0.62rem; font-weight: 600; color: var(--ink); letter-spacing: 0.02em; }
+    .thumb-tagline { font-family: var(--serif); font-size: 0.65rem; font-style: italic; color: var(--muted); text-align: center; line-height: 1.3; }
+    .member-overlay { position: absolute; inset: 0; background: rgba(176,96,112,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.25s; }
+    .member-overlay span { color: var(--white); font-family: var(--serif); font-size: 0.85rem; font-style: italic; letter-spacing: 0.05em; }
+    .member-info { padding: 0.85rem 1rem; border-top: 1px solid var(--border); }
+    .member-name { font-family: var(--serif); font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.1rem; }
+    .member-craft { font-size: 0.72rem; color: var(--muted); }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(26,16,24,0.6);
+      backdrop-filter: blur(4px); z-index: 500; display: flex;
+      align-items: center; justify-content: center; padding: 2rem;
+      opacity: 0; pointer-events: none; transition: opacity 0.28s;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal {
+      background: var(--white); max-width: 680px; width: 100%;
+      max-height: 88vh; overflow-y: auto;
+      transform: translateY(20px); transition: transform 0.3s; position: relative;
+    }
+    .modal-overlay.open .modal { transform: translateY(0); }
+    .modal-close {
+      position: absolute; top: 1rem; right: 1rem; width: 32px; height: 32px;
+      background: var(--off); border: 1px solid var(--border); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: var(--ink); transition: background 0.2s;
+    }
+    .modal-close:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+    .modal-top { width: 100%; aspect-ratio: 16/6; background: var(--off); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .modal-top img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-top-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--muted); font-family: var(--serif); font-size: 0.85rem; font-style: italic; }
+    .modal-body { padding: 2rem; }
+    .modal-group-tag { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.8rem; display: block; }
+    .modal-name { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: var(--ink); margin-bottom: 0.2rem; }
+    .modal-craft { font-size: 0.85rem; color: var(--muted); margin-bottom: 1.2rem; }
+    .modal-desc { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin-bottom: 1.5rem; }
+    .modal-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1.5rem; }
+    .modal-gallery-item { aspect-ratio: 1; background: var(--off); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--border); overflow: hidden; }
+    .modal-gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .modal-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+    .modal-link { display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.55rem 1.2rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; }
+    .modal-link.ig { background: var(--pink); color: var(--white); }
+    .modal-link.ig:hover { background: var(--ink); }
+    .modal-link.web { background: transparent; color: var(--green); border: 1px solid var(--green); }
+    .modal-link.web:hover { background: var(--green); color: var(--white); }
+
+    /* ── STORIES ── */
+    .stories { background: var(--off); border-bottom: 1px solid var(--border); }
+    .stories-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+    .stories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .story-card { background: var(--white); padding: 2rem; transition: background 0.2s; }
+    .story-card:hover { background: var(--pink-ll); }
+    .story-avatar { width: 40px; height: 40px; background: var(--pink-ll); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.1rem; color: var(--pink); margin-bottom: 1.2rem; }
+    .story-quote { font-family: var(--serif); font-size: 1rem; font-style: italic; line-height: 1.6; color: var(--ink); margin-bottom: 1.2rem; }
+    .story-quote::before { content: '"'; color: var(--pink); font-size: 1.4em; line-height: 0; vertical-align: -0.3em; margin-right: 0.1em; }
+    .story-name { font-size: 0.8rem; font-weight: 600; color: var(--ink2); }
+    .story-role { font-size: 0.75rem; color: var(--muted); }
+
+    /* ── SHOPS ── */
+    .shops { border-bottom: 1px solid var(--border); }
+    .shops-header { max-width: 560px; margin-bottom: 3.5rem; }
+    .shops-featured { margin-bottom: 3.5rem; border: 1px solid var(--border); position: relative; overflow: hidden; background: var(--white); }
+    .featured-track { display: flex; transition: transform 0.5s ease; }
+    .featured-slide { min-width: 100%; flex-shrink: 0; }
+    .featured-img { width: 100%; height: 380px; overflow: hidden; background: var(--off); }
+    .featured-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .featured-img-placeholder { width: 100%; height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; background: var(--off); }
+    .featured-img-placeholder .fp-logo { width: 56px; height: 56px; background: var(--pink-ll); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.4rem; color: var(--pink); }
+    .featured-img-placeholder p { font-size: 0.72rem; color: var(--muted); font-style: italic; }
+    .featured-controls { position: absolute; bottom: 0.8rem; right: 1rem; display: flex; gap: 0.4rem; align-items: center; }
+    .featured-btn { width: 28px; height: 28px; background: rgba(255,255,255,0.9); border: 1px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--ink); transition: all 0.2s; }
+    .featured-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .featured-dots { display: flex; gap: 0.3rem; }
+    .featured-dot { width: 5px; height: 5px; background: rgba(255,255,255,0.6); cursor: pointer; transition: all 0.2s; }
+    .featured-dot.active { background: var(--white); }
+    .shops-grid-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .shops-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .shop-card { background: var(--white); padding: 1.4rem; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; text-decoration: none; transition: background 0.2s; }
+    .shop-card:hover { background: var(--pink-ll); }
+    .shop-logo { width: 48px; height: 48px; background: var(--off); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .shop-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .shop-logo-placeholder { font-family: var(--serif); font-size: 1.2rem; color: var(--pink); }
+    .shop-name { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; color: var(--ink); text-align: center; }
+    .shop-url { font-size: 0.68rem; color: var(--muted); text-align: center; }
+
+    /* ── CTA ── */
+    .cta-final { background: var(--ink); text-align: center; padding: 8rem 4rem; }
+    .cta-final .eyebrow { color: var(--green); }
+    .cta-final .section-h { color: var(--white); font-size: clamp(2.5rem, 4vw, 4rem); margin-bottom: 1.2rem; }
+    .cta-final .section-h em { color: var(--pink-l); }
+    .cta-final p { font-size: 0.95rem; line-height: 1.8; color: rgba(249,247,245,0.6); max-width: 480px; margin: 0 auto 3rem; }
+    .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-outline { background: transparent; color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+    .btn-outline:hover { border-color: var(--pink); color: var(--pink); }
+
+    /* Community join boxes */
+    .join-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); max-width: 600px; margin: 3rem auto 0; }
+    .join-box { background: rgba(255,255,255,0.04); padding: 1.8rem; }
+    .join-box h4 { font-family: var(--serif); font-size: 1rem; color: var(--white); margin-bottom: 0.4rem; }
+    .join-box p { font-size: 0.82rem; color: rgba(249,247,245,0.5); line-height: 1.6; margin-bottom: 1.2rem; }
+    .join-btn-ig { display: inline-block; background: var(--pink); color: var(--white); padding: 0.55rem 1.2rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+    .join-btn-ig:hover { background: var(--green); }
+    .join-btn-wait { display: inline-block; background: transparent; color: var(--green); padding: 0.55rem 1.2rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--green); transition: all 0.2s; cursor: pointer; }
+    .join-btn-wait:hover { background: var(--green); color: var(--white); }
+
+    #nabor-form { max-width: 400px; margin: 1.5rem auto 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; text-align: left; }
+    #nabor-form h4 { font-family: var(--serif); font-size: 0.95rem; color: var(--white); margin-bottom: 0.3rem; }
+    #nabor-form p { font-size: 0.8rem; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 1rem; }
+    #nabor-form input { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); padding: 0.7rem 1rem; font-family: var(--sans); font-size: 0.85rem; color: var(--white); outline: none; margin-bottom: 0.6rem; }
+    #nabor-form input::placeholder { color: rgba(255,255,255,0.25); }
+    #nabor-form button { width: 100%; background: var(--green); color: var(--white); border: none; padding: 0.75rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    #nabor-form button:hover { background: var(--pink); }
+    #nabor-form .fnote { font-size: 0.7rem; color: rgba(255,255,255,0.2); text-align: center; margin-top: 0.5rem; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--green); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+
+    /* ── ARTICLE MODALS ── */
+    .art-overlay { position: fixed; inset: 0; background: rgba(26,16,24,0.6); backdrop-filter: blur(4px); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
+    .art-overlay.open { opacity: 1; pointer-events: all; }
+    .art-modal { background: var(--white); max-width: 700px; width: 100%; max-height: 88vh; overflow-y: auto; transform: translateY(20px); transition: transform 0.3s; position: relative; }
+    .art-overlay.open .art-modal { transform: translateY(0); }
+    .art-close { position: sticky; top: 1rem; float: right; margin: 1rem 1rem 0 0; width: 30px; height: 30px; background: var(--off); border: 1px solid var(--border); cursor: pointer; font-size: 0.85rem; color: var(--ink); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .art-close:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+    .art-content { padding: 0.5rem 2.5rem 3rem; clear: both; }
+    .art-content .article-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.8rem; }
+    .art-content h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: var(--ink); line-height: 1.25; margin-bottom: 1.5rem; }
+    .art-content .article-lead { font-size: 1rem; line-height: 1.8; color: var(--ink2); margin-bottom: 2rem; border-left: 1px solid var(--pink); padding-left: 1.2rem; font-style: italic; }
+    .art-content h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); margin: 2rem 0 0.7rem; }
+    .art-content p { font-size: 0.92rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1rem; }
+    .art-content ul { margin: 0.5rem 0 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .art-content ul li { font-size: 0.92rem; line-height: 1.7; color: var(--ink2); }
+    .art-content ul li strong { color: var(--ink); }
+    .article-formula { background: var(--pink-ll); padding: 1.4rem 1.8rem; margin: 1.5rem 0; border-left: 2px solid var(--pink); font-family: var(--serif); font-size: 1rem; color: var(--ink); line-height: 1.7; }
+    .article-callout { background: var(--green-l); padding: 1.4rem 1.8rem; margin: 1.5rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; font-size: 0.92rem; line-height: 1.75; color: var(--ink); }
+    .article-callout strong { color: var(--green); }
+    .article-ig-tip { background: var(--off); padding: 1.4rem 1.8rem; margin-top: 2rem; border: 1px solid var(--border); }
+    .article-ig-tip h3 { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-ig-tip p { margin: 0; font-size: 0.88rem; line-height: 1.7; color: var(--ink2); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
+      .hero-visual { order: -1; }
+      section { padding: 4rem 1.5rem; }
+      .about { grid-template-columns: 1fr; gap: 3rem; }
+      .about-values { grid-template-columns: 1fr; }
+      .start-grid { grid-template-columns: 1fr; }
+      .start-card:nth-child(n) { border-right: none; }
+      .freebie-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .freebie-visual { display: none; }
+      .members-grid { grid-template-columns: repeat(2, 1fr); }
+      .members-intro { grid-template-columns: 1fr; }
+      .members-intro-box:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+      .stories-grid { grid-template-columns: 1fr; gap: 1px; }
+      .stories-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .shops-featured { grid-template-columns: 1fr; }
+      .featured-slide { grid-template-columns: 1fr; }
+      .featured-content { border-left: none; border-top: 1px solid var(--border); }
+      .shops-grid { grid-template-columns: repeat(2, 1fr); }
+      .cta-final { padding: 5rem 1.5rem; }
+      .join-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    }
+
+    /* Article modal aliases */
+    .article-overlay { position: fixed; inset: 0; background: rgba(26,16,24,0.6); backdrop-filter: blur(4px); z-index: 500; display: flex; align-items: center; justify-content: center; padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.28s; }
+    .article-overlay.open { opacity: 1; pointer-events: all; }
+    .article-modal { background: var(--white); max-width: 700px; width: 100%; max-height: 88vh; overflow-y: auto; transform: translateY(20px); transition: transform 0.3s; position: relative; }
+    .article-overlay.open .article-modal { transform: translateY(0); }
+    .article-modal-close { position: sticky; top: 1rem; float: right; margin: 1rem 1rem 0 0; width: 30px; height: 30px; background: var(--off); border: 1px solid var(--border); cursor: pointer; font-size: 0.85rem; color: var(--ink); display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .article-modal-close:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+    .article-content { padding: 0.5rem 2.5rem 3rem; clear: both; }
+    .article-content .article-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.8rem; }
+    .article-content h1 { font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: var(--ink); line-height: 1.25; margin-bottom: 1.5rem; }
+    .article-content .article-lead { font-size: 1rem; line-height: 1.8; color: var(--ink2); margin-bottom: 2rem; border-left: 1px solid var(--pink); padding-left: 1.2rem; font-style: italic; }
+    .article-content h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--ink); margin: 2rem 0 0.7rem; }
+    .article-content p { font-size: 0.92rem; line-height: 1.85; color: var(--ink2); margin-bottom: 1rem; }
+    .article-content ul { margin: 0.5rem 0 1rem 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; }
+    .article-content ul li { font-size: 0.92rem; line-height: 1.7; color: var(--ink2); }
+    .article-content ul li strong { color: var(--ink); }
+    .article-formula { background: var(--pink-ll); padding: 1.4rem 1.8rem; margin: 1.5rem 0; border-left: 2px solid var(--pink); font-family: var(--serif); font-size: 1rem; color: var(--ink); line-height: 1.7; }
+    .article-callout { background: var(--green-l); padding: 1.4rem 1.8rem; margin: 1.5rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; font-size: 0.92rem; line-height: 1.75; color: var(--ink); }
+    .article-callout strong { color: var(--green); }
+    .article-ig-tip { background: var(--off); padding: 1.4rem 1.8rem; margin-top: 2rem; border: 1px solid var(--border); }
+    .article-ig-tip h3 { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-ig-tip p { margin: 0; font-size: 0.88rem; line-height: 1.7; color: var(--ink2); }
+
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="#" style="text-decoration:none;">
+        <img src="logo.png" alt="Rosteme spolu" style="height: 48px; width: auto;">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">O nás</a></li>
+      <li><a href="#start">Začínám podnikat</a></li>
+      <li><a href="#members">Členky</a></li>
+      <li><a href="#shops">Weby členek</a></li>
+      <li><a href="#stories">Příběhy</a></li>
+      <li><a href="#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+    <a href="#about" class="mobile-link">O nás</a>
+    <a href="#members" class="mobile-link">Členky</a>
+    <a href="#start" class="mobile-link">Začínám podnikat</a>
+    <a href="#shops" class="mobile-link">Weby členek</a>
+    <a href="#stories" class="mobile-link">Příběhy</a>
+    <a href="#freebie" class="mobile-link">Průvodce zdarma</a>
+    <a href="#community" class="mobile-link mcta">Přidej se</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content" style="animation: fadeUp 0.9s ease both;">
+      <span class="hero-eyebrow">Komunita tvůrkyň & podnikatelek</span>
+      <h1>
+        Rosteme.<br>
+        <em>Každá</em>
+        <span class="hand-word">svým tempem.</span>
+      </h1>
+      <p class="hero-sub">Komunita tvůrkyň a maminek, kde máme pro sebe pochopení. Někdo je aktivnější, někdo méně — a obojí je v pořádku.</p>
+      <div class="hero-actions">
+        <a href="#community" class="btn-primary">Chci být součástí</a>
+        <a href="#start" class="btn-ghost">Jak začít ↓</a>
+      </div>
+    </div>
+    <div class="hero-visual" style="animation: fadeUp 0.9s 0.2s ease both;">
+      <div class="hero-img-wrap">
+        <img src="hero-ilustrace.png" alt="Tři tvůrkyně u stolu — komunita Rosteme spolu">
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Bez tlaku</span><span class="dot">✦</span>
+      <span>Bez křiku</span><span class="dot">✦</span>
+      <span>Spolu</span><span class="dot">✦</span>
+      <span>Každý krok vpřed se počítá</span><span class="dot">✦</span>
+      <span>Tvůj výrobek má hodnotu</span><span class="dot">✦</span>
+      <span>Komunita tvůrkyň & podnikatelek</span><span class="dot">✦</span>
+      <span>Bez tlaku</span><span class="dot">✦</span>
+      <span>Bez křiku</span><span class="dot">✦</span>
+      <span>Spolu</span><span class="dot">✦</span>
+      <span>Každý krok vpřed se počítá</span><span class="dot">✦</span>
+      <span>Tvůj výrobek má hodnotu</span><span class="dot">✦</span>
+      <span>Komunita tvůrkyň & podnikatelek</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- O NÁS -->
+  <section class="about" id="about">
+    <div class="reveal">
+      <span class="eyebrow">O nás</span>
+      <h2 class="section-h">Místo kde se<br><em>nebojíš</em> začít</h2>
+      <blockquote class="about-quote">"Začalo to úplně jinak, než bych čekala."</blockquote>
+      <p class="about-body">Spravovala jsem Instagram své maminky — malá cestovní agentura, poctivá práce, krásné příběhy z cest. A přesto: téměř nulový dosah. Ne proto, že by obsah byl špatný. Ale proto, že být vidět bez toho, abys každý druhý den prosila rodinu o sdílení, je opravdu těžké.<br><br>Tehdy mi došlo, že tohle není jen mamčin problém. Jsou tisíce žen — tvůrkyň, maminek na rodičovské, malých podnikatelek — které dělají krásné věci a nikdo je nevidí. Ne proto, že nestojí za pozornost. Ale proto, že nemají komunitu, která by je nesla.<br><br>Tak vzniklo Rosteme spolu. Místo, kde se neseme navzájem. Kde sdílení není prosba, ale přirozená součást toho, jak fungujeme.<br><br>Jsem Michaela — grafická designérka a zakladatelka komunity. Ráda pomáhám. Možná až moc. Ale tohle je projekt, kde to dává smysl.</p>
+      <div class="about-values">
+        <div class="value-item">
+          <h4>Autenticita</h4>
+          <p>Mluvíme na rovinu. Žádné přikrášlování.</p>
+        </div>
+        <div class="value-item">
+          <h4>Podpora bez soupeření</h4>
+          <p>Úspěch jedné inspiruje všechny ostatní.</p>
+        </div>
+        <div class="value-item">
+          <h4>Bezpečný prostor</h4>
+          <p>Tady každá jde svým tempem.</p>
+        </div>
+        <div class="value-item">
+          <h4>Praktičnost</h4>
+          <p>Věci, které se dají použít hned — dnes večer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-photo reveal" data-num="01">
+      <div class="about-photo-wrap">
+        <img src="foto-michaela.png" alt="Michaela Skalková" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+        <div class="about-photo-placeholder" style="display:none;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="17" r="9" stroke="#B06070" stroke-width="1.2"/><path d="M6 44 C6 30 42 30 42 44" stroke="#B06070" stroke-width="1.2" stroke-linecap="round"/></svg>
+          <p>Michaela Skalková</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- FEATURED SLIDER -->
+  <section style="padding: 4rem 4rem; background: var(--off); border-bottom: 1px solid var(--border);">
+    <div class="reveal" style="margin-bottom: 1.5rem;">
+      <span class="eyebrow">Členky v akci</span>
+      <h2 class="section-h" style="font-size: 1.8rem;">Navštiv jejich <em>weby</em></h2>
+    </div>
+    <div class="shops-featured reveal"><div class="featured-track" id="featuredTrack"><div class="featured-slide"><div class="featured-img"><img src="banner-bellakvet.png" alt="Bellakvet — Šperky z podhůří Beskyd"></div></div><div class="featured-slide"><div class="featured-img"><div class="featured-img-placeholder"><div class="fp-logo">L</div><p>banner-lamays_jewelry.png</p></div></div></div><div class="featured-slide"><div class="featured-img"><div class="featured-img-placeholder"><div class="fp-logo">C</div><p>banner-candles_by_nira.png</p></div></div></div><div class="featured-slide"><div class="featured-img"><div class="featured-img-placeholder"><div class="fp-logo">U</div><p>banner-utita.png</p></div></div></div><div class="featured-slide"><div class="featured-img"><div class="featured-img-placeholder"><div class="fp-logo">J</div><p>banner-janniestore.png</p></div></div></div></div>
+      <div class="featured-controls"><button class="featured-btn" id="featuredPrev">←</button>
+      <div class="featured-dots" id="featuredDots"></div>
+      <button class="featured-btn" id="featuredNext">→</button></div></div>
+  </section>
+
+
+  <!-- ZAČÍNÁM PODNIKAT -->
+  <section class="start" id="start">
+    <div class="start-header reveal">
+      <div>
+        <span class="eyebrow">Průvodce podnikáním</span>
+        <h2 class="section-h">Začni tam, kde <span class="hw">právě jsi</span></h2>
+      </div>
+      <p class="section-intro" style="max-width:360px;">Každá z nás začínala od nuly. Vybraly jsme témata, která řeší začínající tvůrkyně nejčastěji.</p>
+    </div>
+    <div class="start-grid">
+      <div class="start-card reveal" onclick="window.location='blog/nez-se-vrhnete-na-urady.html'" style="cursor:pointer;">
+        <div class="card-num">01</div>
+        <h3>Než se vrhneš na úřady</h3>
+        <p>Jak si připravit půdu pro úspěšné podnikání — ještě před tím, než zajdeš na živnostenský úřad.</p>
+        <a href="#" class="card-link" href="blog/nez-se-vrhnete-na-urady.html">Číst více →</a>
+      </div>
+      <div class="start-card reveal" onclick="window.location='blog/zivnost-bez-strachu.html'" style="cursor:pointer;">
+        <div class="card-num">02</div>
+        <h3>Živnost bez strachu</h3>
+        <p>Co potřebuješ vědět o živnosti, OSVČ a přivýdělku na rodičovské — srozumitelně a bez zbytečného strachu.</p>
+        <a href="#" class="card-link" href="blog/zivnost-bez-strachu.html">Číst více →</a>
+      </div>
+      <div class="start-card reveal">
+        <div class="card-num">03</div>
+        <h3>Tvůj brand, tvůj příběh</h3>
+        <p>Proč zákaznice nekupují výrobky, ale příběh za nimi — a jak svůj příběh začít vyprávět.</p>
+        <a href="#" class="card-link">Číst více →</a>
+      </div>
+      <div class="start-card reveal" onclick="window.location='blog/cena-tveho-vyrobku.html'" style="cursor:pointer;">
+        <div class="card-num">04</div>
+        <h3>Cena tvého výrobku</h3>
+        <p>Jak správně nastavit cenu, aby pokryla náklady i tvůj čas — a přesto byla pro zákaznici přijatelná.</p>
+        <a href="#" class="card-link" href="blog/cena-tveho-vyrobku.html">Číst více →</a>
+      </div>
+      <div class="start-card reveal">
+        <div class="card-num">05</div>
+        <h3>Instagram, který tě vidí</h3>
+        <p>Jak vytvářet obsah, který přitahuje správné zákaznice — bez toho, abys byla online 24 hodin denně.</p>
+        <a href="#" class="card-link">Číst více →</a>
+      </div>
+      <div class="start-card reveal">
+        <div class="card-num">06</div>
+        <h3>První zákaznice</h3>
+        <p>Kde hledat první zákaznice, jak oslovit svou síť, a proč začít blíž, než si myslíš.</p>
+        <a href="#" class="card-link">Číst více →</a>
+      </div>
+      <div class="start-card start-card-last reveal">
+        <h3>Chybí ti téma?</h3>
+        <p style="font-size:0.85rem; line-height:1.7; color: var(--muted);">Napiš nám. Obsah tvoříme pro vás.</p>
+        <a href="#community" class="card-link">Napsat →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRŮVODCE ZDARMA -->
+  <section class="freebie" id="freebie">
+    <div class="freebie-inner">
+      <div class="reveal">
+        <span class="eyebrow">Zdarma pro tebe</span>
+        <h2 class="section-h">Instagram,<br>který tě <em>vidí</em></h2>
+        <p>Bezplatný průvodce obsahem na Instagramu — pro handmade tvůrkyně, které chtějí být vidět. Žádný spam, jen hodnota.</p>
+        <div class="freebie-form">
+          <input type="text" placeholder="Tvoje jméno">
+          <input type="email" placeholder="Tvůj e-mail">
+          <button>Chci průvodce zdarma →</button>
+          <p class="fnote">Žádný spam. Odhlásit se můžeš kdykoliv.</p>
+        </div>
+      </div>
+      <div class="freebie-visual reveal">
+        <div class="freebie-mockup">
+          <span class="mockup-badge">Zdarma</span>
+          <div class="mockup-h">Instagram,</div>
+          <span class="mockup-hw">který tě vidí</span>
+          <p class="mockup-sub">Průvodce pro handmade tvůrkyně</p>
+          <div class="mockup-lines">
+            <div class="mockup-line"></div>
+            <div class="mockup-line"></div>
+            <div class="mockup-line"></div>
+            <div class="mockup-line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ČLENKY -->
+  <section class="members" id="members">
+    <div class="members-header reveal"><span class="eyebrow">Naše komunita</span>
+      <h2 class="section-h">Poznej naše <em>členky</em></h2>
+      <p class="section-intro">Každá z nich je originál. Podívej se, kdo tvoří Rosteme spolu.</p></div>
+    <div class="members-intro reveal">
+      <div class="members-intro-box"><h4>Uzavřené skupiny</h4><p>Každá skupina má 10–13 členek, které se vzájemně podporují. Počet míst je záměrně omezený.</p></div>
+      <div class="members-intro-box"><h4>Jak nás podpořit?</h4><p>Sleduj profil a zapoj se. Největší radost nám uděláš sdílením na osobní profil.</p></div>
+    </div>
+    <div class="members-notice reveal"><p>Skupiny otevíráme příležitostně — <a href="https://instagram.com/rosteme_spolu_na_sitich" target="_blank">@rosteme_spolu_na_sitich →</a></p></div>
+    <div class="members-tabs reveal">
+      <button class="tab-btn active" data-group="alpha">Alpha</button>
+      <button class="tab-btn" data-group="beta">Beta</button>
+      <button class="tab-btn" data-group="gamma">Gamma</button>
+      <button class="tab-btn" data-group="delta">Delta</button>
+    </div>
+<!-- ALPHA -->
+    <div class="members-group active" id="group-alpha">
+      <div class="members-grid">
+        
+        <div class="member-card reveal" data-name="if_hacekalist" data-craft="Dětská jména na zeď & tricotín" data-group="Alpha" data-ig="if_hacekalist"  data-web="https://www.fler.cz/if-hacek-a-list" data-desc="Ve své tvorbě si zakládám na detailu a individuálním přístupu. Pomáhám vytvořit kouzelný dětský pokojíček — ručně vyráběné dekorace se jménem na míru.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@if_hacekalist</span>
+            <span class="thumb-tagline">Ve své tvorbě si zakládám na detailu.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">if_hacekalist</div>
+            <div class="member-craft">Dětská jména na zeď & tricotín</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="magni_to.cz" data-craft="Magnety & fotodárky" data-group="Alpha" data-ig="magni_to.cz"  data-web="https://www.magni-to.cz" data-desc="Kvalita a spokojenost zákazníků jsou pro mě hlavní priority. Tvoje fotky (design) = naše magnety. Vzpomínky, dárky a promo v 5×5 cm.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@magni_to.cz</span>
+            <span class="thumb-tagline">Kvalita a spokojenost zákazníků.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">magni_to.cz</div>
+            <div class="member-craft">Magnety & fotodárky</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="vf_clay" data-craft="Šperky z polymeru" data-group="Alpha" data-ig="vf_clay"  data-web="https://www.fler.cz/shop/vf-clay" data-desc="Jednoduché šperky inspirované přírodou. Ručně tvořené náušnice z polymeru — hravé i elegantní doplňky, originální dárek pro ženy.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@vf_clay</span>
+            <span class="thumb-tagline">Jednoduché šperky inspirované přírodou.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">vf_clay</div>
+            <div class="member-craft">Šperky z polymeru</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="cestuj_s_blankou" data-craft="CABS Cestovní agentura" data-group="Alpha" data-ig="cestuj_s_blankou"  data-web="https://ca-bs.cz" data-desc="Cestuj autenticky, bez starostí s Blankou. Dovolená bez stresu a bez překvapení — Evropa, kam dojedeš i autem. Poznávací i klasické pobyty s férovým výběrem.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@cestuj_s_blankou</span>
+            <span class="thumb-tagline">Cestuj autenticky, bez starostí.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">cestuj_s_blankou</div>
+            <div class="member-craft">CABS Cestovní agentura</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="hunatekvitko" data-craft="Huňaté květiny & dekorace" data-group="Alpha" data-ig="hunatekvitko"  data-web="" data-desc="Huňaté květiny a dekorace, radost vašeho domova. Ručně vyrábím nejen květiny z huňatých drátků — originální dárky, dekorace, aranžmá.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@hunatekvitko</span>
+            <span class="thumb-tagline">Huňaté květiny, radost domova.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">hunatekvitko</div>
+            <div class="member-craft">Huňaté květiny & dekorace</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="zamotana_zahrada" data-craft="Květiny z drátku" data-group="Alpha" data-ig="zamotana_zahrada"  data-web="" data-desc="Pokud máte rádi květiny, které neuvadnou, vítejte! Ručně tvořené z jemného chlupatého drátku — květy, kytice, dekorace.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@zamotana_zahrada</span>
+            <span class="thumb-tagline">Květiny, které nikdy neuvadnou.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">zamotana_zahrada</div>
+            <div class="member-craft">Květiny z drátku</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="bellakvet" data-craft="Šperky z podhůří Beskyd" data-group="Alpha" data-ig="bellakvet"  data-web="https://bellakvet.cz" data-desc="Klenoty z podhůří Beskyd. Zlaceno Pro Tvo — aby vydržely s tebou. Minimalistická elegance, šperky které mluví za tebe.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@bellakvet</span>
+            <span class="thumb-tagline">Klenoty z podhůří Beskyd.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">bellakvet</div>
+            <div class="member-craft">Šperky z podhůří Beskyd</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="anett_stvorenohackem" data-craft="Háčkování & e-shop s klubíčky" data-group="Alpha" data-ig="anett_stvorenohackem"  data-web="https://stvorenohackem.cz" data-desc="Od srdce jedné háčkařky k rukám druhé. E-shop s klubíčky s osobním přístupem, hotové výrobky, inspirace, DIY krabičky a návody.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@anett_stvorenohackem</span>
+            <span class="thumb-tagline">Od srdce jedné háčkařky k rukám druhé.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">anett_stvorenohackem</div>
+            <div class="member-craft">Háčkování & e-shop s klubíčky</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BETA -->
+    <div class="members-group" id="group-beta">
+      <div class="members-grid">
+        
+        <div class="member-card reveal" data-name="lamays.jewelry" data-craft="Šperky z perel & polodrahokamů" data-group="Beta" data-ig="lamays.jewelry"  data-web="https://lamays.cz" data-desc="Ručně vyráběná elegance z říčních perel a polodrahokamů. Tvořím ručně osobité šperky pouze v malých sériích — od každého jen pár kusů.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@lamays.jewelry</span>
+            <span class="thumb-tagline">Ručně vyráběná elegance z perel.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">lamays.jewelry</div>
+            <div class="member-craft">Šperky z perel & polodrahokamů</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="sebi_dori" data-craft="Dekorace & svíčky" data-group="Beta" data-ig="sebi_dori"  data-web="" data-desc="Každý výrobek, který mi vznikne pod rukama, je originál. Ručně tvořené dekorace, sójové svíčky v originálních nádobách — kouzelná atmosféra pro váš domov.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@sebi_dori</span>
+            <span class="thumb-tagline">Každý výrobek pod rukama je originál.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">sebi_dori</div>
+            <div class="member-craft">Dekorace & svíčky</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="pestrokvet" data-craft="Malované květináče" data-group="Beta" data-ig="pestrokvet"  data-web="" data-desc="Malovat květináče je pro mě neuvěřitelně uklidňující činnost. Ručně zdobené květináče — každý jedinečný.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@pestrokvet</span>
+            <span class="thumb-tagline">Malování jako meditace.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">pestrokvet</div>
+            <div class="member-craft">Malované květináče</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="candles_by_nira" data-craft="Svíčky z přírodních vosků" data-group="Beta" data-ig="candles_by_nira"  data-web="https://candlesbynira.cz" data-desc="Svíčky, do kterých se zamiluješ na první pohled. Handmade svíčky z přírodních vosků — sója + včela, eko nádoby, svíčky s SDS.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@candles_by_nira</span>
+            <span class="thumb-tagline">Svíčky, do kterých se zamiluješ.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">candles_by_nira</div>
+            <div class="member-craft">Svíčky z přírodních vosků</div>
+          </div>
+        </div>
+
+        <div class="member-card reveal" data-name="batol_ina" data-craft="Domácí modelína pro děti" data-group="Beta" data-ig="batol_ina"  data-web="" data-desc="Tvořím domácí modelínu pro malé všetečné ručičky. Bezpečné, jedlé suroviny — pro malé zvídavé ručičky s láskou od mámy.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@batol_ina</span>
+            <span class="thumb-tagline">Domácí modelína pro malé ručičky.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">batol_ina</div>
+            <div class="member-craft">Domácí modelína pro děti</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAMMA -->
+    <div class="members-group" id="group-gamma">
+      <div class="members-grid">
+        <div class="member-card reveal" data-name="Členka Gamma" data-craft="Ruční tvorba" data-group="Gamma" data-ig="" data-web="" data-desc="Představení členky skupiny Gamma bude doplněno.">
+          <div class="member-thumb">
+            <div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div>
+            <span class="thumb-ig-handle">@username</span>
+            <span class="thumb-tagline">Brzy doplníme.</span>
+            <div class="member-overlay"><span>Zobrazit profil →</span></div>
+          </div>
+          <div class="member-info">
+            <div class="member-name">Členka Gamma</div>
+            <div class="member-craft">Ruční tvorba</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELTA -->
+    <div class="members-group" id="group-delta">
+      <div class="members-grid">
+
+        <div class="member-card reveal" data-name="Svět kouzelných objevů" data-craft="Půjčovna hraček & digitální produkty" data-group="Delta" data-ig="svet_kouzelnych_objevu" data-web="" data-desc="Půjčovna hraček pro děti a rodiny — zábava, hry, aktivity od miminek po větší děti. Digitální produkty a tipy na výlety.">
+          <div class="member-thumb"><div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div><span class="thumb-ig-handle">@svet_kouzelnych_objevu</span><span class="thumb-tagline">Kouzelný svět hraček a dobrodružství.</span><div class="member-overlay"><span>Zobrazit profil →</span></div></div>
+          <div class="member-info"><div class="member-name">Svět kouzelných objevů</div><div class="member-craft">Půjčovna hraček & digitální produkty</div></div>
+        </div>
+
+        <div class="member-card reveal" data-name="Simiji — Dekorace z lásky" data-craft="Dekorace do dětského pokojíčku" data-group="Delta" data-ig="simiji.decor" data-web="" data-desc="Jemné dekorace do dětského pokojíčku — domečky se jmény a pastelkovníky. Každý kousek vzniká s láskou u nás doma.">
+          <div class="member-thumb"><div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div><span class="thumb-ig-handle">@simiji.decor</span><span class="thumb-tagline">Dekorace do dětského pokojíčku s láskou.</span><div class="member-overlay"><span>Zobrazit profil →</span></div></div>
+          <div class="member-info"><div class="member-name">Simiji — Dekorace z lásky</div><div class="member-craft">Dekorace do dětského pokojíčku</div></div>
+        </div>
+
+        <div class="member-card reveal" data-name="AkibuHandmade" data-craft="Háčkování — šátky, šaty, krajky" data-group="Delta" data-ig="akibuhandmade" data-web="" data-desc="Kreativně od všeho trochu — dárky, hračky, šperky pro děti i dospělé. Háčkování jako umění.">
+          <div class="member-thumb"><div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div><span class="thumb-ig-handle">@akibuhandmade</span><span class="thumb-tagline">Kreativně od všeho trochu.</span><div class="member-overlay"><span>Zobrazit profil →</span></div></div>
+          <div class="member-info"><div class="member-name">AkibuHandmade</div><div class="member-craft">Háčkování — šátky, šaty, krajky</div></div>
+        </div>
+
+        <div class="member-card reveal" data-name="Hačkovani od Maggie" data-craft="Háčkované dekorace & plyšáci" data-group="Delta" data-ig="hackovaniodmaggie" data-web="" data-desc="Ručně vyrobené originální dekorace pro váš domov. Háčkované klíčenky, plyšáci, doplňky — posílám do CZ i SK.">
+          <div class="member-thumb"><div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div><span class="thumb-ig-handle">@hackovaniodmaggie</span><span class="thumb-tagline">Originální dekorace háčkované s duší.</span><div class="member-overlay"><span>Zobrazit profil →</span></div></div>
+          <div class="member-info"><div class="member-name">Hačkovani od Maggie</div><div class="member-craft">Háčkované dekorace & plyšáci</div></div>
+        </div>
+
+        <div class="member-card reveal" data-name="Saporteo — Dorotea" data-craft="Akvarel, ilustrace & olejomalba" data-group="Delta" data-ig="saporteo" data-web="https://www.fler.cz/saporteo" data-desc="Tvorba s hlubším přesahem — akvarel, ilustrace, olej. Personalizované dárky, kaligrafické nápisy. Pečuji o syna s DMO.">
+          <div class="member-thumb"><div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div><span class="thumb-ig-handle">@saporteo</span><span class="thumb-tagline">Tvorba s hlubším přesahem.</span><div class="member-overlay"><span>Zobrazit profil →</span></div></div>
+          <div class="member-info"><div class="member-name">Saporteo — Dorotea</div><div class="member-craft">Akvarel, ilustrace & olejomalba</div></div>
+        </div>
+
+        <div class="member-card reveal" data-name="Waresa Keramika" data-craft="Barevná keramika z Hradce Králové" data-group="Delta" data-ig="waresa_keramika" data-web="https://waresakeramika.cz" data-desc="Barevná keramika z Hradce Králové — vše jen ruční práce. Originální hrnečky jen pro Vás.">
+          <div class="member-thumb"><div class="thumb-phone"><div class="thumb-phone-placeholder">✦</div></div><span class="thumb-ig-handle">@waresa_keramika</span><span class="thumb-tagline">Barevná keramika jen pro Vás.</span><div class="member-overlay"><span>Zobrazit profil →</span></div></div>
+          <div class="member-info"><div class="member-name">Waresa Keramika</div><div class="member-craft">Barevná keramika z Hradce Králové</div></div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  
+  </section>
+<!-- MODAL -->
+  <div class="modal-overlay" id="memberModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-top" id="modalTop">
+        <div class="modal-top-placeholder">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="14" r="8" stroke="#C9A4A4" stroke-width="1.5"/><path d="M4 38 C4 26 36 26 36 38" stroke="#C9A4A4" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <span>Fotka členky</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <span class="modal-group-tag" id="modalGroup">Alpha</span>
+        <div class="modal-name" id="modalName">Jméno členky</div>
+        <div class="modal-craft" id="modalCraft">Co vyrábí</div>
+        <p class="modal-desc" id="modalDesc">Popis členky.</p>
+        <div class="modal-gallery" id="modalGallery">
+          <div class="modal-gallery-item">✦</div>
+          <div class="modal-gallery-item">✦</div>
+          <div class="modal-gallery-item">✦</div>
+        </div>
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  <!-- PŘÍBĚHY -->
+  <section class="stories" id="stories">
+    <div class="stories-header reveal">
+      <div><span class="eyebrow">Příběhy členek</span><h2 class="section-h">Co říkají <em>ony</em></h2></div>
+      <a href="#" class="btn-ghost">Všechny příběhy →</a>
+    </div>
+    <div class="stories-grid">
+      <div class="story-card reveal"><div class="story-avatar">M</div><p class="story-quote">Tahle komunitní skupinka tvůrců je pro mě obrovským zdrojem podpory, inspirace a motivace. Vždycky mě dokáže povzbudit, když ztrácím směr, a připomene mi, proč jsem začala.</p><div class="story-name">Monči dílnička</div><div class="story-role">DIY &amp; Handmade</div></div>
+      <div class="story-card reveal"><div class="story-avatar">M</div><p class="story-quote">Projekt podpory malých tvůrců byl skvělý nápad. Velmi mi pomohl k růstu profilu i objednávek. A navíc jsem získala bezvadnou komunitu, kde si radíme a podporujeme.</p><div class="story-name">Mezi květy</div><div class="story-role">Květinové doplňky ze sušených květů</div></div>
+      <div class="story-card reveal"><div class="story-avatar">✦</div><p class="story-quote">Je skvělé být součástí prostředí, kde si lidé navzájem fandí a pomáhají růst.</p><div class="story-name">Členka komunity</div><div class="story-role">Rosteme spolu</div></div>
+    </div>
+  </section>
+
+  <!-- WEBY -->
+  <section class="shops" id="shops">
+    <div class="shops-header reveal"><span class="eyebrow">Naše členky online</span>
+      <h2 class="section-h">Weby &amp; e-shopy <em>členek</em></h2>
+      <p class="section-intro">Naše členky tvoří a prodávají. Podpoř je návštěvou jejich webu.</p></div>
+    <div class="shops-grid-label reveal">Všechny weby &amp; e-shopy</div>
+    <div class="shops-grid"><a href="https://bellakvet.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">B</span></div><div class="shop-name">Bellakvet</div><div class="shop-url">bellakvet.cz</div></a><a href="https://lamays.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">L</span></div><div class="shop-name">La Mays Jewelry</div><div class="shop-url">lamays.cz</div></a><a href="https://candlesbynira.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">C</span></div><div class="shop-name">Candles by Nira</div><div class="shop-url">candlesbynira.cz</div></a><a href="https://utita.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">U</span></div><div class="shop-name">UTITA</div><div class="shop-url">utita.cz</div></a><a href="https://petloop.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">P</span></div><div class="shop-name">Petloop</div><div class="shop-url">petloop.cz</div></a><a href="https://moni-art.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">M</span></div><div class="shop-name">MoniArt</div><div class="shop-url">moni-art.cz</div></a><a href="https://fler.cz/locus-tempus" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">L</span></div><div class="shop-name">Locus Tempus</div><div class="shop-url">fler.cz/locus-tempus</div></a><a href="https://janniestore.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">J</span></div><div class="shop-name">Jannie Store</div><div class="shop-url">janniestore.cz</div></a><a href="https://eweriaprints.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">E</span></div><div class="shop-name">Eweria Prints</div><div class="shop-url">eweriaprints.cz</div></a><a href="https://waresakeramika.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">W</span></div><div class="shop-name">Waresa Keramika</div><div class="shop-url">waresakeramika.cz</div></a><a href="https://stvorenohackem.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">A</span></div><div class="shop-name">ANETTKA</div><div class="shop-url">stvorenohackem.cz</div></a><a href="https://magni-to.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">M</span></div><div class="shop-name">MAGNI TO</div><div class="shop-url">magni-to.cz</div></a><a href="https://fler.cz/shop/vf-clay" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">V</span></div><div class="shop-name">VF Clay</div><div class="shop-url">fler.cz/shop/vf-clay</div></a><a href="https://ca-bs.cz" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">C</span></div><div class="shop-name">CABS</div><div class="shop-url">ca-bs.cz</div></a><a href="https://fler.cz/saporteo" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">S</span></div><div class="shop-name">Saporteo</div><div class="shop-url">fler.cz/saporteo</div></a><a href="https://skami.design" target="_blank" class="shop-card reveal"><div class="shop-logo"><span class="shop-logo-placeholder">S</span></div><div class="shop-name">SkaMi Design</div><div class="shop-url">skami.design</div></a></div>
+  </section>
+
+  <section class="cta-final" id="community">
+    <span class="eyebrow">Přidej se</span>
+    <h2 class="section-h">Rosteme.<br><span class="hw" style="color:var(--green-l);">Každá svým tempem.</span></h2>
+    <p>Komunita tvůrkyň a maminek, kde máme pro sebe pochopení. Bez tlaku na dokonalost.</p>
+    <div class="join-grid">
+      <div class="join-box"><h4>Sleduj komunitu</h4><p>Otevřeno pro všechny — sleduj profil a zapoj se.</p><a href="https://instagram.com/rosteme_spolu_na_sitich" target="_blank" class="join-btn-ig">Instagram →</a></div>
+      <div class="join-box"><h4>Vstup do skupiny</h4><p>Vstup probíhá formou náboru. Nech nám email a dáme ti vědět.</p><button class="join-btn-wait" onclick="document.getElementById('nabor-form').style.display=document.getElementById('nabor-form').style.display==='none'?'block':'none'">Čekací listina →</button></div>
+    </div>
+    <div id="nabor-form" style="display:none;"><h4>Přihlas se na čekací listinu</h4><p>Až budeme otevírat novou skupinu, dáme ti vědět jako první.</p><input type="text" placeholder="Tvoje jméno"><input type="email" placeholder="Tvůj e-mail"><button>Přihlásit se →</button><p class="fnote">Žádný spam. Odhlásit se můžeš kdykoliv.</p></div>
+  </section>
+  <!-- PODPORUJ ČESKÉ HANDMADE -->
+  <section style="background: var(--ink); padding: 5rem 4rem; border-top: 1px solid #2E2030;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <span class="eyebrow" style="color: var(--green);">Nejsi tvůrkyně?</span>
+      <h2 class="section-h" style="color: var(--white); margin-bottom: 1rem;">Tady taky <em style="color: var(--pink-l);">patříš.</em></h2>
+      <p style="font-size: 1rem; line-height: 1.8; color: rgba(249,247,245,0.65); max-width: 620px; margin-bottom: 3.5rem;">
+        Každá žena v naší komunitě tvoří něco vlastního — ručně, s péčí, s příběhem za tím. Aby se dostaly k lidem, kteří je hledají, nepotřebují velký marketingový rozpočet. Potřebují tebe.
+      </p>
+
+      <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 2.5rem; max-width: 620px; margin-bottom: 3rem;">
+          <div style="font-family: var(--serif); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink-l); margin-bottom: 1rem;">Zdarma & okamžitě</div>
+          <h3 style="font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--white); margin-bottom: 0.8rem;">Sdílej a pomoz být vidět</h3>
+          <p style="font-size: 0.88rem; line-height: 1.75; color: rgba(249,247,245,0.55); margin-bottom: 1.5rem;">
+            Sdílej náš profil, příspěvek nebo tento web na svůj osobní Instagram nebo Facebook. Jeden člověk navíc může znamenat první zákaznici pro někoho, kdo to právě potřebuje. A osobní profil má vždy větší dosah než firemní.
+          </p>
+          <a href="https://instagram.com/rosteme_spolu_na_sitich" target="_blank" style="display: inline-block; background: var(--pink); color: var(--white); padding: 0.6rem 1.4rem; font-family: var(--sans); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;">Sledovat na Instagramu →</a>
+        </div>
+
+
+
+      <p style="font-size: 0.8rem; color: rgba(249,247,245,0.25); text-align: center; font-style: italic;">
+        Rosteme spolu je nekomerční projekt. Cílem není vydělávat, ale umožnit komunitě růst a být vidět.
+      </p>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <div class="footer-logo"><img src="logo.png" alt="Rosteme spolu" style="height: 40px; width: auto;"></div>
+    <ul class="footer-links"><li><a href="#about">O nás</a></li><li><a href="#members">Členky</a></li><li><a href="#start">Začínám podnikat</a></li><li><a href="#freebie">Průvodce</a></li><li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li></ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
+  </footer>
+
+
+  <!-- ARTICLE 01 MODAL -->
+  <div class="article-overlay" id="article01Overlay">
+    <div class="article-modal">
+      <button class="article-modal-close" id="article01Close">✕</button>
+      <div class="article-content">
+        <span class="article-label">Začínám podnikat · 01</span>
+        <h1>Cenotvorba: Jak přestat dotovat své zákazníky</h1>
+        <p class="article-lead">Většina začínajících tvůrkyň dělá stejnou chybu: podívá se, za kolik prodává konkurence, a dá cenu o něco nižší, aby „měla šanci". Výsledek? Po odečtení nákladů zjistíš, že pracuješ za 40 Kč na hodinu. To není podnikání, to je drahý koníček.</p>
+
+        <h2>1. Rozbití mýtu o „vysoké ceně"</h2>
+        <p>Cena není jen číslo na cedulce. Je to filtr. Nízká cena přitahuje lovce slev, kteří bývají nejnáročnějšími zákazníky. Vyšší, férová cena přitahuje lidi, kteří oceňují tvůj čas, tvoji energii a originalitu.</p>
+
+        <h2>2. Svatá trojice tvé ceny</h2>
+        <p>Abys byla v zisku, tvoje cena musí obsahovat tyto tři složky:</p>
+        <ul>
+          <li><strong>Přímé náklady (Co jsi zaplatila):</strong> Materiál, obaly, provize prodejním portálům, doprava, reklama.</li>
+          <li><strong>Tvoje mzda (Tvůj čas):</strong> Tohle je kámen úrazu. Stopni si, jak dlouho ti trvá výroba jednoho kusu (včetně focení a komunikace se zákazníkem). Vynásob to svou hodinovkou. <em>Tip: Tvoje hodinovka by neměla být nižší než 300–400 Kč, pokud chceš v budoucnu z podnikání žít.</em></li>
+          <li><strong>Režie a rozvoj (Budoucnost):</strong> Amortizace stroje, elektřina, kurz, který sis koupila, nebo peníze na nový web.</li>
+        </ul>
+
+        <h2>3. Vzorec, který tě zachrání</h2>
+        <div class="article-formula">
+          <strong>Cena = (Přímé náklady + Tvoje mzda + Režie) × 1,2</strong><br>
+          <span style="font-size:0.88rem; color: var(--brown-light);">Koeficient 1,2 přidává 20% marži na nečekané výdaje a rozvoj.</span>
+        </div>
+
+        <h2>4. Proč je „Drahé" relativní?</h2>
+        <p>Když ti někdo řekne: „To je drahé," neříká tím, že tvůj výrobek nemá tu hodnotu. Říká jen: „Já na to teď nemám rozpočet" nebo „Nejsem tvoje cílová skupina". A to je v pořádku. Lamborghini taky nikdo nevyčítá, že není levné jako Fabia.</p>
+
+        <div class="article-callout">
+          <p><strong>Úkol pro tebe:</strong> Vezmi svůj nejoblíbenější produkt a upřímně si propočítej čas, který nad ním strávíš od první nitky až po cestu na poštu. Sedí tvoje aktuální cena? Pokud ne, je čas ji zvednout. Ne zítra, ale hned.</p>
+        </div>
+
+        <div class="article-ig-tip">
+          <h3>Jak to komunikovat na Instagramu?</h3>
+          <p>Pokud se tvé zákaznice bojí zdražení, nemluv o ceně omluvně. Místo:<br>
+          <em>„Musela jsem zdražit, protože materiál je drahý,"</em><br>
+          zkus:<br>
+          <em>„Abych pro vás mohla udržet tuhle kvalitu a věnovat každému kusu maximální péči, upravila jsem ceník."</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ARTICLE 02 MODAL -->
+  <div class="article-overlay" id="article02Overlay">
+    <div class="article-modal">
+      <button class="article-modal-close" id="article02Close">✕</button>
+      <div class="article-content">
+        <span class="article-label">Začínám podnikat · 02</span>
+        <h1>Živnost bez strachu: Průvodce pro mámy, které chtějí začít podnikat</h1>
+        <p class="article-lead">Rozjet vlastní projekt mezi přebalováním a uspáváním je pro mnohé z nás cesta, jak si udržet kontakt s oborem, realizovat se, nebo si přivydělat. Dobrá zpráva: rodičovská je pro start podnikání nejlepším obdobím.</p>
+        <h2>Co si ujasnit, než do toho šlápneš?</h2>
+        <ul>
+          <li><strong>Sídlo podnikání:</strong> Většinou tvoje trvalé bydliště. V nájmu nepotřebuješ souhlas majitele, ale je slušnost mu to říct.</li>
+          <li><strong>Tvoje značka:</strong> Oficiálně podnikáš pod jménem, ale navenek používáš jakýkoliv název.</li>
+          <li><strong>Oddělené peníze:</strong> Založ si separátní účet, ať se ti nepletou nákupy pro rodinu s příjmy od klientek.</li>
+        </ul>
+        <h2>Typy živností</h2>
+        <p>Většina začíná s <strong>živností volnou</strong> — nepotřebuješ školu ani praxi, jen ji nahlásit. Řemeslná nebo vázaná živnost vyžaduje doložit vzdělání nebo praxi.</p>
+        <p>Při výběru oborů zaškrtni klidně víc najednou — je to v rámci jednoho poplatku.</p>
+        <h2>Kde to vyřídit a kolik tě to stojí?</h2>
+        <ul>
+          <li><strong>Osobně na živnostenském úřadě:</strong> 1 000 Kč, úředník ti pomůže.</li>
+          <li><strong>Online přes portál:</strong> 800 Kč, potřebuješ Bankovní identitu nebo Datovou schránku.</li>
+        </ul>
+        <div class="article-formula">
+          <strong>Pozor na platbu online!</strong><br>
+          <span style="font-size:0.88rem;">Při vyplňování formuláře nikde neuvidíš tlačítko k platbě kartou. Formulář odešli — úřad tě vyzve k platbě e-mailem. Živnostenský list dostaneš až po zaplacení.</span>
+        </div>
+        <h2>Proč je rodičovská podnikatelský ráj?</h2>
+        <p>Jako máma na rodičovské jsi <strong>OSVČ na vedlejší činnost</strong>. V prvním roce neplatíš žádné fixní zálohy na pojištění. Skutečné pojištění a daně doplatíš až příští rok na jaře — podle toho, kolik jsi skutečně vydělala.</p>
+        <div class="article-callout">
+          <p><strong>Shrnutí:</strong> Podnikání na rodičovské není o stresu z úřadů. Je to šance zkusit si svůj sen nanečisto a bez rizika. Celá naše komunita ti fandí!</p>
+        </div>
+        <div class="article-ig-tip">
+          <h3>Tip pro komunitu</h3>
+          <p>Máš za sebou rozjezd živnosti? Napiš nám — rádi tě představíme ostatním jako inspiraci.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ARTICLE 03 MODAL -->
+  <div class="article-overlay" id="article03Overlay">
+    <div class="article-modal">
+      <button class="article-modal-close" id="article03Close">✕</button>
+      <div class="article-content">
+        <span class="article-label">Začínám podnikat · 01</span>
+        <h1>Než se vrhneš na úřady: Jak si připravit půdu pro úspěšné podnikání</h1>
+        <p class="article-lead">Máš nápad a už se vidíš, jak tvoříš a prodáváš? Skvělé! Ale než se oficiálně staneš podnikatelkou, vyplatí se zastavit a postavit projekt na pevné základy.</p>
+        <h2>1. Ujasni si, co přesně prodáváš</h2>
+        <p>Nestačí říct „budu šít pro děti". Definuj svou přidanou hodnotu — udržitelný materiál, originální střihy, expresní dodání?</p>
+        <h2>2. Průzkum trhu</h2>
+        <p>Než investuješ peníze, zjisti jestli tvůj produkt někdo chce. Podívej se na konkurenci, zeptej se v tematických skupinách. Pozor na kamarádky — ty tě budou vždy chválit.</p>
+        <h2>3. Kde se budeš prezentovat?</h2>
+        <p>Instagram a Facebook, nebo vlastní e-shop? Zvládneš vše z domova, nebo potřebuješ provozovnu?</p>
+        <h2>4. Jednoduchý podnikatelský plán</h2>
+        <ul>
+          <li>Kdo je tvůj cílový zákazník</li>
+          <li>Cíle na prvních 6 měsíců</li>
+          <li>Milníky které chceš dosáhnout</li>
+        </ul>
+        <h2>5. Využij dotace na vzdělání</h2>
+        <p>Projekt <strong>Jsem v kurzu</strong> přes Úřad práce — stát ti může uhradit až 82 % ceny kurzu, včetně digitálních dovedností a marketingu.</p>
+        <h2>6. Počty a finance</h2>
+        <div class="article-formula">
+          <strong>Příklad cíle na první půlrok:</strong><br>
+          <span style="font-size:0.88rem;">"V březnu chci být na nule, od května chci mít čistý zisk 5 000 Kč měsíčně."</span>
+        </div>
+        <div class="article-callout">
+          <p><strong>Příprava není brzda — je to tvůj odrazový můstek.</strong> Jakmile budeš mít jasno, samotné založení živnosti bude jen třešnička na dortu.</p>
+        </div>
+        <div class="article-ig-tip">
+          <h3>Kde začít hned teď?</h3>
+          <p>Vezmi papír a napiš si: <em>„Co přesně prodávám?"</em> a <em>„Komu to prodávám?"</em> Pokud ti to trvá víc než 5 minut — tady je potřeba se zastavit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+
+    // Article 01
+    function openArticle01(e) {
+      e.preventDefault();
+      document.getElementById('article01Overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    document.getElementById('article01Close').addEventListener('click', () => {
+      document.getElementById('article01Overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    document.getElementById('article01Overlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('article01Overlay')) {
+        document.getElementById('article01Overlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.members-group').forEach(g => g.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('group-' + btn.dataset.group).classList.add('active');
+      });
+    });
+
+    // Modal
+    const modal = document.getElementById('memberModal');
+    const modalClose = document.getElementById('modalClose');
+
+    document.querySelectorAll('.member-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.getElementById('modalName').textContent = card.dataset.name;
+        document.getElementById('modalCraft').textContent = card.dataset.craft;
+        document.getElementById('modalGroup').textContent = card.dataset.group;
+        document.getElementById('modalDesc').textContent = card.dataset.desc;
+
+        // Links
+        const linksEl = document.getElementById('modalLinks');
+        linksEl.innerHTML = '';
+        if (card.dataset.ig) {
+          linksEl.innerHTML += `<a href="https://instagram.com/${card.dataset.ig}" class="modal-link ig" target="_blank">Instagram @${card.dataset.ig}</a>`;
+        }
+        if (card.dataset.web) {
+          linksEl.innerHTML += `<a href="${card.dataset.web}" class="modal-link web" target="_blank">Web →</a>`;
+        }
+
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Featured slider
+    (function() {
+      var track = document.getElementById('featuredTrack');
+      var dotsContainer = document.getElementById('featuredDots');
+      if (!track) return;
+      var slides = track.children;
+      var current = 0;
+      var autoSlide;
+      for (var i = 0; i < slides.length; i++) {
+        var dot = document.createElement('div');
+        dot.className = 'featured-dot' + (i === 0 ? ' active' : '');
+        (function(idx) {
+          dot.addEventListener('click', function() { goTo(idx); resetAuto(); });
+        })(i);
+        dotsContainer.appendChild(dot);
+      }
+      function goTo(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        var dots = document.querySelectorAll('.featured-dot');
+        for (var j = 0; j < dots.length; j++) {
+          dots[j].classList.toggle('active', j === current);
+        }
+      }
+      function resetAuto() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(function() { goTo(current + 1); }, 5000);
+      }
+      document.getElementById('featuredPrev').addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+      document.getElementById('featuredNext').addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+      resetAuto();
+    })();
+
+
+    // Featured slider
+    (function() {
+      var track = document.getElementById('featuredTrack');
+      var dotsEl = document.getElementById('featuredDots');
+      if (!track) return;
+      var slides = track.children;
+      var cur = 0;
+      var timer;
+      for (var i = 0; i < slides.length; i++) {
+        var dot = document.createElement('div');
+        dot.className = 'featured-dot' + (i === 0 ? ' active' : '');
+        (function(idx) { dot.addEventListener('click', function() { go(idx); reset(); }); })(i);
+        dotsEl.appendChild(dot);
+      }
+      function go(n) {
+        cur = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+        var dots = document.querySelectorAll('.featured-dot');
+        for (var j = 0; j < dots.length; j++) { dots[j].classList.toggle('active', j === cur); }
+      }
+      function reset() { clearInterval(timer); timer = setInterval(function() { go(cur + 1); }, 5000); }
+      document.getElementById('featuredPrev').addEventListener('click', function() { go(cur - 1); reset(); });
+      document.getElementById('featuredNext').addEventListener('click', function() { go(cur + 1); reset(); });
+      reset();
+    })();
+
+
+    // Article 02
+    function openArticle02(e) {
+      e.preventDefault();
+      document.getElementById('article02Overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    document.getElementById('article02Close').addEventListener('click', () => {
+      document.getElementById('article02Overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    document.getElementById('article02Overlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('article02Overlay')) {
+        document.getElementById('article02Overlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Article 03
+    function openArticle03(e) {
+      e.preventDefault();
+      document.getElementById('article03Overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    document.getElementById('article03Close').addEventListener('click', () => {
+      document.getElementById('article03Overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    document.getElementById('article03Overlay').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('article03Overlay')) {
+        document.getElementById('article03Overlay').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+  
+  </script>
+
+</body>
+</html>
