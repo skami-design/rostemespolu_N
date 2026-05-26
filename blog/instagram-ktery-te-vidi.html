@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram, který tě vidí — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Jak přitahovat zákaznice na Instagramu a nezbláznit se z toho. Obsah, který pracuje i když ty ne — strategie pro handmade tvůrkyně.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Instagram, který tě vidí — Rosteme spolu">
+  <meta property="og:description" content="Obsah, který pracuje i když ty ne. Strategie pro handmade tvůrkyně bez vyhoření.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/instagram-ktery-te-vidi.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink2); margin: 1.8rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body ul, .article-body ol { margin: 0.5rem 0 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .article-body ul li, .article-body ol li { font-size: 0.95rem; line-height: 1.75; color: var(--ink2); }
+    .article-body ul li strong, .article-body ol li strong { color: var(--ink); }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-family: var(--serif); font-size: 1rem; color: var(--ink); line-height: 1.7; }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .pillar { background: var(--white); padding: 1.5rem; }
+    .pillar-num { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--green); margin-bottom: 0.5rem; }
+    .pillar h4 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .pillar p { font-size: 0.82rem; line-height: 1.6; color: var(--muted); margin: 0; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 4rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../index.html#start">Začínám podnikat</a></li>
+      <li><a href="../index.html#members">Členky</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../index.html#start">Začínám podnikat</a><span>/</span>
+      <span>Instagram, který tě vidí</span>
+    </div>
+
+    <span class="article-eyebrow">Začínám podnikat · Krok 05</span>
+    <h1 class="article-h1">Instagram, který tě vidí: Obsah, který pracuje i když ty ne</h1>
+    <p class="article-lead">Je deset večer. Děti konečně spí. V kuchyni stojí hrnek s dávno studeným kafem, na gauči čeká prádlo — a ty místo odpočinku znovu otevíráš Instagram. Ne proto, že chceš. Ale protože máš pocit, že když dnes nic nepřidáš, všechno se zase o kousek zpomalí.</p>
+
+    <div class="article-body">
+
+      <p>Dosahy. Objednávky. Celý ten malý sen, který se snažíš po večerech budovat mezi normálním životem. Tak natočíš Reel. Přidáš Stories. Napíšeš popisek. A pak čekáš. Čekáš, až tě někdo uvidí. Jenže správné zákaznice nepřicházejí — nebo přicházejí, ale nekupují. A ty nevíš, co děláš jinak než ostatní.</p>
+      <p>Možná neděláš nic špatně. Jen ses stejně jako většina z nás někde po cestě nechala přesvědčit, že Instagram odměňuje hlavně ty, které jsou online nonstop. Jenže neodměňuje.</p>
+
+      <h2>1. Instagram tě nevidí — vidí, co říkáš pořád dokola</h2>
+      <p>Instagram není billboard, kam lepíš obsah a doufáš. Je to spíš kavárna, kam tvoje zákaznice chodí. A buď tam máš atmosféru, kvůli které se chtějí vracet — nebo tam jen na chvíli zabloudí při scrollování.</p>
+      <p>Algoritmus si tvůj účet „přečte" podle posledních příspěvků. Z nich si skládá obrázek — co děláš, pro koho to děláš, a komu tě má ukázat dál. Pokud jeden týden sdílíš výrobky, druhý motivační citáty a třetí recept na banánový chleba, Instagram z tebe moc moudrý nebude. A ne, není to trest — je to vlastně skvělá zpráva. Protože ve chvíli, kdy si tohle uvědomíš, přestaneš tvořit pro algoritmus a začneš tvořit pro jednu konkrétní ženu. A přesně tam se to začne lámat.</p>
+
+      <div class="article-callout">
+        <p>Zastav se teď na chvíli. Kdybys přišla na svůj profil jako úplně cizí člověk — pochopila bys během třiceti sekund, <strong>co děláš, pro koho to děláš a proč by si to měla koupit právě od tebe?</strong> Pokud ne, možná není problém v algoritmu. Možná jen tvoříš obsah, který je hezký — ale není jasný.</p>
+      </div>
+
+      <h2>2. Správné zákaznice nepřicházejí náhodou</h2>
+      <p>Přijdou ve chvíli, kdy se v tvém obsahu poznají tak moc, že se zastaví uprostřed scrollování a řeknou si: „Ty jo… tohle je úplně o mně." A to není magie. To je přesnost.</p>
+      <p>Při podnikání na Instagramu pracují tři typy obsahu — a každý dělá trochu jinou práci:</p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">Reels</div>
+          <h4>Nové oči</h4>
+          <p>Přivedou lidi, kteří tě ještě vůbec neznají. Dostanou tě za hranice těch, kteří tě sledují.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Karusely</div>
+          <h4>Důvěra</h4>
+          <p>Ukládají se, vracejí se k nim. Tady začínáš být „ta, co fakt ví, o čem mluví".</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Stories</div>
+          <h4>Vztah</h4>
+          <p>Tady vzniká vztah. Ne přes dokonalost — ale přes přítomnost.</p>
+        </div>
+      </div>
+
+      <p>Lidem už dávno nestačí vidět hotový produkt. Potřebují přidanou hodnotu — důvod, proč na tvém profilu zůstat. A ta hodnota nemusí být složitá. Může to být pohled do toho, jak něco vyrábíš. Jak nad věcmi přemýšlíš. Co ses naučila, co se ti nepovedlo, jak jsi to vyřešila. Zákulisí, proces, myšlenka za tím vším.</p>
+      <p>Jenže i ten nejhodnotnější obsah přestane fungovat, jakmile ho tvoříš pro všechny. Je rozdíl mezi „Tipy pro lepší ráno" a „Jak se postavit na nohy, když jsi spala čtyři hodiny, děti se od rána hádají a ty máš ještě pocit, že bys mezitím měla vybudovat úspěšné podnikání." To druhé možná nebude mít milion lajků. Ale žena, které se trefíš přímo do života, si tě zapamatuje.</p>
+
+      <h2>3. Konzistentní neznamená být online celý den</h2>
+      <p>Tady podle mě vyhoří skoro každá z nás. Máme pocit, že musíme přidávat každý den, odpovídat okamžitě, být aktivní pořád — a ideálně ještě u toho vypadat, že nám to celé strašně jde. Instagram ale není toxický ex, který se urazí, když jeden den nepřidáš Stories.</p>
+      <p>Potřebuje od tebe hlavně dvě věci: <strong>jasnost a pravidelnost</strong>. Ne nonstop přítomnost. Tři promyšlené příspěvky týdně udělají mnohem větší službu než sedm rychle splácaných jen proto, aby „něco vyšlo". A zákaznice, která tě tři měsíce sleduje a pak koupí, má mnohem větší hodnotu než tisíce followerů, kteří za dva týdny zmizí.</p>
+
+      <div class="article-formula">
+        <strong>Tip: Batch creation</strong><br>
+        Jedno odpoledne, zavřené notifikace, velká káva — tu, kterou tentokrát opravdu vypiješ, dokud je horká. Natočíš tři Reely, připravíš dva karusely… a najednou máš na týden klid. A hlavně prostor zase normálně žít. Protože obsah by měl podporovat tvůj život. Ne ho celý spolknout.
+      </div>
+
+      <h2>4. Proč tě vidí hodně lidí, ale nekupuje skoro nikdo</h2>
+      <p>Tohle je asi nejvíc frustrující fáze. Příspěvky mají lajky. Followerky přibývají. Stories nejsou úplně mrtvé. Ale objednávky nikde. Problém ale často není v tom, že bys tvořila špatně — jen tvoříš obsah, který je milý, ale nefiltruje.</p>
+      <p>Hezké fotky a obecné citáty přitáhnou hodně lidí. Obsah, který mluví přímo k ženě, která právě řeší konkrétní problém? Ten přitáhne mnohem méně lidí. A přesně to je dobře. Protože to jsou většinou ty ženy, které pak opravdu koupí.</p>
+
+      <div class="article-callout">
+        <p><strong>Nejsilnější obsah na Instagramu dnes není ten, který získá nejvíc lajků.</strong> Je to ten, který si někdo uloží se slovy: „Tohle si přečtu znovu." A právě tam začíná obsah, který nefunguje jen jeden večer — ale pracuje pro tebe dlouhodobě.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Dnešní výzva</h3>
+        <p>Otevři si svůj profil a podívej se na posledních devět příspěvků očima ženy, která tě vůbec nezná. Pochopí, co děláš, komu pomáháš a proč by měla zůstat právě u tebe? Pokud ne, nezačínej dalším Reelsem. Začni tím, že si ujasníš tohle. Protože ve chvíli, kdy začne být jasný tvůj obsah — začnou být mnohem jasnější i tvoje zákaznice.</p>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="cena-tveho-vyrobku.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Cena tvého výrobku</span>
+      </a>
+      <a href="prvni-zakaznice.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">První zákaznice</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš sdílet obsah s podporou komunity?</h3>
+      <p>Rosteme spolu je komunita tvůrkyň, kde si navzájem pomáháme s viditelností. Bez tlaku, bez křiku.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../index.html#start">Začínám podnikat</a></li>
+      <li><a href="../index.html#members">Členky</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
