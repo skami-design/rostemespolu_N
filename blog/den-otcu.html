@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Táto, tohle je pro tebe — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Den otců není svátek z obchodního katalogu. Je to chvíle, kdy říkáme nahlas to, co tak často zůstává nevyřčené.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Táto, tohle je pro tebe — Rosteme spolu">
+  <meta property="og:description" content="Den otců není svátek z obchodního katalogu. Je to chvíle, kdy říkáme nahlas to, co tak často zůstává nevyřčené.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/den-otcu.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-family: var(--serif); font-size: 1rem; color: var(--ink); line-height: 1.7; }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+        <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <span>Komunita</span><span>/</span>
+      <span>Den otců</span>
+    </div>
+
+    <span class="article-eyebrow">Komunita · Den otců</span>
+    <h1 class="article-h1">Táto, tohle je pro tebe. I když říkáš, že nic nepotřebuješ.</h1>
+    <p class="article-lead">Každý rok to je stejné. Přijde třetí červnová neděle a půlka z nás si říká — slavíme vůbec? A druhá půlka mezitím panikaří, co mu vlastně koupit, když říká, že nic nepotřebuje. A přitom — nic nepotřebuje, to je pravda. Ale zaslouží si ten pocit důležitosti.</p>
+
+    <div class="article-body">
+
+      <h2>Kde se to vlastně vzalo</h2>
+      <p>Za vznikem Dne otců stojí — překvapivě — žena. Američance Sonoře Smart Doddové se nelíbilo, že maminky mají svůj svátek, ale táta, který po smrti manželky sám vychoval šest dětí, nemá nic. Tak šla za pastorem a svátek prostě zorganizovala. Pastor ale v původně vybraný den nemohl, termín se posunul na třetí červnovou neděli — a tak to zůstalo dodnes.</p>
+      <p>Pak přišli obchodníci — s předpokladem oživení obchodu i s argumentem kulturně-etickým. Ale záměr nezruší pocit. A pocit, že na tátu myslíme, je vždycky správný.</p>
+
+      <h2>Táta dneška není táta z černobílé fotky</h2>
+      <p>Vzpomínáte na ten stereotyp? Táta přijde z práce, sedí u televize, noviny v ruce, rodina kolem. Rodič z dálky. Monetizační nástroj domácnosti. Tohle je dneska jiný příběh.</p>
+      <p>Dnešní tatínci jsou u porodu. Drží ruku, třesou se u toho víc než my. Jsou na mateřské. Vstávají v noci. Balí svačiny, čtou pohádky, vozí na kroužky. A na hřišti s kočárkem nebo na pískovišti s lopatkou v ruce už nevypadají jako ufo na obloze — ale jako normální součást světa, který se konečně trochu narovnal.</p>
+      <p>A právě proto má Den otců smysl. Ne jako svátek z obchodního katalogu. Ale jako chvíle, kdy se zastavíme a uděláme si čas říci nahlas to, co tak často zůstává nevyřčené.</p>
+
+      <div class="article-callout">
+        <p>Nejsi pro nás samozřejmost. Vážím si toho, co pro nás děláš. Péče o naše děti je pro tebe samozřejmost — a já to vnímám. <strong>Děkuju za tvou přítomnost v jejich každodenním životě.</strong></p>
+      </div>
+
+      <h2>„Říká, že nic nepotřebuje." Jasně že říká.</h2>
+      <p>Tohle je asi nejčastější věta, která se v červnu točí ve všech skupinách a konverzacích. A hned za ní: „Jak mu udělat radost, aniž bych koupila další věc, která skončí v šuplíku?"</p>
+      <p>Tátové nepotřebují věci. Potřebují být vidět, být vnímaní a oceňovaní — a právě tam je prostor pro dárek, který není jen věc. Který říká: vím, kdo jsi. Udělala jsem to pro tebe.</p>
+
+      <div class="article-formula">
+        „Tohle je pro tebe, táti. Vím, že toho máš dost — ale tohle jsem ti vybral já a mamka mi s tím pomohla. Našli jsme paní, která ti můj obrázek přešila na tričko."
+      </div>
+
+      <div class="article-callout">
+        <p><strong>Nejlepší dárek ke Dni otců? Není to nejdražší.</strong> Je to ten, za kterým cítí člověka. Společně strávený čas, ručně vyrobená věc s příběhem, nebo gesto, které říká víc než tisíc slov — a trefí se přesně do toho, co má rád.</p>
+      </div>
+
+      <h2>A my v Rosteme spolu na táty nezapomínáme</h2>
+      <p>Mluvíme hodně o ženách, maminkách, podnikatelkách. Ale za každou z nás stojí — ať přímo nebo v záloze — člověk, který to s námi táhne. Táta dětí, partner, který drží pevně, když my se sypeme. A čím víc máme kolem sebe takových tatínků, tím víc chceme, aby věděli, že si toho všímáme.</p>
+      <p>Ženy z komunity Rosteme spolu tvoří věci s příběhem. Dárky, u kterých táta neřekne „ach jo, díky" a odloží je. Ale „tohle je ono" — a přesně to hledáme.</p>
+      <p>Na našem Instagramu a webu najdeš tvorbu žen z komunity — každý kousek vytvořený s péčí a záměrem. Třeba právě tam najdeš něco, co tátu opravdu překvapí.</p>
+
+    </div>
+
+    <div class="article-cta">
+      <h3>Jsi tvůrkyně s příběhem?</h3>
+      <p>Přidej se ke komunitě žen, které tvoří věci s duší — a pomáháme si být vidět.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+        <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
