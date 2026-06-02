@@ -541,8 +541,8 @@
       </a>
     </div>
     <ul class="nav-links">
-      <li><a href="#about">O nás</a></li>
-      <li><a href="#start">Začínám podnikat</a></li>
+      <li><a href="index.html#about">O nás</a></li>
+      <li><a href="clanky.html">Články</a></li>
       <li><a href="tvorkyně.html">Objevuj tvůrkyně</a></li>
       <li><a href="#stories">Příběhy</a></li>
       <li><a href="#community" class="nav-cta">Přidej se</a></li>
@@ -575,7 +575,7 @@
       <p class="hero-sub">Komunita tvůrkyň a maminek, kde máme pro sebe pochopení. Někdo je aktivnější, někdo méně — a obojí je v pořádku.</p>
       <div class="hero-actions">
         <a href="#community" class="btn-primary">Chci být součástí</a>
-        <a href="#start" class="btn-ghost">Jak začít ↓</a>
+        <a href="clanky.html" class="btn-ghost">Jak začít ↓</a>
       </div>
     </div>
     <div class="hero-visual" style="animation: fadeUp 0.9s 0.2s ease both;">
@@ -654,68 +654,8 @@
     </div>
   </section>
 
-    <!-- ZAČÍNÁM PODNIKAT -->
-  <section class="start" id="start">
-    <div class="start-header reveal">
-      <div>
-        <span class="eyebrow">Průvodce podnikáním</span>
-        <h2 class="section-h">Začni tam, kde <span class="hw">právě jsi</span></h2>
-      </div>
-      <p class="section-intro" style="max-width:360px;">Každá z nás začínala od nuly. Vybraly jsme témata, která řeší začínající tvůrkyně nejčastěji.</p>
-    </div>
-    <div class="start-grid">
-      <div class="start-card reveal" onclick="window.location='blog/nez-se-vrhnete-na-urady.html'" style="cursor:pointer;">
-        <div class="card-num">01</div>
-        <h3>Než se vrhneš na úřady</h3>
-        <p>Jak si připravit půdu pro úspěšné podnikání — ještě před tím, než zajdeš na živnostenský úřad.</p>
-        <a href="blog/nez-se-vrhnete-na-urady.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card reveal" onclick="window.location='blog/zivnost-bez-strachu.html'" style="cursor:pointer;">
-        <div class="card-num">02</div>
-        <h3>Živnost bez strachu</h3>
-        <p>Co potřebuješ vědět o živnosti, OSVČ a přivýdělku na rodičovské — srozumitelně a bez zbytečného strachu.</p>
-        <a href="blog/zivnost-bez-strachu.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card reveal" onclick="window.location='blog/brand-tvuj-pribeh.html'" style="cursor:pointer;">
-        <div class="card-num">03</div>
-        <h3>Tvůj brand, tvůj příběh</h3>
-        <p>Proč zákaznice nekupují výrobky, ale příběh za nimi — a jak svůj příběh začít vyprávět.</p>
-        <a href="blog/brand-tvuj-pribeh.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card reveal" onclick="window.location='blog/cena-tveho-vyrobku.html'" style="cursor:pointer;">
-        <div class="card-num">04</div>
-        <h3>Cena tvého výrobku</h3>
-        <p>Jak správně nastavit cenu, aby pokryla náklady i tvůj čas — a přesto byla pro zákaznici přijatelná.</p>
-        <a href="blog/cena-tveho-vyrobku.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card reveal" onclick="window.location='blog/instagram-ktery-te-vidi.html'" style="cursor:pointer;">
-        <div class="card-num">05</div>
-        <h3>Instagram, který tě vidí</h3>
-        <p>Obsah, který pracuje i když ty ne. Jak přitahovat zákaznice na Instagramu — bez vyhoření.</p>
-        <a href="blog/instagram-ktery-te-vidi.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card reveal" onclick="window.location='blog/den-deti.html'" style="cursor:pointer;">
-        <div class="card-num">06</div>
-        <h3>Den dětí jinak</h3>
-        <p>Dárek, za kterým stojí člověk. Inspirace na Den dětí od tvůrkyň, které tvoří s příběhem.</p>
-        <a href="blog/den-deti.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card reveal" onclick="window.location='blog/prvni-zakaznice.html'" style="cursor:pointer;">
-        <div class="card-num">07</div>
-        <h3>První zákaznice</h3>
-        <p>Kde hledat první zákaznice, jak oslovit svou síť, a proč začít blíž, než si myslíš.</p>
-        <a href="blog/prvni-zakaznice.html" class="card-link">Číst více →</a>
-      </div>
-      <div class="start-card start-card-last reveal">
-        <h3>Chybí ti téma?</h3>
-        <p style="font-size:0.85rem; line-height:1.7; color: var(--muted);">Napiš nám. Obsah tvoříme pro vás.</p>
-        <a href="#community" class="card-link">Napsat →</a>
-      </div>
-    </div>
-  </section>
 
-
-
+  <!-- PRŮVODCE ZDARMA -->
   <!-- PRŮVODCE ZDARMA -->
   <section class="freebie" id="freebie">
     <div class="freebie-inner">
@@ -1118,7 +1058,32 @@
       }
     });
 
-  
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
   </script>
 
 </body>
