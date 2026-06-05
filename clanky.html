@@ -19,11 +19,11 @@
       --hand: 'Allura', cursive;
       --sans: 'Source Sans 3', sans-serif;
 
-      /* Rubrika barvy */
-      --r1-bg: #F3EEF8; --r1-text: #5C4470; /* Začínám podnikat — levandule */
-      --r2-bg: #D4EDE0; --r2-text: #4E7A60; /* Tvořím & rostu — mint */
-      --r3-bg: #F0E4E7; --r3-text: #9A6070; /* Myslím & cítím — růžová */
-      --r4-bg: #C8EDD8; --r4-text: #3A6B50; /* Rosteme spolu — tmavší mint */
+      /* Rubrika barvy — shodné s IG systémem */
+      --r1-bg: #FAF6F0; --r1-text: #3D2D3A; /* Začínám podnikat — off-white */
+      --r2-bg: #4E7A60; --r2-text: #FFFFFF; /* Tvořím & rostu — tmavá zelená */
+      --r3-bg: #3D2D3A; --r3-text: #FFFFFF; /* Myslím & cítím — tmavá fialová */
+      --r4-bg: #C0A0A5; --r4-text: #FFFFFF; /* Rosteme spolu — mauve */
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -102,7 +102,7 @@
       text-transform: uppercase; padding: 0.25rem 0.7rem;
       align-self: flex-start;
     }
-    .badge-zacin   { background: var(--r1-bg); color: var(--r1-text); }
+    .badge-zacin   { background: var(--r1-bg); color: var(--r1-text); border: 1px solid var(--border); }
     .badge-tvorim  { background: var(--r2-bg); color: var(--r2-text); }
     .badge-myslim  { background: var(--r3-bg); color: var(--r3-text); }
     .badge-rosteme { background: var(--r4-bg); color: var(--r4-text); }
@@ -234,12 +234,12 @@
         <span class="card-link">Brzy →</span>
       </div>
 
-      <div class="blog-card upcoming" data-rubric="zacin">
+      <a class="blog-card" data-rubric="zacin" href="blog/ai-dobry-sluha.html">
         <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>AI a tvoje podnikání</h3>
-        <p>Jak chytře využít umělou inteligenci, když buduješ vlastní značku.</p>
-        <span class="card-link">Brzy →</span>
-      </div>
+        <h3>AI — dobrý sluha nebo zlý pán?</h3>
+        <p>Jak chytře využít umělou inteligenci v podnikání — bez iluzí, bez strachu.</p>
+        <span class="card-link">Číst více →</span>
+      </a>
 
     </div>
   </div>
