@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI — dobrý sluha nebo zlý pán? — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Jak chytře využít umělou inteligenci v podnikání — bez iluzí, bez strachu. Praktický průvodce pro tvůrkyně.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="AI — dobrý sluha nebo zlý pán? — Rosteme spolu">
+  <meta property="og:description" content="Jak chytře využít umělou inteligenci v podnikání — bez iluzí, bez strachu.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/ai-dobry-sluha.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body ul { margin: 0.5rem 0 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .article-body ul li { font-size: 0.95rem; line-height: 1.75; color: var(--ink2); }
+    .article-body ul li strong { color: var(--ink); }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-family: var(--sans); font-size: 0.92rem; color: var(--ink); line-height: 1.8; }
+    .article-formula strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 0.5rem; }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-warning { background: #FDF6F0; padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); }
+    .article-warning p { margin: 0 0 0.6rem; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-warning p:last-child { margin: 0; }
+    .article-warning strong { color: var(--ink); }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.8rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-tip em { font-family: var(--serif); font-style: italic; color: var(--ink); display: block; margin: 0.8rem 0; font-size: 1rem; line-height: 1.6; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 4rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>AI — dobrý sluha nebo zlý pán?</span>
+    </div>
+
+    <span class="article-eyebrow">Nástroje · Podnikání</span>
+    <h1 class="article-h1">AI — dobrý sluha nebo zlý pán?</h1>
+    <p class="article-lead">Všude se mluví o umělé inteligenci. Půlka internetu ti říká, že bez ní zaostaneš za konkurencí. Druhá půlka tě straší, že ti vezme práci. A ty mezitím otevřeš ChatGPT, napíšeš „pomoz mi s podnikáním" — a dostaneš odpověď tak obecnou, že tě to přejde. Tak co s tím vlastně je?</p>
+
+    <div class="article-body">
+
+      <h2>Co AI vlastně je — a co není</h2>
+      <p>AI není kouzelník. Ani to není ten chytrý parťák, který zná tvůj byznys zezadu dopředu a vždy ví, co potřebuješ slyšet.</p>
+      <p>AI má jednu zvláštnost: často odpoví i ve chvíli, kdy si není úplně jistá. Místo obyčejného „nevím" se pokusí vytvořit odpověď, která zní pravděpodobně. A protože zní často velmi sebevědomě, je snadné jí uvěřit. Proto si důležitá fakta vždy ověřuj.</p>
+      <p>To není důvod ji nepoužívat. Je to důvod ji používat chytře.</p>
+
+      <div class="article-callout">
+        <p>AI ti pomůže s rešerší, navrhne postup, pomůže hledat souvislosti, připraví osnovu nebo tě nasměruje, kde hledat dál. Popiš přesně co potřebuješ, jak to má vypadat, pro koho a proč. Čím víc kontextu dáš, tím lepší výsledek dostaneš. <strong>Ty jsi mozek. AI jsou ruce.</strong></p>
+      </div>
+
+      <p>Přestala jsem od ní čekat zázraky a začala jsem ji brát jako parťáka — takového, který nikdy nespí, nestěžuje si a udělá mravenčí práci bez reptání. Zatímco já se soustředím na to, co umím jen já.</p>
+      <p>Dokonce ti může ušetřit peníze. Zvažovala jsem jeden online kurz — vypadal dobře, měl hezkou prezentaci. Než jsem ale vytáhla peněženku, nechala jsem si celý kurz rozebrat pomocí AI. Zjistila jsem, že většinu informací znám, část aktivně používám a zbytek pro mě v tu chvíli neměl reálnou hodnotu. Kurz nebyl špatný. Jen nebyl pro mě. Tehdy mi došlo, že AI nemusí šetřit jen čas — když ji používáš dobře, může ti pomoci i při rozhodování.</p>
+
+      <h2>AI není jen na Instagram. Buď kreativní.</h2>
+      <p>Většina lidí si AI spojí hlavně s psaním příspěvků na sociální sítě. A to je škoda — protože největší hodnotu přináší úplně jinde. Plánování, organizace, zpracování informací, tvorba systémů, rozhodování. Věci, které ti berou nejvíc energie ne proto, že jsou těžké, ale proto, že na ně není čas.</p>
+      <p>Osnova článku, obsahový plán na celý měsíc, produktové popisky, FAQ na web, odpovědi zákaznicím, rešerše témat, struktura webu, organizace projektu — to vše zvládne připravit během několika minut. A i když výsledek většinou potřebuje tvoji kontrolu a doladění, pořád je to nesrovnatelně rychlejší než začínat od prázdné stránky.</p>
+      <p>AI může být debatní parťák, který ti oponuje. Může se podívat na věc očima zákaznice, začátečníka nebo člověka, který tvůj obor vůbec nezná. Záměr, rozhodnutí, hlas a selský rozum ale zůstávají na tobě. Znáš svoji Marušku lépe než jakýkoliv algoritmus — a to se nezmění.</p>
+
+      <h2>Prompt — jak ji nastavit, aby dělala co chceš</h2>
+      <p>Prompt je zadání, které AI dáváš. A tady se láme chleba — většina lidí, kteří říkají „AI mi nefunguje", zadává holé otázky a čeká zázrak. Jenže AI potřebuje kontext.</p>
+      <p>Představ si, že zadáš: „Napiš mi popisek produktu." AI napíše něco obecného, co by mohlo být o čemkoliv. Teď si představ, že zadáš tohle:</p>
+
+      <div class="article-formula">
+        <strong>Příklad dobrého promptu:</strong>
+        „Jsem maminka na mateřské a prodávám handmade háčkované hračky. Moje zákaznice jsou maminky 25–40 let, kterým záleží na bezpečnosti materiálů a originalitě. Napiš mi popisek k této produktové fotografii háčkovaného zajíčka. Tón přátelský a osobní, bez marketingových frází. Zdůrazni, že je vyroben z certifikované bavlny, je vhodný od narození a každý kousek je originál. Délka do 100 slov."
+      </div>
+
+      <p>Výsledek bude o třídy lepší. A čím víc si takhle zvykneš AI briefovat — tím rychleji a přesněji pracuje.</p>
+      <p>Já si styl komunikace nastavila takhle: každý chat začínám pozdravem a nebráním se slovům jako prosím, děkuju nebo „mohl bys". Nastíním, co nás čeká, pochválím za předchozí práci. Jako kdybych byla na poradě s kolegyní, ne u počítače sama. Zbytečné? Možná. Ale funguje to.</p>
+
+      <h2>AI nemá lékařský diplom</h2>
+      <p>Tohle je absolutní pravidlo. A protože píšeme hlavně pro maminky, musím to říct nahlas.</p>
+
+      <div class="article-warning">
+        <p>AI je skvělý parťák na podnikání — ale <strong>nikdy, a tím myslím opravdu nikdy</strong>, ji nenechávej suplovat doktora. Nezná tvoje tělo. Neposlechne si tě. Nevidí, jak vypadá ta podivná vyrážka, kterou zrovna řešíš u dítěte. Když se jí zeptáš na zdravotní příznaky, s ledovým klidem ti naservíruje diagnózu, která ale může být úplně vedle.</p>
+        <p>Jakmile jde o tvoje fyzické nebo duševní zdraví — zavři chat a vždy raději vytoč číslo skutečného lékaře. Příbalový leták hledej přímo u výrobce nebo v lékárně — ne v chatbotu.</p>
+        <p>Stejně tak u věcí, kde záleží na přesnosti: <strong>daně, právní otázky, legislativa</strong>. Tam vždy ověřuj u odborníka nebo na oficiálním zdroji.</p>
+      </div>
+
+      <p>Vyvážení patří k článku stejně jako nadšení. Nepublikuj texty od AI beze čtení — nezná tvůj hlas, tvůj příběh, tvoje zákaznice. Vždy potřebují tvoji ruku.</p>
+
+      <div class="article-callout">
+        <p><strong>Největší přínos AI není v tom, že bude přemýšlet za tebe.</strong> Ale v tom, že ti uvolní ruce — abys ty mohla přemýšlet o věcech, které za tebe udělat neumí. Selský rozum je stále největší nástroj, který máš.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Můj tajný tip</h3>
+        <p>Občas jsou dny, kdy s AI nemůžu najít společnou řeč — ať se snažím jak se snažím. A tehdy mi pomáhá jedna kouzelná věta:</p>
+        <em>„Dnes nám to nejde. Poraď mi prosím, jak ti mám napsat prompt, abys mi opravdu pomohla tak, jak potřebuji."</em>
+        <p>A jako mávnutím kouzelným proutkem to zase jde. Někdy stačí říct nahlas, že potřebuješ pomoct s tím, jak popsat, co potřebuješ.</p>
+        <p>A teď jdi na svůj Instagram. Najdi si poslední produktovou fotku a zadej chatu prompt přesně tak, jak si přeješ, aby ta fotka byla popsána — s tónem, zákaznicí, délkou i pocitem. A uvidíš, co se stane.</p>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="prvni-zakaznice.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">První zákaznice</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš probrat AI s ostatními tvůrkyněmi?</h3>
+      <p>V komunitě Rosteme spolu si navzájem sdílíme tipy, nástroje i zkušenosti. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
