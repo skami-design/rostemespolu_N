@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Děkuji, paní učitelko — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Konec školního roku — proč si paní učitelka zaslouží víc než kytku. Inspirace na dárek s příběhem od tvůrkyň z komunity.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Děkuji, paní učitelko — Rosteme spolu">
+  <meta property="og:description" content="Proč si paní učitelka zaslouží víc než kytku. Inspirace na dárek s příběhem.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/konec-skolniho-roku.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-family: var(--serif); font-size: 1rem; color: var(--ink); line-height: 1.8; font-style: italic; }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip p { margin: 0; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); font-style: italic; }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Děkuji, paní učitelko</span>
+    </div>
+
+    <span class="article-eyebrow">Komunita · Konec školního roku</span>
+    <h1 class="article-h1">Děkuji, paní učitelko.</h1>
+    <p class="article-lead">Každý rok je to stejné. Poslední červnový den, chodbou voní třicet kytek, děti mačkají pytlíky s čokoládami, které jsi koupila ještě ten den ráno — a ve frontě v nákupáku nesměle pozdravíš paní učitelku svojí Aničky, která už si po očku prohlíží, co že si to dnes dá ke kafíčku.</p>
+
+    <div class="article-body">
+
+      <h2>Malý papír s velkým příběhem</h2>
+      <p>Vysvědčení existuje od dob Marie Terezie. Zavedla povinnou školní docházku — a s ní přišla i potřeba děti hodnotit. Jenomže to hodnocení nebylo každý půl rok, jak jsme zvyklé dnes — žáci ho dostali jednou, na samém konci celé školní docházky. Jako potvrzení, že to zvládli. A pětistupňová škála, jak ji známe dnes, přišla až po druhé světové válce.</p>
+      <p>Co se květiny týče — tahle tradice je ještě mladší. Nikde psaná, nikde nařízená, a přesto každý rok spolehlivě dorazí ve třiceti exemplářích najednou. Paní učitelka se usměje, poděkuje — a je trochu škoda, že pak to vše zvadne, čokoláda se sní a z celého gesta nezbyde skoro nic. Jako by si ten okamžik zasloužil trochu víc.</p>
+
+      <h2>Vzpomeň si</h2>
+      <p>Vzpomeň si, jak jsi ty sama byla to malé dítě, které se nemohlo dočkat, až předá kytičku paní učitelce. Jak jsi tahala mámě za rukáv, ať ji jdete vybrat. Jak jsi přesně věděla, že paní učitelka nemá ráda žlutou — a jakou jsi měla radost, když ses trefila. A paní učitelka? Ta si toho všimla. Vždy si všimla.</p>
+      <p>Jsou to lidé, kteří tráví s našimi dětmi víc bdělých, soustředěných hodin než my sami. Kteří si pamatují, co dítě trápí, kde se zaseklo a kde najednou zazářilo. Kteří přišli znovu — i ve chvíli, kdy to bylo těžké. Kdy rodiče psali e-maily ve tři ráno. Kdy jich bylo pětadvacet v jedné místnosti a každé z nich mělo jiný den, jiný problém a jiné potřeby. Vydrželi. A přišli znovu.</p>
+      <p>A to není samozřejmé.</p>
+
+      <div class="article-callout">
+        <p>Průměrná učitelka základní školy stráví se třídou zhruba <strong>800 hodin ročně</strong>. Ne s jedním dítětem — ale s pětadvaceti najednou. Každé z jiného světa, každé s jiným dnem, každé s jiným příběhem.</p>
+      </div>
+
+      <h2>Povinnost, nebo nutnost?</h2>
+      <p>Tento zvyk malého gesta jako poděkování se předává z generace na generaci — a není v něm nic strojeného. My rodiče si vážíme péče, jakou naše děti dostávají, když je svěříme někomu jinému. Děti si váží toho, že se cítí součástí — že jsou brány jako rovnocenní partneři do diskuse, jako členové kolektivu, kteří mají svůj hlas a svůj příběh.</p>
+      <p>Největší dárek ale není v tom, co předáme poslední červnový den. Je v tom, co přijde potom. Když dítě za rok přijde a je vidět, že mu ta slova, která slyšelo znovu a dokola, někam dopadla. Že si našla místo v té po poznání dychtivé hlavičce.</p>
+
+      <div class="article-formula">
+        A pak je tu ten dárek, který paní učitelka schová do šuplíku a nevyhodí. Není to kytka. Je to zmačkaný obrázek, na kterém je nakreslena ona — trochu větší hlava, trochu kratší nohy, ale úsměv přesný. Nebo dopis plný překlepů, kde někdo napsal, že je nejlepší učitelka na světě, a pro jistotu to podtrhl třikrát. Věci, za kterými vidí konkrétní dítě. A to je přesně to, co zůstane.
+      </div>
+
+      <div class="article-tip">
+        <p>Zeptejte se jakékoliv učitelky, co ji opravdu potěší. Skoro vždy řekne totéž — upřímné slovo. Ručně psaný vzkaz od dítěte. Nebo prostý moment, kdy se rodič zastaví a řekne: „Moc vám děkuji. A myslím to vážně."</p>
+      </div>
+
+      <h2>A tady přicházíme my</h2>
+      <p>V komunitě Rosteme spolu jsou ženy, které tvoří s péčí a záměrem. A výrobky, které vznikají pod jejich rukama, mají přesně to, co velkovýrobě chybí — příběh a člověka za ním.</p>
+      <p>Ručně vyrobený hrníček, ze kterého si paní učitelka každé ráno dá kávu. Vonná svíčka na pracovní stůl. Věci, které zůstanou. Věci, které připomenou, že na ni někdo myslel — ne jen poslední červnový den, ale opravdu.</p>
+
+      <div class="article-callout">
+        <p>Dárek od tvůrkyně z komunity Rosteme spolu není jen dárek. Je to gesto, které říká: <strong>vidíme vás. A vaší práce si vážíme víc, než zvládneme říct.</strong></p>
+      </div>
+
+      <p style="margin-top:1.5rem;">Potřebuješ inspiraci? Připravily jsme výběr konkrétních výrobků od tvůrkyň z komunity — mrkni na náš Reel. <a href="https://www.instagram.com/reel/DZXK8YesVmx/" target="_blank" rel="noopener" style="color:var(--green); font-weight:600; text-decoration:none; border-bottom: 1px solid var(--mint);">Podívat se na Instagramu →</a></p>
+
+    </div>
+
+    <div class="article-cta">
+      <h3>Hledáš dárek s příběhem?</h3>
+      <p>Výrobky od žen z komunity Rosteme spolu najdeš na našem Instagramu a webu — každý vytvořený s péčí a záměrem.</p>
+      <a href="../tvorkyně.html" class="btn-primary">Objevuj tvůrkyně</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
