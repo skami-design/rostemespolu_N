@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nejsi neorganizovaná. Jen organizuješ víc životů najednou — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Nejsi neorganizovaná. Organizuješ víc životů najednou — a to není osobní selhání. Je to systémový problém, který si zaslouží systémové řešení.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Nejsi neorganizovaná. Jen organizuješ víc životů najednou — Rosteme spolu">
+  <meta property="og:description" content="Mentální nálož, otevřené záložky v hlavě a pocit že nestíháš. Jak z toho ven.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/nejsi-neorganizovana.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-size: 0.95rem; color: var(--ink); line-height: 1.8; }
+    .article-formula strong { font-family: var(--serif); font-size: 1rem; display: block; margin-bottom: 0.5rem; }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.6rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.6rem 2rem; margin: 2rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .pillar { background: var(--white); padding: 1.5rem; }
+    .pillar-num { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--green); margin-bottom: 0.4rem; }
+    .pillar h4 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .pillar p { font-size: 0.82rem; line-height: 1.6; color: var(--muted); margin: 0; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 4rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2.5rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .pillars { grid-template-columns: 1fr; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Nejsi neorganizovaná</span>
+    </div>
+
+    <span class="article-eyebrow">Myslím & cítím</span>
+    <h1 class="article-h1">Nejsi neorganizovaná. Jen organizuješ víc životů najednou.</h1>
+    <p class="article-lead">Je jedenáct večer. Děti konečně spí. A ze všech stran se na tebe najednou valí všechno, co jsi udělala, co jsi zapomněla a co tě čeká zítra. Zubař. Platba za kroužek. Nákup. Odpovědět na maily. Materiál, který dochází. Příspěvek, který měl být hotový už ve středu. A uprostřed toho všeho si tiše říkáš: proč to nezvládám líp?</p>
+
+    <div class="article-body">
+
+      <p>Mentální nálož. Pojem, který se nevyslovuje moc nahlas, protože jde ruku v ruce se selháním. Ale každá z nás ji okusila na vlastní kůži. Není to to-do list ani stres. Je to ta perfektní idea v hlavě — malá, hlasitá kontrolka, která nikdy nevypne. Taková šedá zóna mezi tím, kdo jsme, a jací bychom chtěly být.</p>
+      <p>A k tomu přidej ještě pozlátko, co všichni sdílí na sítích — tu jednostrannou dokonalost, kterou se snažíme dohonit. Jenže pozadí není život. Stejně jako nevidíš ten čurbes na straně místnosti, který nezabírá kamera, tak nevidíš ani velkou proměnnou jménem život — který ti buď jde na ruku, nebo hází klacky pod nohy.</p>
+      <p>Výzkumy potvrzují to, co dávno tušíme — tato neviditelná nálož leží téměř výhradně na ženách. Vkrádá se do práce, do volného času, do spánku. Nikdy nemáš hotovo. A právě proto je tak vyčerpávající — protože ji nesete pořád, ve dne v noci, a většinou bez toho, aby si toho někdo vůbec všiml.</p>
+
+      <div class="article-callout">
+        <p>Takže ne. <strong>Nejsi neorganizovaná. Organizuješ víc životů najednou.</strong> A to není osobní selhání — je to systémový problém, který si zaslouží systémové řešení.</p>
+      </div>
+
+      <h2>Co se děje v mozku, když nestíháš</h2>
+      <p>Když máš v hlavě příliš mnoho otevřených záložek najednou — termíny, děti, zásoby, podnikání, vztahy — mozek se dostává do stavu chronické pohotovosti. Není to panika. Je to tišší a zákeřnější. Pořád hlídáš. Pořád čekáš, co přijde. A protože nikdy nemáš opravdu hotovo, mozek se nikdy pořádně nevypne.</p>
+      <p>Výsledek? Únava, která nejde vyspat. Podrážděnost, která přichází zdánlivě odnikud. Pocit, že děláš spoustu věcí — a zároveň nestíháš nic pořádně. Mozek není zápisník. Je to procesor. A čím víc ho cpeme věcmi, které by měly být někde zapsané, tím méně kapacity zbývá na to, co opravdu potřebuje naši pozornost — tvorbu, rozhodování, přítomnost.</p>
+      <p>Řešení není pracovat víc. Řešení je dostat věci z hlavy ven. A tady přichází systém — jakýkoliv, hlavně aby existoval.</p>
+
+      <h2>Systém není dokonalý diář. Je to dohoda sama se sebou.</h2>
+      <p>Je spousta způsobů, jak si zorganizovat život. Ať jsi old school diářová lady s výrazňovačema, nebo zarputilý tabulkář v Google Sheets — hlavní je najít systém, který ti sedne a pomůže plnohodnotně využít zbytky tvé energie. Protože těch zbytků není mnoho. A zaslouží si, aby šly na věci, které mají smysl.</p>
+
+      <div class="osobni-box">
+        Bez mučení se přiznám — dostala jsem se do takového chaosu, že jsem chodila od jedné věci ke druhé a byly dny, kdy jsem se vůbec nedostala k háčkování. Ani na chvilku. A když mi to došlo, sedla jsem si a vytvořila si v Google Sheets podrobného admina — kalendář, content planner i action plan na celý rok. Ne proto, že jsem posedlá organizací, ale proto, že jsem chtěla změnu. Jenže ne na úkor dětí — těm chci věnovat maximum svého času a pozornosti, dokud o ni stojí.
+      </div>
+
+      <div class="article-formula">
+        <strong>Jak vypadá můj týden:</strong>
+        Neděle — plánování + háčkování<br>
+        Úterý — články + háčkování<br>
+        Středa — příspěvky + háčkování<br>
+        Čtvrtek — rešerše + háčkování<br>
+        Pátek — admin, objednávky, strategie<br><br>
+        Všimly jste si háčkování? Ano. Je tam každý den. Záměrně. Aby bylo vždy uděláno to kolem háčku — a zároveň byl i prostor pro háček samotný.
+      </div>
+
+      <div class="article-callout">
+        <p>Plánování dopředu není o kontrole. Je o tom <strong>dát si prostor</strong> — aby ses ráno nemusela rozhodovat od nuly a mohla rovnou tvořit, být přítomná, nebo si dát kafe dokud je ještě teplé.</p>
+      </div>
+
+      <h2>Tři nástroje, které skutečně pomáhají</h2>
+      <p>Nepotřebuješ všechno najednou. Vyber jeden nástroj, který sedí tvému stylu — a dej mu šanci aspoň měsíc.</p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">Tabulky</div>
+          <h4>Google Sheets nebo papír</h4>
+          <p>Týdenní přehled toho, co, kdy a kolik. Plánování obsahu, objednávky i rodinný kalendář. Žádná extra aplikace — jen sloupce, barvy a přehled. Srdcovka.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Todoist</div>
+          <h4>To-do listy s prioritami</h4>
+          <p>Termíny a projekty přehledně. Zdarma, funguje na telefonu i počítači. Ideální pokud potřebuješ mít seznam úkolů vždy po ruce — a nechceš ho hledat mezi papíry.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Notion</div>
+          <h4>Vše na jednom místě</h4>
+          <p>Poznámky, plány, obsah, databáze. Strmější křivka učení, ale jakmile si ho nastavíš po svém, ušetří hodiny každý týden. A vypadá přitom tak hezky, že ho chceš otevírat.</p>
+        </div>
+      </div>
+
+      <h2>A pak přijdou vidle</h2>
+      <p>Tak schválně — máš to taky tak? Řekneš si, dnes udělám to a to. Pak ti pípne telefon, podíváš se — a o dvě hodiny později vytřeštíš uslzený oči od sledování AGT golden buzzers a vůbec nevíš, jak se to stalo.</p>
+      <p>NE, není to lenost. To jen tvůj přestimulovaný mozek hledá chvilku bez zodpovědnosti a vezme si ji tam, kde ji dostane nejrychleji. Pomáhá telefon při práci otočit obrazovkou dolů. A mít naplánovanou konkrétní věc — ne „pracovat", ale „napsat úvod článku". Čím konkrétnější úkol, tím menší pokušení utéct.</p>
+      <p>A pak stejně přijdou děti, které ne a ne spát. Do každého systému přijdou vidle — a to je normální. Systém není o dokonalosti. Je o tom vrátit se tam, kde jsi skončila.</p>
+
+      <div class="article-tip">
+        <h3>Dnešní výzva</h3>
+        <p>Dnes večer — až bude klid — napiš si pět úkolů na zítřek. Seřazené podle priority. A pak zavři počítač.</p>
+        <p>Zbytek počká do rána. Opravdu.</p>
+      </div>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="brand-tvuj-pribeh.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Tvůj brand, tvůj příběh</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš organizaci řešit s někým, kdo to chápe?</h3>
+      <p>V komunitě Rosteme spolu sdílíme tipy, systémy i to, když to prostě nejde. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
