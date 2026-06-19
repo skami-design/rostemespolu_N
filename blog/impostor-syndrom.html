@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impostor syndrom: přestanu o sobě někdy pochybovat? — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Impostor syndrom zažilo až 70 % lidí. U podnikatelek obzvlášť. Co to je, jak se projevuje — a jak mu ubírat prostor.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Impostor syndrom: přestanu o sobě někdy pochybovat? — Rosteme spolu">
+  <meta property="og:description" content="Impostor syndrom zažilo až 70 % lidí. Nejsi sama. A tady je návod, jak mu ubírat prostor.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/impostor-syndrom.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.6rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    /* Otázky */
+    .otazky { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .otazka { background: var(--white); padding: 1.4rem 1.8rem; }
+    .otazka strong { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); display: block; margin-bottom: 0.4rem; font-weight: 600; }
+    .otazka p { font-size: 0.88rem; line-height: 1.75; color: var(--ink2); margin: 0; }
+    /* Kroky */
+    .steps { display: flex; flex-direction: column; gap: 2rem; margin: 1.5rem 0; }
+    .step { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: start; }
+    .step-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: var(--pink-l); line-height: 1; padding-top: 0.1rem; }
+    .step-content h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .step-content p { font-size: 0.92rem; line-height: 1.85; color: var(--ink2); margin-bottom: 0.6rem; }
+    .step-content p:last-child { margin: 0; }
+    .konkretne { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1rem 1.4rem; margin-top: 0.8rem; font-size: 0.88rem; line-height: 1.8; color: var(--ink2); }
+    .konkretne strong { color: var(--ink); font-weight: 600; }
+    /* Autor */
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2.5rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; transition: background 0.2s; border: none; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Impostor syndrom</span>
+    </div>
+
+    <span class="article-eyebrow">Myslím & cítím</span>
+    <h1 class="article-h1">Impostor syndrom: aneb přestanu o sobě někdy pochybovat?</h1>
+    <p class="article-lead">Přidáváš příspěvky, děláš svoji práci, zákaznice jsou spokojené — a přesto v sobě máš zabudovaného malého červíčka, který každý den hlodá víc a víc. Jsem dost dobrá? Nebo si jen hraju na paní podnikatelku a nikdo za to nezaplatí ani korunu?</p>
+
+    <div class="article-body">
+
+      <p>Pokud ti tohle zní povědomě, máš ve své hlavě nezvaného hosta, který se vrací, kdy se mu zachce. A říká se mu impostor syndrom.</p>
+
+      <h2>Co to vlastně je?</h2>
+      <p>Tenhle pocit jako první popsaly psycholožky Pauline Clance a Suzanne Imes. Zjistily, že spousta jinak úspěšných lidí se vnitřně cítí, jako by si svůj úspěch nezasloužili. Jako by jen čekali, až je někdo odhalí. A přiznaly, že to zažívají i ony samy.</p>
+      <p>Není to diagnóza. Není to porucha. Je to soubor pochybností, které podle výzkumů zažilo až 70 % lidí — a u žen, kreativních lidí a podnikatelek se objevuje obzvlášť často. Takže pokud ses v tom úvodu poznala — nejsi sama. Ani zdaleka.</p>
+
+      <div class="article-callout">
+        <p>Impostor syndrom postihuje nejčastěji lidi, kteří jsou ve skutečnosti <strong>velmi schopní</strong>. Čím víc umíš, tím víc si uvědomuješ, co ještě neumíš. A mozek to rád přepočítá jako důkaz, že vlastně neumíš nic.</p>
+      </div>
+
+      <h2>Jak to vypadá v praxi</h2>
+      <p>Zákaznice ti napíše, že je nadšená — a tobě se najednou viditelně uleví. Dostaneš pochvalu — a místo aby ti udělala radost, čekáš, kdy zjistí, že to byl omyl. Zdražíš cenu — a hned přepočítáváš znovu a znovu, jestli to není moc, jestli jsi někde neudělala chybu. (O tom, jak nastavit cenu tak, aby seděla i tobě, jsme psaly v článku <a href="jak-prestat-podhodnocovat.html">Jak přestat podhodnocovat svou práci</a>.)</p>
+      <p>Když scrolluješ Instagram a vidíš, jak ostatní tvoří, prodávají, rostou. A místo inspirace přijde ta tichá, otrávená myšlenka: ony to dělají líp. Proč to takhle nejde i mně? Co dělají jinak? Jsem na sítích moc, nebo naopak málo? Nejsem dost sympatická?</p>
+      <p>Tenhle zásobník pochybností se vždycky vytasí přesně ve chvíli, kdy ho nejméně potřebuješ. Těsně předtím, než svou práci představíš ostatním. Impostor syndrom se projevuje různě — strachem z hodnocení, neschopností přijmout kompliment, odkládáním věcí protože „ještě nejsem připravená", perfekcionismem, který ve výsledku paralyzuje víc než pomáhá.</p>
+
+      <h2>Proč to postihuje podnikatelky zvlášť</h2>
+      <p>Když pracuješ pro někoho jiného, máš kolem sebe strukturu. Kolegy, šéfa, hodnocení. Někdo ti řekne, jestli to děláš dobře. Když podnikáš sama — nebo na mateřské, po večerech, mezi dětmi — tahle zpětná vazba chybí. Jsi odkázaná na sebe. A to je živná půda pro vnitřní kritiku.</p>
+      <p>K tomu přidej sociální sítě plné nalešených výsledků bez zákulisí, srovnávání s lidmi, kteří jsou v oboru o pět let déle, a přirozenou ženskou tendenci podceňovat vlastní přínos — a máš recept na impostor syndrom jako vyšitý.</p>
+      <p>A ještě jedna věc, která se moc neříká: <strong>impostor syndrom nemizí s úspěchem.</strong> Herečka Emma Watson ho popsala na vrcholu své kariéry. Šéfka Světové zdravotnické organizace taky. Takže čekat, až ho „přerosteš" — to není strategie.</p>
+
+      <div class="otazky">
+        <div class="otazka">
+          <strong>„Kdo jsem já, abych za to brala peníze?"</strong>
+          <p>Učíš se řemeslu, zdokonaluješ své dovednosti, věnuješ tomu hromadu času. A peníze jsou jeden ze způsobů, jak může někdo ocenit tu péči, kterou do toho dáváš.</p>
+        </div>
+        <div class="otazka">
+          <strong>„Co když je to jen štěstí?"</strong>
+          <p>Štěstí přeje připraveným. A ty ses připravovala dlouho, jen sis to nikdy nezapočítala jako práci.</p>
+        </div>
+        <div class="otazka">
+          <strong>„Ostatní to dělají líp — proč bych měla já?"</strong>
+          <p>Srovnáváš svůj začátek s jejich výsledkem. Vidíš jen tu špičku ledovce nad hladinou — ne ty roky, které jim to vybudovaly.</p>
+        </div>
+      </div>
+
+      <h2>Jak s tím pracovat</h2>
+      <p>Impostor syndrom nejde „vyléčit". Ale dá se s ním naučit žít — a postupně mu ubírat prostor.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Pojmenuj ho</h3>
+            <p>Řekni si nahlas: tohle je impostor syndrom, ne pravda. Mozek rád generalizuje — jeden špatný den přepočítá na důkaz, že nejsem dost dobrá. Vědomé pojmenování tohle automatické myšlení přeruší.</p>
+            <p>Mně osobně pomáhá si občas v duchu zopakovat: dělám věci tak, jak je dělám jen já. Nikoho nekopíruji. Snažím se být dostatečně autentická.</p>
+            <div class="konkretne"><strong>Konkrétně:</strong> Až tě ta myšlenka přepadne — třeba těsně před tím, než zveřejníš příspěvek — zastav se a řekni si: „Tohle je impostor syndrom, mluví, ne já." Tři vteřiny. Ale přerušíš tím automatický kolotoč, který by jinak běžel dál.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Sbírej důkazy</h3>
+            <p>Piš si pozitivní zpětnou vazbu, dobré momenty, věci, které se povedly. Ne proto, aby ses chválila — ale proto, aby mozek měl k dispozici reálná data místo domněnek. Impostor syndrom pracuje s pocity. Ty mu naservíruj fakta.</p>
+            <p>A je tu jeden moment, který je pro mě v tomhle vždycky zlatý grál — když vidím, že se výsledný produkt líbí, mám hezké ohlasy, a já si v tu chvíli řeknu: hele Áňo, to už není jen tvoje mamka, která řekne na všechno, co děláš, jak je to báječné.</p>
+            <div class="konkretne"><strong>Konkrétně:</strong> Založ si v telefonu jednu poznámku nebo album — a každou pochvalu, screenshot recenze nebo zprávu od spokojené zákaznice tam ulož. Bez výjimky, hned jak přijde. Až tě příště přepadne pochybnost, otevři to album místo Instagramu. Pět minut čtení vlastních důkazů zabije víc pochybností než hodina přemýšlení.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Mluv o tom</h3>
+            <p>Právě proto, že se o tom nemluví, máme všechny pocit, že jsme jediné, kdo tohle zažívá. Nejsme. A komunita, ve které se ženy svěřují i s tím, co nejde — je mnohem cennější než jakýkoliv highlight feed.</p>
+            <p>Je důležité sdílet svoje strasti stejně tak jako úspěchy. Mít prostor bez hejtů, s konstruktivní kritikou a nápomocnou rukou, je v dnešní době vzácnost.</p>
+            <div class="konkretne"><strong>Konkrétně:</strong> Napiš jednu konkrétní pochybnost do naší <a href="../index.html#community">FB skupiny</a> — třeba přesně tu, kterou jsi měla tento týden. Uvidíš, kolik žen napíše „já mám to samé". Tahle jedna zpráva ti pravděpodobně udělá víc, než týden přemýšlení v hlavě.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-tip">
+        <h3>Dnešní výzva</h3>
+        <p>Od dnešního dne si každý večer sedni a napiš — opravdu napiš, na papír — tři věci, které se ti dnes povedly. Nemusí se to týkat jen podnikání. Může to být cokoliv.</p>
+        <p>Tyhle tři věci jsou důkaz. A důkazy jsou silnější než pocity.</p>
+        <p>Klidně to může být i den, kdy napíšeš jen: dnes jsem vstala a šla něco dělat, i když vesmír chtěl, abych zůstala v posteli. I to se počítá.</p>
+      </div>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="nejsi-neorganizovana.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Nejsi neorganizovaná</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš o tom mluvit s někým, kdo to chápe?</h3>
+      <p>Komunita Rosteme spolu je místo, kde sdílíme i to, co nejde. Bez posuzování, bez dokonalosti.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
