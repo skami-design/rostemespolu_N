@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podnikání na vedlejší činnost — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Podnikáš vedle rodičovské, zaměstnání nebo studia? Přehled vedlejší činnosti — od zákonů přes daně až po práci s kapacitou, kterou reálně máš.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Podnikání na vedlejší činnost — Rosteme spolu">
+  <meta property="og:description" content="Vedlejší činnost bez strachu. Od živnostenského úřadu přes daně až po kapacitu, se kterou reálně pracuješ.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/podnikani-na-vedlejsi-cinnost.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .article-body ul { margin: 0.5rem 0 1.2rem 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .article-body ul li { font-size: 0.95rem; line-height: 1.75; color: var(--ink2); }
+    .article-body ul li strong { color: var(--ink); }
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-size: 0.95rem; color: var(--ink); line-height: 1.9; }
+    .article-formula strong { font-family: var(--serif); font-size: 0.95rem; display: block; margin-bottom: 0.3rem; color: var(--ink); }
+    .article-warning { background: #FDF6F0; padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); }
+    .article-warning p { margin: 0 0 0.5rem; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-warning p:last-child { margin: 0; }
+    .article-warning strong { color: var(--ink); }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.6rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Podnikání na vedlejší činnost</span>
+    </div>
+
+    <span class="article-eyebrow">Začínám podnikat</span>
+    <h1 class="article-h1">Podnikání na vedlejší činnost</h1>
+    <p class="article-lead">Konečně usnula. Otevřeš laptop, napíšeš jednu větu popisku — a uslyšíš ji breptat přes monitor. Deset minut. Možná patnáct, pokud máš štěstí. Tolik času dostaneš na to, co by jinde trvalo hodinu v klidu. Stejnou matematiku ale řeší i ženy, které pracují na plný úvazek a chtějí si vedle toho rozjet vlastní tvorbu.</p>
+
+    <div class="article-body">
+
+      <h2>Není to jen koníček. Je to práce s omezenou kapacitou.</h2>
+      <p>Spousta lidí si myslí, že podnikání vedle rodičovské, zaměstnání nebo studia je takové malé podnikání naoko — něco mezi koníčkem a opravdovou prací, co se dělá, když zrovna vyjde čas. Jenže ten čas přijde nepravidelně, krátce, a často přesně ve chvíli, kdy bys nejvíc potřebovala odpočívat.</p>
+      <p>Podnikání jako vedlejší činnost se neřídí stejnými pravidly jako podnikání na plno. Ne kvůli zákonu — kvůli kapacitě. A respektovat tu kapacitu, ne ji ignorovat, je to, co rozhoduje, jestli ti tohle období dá sílu, nebo tě úplně vyčerpá.</p>
+      <p>Máš dny, kdy se nedostaneš ani k tomu napsat první větu popisku. A pak dny, kdy si připadáš jako superžena. Obojí je normální. Jen to druhé se nestává tak často, jak by sis přála.</p>
+
+      <div class="article-callout">
+        <p>Tvoje podnikání jako vedlejší činnost <strong>nemusí růst rychle. Musí přežít tohle období</strong> — aniž by z tebe vysálo všechnu energii, kterou právě teď potřebuješ jinde.</p>
+      </div>
+
+      <h2>Co je vlastně vedlejší činnost</h2>
+      <p>Vedlejší činnost je status, na který máš nárok, pokud máš vedle podnikání ještě jiný hlavní zdroj — zaměstnání, rodičovský příspěvek, mateřskou, studium na vysoké škole, nebo třeba důchod.</p>
+      <p>Když si zakládáš živnost, vyplníš jednotný registrační formulář na živnostenském úřadě a zaplatíš správní poplatek. Vyber si rovnou víc oborů činnosti, i ty, co si myslíš, že možná nevyužiješ — přidávat obor dodatečně tě stojí další poplatek, zatímco při založení jich zvolíš víc najednou bez příplatku.</p>
+
+      <div class="osobni-box">Dodnes si pamatuju, jak jsem se několik hodin lopotila se založením živnosti online — formulář se mi zasekl při výběru oboru a nešlo mi tam nic přidávat. Nakonec jsem to vzdala a šla na úřad osobně. Paní za přepážkou měla všechno hotové za pět minut. Ještě jsme si u toho stihly popovídat.</div>
+
+      <p>Status vedlejší činnosti pak oznámíš přímo v přehledu pro ČSSZ. U rodičovské obvykle stačí uvést, kdy se ti narodilo dítě — úřad tuhle informaci většinou už má ve své evidenci. U zaměstnání nebo studia bývá potřeba doložit potvrzení navíc. Konkrétní požadavky si nejjistěji ověříš přímo na webu ČSSZ.</p>
+      <p>Proč na tom záleží? Protože vedlejší činnost má úplně jiná pravidla. Tam, kde OSVČ na hlavní činnost musí každý měsíc odvádět minimální zálohy na pojištění bez ohledu na výdělek, ty na vedlejší činnosti v prvním roce podnikání žádné zálohy neplatíš. Vůbec. Vše se dopočítá až zpětně, podle skutečného zisku za celý rok.</p>
+      <p>To se ale neposuzuje jen jednou na začátku — kontroluje se každý rok znovu. Pokud tvůj zisk v dalších letech přesáhne hranici, sociální pojištění už platit budeš — přesně podle toho, kolik jsi vydělala.</p>
+
+      <h2>Kde si ohlídat aktuální podmínky</h2>
+      <p>Existuje roční hranice zisku, do které sociální pojištění na vedlejší činnosti nemusíš platit vůbec. Tahle hranice se každý rok mění podle průměrné mzdy — konkrétní částku najdeš vždy aktuální na stránkách ČSSZ. Orientačně se ale dlouhodobě jedná o desítky tisíc korun ročně, do kterých se vejde spousta začínajících tvůrkyň.</p>
+      <p>Zdravotní pojištění se na vedlejší činnosti počítá z reálného zisku — ne z paušální minimální částky jako u hlavní činnosti. Takže pokud vyděláš málo, zaplatíš málo. Přesné výpočty a aktuální sazby najdeš na webu své zdravotní pojišťovny nebo na Finanční správě.</p>
+
+      <div class="osobni-box">Měla jsem děsný strach, na kolik se mi to může peněžně vyšplhat. Hned po prvním podání jsem zjistila, že byl úplně zbytečný.</div>
+
+      <p>A pokud jsi na rodičovském příspěvku — ten samotný není na tvůj výdělek napojen vůbec. Můžeš podnikat bez omezení výše příjmu. Jediná podmínka se týká péče o dítě: pokud je mladší dvou let a chodí do jeslí nebo školky, jejich docházka tam nesmí překročit stanovený limit hodin měsíčně — najdeš ho na webu Ministerstva práce a sociálních věcí. Po druhém roce věku dítěte už ani tohle omezení neplatí.</p>
+      <p>Pokud podnikáš vedle běžného zaměstnání, pravidla jsou velmi podobná — status vedlejší činnosti máš automaticky, jen místo potvrzení o rodičovské doložíš potvrzení od zaměstnavatele. Hlavně si dej pozor na případnou konkurenční doložku, pokud bys podnikala ve stejném oboru jako tvoje práce. U většiny tvůrkyň — handmade, design, kreativní obory — tohle ale vůbec neřešíš.</p>
+
+      <h2>Daně a termíny, na které nezapomeň</h2>
+      <p>Každý rok tě čekají dva kroky, vždy v tomto pořadí. Nejdřív daňové přiznání — podává se obvykle v prvních měsících roku za rok předchozí. Pak přehled o příjmech a výdajích pro ČSSZ a pro tvou zdravotní pojišťovnu — ten musíš odevzdat do jednoho měsíce po podání daňového přiznání. Přesné termíny najdeš vždy na webu Finanční správy a ČSSZ.</p>
+      <p>Nemusíš vést účetnictví. Stačí jednoduchá evidence příjmů a výdajů — kolik jsi přijala, kolik jsi vydala. Pokud nechceš sbírat účtenky, můžeš místo skutečných výdajů uplatnit výdajový paušál — fixní procento z příjmů, které se uznává automaticky bez dokládání.</p>
+
+      <div class="osobni-box">Myslela jsem si, že po třech měsících podnikání s nulovým ziskem nemusím dokládat nic, a podám to pak zpětně za celý rok najednou. Omyl. Nezapomenu na tu malou dušičku, co se ve mně otřásla, když mi přišla výzva od úřadu.</div>
+
+      <p>Přehledy pro ČSSZ a zdravotní pojišťovnu podáváš pokaždé, klidně i s nulovým ziskem — tady žádná výjimka neplatí, ani pokud jsi podnikala jen část roku.</p>
+
+      <h2>Co skutečně musíš vědět — a co je jen strach</h2>
+      <p>Spousta žen se bojí začít podnikat vedle rodičovské nebo zaměstnání, protože si myslí, že tím riskují svůj příspěvek nebo se zapletou do nekonečné administrativy. Ve skutečnosti je pravda mnohem jednodušší — vedlejší činnost vznikla přesně pro tyhle situace a pravidla jsou nastavená tak, aby ti nekladla zbytečné překážky.</p>
+
+      <div class="article-callout">
+        <p>Administrativa tu <strong>není ta skutečná překážka</strong>. Tou skutečnou překážkou je čas, který prostě nemáš nazbyt.</p>
+      </div>
+
+      <div class="osobni-box">Dlouho jsem se bála, že mi nějaký úřad jednou napíše, že jsem udělala chybu. Místo studování paragrafů jsem se nakonec rozhodla zavolat přímo na pojišťovnu a zeptat se na vše najednou. Deset minut telefonátu mi ušetřilo týdny úzkosti.</div>
+
+      <div class="article-formula">
+        <strong>Tři praktické tipy, které ti ušetří starosti:</strong>
+        <strong>Veď si evidenci od prvního dne</strong> — i v běžném sešitě nebo tabulce. Na konci roku budeš ráda, že nemusíš nic dohledávat zpětně.<br><br>
+        <strong>Ozvi se své zdravotní pojišťovně hned na začátku</strong> a zeptej se přímo na svůj konkrétní případ. Operátor ti to vysvětlí rychleji, než cokoliv najdeš na internetu.<br><br>
+        <strong>Pokud váháš, jestli si platit dobrovolné nemocenské pojištění</strong> (kvůli budoucí mateřské), spočítej si to s předstihem — doplatit zpětně totiž nejde.
+      </div>
+
+      <h2>Jak pracovat s kapacitou, kterou máš</h2>
+      <p>Místo plánování podle toho, co bys chtěla zvládnout, plánuj podle toho, co realisticky zvládneš v tomhle konkrétním týdnu. Ne podle ambic. Podle spánku tvého dítěte, podle toho, jestli zrovna prokousává zoubky, podle toho, kolik energie ti zbylo.</p>
+      <p>Rozděl práci na menší kousky, než bys čekala. Ne „natočím reel", ale rozfázovaně: teď natočím video, teď to sestříhám, teď dám popisky. Drobné kroky, které se vejdou do drobných oken času, se za měsíc sečtou na víc, než bys čekala.</p>
+
+      <div class="osobni-box">Naučila jsem se nosit poznámkový blok i na procházku s kočárkem. Nápad na popisek mi totiž přijde nejčastěji přesně ve chvíli, kdy nemám jak ho zapsat — a kdybych čekala na klid u počítače, zapomněla bych ho dřív, než bych se k němu vrátila.</div>
+
+      <ul>
+        <li><strong>Plánuj po blocích, ne po hodinách.</strong> Vytvoř si seznam drobných úkolů, které jdou udělat i v desetiminutovém okně — a sáhni po něm, kdykoliv ten čas přijde.</li>
+        <li><strong>Najdi si jedno spolehlivé okno týdně.</strong> Odpolední spánek dítěte, večer po práci, čas s babičkou — a chraň ho jako schůzku, kterou nelze zrušit.</li>
+        <li><strong>Najdi si v komunitě Rosteme spolu někoho, kdo podniká ve stejné fázi jako ty.</strong> Sdílej s ní, co se daří a co ne — tohle období je míň osamělé, když ho neprocházíš sama.</li>
+      </ul>
+
+      <div class="article-warning">
+        <p><strong>Pozor na AI.</strong> Chatboti jsou skvělý pomocník na spoustu věcí, ale s aktuálními čísly a daty mívají problém. Pokud je používáš na denní bázi — a u administrativy a daní obzvlášť — vždy si ověřuj informace přímo na oficiálních zdrojích. Zodpovědnost je vždy tvoje.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Tento týden</h3>
+        <p>Vyber si jeden z těch tří kroků a vyzkoušej ho. Nemusíš dělat všechny tři. Stačí jeden, opakovaný pravidelně.</p>
+        <p>A pokud dnes nestihneš nic — i to je v pořádku. Kapacita, kterou máš, je pořád dost.</p>
+        <p><em>Možná ještě dnes živnost nezaložíš. Ale už se jí nebojíš.</em></p>
+      </div>
+
+      <p class="article-ps">P.S. O tom, jak si poskládat systém na míru i s mentální náloží, kterou tohle období přináší, jsme psaly v článku <a href="nejsi-neorganizovana.html">Nejsi neorganizovaná — jen organizuješ víc životů</a>. A pokud chceš projít celým procesem zakládání živnosti krok za krokem, přečti si také <a href="zivnost-bez-strachu.html">Živnost bez strachu</a>.</p>
+
+      <p class="sources">Zdroje: <a href="https://www.cssz.cz" target="_blank" rel="noopener">Česká správa sociálního zabezpečení</a> · <a href="https://www.financnisprava.cz" target="_blank" rel="noopener">Finanční správa ČR</a> · <a href="https://www.mpsv.cz" target="_blank" rel="noopener">Ministerstvo práce a sociálních věcí</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="zivnost-bez-strachu.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Živnost bez strachu</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Procházíš tím taky?</h3>
+      <p>Komunita Rosteme spolu je plná žen, které podnikají vedle rodičovské nebo zaměstnání. Přidej se — není důvod procházet tím sama.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
