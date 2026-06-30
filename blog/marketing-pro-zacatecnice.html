@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing pro začátečnice na sociálních sítích — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Prodej není o počtu příspěvků. Je o důvěře. Marketing pro začátečnice — 4P, Instagram vs Facebook, čtyři pilíře obsahu a praktické kroky.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Marketing pro začátečnice na sociálních sítích — Rosteme spolu">
+  <meta property="og:description" content="Prodej není o počtu příspěvků. Je o důvěře — a o ceně, kterou si troufneš pojmenovat.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/marketing-pro-zacatecnice.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink2); margin: 1.8rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* 4P grid */
+    .pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .pillar { background: var(--white); padding: 1.5rem; }
+    .pillar-num { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--pink-l); margin-bottom: 0.4rem; }
+    .pillar h4 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .pillar p { font-size: 0.85rem; line-height: 1.65; color: var(--muted); margin: 0; }
+
+    /* Comparison table IG vs FB */
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .compare-col { background: var(--white); }
+    .compare-head { padding: 1rem 1.4rem; font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); background: var(--pink-ll); }
+    .compare-row { padding: 1rem 1.4rem; border-top: 1px solid var(--border); }
+    .compare-row strong { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.3rem; }
+    .compare-row p { margin: 0; font-size: 0.85rem; line-height: 1.6; color: var(--ink2); }
+
+    /* 4 pilíře obsahu */
+    .content-pillars { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .cp { background: var(--white); padding: 1.5rem; }
+    .cp-num { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--green); margin-bottom: 0.3rem; }
+    .cp-format { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--pink); background: var(--pink-ll); padding: 0.15rem 0.5rem; margin-bottom: 0.5rem; }
+    .cp h4 { font-family: var(--serif); font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+    .cp p { font-size: 0.85rem; line-height: 1.6; color: var(--muted); margin: 0; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-size: 0.95rem; color: var(--ink); line-height: 1.9; }
+    .article-formula strong { font-family: var(--serif); font-size: 1rem; display: block; margin-bottom: 0.4rem; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.6rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+
+    .steps { display: flex; flex-direction: column; gap: 1.6rem; margin: 1.5rem 0; }
+    .step { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: start; }
+    .step-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: var(--pink-l); line-height: 1; padding-top: 0.1rem; }
+    .step-content h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0 0 0.4rem; }
+    .step-content p { font-size: 0.92rem; line-height: 1.85; color: var(--ink2); margin: 0; }
+
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; }
+    .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .pillars, .compare, .content-pillars { grid-template-columns: 1fr; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Marketing pro začátečnice</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím & rostu</span>
+    <h1 class="article-h1">Marketing pro začátečnice na sociálních sítích</h1>
+    <p class="article-lead">Prodej není o počtu příspěvků. Je o důvěře — a o ceně, kterou si troufneš pojmenovat.</p>
+
+    <div class="article-body">
+
+      <p>Uklízíš kuchyň. Ruce dělají, co znají automaticky — utřít, uklidit, zavřít dvířka — a mysl se mezitím loudá někde úplně jinde. Vzpomínáš si na výrobek, který jsi včera večer dokončila. Na to, jak se ráno probudily tvoje děti a hned se jim rozjasnila očička — že se jim to strašně líbí a moc to chtějí. Usměješ se. Zahřeje tě to u srdíčka.</p>
+      <p>A v tu ránu tě napadne jedna jediná otázka, která obrátí celé tvé uvažování naruby: jak udělat, aby tvůj výrobek rozzářil oči i někomu jinému?</p>
+      <p>Najednou nestavíš jen výrobek. Stavíš cestu — od bodu A, kde leží tvůj výrobek, do bodu B, kde stojí tvůj koncový zákazník, který ho potřebuje, který ho chce. Jen o tom ještě neví.</p>
+      <p>A na téhle cestě znáš každou zastávku, i když si to možná neuvědomuješ. Sama jsi totiž nakupovala už tisíckrát. Jen sis nikdy plně neuvědomovala ten proces — máš ho tak zautomatizovaný, že už nevidíš ty vnější vlivy, které na tebe při rozhodování, zda něco koupíš, nebo ne, působí.</p>
+      <p>Slovo „marketing" tě děsí jen do té doby, než si uvědomíš, co vlastně je. Je všude kolem tebe — ty jen musíš vyměnit stranu. Teď jsi ten člověk, který koncovou zákaznici touhle cestou vede a dává jí důvod, proč si vybrat právě tvůj výrobek, a ne ten od Janičky o tři ulice dál.</p>
+      <p>Právě tady většina z nás narazí. Umíme tvořit. Ale najednou zjistíme, že samotný výrobek nestačí. A přesně tady začíná marketing.</p>
+
+      <h2>Co marketing vlastně je — a co určitě není</h2>
+      <p>Marketing není pouze o reklamě. Reklama je jen jeho malá část. Marketing je celá ta cesta, kterou jsme si před chvílí nastínily — způsob, jak se o tobě a tvém výrobku dozví ta pravá žena, jak v ní vznikne důvěra a jak se z „jé, to je hezké" stane „tohle chci, tohle potřebuju".</p>
+      <p>V marketingové teorii se téhle cestě říká 4P. Neboj, taky jsem si při prvním čtení říkala, že to zní jako učebnice ekonomky. Ve skutečnosti jsou to přesně ty zastávky, které sis teď v hlavě poskládala:</p>
+
+      <div class="pillars">
+        <div class="pillar">
+          <div class="pillar-num">Produkt</div>
+          <h4>Product</h4>
+          <p>Co nabízíš — tvůj výrobek, jeho kvalita a vlastnosti.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Cena</div>
+          <h4>Price</h4>
+          <p>Kolik to stojí.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Místo</div>
+          <h4>Place</h4>
+          <p>Kde a jakým kanálem se k zákaznici dostaneš.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-num">Propagace</div>
+          <h4>Promotion</h4>
+          <p>Jak o tom mluvíš a jakým tónem.</p>
+        </div>
+      </div>
+
+      <div class="article-callout">
+        <p>Když si to vezmeš kolem a kolem, <strong>marketing je o tom ukázat to, co už nabízíš, někomu, kdo o tobě ještě neví</strong> — a kdo přesně spadá do tvé cílové skupiny.</p>
+      </div>
+
+      <h2>Instagram, nebo Facebook? Obojí — ale jinak</h2>
+      <p>Neexistuje správná sociální síť. Existuje správná sociální síť pro tvoji zákaznici.</p>
+      <p>Pro dnešní dobu je nejlepší nástroj, co se marketingu týče, bezkonkurenčně sociální síť. Záleží ale, jakou síť si zvolíš. Pro někoho může být hlavní Instagram, pro někoho Facebook — všechno se odvíjí od tvé cílové skupinky, od tvého koncového zákazníka. Proto je strašně důležité věnovat čas tomu, aby sis ho podrobně vykreslila. Abys věděla, kde se nachází a jak k němu budeš mluvit, aby se ta informace dostala na správné místo, správnými slovy, jeho řečí.</p>
+      <p>Možná nakonec zjistíš, že Facebook vůbec nepotřebuješ, ale potřebuješ Instagram a TikTok. Nebo Facebook a Pinterest. Nebo pro tebe bude nejlepší YouTube. Anebo najdeš nějakou offline cestu a internet budeš potřebovat jen z deseti procent. Tohle všechno je možné. Pojďme si ale ukázat příklad na dvou nejpoužívanějších — Facebooku a Instagramu.</p>
+
+      <div class="compare">
+        <div class="compare-col">
+          <div class="compare-head">Instagram</div>
+          <div class="compare-row"><strong>Hlavní účel</strong><p>Inspirace, estetika, vizuální příběh výrobku</p></div>
+          <div class="compare-row"><strong>Publikum</strong><p>Spíše mladší, hledá inspiraci a styl</p></div>
+          <div class="compare-row"><strong>Co tam funguje</strong><p>Fotky výrobků, Reels, Stories, vizuální série</p></div>
+          <div class="compare-row"><strong>Role v marketingu</strong><p>Ukazuješ, co tvoříš — vizitka tvé práce</p></div>
+        </div>
+        <div class="compare-col">
+          <div class="compare-head">Facebook</div>
+          <div class="compare-row"><strong>Hlavní účel</strong><p>Komunita, diskuze, dlouhodobý vztah</p></div>
+          <div class="compare-row"><strong>Publikum</strong><p>Širší věkové rozpětí, méně letmé scrollování</p></div>
+          <div class="compare-row"><strong>Co tam funguje</strong><p>Delší text, příběh, diskuze ve skupině, osobní zpráva</p></div>
+          <div class="compare-row"><strong>Role v marketingu</strong><p>Budujete vztah a komunitu — místo pro hlubší rozhovor</p></div>
+        </div>
+      </div>
+
+      <p>Pro tebe to v praxi znamená jedno: na Instagramu ukazuješ. Na Facebooku — třeba právě tady v komunitě Rosteme spolu — si o tom povídáte. Jedna síť přivede pohled, druhá ho prohloubí ve skutečný zájem.</p>
+
+      <h2>Na co se ptáme nejčastěji</h2>
+
+      <h3>Kolik mám postovat, abych byla vidět?</h3>
+      <p>Velké účty s desítkami tisíc sledujících publikují klidně několik příspěvků denně. To je fakt — a taky důvod, proč se spousta začínajících tvůrkyň cítí, že nestíhají. Jenže ty nesoutěžíš s velkými účty o stejnou pozornost. Soutěžíš o pozornost konkrétní ženy, která tě sleduje, protože jí něco na tobě dává smysl.</p>
+      <p>Realistický rytmus je pro malou značku dva až tři příspěvky týdně — ale každá si to nastaví podle svých časových možností. Hlavně nebuď otrokyní sociálních sítí. Nastav si to tak, aby to sloužilo tobě, a ne naopak.</p>
+      <p>Funguje to nejlíp, když se obsah skládá ze čtyř pilířů, které se navzájem doplňují:</p>
+
+      <div class="content-pillars">
+        <div class="cp">
+          <div class="cp-num">01</div>
+          <span class="cp-format">Karusel</span>
+          <h4>Výrobek</h4>
+          <p>Co tvoříš — fotka, detail, proces vzniku.</p>
+        </div>
+        <div class="cp">
+          <div class="cp-num">02</div>
+          <span class="cp-format">Reel</span>
+          <h4>Příběh</h4>
+          <p>Proč to děláš — osobní moment, hodnoty.</p>
+        </div>
+        <div class="cp">
+          <div class="cp-num">03</div>
+          <span class="cp-format">Reel</span>
+          <h4>Hodnota</h4>
+          <p>Tip, návod, něco užitečného bez prodeje.</p>
+        </div>
+        <div class="cp">
+          <div class="cp-num">04</div>
+          <span class="cp-format">Karusel</span>
+          <h4>Vztah</h4>
+          <p>Otázka, recenze, pozvánka do komunity.</p>
+        </div>
+      </div>
+
+      <p>Jestli se teď podíváš na svůj profil a převažuje tam jen jedna z těchto kategorií, možná už víš, proč se lidé nevrací.</p>
+      <p>A pak je tu ještě jedna vrstva navíc — to kolečko nahoře, do kterého dáváš příběhy každý den, klidně i několik za sebou. Stories jsou místo, kde se ti všechny čtyři kategorie krásně propojí. Patří sem střípky ze všedního dne: co se ti povedlo, co naopak ne, teaser na výrobek, který ještě ani nemáš hotový. Můžeš tam dávat ankety, ptát se, zjišťovat, co tvé publikum zajímá — a tohle je možná ten nejcennější nástroj marketingu vůbec. Klást otázky a vědět, co lidi zajímá.</p>
+      <p>Tomuhle všemu se říká zahřívání publika. Vytváříš očekávání, které pak konkrétním příspěvkem naplníš. Lidé totiž v dnešní době nečekají pouze na produkt. Čekají na tvůj produkt, na tebe, na tvou cestu — a to je ten důvod, proč se vrátí.</p>
+
+      <div class="article-formula">
+        <strong>Zlaté pravidlo 80/20</strong>
+        80 % obsahu je hodnota — všechno mimo prodej. Tvůj příběh, tipy, drobnosti ze dne, věci, které tvé publikum zajímají. Jen 20 % je samotný prodej.
+      </div>
+
+      <p>Není to o tom, že všude musí být tvůj obličej a tvůj osobní život. Ale musíš tam dát svou osobnost.</p>
+
+      <div class="osobni-box">Pro mě osobně bylo i je strašně těžké ukazovat samu sebe — postavit se před kameru a mluvit. To u mě zatím nenajdete, ale moc dobře vím, že tam směřuju. Už mám v hlavě malé červíčky a nápady, jak to zakomponovat — jen to ještě chvilku potrvá, než tam dojdu. A to vůbec nevadí, protože cesta je stejně důležitá jako cíl. Tohle prostředí se mi stává čím dál přirozenější.</div>
+
+      <h3>Jak získat první sledující, když začínám od nuly?</h3>
+      <p>Hledáš daleko. Přemýšlíš o reklamách, virálních trendech, influencerkách. A přitom lidé, kteří tě budou sledovat doopravdy — ne jen mávnutím palce — jsou ti, kteří tě už nějak znají nebo se v tobě poznají.</p>
+      <p>Lokální skupiny, komunita jako Rosteme spolu, kamarádky, které vědí, že tvoříš. Psaly jsme o tom podrobně v článku <a href="prvni-zakaznice.html">První zákaznice</a> — princip je stejný i pro sledující. Nejde o to, kolik lidí tě uvidí. Jde o to, kolik z nich se v tobě skutečně pozná.</p>
+      <p>Prakticky to znamená: optimalizuj si bio (jasně napiš, co děláš a pro koho), přidej fotku, kde je vidět tvář — lidé důvěřují lidem, ne logu — a aktivně se zapojuj do komunit, kde se tvá budoucí zákaznice už pohybuje. Sledující nezískáš tím, že budeš čekat. Získáš je tím, že budeš viditelná tam, kde už je.</p>
+
+      <h3>Proč mám hezký profil a stejně nikdo nekupuje?</h3>
+      <p>Tahle otázka bolí nejvíc, protože za ní stojí hodiny práce, které se zdánlivě nikam nepřevedly. Profil vypadá dobře. Fotky jsou hezké. A přesto ticho.</p>
+      <p>Často za tím stojí strach. Strach ukázat víc než jen hezkou fotku. Strach, že to zkusíš a nebude to fungovat.</p>
+      <p>Tady bych ráda zmínila Pavla Procházku, obchodníka a lektora, který přes třicet let učí lidi prodávat — a dělá to skvělým způsobem. Vždycky se u toho pobavím a vždycky si z toho něco odnesu. Pavla Procházku vám můžu vážně doporučit.</p>
+      <p>Jedna věc, kterou mi pomohl pochopit nejvíc, se týká dělání chyb. Lidi se chybovat strašně bojí — a přitom, jak zní krásné české přísloví, chybami se člověk učí. Každá chyba, kterou jsem udělala, mě posunula o deset kroků dopředu.</p>
+      <p>Důležité je jedno nastavení mysli: chyba tě nemůže zastavit. Sedneš si, zjistíš, proč se to nepovedlo, a příště to uděláš jinak. Žádný velký byznys nevznikl bez chyb — rozdíl je v tom, co s tou chybou uděláš dál.</p>
+      <p>Na sítích je to úplně stejné. Hezký feed ti nevytvoří důvěru. Důvěra vzniká opakováním, že to, co říkáš, sedí s tím, co děláš. A tím, že lidem ukážeš, kdo jsi, svoje hodnoty, svoje myšlenky — tím tu důvěru buduješ.</p>
+
+      <div class="article-callout">
+        <p>Zapamatuj si: <strong>lidé nekupují od profilu s nejvíc fotkami.</strong> Kupují od ženy, které věří, že dodá to, co slibuje.</p>
+      </div>
+
+      <h2>Kroky, které tě posunou</h2>
+      <p>Teď je čas udělat ten malý krůček, který odstartuje velké věci. Vezmi si papír, tužku a zamysli se nad konkrétními otázkami.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Napiš si vizi</h3>
+            <p>To, kam směřuješ, co chceš. Jestli je tvá vize co největší prodeje — fajn. Jestli je to vybudovat celou značku, celý byznys — tím líp.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Napiš si cíl</h3>
+            <p>Kdo je ta konkrétní žena, která si ho koupí. Ne „všichni" — jedna konkrétní žena, s jednou situací, starostí.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Napiš si zastávky</h3>
+            <p>Cesty mezi tím. Klidně si tam dej i ty čtyři P — kde se ta žena pohybuje, jakým tónem na ni promluvíš, jaký kanál k tomu použiješ.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Napiš si pět bodů</h3>
+            <p>Takové cestičky, podúkoly, které tě k cíli, vizi a zastávkám dovedou. Malý úkolníček — něco, co ti pomůže.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Je opravdu důležité si to nejen poskládat v hlavě, ale hezky napsat na papír, nebo do nějaké přehledné tabulky. Tam, kde to uvidíš, se k tomu můžeš vracet a odrazit se od toho. A zároveň uvidíš, jestli jsi na správné cestě, nebo jsi někde odbočila a je potřeba se vrátit.</p>
+      <p>Zní to jako hodně otázek najednou. Ale na začátku stačí pár základních bodů. Cesta i tvůj výrobek poroste společně s tebou.</p>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Vyber si jeden pilíř obsahu, který na svém profilu používáš nejméně, a tento týden vytvoř právě takový příspěvek. Sleduj, jak na něj budou lidé reagovat.</p>
+      </div>
+
+      <p class="article-ps">Sem patří i tato témata. Cenotvorba, viditelnost a vyprávění příběhu jdou ruku v ruce s tím, o čem jsme psaly tady. Přečti si také: <a href="brand-tvuj-pribeh.html">Tvůj brand, tvůj příběh</a>, <a href="jak-prestat-podhodnocovat.html">Jak přestat podhodnocovat svou práci</a> a <a href="prvni-zakaznice.html">První zákaznice</a>.</p>
+
+      <p class="sources">Zdroje: Pavel Procházka — Podcast Pavel Procházka, <a href="https://youtube.com/@podcastpavelprochazka" target="_blank" rel="noopener">YouTube</a> · <a href="https://seoconsult.cz" target="_blank" rel="noopener">Marketing na Instagramu a Facebooku, SEO Consult</a> · <a href="https://pruvodcepodnikanim.cz" target="_blank" rel="noopener">Sociální sítě v době moderního podnikání, ČSOB Průvodce podnikáním</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="instagram-ktery-te-vidi.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Instagram, který tě vidí</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš sdílet svůj marketingový pokrok s ostatními?</h3>
+      <p>V komunitě Rosteme spolu si navzájem pomáháme s viditelností, obsahem i odvahou to zkoušet.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
