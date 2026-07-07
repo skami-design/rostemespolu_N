@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Příležitostný příjem vs. živnost — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Do 50 000 Kč ročně bez daně — kdy je čas na živnost? Jak poznat rozdíl mezi příležitostným příjmem a podnikáním.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Příležitostný příjem vs. živnost — Rosteme spolu">
+  <meta property="og:description" content="Prodáš pár výrobků a ptáš se: musím to nějak řešit? Stačí pochopit dvě věci.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/prilezitostny-prijem-vs-zivnost.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* Signály — stacked list */
+    .signals { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.5rem 0; }
+    .signal { background: var(--white); padding: 1.2rem 1.6rem; }
+    .signal strong { color: var(--ink); font-weight: 600; display: block; margin-bottom: 0.2rem; font-size: 0.95rem; }
+    .signal p { margin: 0; font-size: 0.88rem; line-height: 1.7; color: var(--ink2); }
+
+    /* Srovnávací tabulka 3 sloupce */
+    .compare3 { width: 100%; border-collapse: collapse; border: 1px solid var(--border); margin: 2rem 0; font-size: 0.85rem; }
+    .compare3 th { font-family: var(--serif); font-weight: 600; font-size: 0.85rem; color: var(--ink); background: var(--pink-ll); padding: 0.9rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .compare3 th:first-child { background: var(--off); }
+    .compare3 td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.6; color: var(--ink2); }
+    .compare3 tr:last-child td { border-bottom: none; }
+    .compare3 td:first-child { font-weight: 600; color: var(--ink); background: var(--off); font-size: 0.82rem; }
+    .compare3 .ok { color: var(--green); font-weight: 600; }
+    .compare3 .warn { color: var(--pink); font-weight: 600; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.6rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; line-height: 1.7; }
+    .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .compare3 { font-size: 0.78rem; }
+      .compare3 th, .compare3 td { padding: 0.7rem 0.6rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Příležitostný příjem vs. živnost</span>
+    </div>
+
+    <span class="article-eyebrow">Začínám podnikat</span>
+    <h1 class="article-h1">Příležitostný příjem vs. živnost: do 50 000 Kč bez daně — kdy je čas na živnost?</h1>
+    <p class="article-lead">Prodáš pár výrobků, přijde první platba a najednou se ptáš: musím to nějak řešit? Nebo to ještě jde bez papírů?</p>
+
+    <div class="article-body">
+
+      <p>Tahle otázka přijde dřív, než čekáš — a nejčastěji přesně ve chvíli, kdy máš ruce plné výrobků, hlavu plnou nápadů a nulovou chuť řešit paragraf sedm zákona o daních z příjmů. Nemusíš být právník. Stačí pochopit dvě základní věci: kdy ještě není potřeba živnost — a kdy už ano.</p>
+
+      <h2>Co je příležitostný příjem a co ti dává</h2>
+      <p>Příležitostný příjem je přesně to, co zní — něco nahodilého. Jednou prodáš věnec na dveře sousedce, jindy ušiješ polštář kamarádce na přání. Nevyhledáváš zákazníky, neinzeruješ, nezakládáš si na tom byznys. Prostě se to stane. A zákon ti to v klidu nechá — pokud jsou celkové příjmy takhle za celý rok do 50 000 Kč, neplatíš daň ani nepodáváš přiznání.</p>
+      <p>A jako bonus: z příležitostného příjmu neplatíš ani zdravotní, ani sociální pojištění — a to bez ohledu na výši. Ověřeno, platí to i nad limitem 50 000 Kč, kde jinak daň odvádíš.¹</p>
+
+      <h2>Kde ta čára leží — a jak ji nepřekročit nevědomky</h2>
+      <p>Tady je ta část, kvůli které to celé čteš. Protože limit 50 000 Kč není jediné kritérium. Finanční úřad se dívá i na to, <em>jak</em> příjem vznikl — ne jen kolik ho bylo.</p>
+      <p>Pokud tvoje prodeje vykazují tyto znaky, může jít o podnikání bez živnosti, i když jsi pod limitem:</p>
+
+      <div class="signals">
+        <div class="signal">
+          <strong>Opakuješ to.</strong>
+          <p>Prodáváš každý měsíc, šiješ na zakázku pravidelně, hlídáš děti každý pátek. Soustavnost je klíčové slovo.</p>
+        </div>
+        <div class="signal">
+          <strong>Veřejně to nabízíš.</strong>
+          <p>Inzeruješ na Facebooku, máš profil na Instagramu s výrobky k prodeji, jsi na Fleru nebo Etsy. To jsou znaky podnikání.</p>
+        </div>
+        <div class="signal">
+          <strong>Aktivně sháníš zákazníky.</strong>
+          <p>Nestačí jen reagovat na poptávku — pokud zákaznice vyhledáváš, jde to do kolonky „podnikání".</p>
+        </div>
+      </div>
+
+      <div class="osobni-box">Na sebe můžu prásknou, že mám z těchhle věcí přirozený respekt — takže si zjistím info dopředu a snažím se jít po zelené. Šedá zóna mě fakt nestresuje méně než jasné pravidlo.</div>
+
+      <div class="article-callout">
+        <p>Věděly jste, že pokud prodáváte na Instagramu a zákaznice vám píšou do DM — <strong>i kdybyste si za rok vydělaly jen 20 000 Kč</strong> — pravděpodobně to není příležitostný příjem? Je to podnikání. A podnikání bez živnosti se nevyplácí.</p>
+      </div>
+
+      <h2>A co ten limit — co se stane, když ho překročím?</h2>
+      <p>Tady je záludnost, která je pro nás matoucí. Když v průběhu roku přesáhneš 50 000 Kč z příležitostných příjmů, nezdaníš jen tu část navíc — <strong>zdaníš celou částku od první koruny</strong>. Vydělala jsi 55 000 Kč? Daníš 55 000 Kč, ne jen těch 5 000 navíc.</p>
+      <p>Pak musíš podat daňové přiznání, i když jinak nejsi OSVČ. Daň z příjmu platíš. Sociální a zdravotní pojištění ale stále ne — to je plus příležitostného příjmu, které zůstává i nad limitem.</p>
+      <p>Přesně proto si to raději zmapuju dopředu. Překvapení v podobě daňového přiznání, které nečekám, je přesně ten typ věcí, co mě pak stojí víc energie než samotné papíry.</p>
+
+      <h2>Příležitostný příjem vs. živnost — přehled na jednom místě</h2>
+
+      <table class="compare3">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Příležitostný příjem</th>
+            <th>Živnost (OSVČ vedlejší)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Daň z příjmu</td>
+            <td>Do 50 000 Kč: žádná<br>Nad 50 000 Kč: platíš z celé částky</td>
+            <td>Platíš (nebo paušální daň)</td>
+          </tr>
+          <tr>
+            <td>Sociální pojištění</td>
+            <td><span class="ok">Neplatíš nikdy</span></td>
+            <td>Platíš (pokud překročíš rozhodný příjem)</td>
+          </tr>
+          <tr>
+            <td>Zdravotní pojištění</td>
+            <td><span class="ok">Neplatíš nikdy</span></td>
+            <td>Platíš</td>
+          </tr>
+          <tr>
+            <td>Daňové přiznání</td>
+            <td>Do 50 000 Kč: nepodáváš<br>Nad 50 000 Kč: podáváš</td>
+            <td>Podáváš (pokud příjem přesáhne 50 000 Kč)</td>
+          </tr>
+          <tr>
+            <td>Musí být nahodilé</td>
+            <td><span class="warn">Ano — podmínka</span></td>
+            <td><span class="ok">Ne — klidně každý den</span></td>
+          </tr>
+          <tr>
+            <td>Inzerce a profil na sítích</td>
+            <td><span class="warn">Problematické</span></td>
+            <td><span class="ok">V pořádku</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Kdy je tedy ten správný čas na živnost?</h2>
+      <p>Upřímná odpověď: dřív, než si myslíš. Živnost neznamená, že musíš hned vydělávat velké peníze nebo mít plný kalendář objednávek. Znamená, že podnikáš legálně — a to od chvíle, kdy se tvoje tvorba začne chovat jako byznys.</p>
+      <p>Tady jsou signály, že je čas zavolat na živnostenský úřad:</p>
+
+      <div class="signals">
+        <div class="signal">
+          <strong>Přijímáš objednávky opakovaně.</strong>
+          <p>I kdyby to bylo jen jednou za měsíc.</p>
+        </div>
+        <div class="signal">
+          <strong>Cítíš, že by ses k té hranici 50 000 Kč mohla přiblížit — nebo ji překročit.</strong>
+          <p>Lepší jednat preventivně než řešit zpětně.</p>
+        </div>
+        <div class="signal">
+          <strong>Chceš to rozvíjet.</strong>
+          <p>Záměr budovat byznys je sám o sobě znakem podnikání — i kdyby to teď bylo pomalinku.</p>
+        </div>
+      </div>
+
+      <div class="osobni-box">Já na sebe můžu prásknou, že jsem děsný poctivec. Mám z těchhle věcí přirozený respekt — zjistím si info dopředu, jdu po zelené a hlídám si, abych neklopýtla do šedé zóny nebo hůř. Možná trochu přes míru. Ale ten klid, který mi to dává? Za papírování u šálku čaje to stojí.</div>
+
+      <h2>A co pokuta, když to neřeším?</h2>
+      <p>Tohle nejraději zamlčujeme — protože to zní děsivě — ale je lepší to vědět. Podnikání bez živnosti, kdy splňuješ znaky soustavné činnosti, je přestupek. A sankce za volnou živnost bez oprávnění může dosáhnout až 500 000 Kč. Za řemeslnou nebo vázanou živnost ještě víc.</p>
+      <p>Není cílem tě strašit. Je cílem říct, že živnost je jednoduchá, rychlá a levná záležitost — a ochrana, kterou ti dá, je nesrovnatelně levnější než případná pokuta.</p>
+
+      <div class="article-callout">
+        <p><strong>Živnost ti dá klid.</strong> A klid je v podnikání při dětech jedna z nejvzácnějších věcí.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Projdi si za posledních 12 měsíců, kolik ti přišlo za výrobky nebo služby. A pak si upřímně odpověz na tři otázky: Nabízím to veřejně? Opakuje se to? Mám záměr v tom pokračovat?</p>
+        <p>Pokud je odpověď na dvě z nich „ano" — je čas se pobavit s živnostenským úřadem. Zavolej nebo zajdi, poradí ti zdarma.</p>
+      </div>
+
+      <p class="article-ps">Pokud tě tohle téma chytlo, přečti si taky <a href="zivnost-bez-strachu.html">Živnost bez strachu</a> — kde vysvětlujeme OSVČ, OSSZ a pojišťovnu v lidštině. A <a href="nez-se-vrhnete-na-urady.html">Než se vrhneš na úřady</a> — co si připravit ještě před první návštěvou živnostenského úřadu.</p>
+
+      <p class="sources">Zdroje: ¹ Zdravotní a sociální pojištění u příležitostného příjmu: <a href="https://fakturoid.cz" target="_blank" rel="noopener">Fakturoid.cz</a> a Dostupný advokát · Limit 50 000 Kč a zákonná definice příležitostného příjmu (§ 10 zákona č. 586/1992 Sb., o daních z příjmů): <a href="https://businessinfo.cz" target="_blank" rel="noopener">BusinessInfo.cz</a> · Sankce za podnikání bez živnostenského oprávnění: zákon č. 455/1991 Sb., o živnostenském podnikání</p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="podnikani-na-vedlejsi-cinnost.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Podnikání na vedlejší činnost</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Máš otázky k živnosti nebo příležitostnému příjmu?</h3>
+      <p>V komunitě Rosteme spolu si navzájem pomáháme i s administrativou. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
