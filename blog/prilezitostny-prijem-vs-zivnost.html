@@ -75,6 +75,7 @@
     .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
     .sources { font-size: 0.78rem; color: var(--muted); margin-top: 1rem; line-height: 1.7; }
     .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    .compare3 small { font-size: 0.75rem; color: var(--muted); }
     .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
     .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
     .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
@@ -183,7 +184,8 @@
           <tr>
             <th></th>
             <th>Příležitostný příjem</th>
-            <th>Živnost (OSVČ vedlejší)</th>
+            <th>Živnost vedlejší (OSVČ vedlejší)</th>
+            <th>Živnost hlavní (OSVČ hlavní)</th>
           </tr>
         </thead>
         <tbody>
@@ -191,30 +193,36 @@
             <td>Daň z příjmu</td>
             <td>Do 50 000 Kč: žádná<br>Nad 50 000 Kč: platíš z celé částky</td>
             <td>Platíš (nebo paušální daň)</td>
+            <td>Platíš (nebo paušální daň)</td>
           </tr>
           <tr>
             <td>Sociální pojištění</td>
             <td><span class="ok">Neplatíš nikdy</span></td>
-            <td>Platíš (pokud překročíš rozhodný příjem)</td>
+            <td>Neplatíš, pokud je zisk do 111 736 Kč ročně.<br>Nad tuto částku platíš.</td>
+            <td>Platíš vždy — min. zálohy<br><small>2026: min. 5 005 Kč/měsíc</small></td>
           </tr>
           <tr>
             <td>Zdravotní pojištění</td>
             <td><span class="ok">Neplatíš nikdy</span></td>
-            <td>Platíš</td>
+            <td>Neplatíš zálohy průběžně — doplatíš zpětně po přehledu</td>
+            <td>Platíš vždy — min. zálohy<br><small>2026: min. 3 143 Kč/měsíc</small></td>
           </tr>
           <tr>
             <td>Daňové přiznání</td>
-            <td>Do 50 000 Kč: nepodáváš<br>Nad 50 000 Kč: podáváš</td>
+            <td>Do 50 000 Kč: <span class="ok">nepodáváš</span><br>Nad 50 000 Kč: podáváš</td>
             <td>Podáváš (pokud příjem přesáhne 50 000 Kč)</td>
+            <td>Podáváš vždy</td>
           </tr>
           <tr>
             <td>Musí být nahodilé</td>
             <td><span class="warn">Ano — podmínka</span></td>
-            <td><span class="ok">Ne — klidně každý den</span></td>
+            <td>Ne</td>
+            <td>Ne</td>
           </tr>
           <tr>
             <td>Inzerce a profil na sítích</td>
             <td><span class="warn">Problematické</span></td>
+            <td><span class="ok">V pořádku</span></td>
             <td><span class="ok">V pořádku</span></td>
           </tr>
         </tbody>
@@ -255,7 +263,7 @@
         <p>Pokud je odpověď na dvě z nich „ano" — je čas se pobavit s živnostenským úřadem. Zavolej nebo zajdi, poradí ti zdarma.</p>
       </div>
 
-      <p class="article-ps">Pokud tě tohle téma chytlo, přečti si taky <a href="zivnost-bez-strachu.html">Živnost bez strachu</a> — kde vysvětlujeme OSVČ, OSSZ a pojišťovnu v lidštině. A <a href="nez-se-vrhnete-na-urady.html">Než se vrhneš na úřady</a> — co si připravit ještě před první návštěvou živnostenského úřadu.</p>
+      <p class="article-ps">Pokud tě tohle téma chytlo, přečti si taky <a href="zivnost-bez-strachu.html">Živnost bez strachu</a> — kde vysvětlujeme OSVČ, OSSZ a pojišťovnu v lidštině. <a href="podnikani-na-vedlejsi-cinnost.html">Podnikání na vedlejší činnost</a> ti pak řekne přesně, co vedlejší živnost obnáší v praxi. A <a href="nez-se-vrhnete-na-urady.html">Než se vrhneš na úřady</a> — co si připravit ještě před první návštěvou živnostenského úřadu.</p>
 
       <p class="sources">Zdroje: ¹ Zdravotní a sociální pojištění u příležitostného příjmu: <a href="https://fakturoid.cz" target="_blank" rel="noopener">Fakturoid.cz</a> a Dostupný advokát · Limit 50 000 Kč a zákonná definice příležitostného příjmu (§ 10 zákona č. 586/1992 Sb., o daních z příjmů): <a href="https://businessinfo.cz" target="_blank" rel="noopener">BusinessInfo.cz</a> · Sankce za podnikání bez živnostenského oprávnění: zákon č. 455/1991 Sb., o živnostenském podnikání</p>
 
