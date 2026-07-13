@@ -2,6 +2,7 @@
 <html lang="cs">
 <head>
   <meta charset="UTF-8">
+  <meta name="google-site-verification" content="GBWxB9JLnxFi2Q9zJ9gSAeNnG91HGtv_mCsW0yfDiP4">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rosteme spolu — Komunita žen v podnikání</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +86,8 @@
     .dropdown-menu a:hover { background: var(--pink-ll); color: var(--ink); }
 
     /* ── HAMBURGER ── */
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; outline: none; }
+    .hamburger:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; }
     .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
