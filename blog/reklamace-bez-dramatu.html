@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reklamace bez dramatu — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Jak zákaznici vyslechnout, vyřešit problém a přitom ji neztratit. HEART model pro handmade tvůrkyně.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Reklamace bez dramatu — Rosteme spolu">
+  <meta property="og:description" content="Způsob, jakým přistoupíš k reklamaci, rozhodne o tom, jestli zákaznice odejde — nebo se vrátí.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/reklamace-bez-dramatu.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* 3 potřeby */
+    .signals { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.5rem 0; }
+    .signal { background: var(--white); padding: 1.2rem 1.6rem; font-size: 0.95rem; line-height: 1.7; color: var(--ink2); }
+    .signal strong { color: var(--ink); }
+
+    /* HEART model */
+    .heart-model { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .heart-step { background: var(--white); display: grid; grid-template-columns: 3.5rem 1fr; }
+    .heart-letter { background: var(--pink-ll); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.8rem; font-weight: 600; color: var(--pink); }
+    .heart-content { padding: 1.4rem 1.6rem; }
+    .heart-title { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .heart-title span { font-weight: 400; color: var(--ink2); font-size: 0.88rem; }
+    .heart-content p { font-size: 0.88rem; line-height: 1.75; color: var(--ink2); margin: 0 0 0.6rem; }
+    .heart-content p:last-child { margin: 0; }
+    .heart-example { font-size: 0.85rem; line-height: 1.7; color: var(--ink); font-style: italic; background: var(--off); padding: 0.7rem 1rem; margin-top: 0.5rem; border-left: 2px solid var(--pink-l); }
+
+    /* Šablona */
+    .template-box { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin: 1.5rem 0; }
+    .template-box .template-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 1rem; }
+    .template-box p { font-size: 0.88rem; line-height: 1.9; color: var(--ink2); margin-bottom: 0.5rem; }
+    .template-box p:last-child { margin: 0; }
+    .template-box .placeholder { color: var(--green); font-style: italic; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.8; }
+    .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Reklamace bez dramatu</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím & rostu</span>
+    <h1 class="article-h1">Reklamace bez dramatu</h1>
+    <p class="article-lead">Způsob, jakým přistoupíš k reklamaci, rozhodne o tom, jestli zákaznice odejde — nebo se vrátí.</p>
+
+    <div class="article-body">
+
+      <p>Přijde zpráva. Zákaznice není spokojená. Možná se barva lišila od fotek. Možná výrobek dorazil poškozený přepravou. Možná jednoduše nečekala to, co dostala. V tu chvíli přijde první impuls — obhajovat se, vysvětlovat, proč za to vlastně nemůžeš. To je lidské. Ale není to to, co zákaznice potřebuje slyšet jako první.</p>
+      <p>Chyby se stávají. U malých tvůrkyň i u velkých značek. Problém není v tom, že uděláš chybu — problém je v tom, jak k tomu přistoupíš. Zákaznice, které dobře vyřešíš reklamaci, se k tobě vrátí. A navíc tě doporučí — protože ji to příjemně překvapilo. Zákaznice, které zlehčíš situaci nebo přijdeš studená a odtažitá — nejenže se nevrátí. Řekne to dalším.</p>
+      <p>A tady máš jako malá tvůrkyně obrovskou výhodu. Zákaznice tě zná. Vidí, kdo jsi. Ví, že za výrobkem stojí opravdový člověk — ne formulář, ne robot, ne call centrum s čekací dobou 47 minut. Když jí napíšeš ty, je to jiný rozhovor.</p>
+
+      <div class="osobni-box">Je dobré se naučit takovéto impulzivní věty prodýchat. Zákaznice přišla s problémem — a ne s obžalobou. A od toho se pak odvíjí celý rozhovor.</div>
+
+      <h2>Tři věci, na kterých zákaznici záleží nejvíc</h2>
+      <p>Než přijde řešení, přijde pocit. Výzkumy zákaznického chování ukazují, že zákaznice nejčastěji odcházejí nespokojené ne proto, že reklamace neprošla — ale proto, že se cítily nevyslyšené. Podle dostupných dat je s vyřízením reklamace spokojena jen polovina zákazníků — přestože zákon je splněn. Problém není v procesu. Je v přístupu.</p>
+
+      <div class="signals">
+        <div class="signal"><strong>Chci být vyslyšená</strong> — ne hned opravená, ne hned vysvětlená. Nejdřív vyslyšená.</div>
+        <div class="signal"><strong>Chci cítit, že ti na tom záleží</strong> — ne jako povinnost, ale jako skutečný zájem.</div>
+        <div class="signal"><strong>Chci vědět, co se stane dál</strong> — konkrétně, přehledně, bez nejasností.</div>
+      </div>
+
+      <h2>H.E.A.R.T. — pět kroků, které z reklamace udělají příležitost</h2>
+      <p>HEART model je osvědčený rámec zákaznického servisu — od malých podniků po velké korporace. Funguje proto, že respektuje jedno důležité pořadí: nejdřív člověk, pak řešení. Nejdřív pocit, pak proces. A právě tohle většina z nás v emočně vypjatém momentu přeskočí — rovnou na obhajobu nebo řešení, aniž by zákaznice vůbec pocítila, že ji slyšíme.</p>
+      <p>Piš tak, jak píšeš zákaznicím běžně — tvůj tón, tvůj styl.</p>
+
+      <div class="heart-model">
+        <div class="heart-step">
+          <div class="heart-letter">H</div>
+          <div class="heart-content">
+            <div class="heart-title">Hear <span>— Vyslechni</span></div>
+            <p>Dej zákaznici prostor, ať řekne vše, co potřebuje. Nepřerušuj, neobouhajuj se, nezačínej vysvětlovat. Nejdřív poslouchej. Aktivní naslouchání je nejlevnější investice do vztahu, jakou znám.</p>
+            <div class="heart-example">„Díky, žes mi napsala — jestli to chápu správně, barva nesedí tomu, cos čekala?"</div>
+          </div>
+        </div>
+        <div class="heart-step">
+          <div class="heart-letter">E</div>
+          <div class="heart-content">
+            <div class="heart-title">Empathize <span>— Vcítit se</span></div>
+            <p>Pojmenuj, co zákaznice cítí. Ne obecně — konkrétně. Zákaznice potřebuje vědět, že ji vidíš jako člověka, ne jako číslo objednávky.</p>
+            <div class="heart-example">„To musí být hrozně zklamání, zvlášť když ses na to těšila."</div>
+          </div>
+        </div>
+        <div class="heart-step">
+          <div class="heart-letter">A</div>
+          <div class="heart-content">
+            <div class="heart-title">Apologize <span>— Omluvit se</span></div>
+            <p>Upřímná omluva neznamená, že přiznáváš vinu. Znamená, že ti záleží na tom, jak se zákaznice cítí. Omluva bez výmluv deeskaluje napětí rychleji než jakékoliv vysvětlení.</p>
+            <div class="heart-example">„Mrzí mě tvá špatná zkušenost — je mi to líto a věřím, že tě tahle situace stresuje."</div>
+          </div>
+        </div>
+        <div class="heart-step">
+          <div class="heart-letter">R</div>
+          <div class="heart-content">
+            <div class="heart-title">Resolve <span>— Vyřeš to</span></div>
+            <p>Teprve teď přichází řešení. Nabídni konkrétní možnosti — ne vágní „nějak to vyřešíme." A pokud můžeš, zeptej se zákaznice, co by jí pomohlo nejvíc. Lidé ocení, když mají možnost volby.</p>
+            <div class="heart-example">„Co by ti teď nejvíc pomohlo — vrátím ti peníze, nebo ráda udělám nový kus přesně podle toho, cos měla na mysli?"</div>
+          </div>
+        </div>
+        <div class="heart-step">
+          <div class="heart-letter">T</div>
+          <div class="heart-content">
+            <div class="heart-title">Thank <span>— Poděkuj</span></div>
+            <p>Zákaznice, která si dala práci a napsala ti, ti dala cennou zpětnou vazbu. Poděkuj za to upřímně — je to malý krok, který přirozeně uzavírá rozhovor a zanechává dobrý pocit na obou stranách.</p>
+            <div class="heart-example">„Díky moc za tvoji zprávu. Zpětná vazba je pro mě důležitá — hlavně proto, že mi pomáhá najít místa pro zlepšení."</div>
+          </div>
+        </div>
+      </div>
+
+      <p>Je dobré si podobné odpovědi nejdřív napsat — a teprve pak odeslat. V momentě napětí nás první impuls málokdy poslouží dobře.</p>
+
+      <h2>Vyjít vstříc, nebo si stát za svým?</h2>
+      <p>Tahle otázka se dá rozdělit do dvou situací.</p>
+      <p><strong>Pochybení je jasné</strong> — výrobek přišel poškozený, barva nesedí popisu, chyba je na tvé straně. Tady není co řešit. Vyjdi vstříc rychle a bez diskuze. Zákaznice to ocení víc, než si myslíš, a pravděpodobně se vrátí. Výrobek, který vyměníš nebo vrátíš, tě stojí méně než zákaznice, která odejde naštvaná a řekne to třem kamarádkám.</p>
+      <p><strong>Pochybení není jasné</strong> — zákaznice čekala něco jiného, ale výrobek odpovídá popisu. Nebo chce vrátit výrobek na míru, který jsi vyrobila přesně podle domluvy. Tady máš právo si stát za svým. Ale i tady platí — tón a způsob, jakým to řekneš, rozhodne o tom, jak si tě zákaznice bude pamatovat. Lze říct „ne" a přitom být lidská.</p>
+
+      <div class="article-callout">
+        <p>Co je vždy lepší pro tvou značku: <strong>rychlé a vstřícné řešení, i když za to zaplatíš trochu víc, než tuhé trvání na svém.</strong> Jedna nespokojená zákaznice, která svůj příběh sdílí dál, může odradit zákaznice, které by si tě jinak oblíbily.</p>
+      </div>
+
+      <h2>A co zákon říká?</h2>
+      <p>Právní rámec je dobrý mít v hlavě — ne proto, aby tě strašil, ale proto, abys věděla, kde stojíš.</p>
+      <p>Ze zákona máš jako prodávající odpovědnost za vady po dobu <strong>24 měsíců</strong> od převzetí zboží zákaznicí (§ 2165 občanského zákoníku). Pokud zákaznice reklamuje vadu do <strong>6 měsíců</strong> od převzetí, předpokládá se, že zboží bylo vadné už při převzetí — důkazní břemeno leží na tobě. Po 6 měsících je to naopak — zákaznice musí vadu prokázat ona.</p>
+      <p>Vlastní reklamační řád si nastavit můžeš — ale nesmí být horší než zákon. A na vyřízení reklamace máš ze zákona <strong>30 dní</strong> — ale první odpověď zákaznice čeká mnohem dřív. Rychlá první reakce je cennější než dokonalé řešení za tři týdny.</p>
+
+      <div class="article-callout">
+        <p><strong>Zákon je minimum. Dobrá praxe je víc.</strong> Zákaznice, které vyjdeš vstříc nad rámec povinnosti — rychlejší řešení, malé gesto navíc, upřímné slovo — se vrátí. A to má dlouhodobě větší hodnotu než cena jednoho výrobku.</p>
+      </div>
+
+      <h2>Šablona zprávy — připravená na každou situaci</h2>
+      <p>Mít připravenou šablonu neznamená, že komunikuješ neosobně. Znamená to, že v momentě, kdy přijde neočekávaná zpráva, nemusíš přemýšlet od nuly — a nezareaguješ z první emoce. Šablona je kostra. Osobní tón je to, co tam přidáš ty.</p>
+
+      <div class="template-box">
+        <span class="template-label">Šablona odpovědi na reklamaci</span>
+        <p>Ahoj <span class="placeholder">[jméno]</span>,</p>
+        <p>díky, že jsi mi napsala — a je mi líto, že to takhle dopadlo.</p>
+        <p>Chápu, jak musíš být zklamaná, a tohle rozhodně není zážitek, který jsem ti chtěla dát.</p>
+        <p>Ráda bych to napravila — <span class="placeholder">[vrácení peněz / výroba nového kusu / sleva na příští objednávku]</span>.</p>
+        <p>Co by ti teď pomohlo nejvíc?</p>
+        <p>Díky za trpělivost a za to, že sis dala práci mi napsat.</p>
+        <p><span class="placeholder">[Tvoje jméno]</span></p>
+      </div>
+
+      <p>Šablonu si ulož do poznámek v telefonu nebo do uložených odpovědí v DM. Přizpůsob ji situaci — přidej konkrétní detail, změň tón podle toho, jak zákaznici znáš. Ale základ máš vždy připravený.</p>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Napiš si svou verzi šablony odpovědi na reklamaci. Nemusí být dokonalá — musí být tvoje. Ulož ji.</p>
+        <p>Možná tu šablonu nikdy nebudeš potřebovat. Ale až ten den přijde, budeš ráda, že jsi ji napsala v klidu a ne ve stresu.</p>
+      </div>
+
+      <p class="article-ps">Jak nastavit komunikaci od prvního dotazu po doručení, najdeš v článku <a href="system-objednavek.html">Systém objednávek a komunikace</a>. A jak si zákaznice udržet dlouhodobě — v <a href="proc-komunita-porazi-feed.html">Proč komunita poráží perfektní feed</a>.</p>
+
+      <p class="sources">Zdroje: How to Handle Customer Complaints with the HEART Method — Herth Solutions · The H.E.A.R.T. Customer Service Method — Customer Service Manager Magazine · Záruční doba podle občanského zákoníku — <a href="https://az-legal.cz" target="_blank" rel="noopener">AZ Legal</a> · Reklamační řád pro e-shopy — <a href="https://muj-pravnik.cz" target="_blank" rel="noopener">Můj-právník.cz</a> · Zákonná záruka v českém právním řádu — <a href="https://epravo.cz" target="_blank" rel="noopener">ePrávo.cz</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="system-objednavek.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Systém objednávek a komunikace</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Řešila jsi reklamaci a nevěděla jak na to?</h3>
+      <p>V komunitě Rosteme spolu sdílíme i tyhle situace — bez souzení, s konstruktivní pomocí.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
