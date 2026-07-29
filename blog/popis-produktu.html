@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popis produktu, který prodává — Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Přestaň psát co věc je — začni psát co přinese. Jak napsat popis produktu, který zákaznici přiměje kliknout na koupit.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Popis produktu, který prodává — Rosteme spolu">
+  <meta property="og:description" content="Přestaň psát co věc je — začni psát co přinese.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/popis-produktu.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* Srovnávací tabulka */
+    .compare-vp { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .compare-vp-header { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+    .compare-vp-header div { padding: 0.7rem 1.2rem; font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+    .compare-vp-header .col-v { background: var(--pink-ll); color: var(--ink2); }
+    .compare-vp-header .col-p { background: var(--green-l); color: var(--green); }
+    .compare-vp-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+    .compare-vp-row div { background: var(--white); padding: 1rem 1.2rem; font-size: 0.88rem; line-height: 1.7; color: var(--ink2); }
+    .compare-vp-row .col-p { color: var(--ink); font-style: italic; }
+    .compare-vp-label { padding: 0.5rem 1.2rem; background: var(--off); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    /* Kroky */
+    .steps { display: flex; flex-direction: column; gap: 1.8rem; margin: 1.5rem 0; }
+    .step { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: start; }
+    .step-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: var(--pink-l); line-height: 1; padding-top: 0.1rem; }
+    .step-content h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .step-content p { font-size: 0.92rem; line-height: 1.85; color: var(--ink2); margin: 0; }
+
+    /* Techniky */
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    /* Checklist */
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-formula { background: var(--pink-ll); padding: 1.4rem 1.8rem; margin: 1.5rem 0; border-left: 2px solid var(--pink); font-size: 0.9rem; color: var(--ink2); line-height: 1.8; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.8; }
+    .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .compare-vp-header, .compare-vp-row { grid-template-columns: 1fr; }
+      .compare-vp-row .col-v { border-bottom: 1px solid var(--border); }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Popis produktu, který prodává</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím & rostu</span>
+    <h1 class="article-h1">Popis produktu, který prodává</h1>
+    <p class="article-lead">Přestaň psát co věc je — začni psát co přinese.</p>
+
+    <div class="article-body">
+
+      <p>Sedíš před prázdným polem a nevíš, co napsat. Výrobek znáš nazpaměť — každý steh, každý detail, každý materiál. Ale jak to říct tak, aby to zákaznici přimělo kliknout na koupit?</p>
+      <p>Tohle je moment, kdy většina tvůrkyň napíše: „Háčkovaný košík z bavlněné šňůry, průměr 25 cm, výška 15 cm, béžová barva." Technicky správně. Ale zákaznice to nechytí za srdce. Protože popis říká, co košík <em>je</em> — ale neříká, co <em>přinese</em>. Přitom právě tam je zakopaný pes.</p>
+
+      <div class="osobni-box">Já si při psaní popisu vždycky položím jednu otázku: kdyby mi zákaznice zavolala a zeptala se, proč právě tenhle výrobek, co bych jí odpověděla? A většinou zjistím, že nemluvím o materiálu ani rozměrech. Mluvím o tom, co jí ten výrobek přinese.</div>
+
+      <h2>Proč zákaznice kupuje emocí — a rozumem si to jen potvrdí</h2>
+      <p>Profesor Gerald Zaltman z Harvard Business School ve svém výzkumu prokázal, že až 95 % nákupních rozhodnutí se odehrává v podvědomí. Zákaznice si racionální argumenty netvoří před nákupem — tvoří si je až zpětně, aby si obhájila emoci, která nákup reálně spustila. Jinými slovy: nejdřív pocítí, pak koupí. A teprve pak si řekne proč.</p>
+      <p>Co to znamená pro popis produktu? Že výčet parametrů zákaznici nepřesvědčí. Přesvědčí ji obraz — jak se bude cítit, až ho bude mít doma. Co si s ním udělá. Jak ho ukáže. Jak zjednoduší její den nebo zpříjemní chvíli, na kterou se těší.</p>
+
+      <div class="article-callout">
+        <p><strong>Zákaznice kupuje emoci. Logika přijde až potom</strong> — jako potvrzení správného rozhodnutí. Proto popis, který osloví pocity dřív než rozum, prodává. A proto výčet rozměrů a materiálů sám o sobě nestačí.</p>
+      </div>
+
+      <h2>Vlastnosti versus přínosy — nejčastější past</h2>
+      <p>V marketingu se tomuhle říká přechod od vlastností k přínosům. Vlastnosti popisují produkt. Přínosy popisují zákaznici — co dostane, co pocítí, jak se změní její situace. Vlastnosti jsou o tobě. Přínosy jsou o ní.</p>
+      <p>Trik, který ti pomůže přejít od jednoho ke druhému, je jednoduchý: za každou vlastností se zeptej <strong>„a co z toho?"</strong> Bavlněná šňůra — a co z toho? Je měkká na dotek a bezpečná pro miminko. Průměr 25 cm — a co z toho? Vejde se do ní vše, co potřebuješ mít po ruce. Béžová barva — a co z toho? Sedí k čemukoliv a neruší interiér.</p>
+
+      <div class="compare-vp">
+        <div class="compare-vp-header">
+          <div class="col-v">Vlastnosti</div>
+          <div class="col-p">Přínosy</div>
+        </div>
+        <div class="compare-vp-label">Košík</div>
+        <div class="compare-vp-row">
+          <div class="col-v">Háčkovaný košík z bavlněné šňůry. Průměr 25 cm, výška 15 cm. Béžová barva.</div>
+          <div class="col-p">Košík, do kterého se vejde všechno, co potřebuješ mít po ruce — a přitom vypadá tak dobře, že ho nebudeš chtít schovat.</div>
+        </div>
+        <div class="compare-vp-label">Svíčka</div>
+        <div class="compare-vp-row">
+          <div class="col-v">Sójová svíčka s vůní levandule. Objem 200 ml, doba hoření 40 hodin. Ručně litá.</div>
+          <div class="col-p">Čtyřicet hodin ticha, levandulového vzduchu a pocitu, že sis ten večer konečně vyhradila pro sebe.</div>
+        </div>
+        <div class="compare-vp-label">Náušnice</div>
+        <div class="compare-vp-row">
+          <div class="col-v">Pozlacené náušnice s přírodním kamenem. Délka 4 cm, rhodiovaná základna.</div>
+          <div class="col-p">Náušnice, které dodají outfitu šmrnc bez toho, aniž bys musela cokoliv dalšího řešit. Jeden detail, který změní celý look.</div>
+        </div>
+      </div>
+
+      <p>Všechny tři ukázky popisují stejné výrobky. Ale jen jedna verze zákaznici přiměje číst dál — a přemýšlet, jestli ji objedná.</p>
+
+      <h2>Jak popis strukturovat</h2>
+      <p>Dobrý popis produktu má jasné pořadí: nejdřív pocit, pak argument, pak detail. Zákaznice ho přečte, pokud ji přirozeně vede — od háčku přes přínos až po technické info, které si pak ověří.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Začni přínosem, ne popisem</h3>
+            <p>První věta je nejdůležitější — zákaznice se v ní má poznat, nebo pocítit, že tohle je přesně to, co hledala. Ne „košík z bavlny," ale „místo pro věci, které jsou vždy po ruce."</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Přidej smyslové detaily</h3>
+            <p>Zákaznice si výrobek nemůže osahat. Ty jí to musíš zprostředkovat slovy. Jak se drží v ruce? Jak voní? Je to lehké nebo robustní? Slova jako hebký, pevný, vzdušný, přírodní dělají víc práce než technické parametry.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Řekni, pro koho to je</h3>
+            <p>Čím konkrétnější, tím lépe. „Skvělý dárek" neznamená nic. „Ideální pro maminku, která si přeje klidný ranní rituál" — to zákaznici vtáhne přímo do situace.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h3>Doplň praktické informace</h3>
+            <p>Rozměry, materiál, způsob údržby, dostupné varianty. Tohle patří na konec — zákaznice, která se rozhoduje, si to pak snadno najde. Na začátku místo přínosu ale rozhodně ne.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-formula">
+        Délka popisu — neexistuje jedno správné číslo. Platí ale, že popis má být tak dlouhý, jak je potřeba, a ani o slovo víc. U jednoduchých výrobků stačí 3–4 věty. U komplexnějších nebo dražších klidně několik odstavců. Zákaznice čte, pokud ji to drží — a přestane číst, jakmile se začne nudit.
+      </div>
+
+      <h2>Tvůj hlas je tvoje výhoda</h2>
+      <p>V době, kdy internet přetéká AI-generovaným obsahem, je autentický lidský hlas jedna z mála věcí, která zákaznici zastaví. Zákaznice nekupuje jen výrobek — kupuje způsob, jakým přemýšlíš o tvorbě. Tvůj přístup, tvůj příběh, tvoji péči o detail, kterou žádný stroj nenapodobí.</p>
+      <p>To neznamená, že musíš do každého popisu psát autobiografii. Ale popis má znít jako ty — ne jako generický e-shop. Pokud každý kus vzniká ručně bez použití forem, pokud používáš přízi z malé přádelny, pokud liješ svíčky v noci při svíčce — tohle jsou detaily, které zákaznici přibližují tvůj svět. A to prodává.</p>
+
+      <div class="osobni-box">Já sama vždycky poznám, když popis píšu moc správně. Většinou ho pak ještě jednou otevřu a přepíšu tak, jako bych výrobek ukazovala kamarádce. A skoro pokaždé je ta druhá verze lepší.</div>
+
+      <div class="article-callout">
+        <p><strong>Zákaznice si popis přečte jednou. Pocit, který v ní zanechá, si nese dál.</strong></p>
+      </div>
+
+      <h2>Co dělat, když zní popis stejně jako všichni ostatní</h2>
+      <p>Otevři tři profily podobných tvůrkyň a přečti si jejich popisky. Vsadím se, že v každém najdeš „ručně vyrobeno s láskou," „originální výrobek" nebo „perfektní dárek." Tohle jsou věty, které zákaznice přestala vnímat — protože je vidí všude.</p>
+      <p>Odlišení nemusí být dramatické. Stačí být konkrétní tam, kde ostatní jsou obecní. Místo „vyrobeno s láskou" napiš „každý kus vzniká ručně od začátku do konce — žádné šablony, žádné formy." Místo „originální výrobek" napiš „dvě úplně stejné nenajdeš — a to záměrně."</p>
+
+      <div class="article-callout">
+        <p><strong>Konkrétnost buduje důvěru. Obecnost ji maže.</strong></p>
+      </div>
+
+      <h2>Nástroje, které ti psaní ulehčí</h2>
+      <p>Než začneš psát, zkus si odpovědět na tři otázky: Komu prodávám? Co ten člověk v tuto chvíli řeší nebo hledá? A jak mu můj výrobek udělá život o trochu lepší, jednodušší nebo hezčí? Teprve pak začni psát — a začni přínosem, ne popisem.</p>
+
+      <div class="technika">
+        <span class="technika-label">Test „A co z toho?"</span>
+        <p>Za každou vlastností se zeptej: a co z toho zákaznice má? Bavlna → hebká a bezpečná. Ruční výroba → žádné dvě stejné. Přírodní vosk → čistší vzduch a delší hoření. Tohle je tvůj přínos.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Obrázek v hlavě</span>
+        <p>Napiš popis tak, aby si zákaznice výrobek dokázala představit ve svém životě. Ne na fotce — ve svém obýváku, na svém pultu, ve svých rukou. Čím konkrétnější obraz, tím silnější touha.</p>
+      </div>
+
+      <div class="osobni-box">Než dám popis ven, přečtu si první dvě věty ještě jednou. Když nemám sama chuť pokračovat dál, vím, že potřebují přepsat.</div>
+
+      <div class="checklist">
+        <span class="checklist-label">Checklist před zveřejněním</span>
+        <ul>
+          <li>Říká první věta zákaznici, co pro ni výrobek udělá — nebo jen co je?</li>
+          <li>Obsahuje popis aspoň jedno smyslové slovo (hebký, vzdušný, pevný, teplý…)?</li>
+          <li>Je jasné, pro koho výrobek je nebo k jaké příležitosti se hodí?</li>
+          <li>Jsou praktické informace (rozměry, materiál, péče) přítomné — ale ne na začátku?</li>
+          <li>Zní to jako ty — nebo jako generický e-shop?</li>
+        </ul>
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Vyber jeden výrobek, který máš zveřejněný. Přečti si jeho popis a zeptej se za každou větou: „a co z toho zákaznice má?" Pak přepiš první dvě věty. Jen dvě.</p>
+        <p>Nemusíš dnes přepisovat celý e-shop. Vyber jeden výrobek — a uvidíš, jak jinak se na něj začneš dívat.</p>
+      </div>
+
+      <p class="article-ps">Jak o sobě mluvit tak, aby zákaznice věděla, kdo jsi — to najdeš v článku <a href="brand-tvuj-pribeh.html">Tvůj brand, tvůj příběh</a>. A jak zákaznici získat a udržet přes Instagram — v <a href="instagram-ktery-te-vidi.html">Instagram, který tě vidí</a>.</p>
+
+      <p class="sources">Zdroje: <a href="https://shoptet.cz" target="_blank" rel="noopener">Jak napsat popisek pro e-shop — Shoptet Blog</a> · <a href="https://vceliste.cz" target="_blank" rel="noopener">Jak na copywriting e-shopu — Včeliště</a> · <a href="https://ecommerce-bridge.cz" target="_blank" rel="noopener">Proč při nakupování vyhrává podvědomí — Ecommerce Bridge</a> · <a href="https://liveagent.cz" target="_blank" rel="noopener">Psychologie zákazníka — LiveAgent</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="reklamace-bez-dramatu.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Reklamace bez dramatu</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš sdílet popis s ostatními tvůrkyněmi?</h3>
+      <p>V komunitě Rosteme spolu si navzájem dáváme zpětnou vazbu — i na popisky. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
