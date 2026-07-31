@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finanční plán na první rok podnikání - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Kolik potřebuješ vydělat, aby to dávalo smysl? Jak spočítat bod zvratu, sestavit finanční plán a nenechat se zaskočit odvody v prvním roce podnikání.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Finanční plán na první rok podnikání - Rosteme spolu">
+  <meta property="og:description" content="Kolik potřebuješ vydělat, aby to dávalo smysl?">
+  <link rel="canonical" href="https://rostemespolu.site/blog/financni-plan.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* Srovnávací tabulka */
+    .compare-vp { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .compare-vp-col { display: flex; flex-direction: column; background: var(--border); gap: 1px; }
+    .compare-vp-col-header { padding: 0.7rem 1.2rem; font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
+    .compare-vp-col-header.col-v { background: var(--pink-ll); color: var(--ink2); }
+    .compare-vp-col-header.col-p { background: var(--green-l); color: var(--green); }
+    .compare-vp-col-content { background: var(--white); padding: 1rem 1.2rem; font-size: 0.88rem; line-height: 1.7; color: var(--ink2); flex: 1; }
+    .compare-vp-col-content.col-p { color: var(--ink); font-style: italic; }
+    .compare-vp-label { padding: 0.5rem 1.2rem; background: var(--off); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    /* Tabulka výdajů */
+    .fin-table { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .fin-table-header { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1px; background: var(--border); }
+    .fin-table-header div { background: var(--off); padding: 0.7rem 1.2rem; font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .fin-table-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1px; background: var(--border); }
+    .fin-table-row div { background: var(--white); padding: 0.8rem 1.2rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); }
+    .fin-table-row div:last-child { color: var(--ink); font-weight: 600; text-align: right; }
+    .fin-table-row.total div { background: var(--pink-ll); font-weight: 700; color: var(--ink); }
+
+    /* Kroky */
+    .steps { display: flex; flex-direction: column; gap: 1.8rem; margin: 1.5rem 0; }
+    .step { display: grid; grid-template-columns: 2.5rem 1fr; gap: 1rem; align-items: start; }
+    .step-num { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: var(--pink-l); line-height: 1; padding-top: 0.1rem; }
+    .step-content h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .step-content p { font-size: 0.92rem; line-height: 1.85; color: var(--ink2); margin: 0; }
+
+    /* Techniky */
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    /* Checklist */
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-formula { background: var(--pink-ll); padding: 1.4rem 1.8rem; margin: 1.5rem 0; border-left: 2px solid var(--pink); font-size: 0.9rem; color: var(--ink2); line-height: 1.8; }
+    .article-warning { background: #FBEFEA; border-left: 2px solid #C97A5A; padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .article-warning span.warning-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C97A5A; display: block; margin-bottom: 0.6rem; }
+    .article-warning p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.8; }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .fin-table-header, .fin-table-row { grid-template-columns: 1fr; }
+      .fin-table-row div:last-child { text-align: left; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .compare-vp { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Finanční plán na první rok podnikání</span>
+    </div>
+
+    <span class="article-eyebrow">Začínám podnikat</span>
+    <h1 class="article-h1">Finanční plán na první rok podnikání</h1>
+    <p class="article-lead">Kolik potřebuješ vydělat, aby to dávalo smysl?</p>
+
+    <div class="article-body">
+
+      <p>Nejdřív to byl jen koníček. Pak přišla odvaha, první fotka, první příspěvek, první objednávka. A&nbsp;potom další a&nbsp;další - a&nbsp;najednou máš pocit, že se to opravdu rozjíždí.</p>
+      <p>Jenže o pár týdnů nebo měsíců později sedíš nad výpisem z&nbsp;účtu a&nbsp;něco ti nesedí. Objednávky přece byly. Peníze přišly. Tak kam se poděly? A&nbsp;právě tady většina začínajících podnikatelek zjistí, že prodávat a&nbsp;vydělávat nejsou vždycky totéž.</p>
+      <p>Do té chvíle všechno dává smysl. A&nbsp;pak přijde kalkulačka. Právě tam začínají problémy - ne proto, že by byl byznys špatný, ale proto, že čísla nebyla od začátku jasně pojmenovaná. Kolik mě podnikání skutečně stojí? Kolik musím vydělat, abych aspoň vyšla? A&nbsp;jak si sestavit plán, když ještě nevím, kolik zákaznic přijde?</p>
+      <p>Tohle jsou otázky, které řeší skoro každá začínající podnikatelka. A&nbsp;dobrá zpráva je, že odpovědi nejsou složité - jen je potřeba si je říct nahlas a&nbsp;sepsat.</p>
+
+      <h2>Proč finanční plán potřebuješ - i&nbsp;když se ti teď zdá zbytečný</h2>
+      <p>Většina začínajících podnikatelek finanční plán nemá. Ne proto, že by byly nezodpovědné - ale proto, že i&nbsp;když se o něm mluví, většinou zůstane u&nbsp;obecných rad, a&nbsp;ta osobní kalkulace, co to pro mě konkrétně znamená, zůstane nevyřčená. Finanční plán zní jako něco pro velké firmy s&nbsp;účetním oddělením. Ale ve skutečnosti je to jen jeden list papíru s&nbsp;odpovědí na tři otázky: kolik mě to stojí, kolik potřebuji vydělat a&nbsp;co budu dělat, když se to nepovede.</p>
+      <p>Když člověk začne všechna ta čísla psát na jedno místo, často zjistí, že nejsou tak děsivá, jak vypadala v&nbsp;hlavě. Mnohem horší než nepřesný plán bývá žádný plán.</p>
+
+      <div class="article-callout">
+        <p><strong>Finanční plán není nástroj kontroly. Je to nástroj klidu.</strong> Dává ti přehled - a&nbsp;přehled ti dává svobodu rozhodovat se lépe.</p>
+      </div>
+
+      <p>Znám tvůrkyně, které prodávají aktivně, mají plný inbox - a&nbsp;přesto na konci měsíce neví, kde jsou peníze. Ne proto, že by utrácely zbytečně. Ale proto, že nikdy nepočítaly s&nbsp;tím, kolik z&nbsp;každé objednávky reálně zbyde po odečtení materiálu, balení, odvodů a&nbsp;rezervy na daň. Finanční plán tohle zviditelní.</p>
+
+      <h2>Nejdřív si spočítej, co tě podnikání bude stát</h2>
+      <p>Než začneš plánovat příjmy, potřebuješ vědět, jaké jsou tvoje výdaje. A&nbsp;tady většina začátečnic udělá první chybu - zapomenou na odvody. Ty jsou přitom jedna z&nbsp;největších položek rozpočtu začínající OSVČ.</p>
+      <p>Jako OSVČ platíš každý měsíc zdravotní a&nbsp;sociální pojištění, a&nbsp;to bez ohledu na to, kolik jsi v&nbsp;daném měsíci vydělala. I&nbsp;v&nbsp;měsíci, kdy nepřijde ani jedna objednávka, odvody běží. Jejich výše závisí na tom, zda podnikáš jako hlavní nebo vedlejší činnost, a&nbsp;mění se každý rok - aktuální čísla vždy najdeš přímo na webu ČSSZ nebo své zdravotní pojišťovny.</p>
+
+      <div class="compare-vp">
+        <div class="compare-vp-col">
+          <div class="compare-vp-col-header col-v">Hlavní činnost</div>
+          <div class="compare-vp-col-content col-v">Podnikání je tvůj primární zdroj příjmů. Platíš minimální zálohy na zdravotní i&nbsp;sociální pojištění od prvního měsíce - odvody se pohybují v&nbsp;řádu několika tisíc korun měsíčně.</div>
+        </div>
+        <div class="compare-vp-col">
+          <div class="compare-vp-col-header col-p">Vedlejší činnost</div>
+          <div class="compare-vp-col-content col-p">Podnikáš při zaměstnání, na mateřské nebo rodičovské, nebo studuješ. Zdravotní pojištění za tebe hradí zaměstnavatel nebo stát, takže zálohy neplatíš. Sociální platíš, jen když roční zisk překročí limit.</div>
+        </div>
+      </div>
+
+      <p>Dobrá zpráva pro začínající v&nbsp;hlavní činnosti: v&nbsp;prvních dvou letech podnikání máš nárok na snížené zálohy na sociální pojištění, takže ušetříš řádově stovky korun měsíčně.</p>
+      <p>K&nbsp;odvodům připočítej ještě daň z&nbsp;příjmu - 15 % ze zisku po odečtení výdajů. Ta se neplatí měsíčně, ale jednorázově na jaře za předchozí rok. Mnoho začátečnic na ni zapomene průběžně šetřit - a&nbsp;na jaře ji pak musí zaplatit najednou.</p>
+
+      <div class="technika">
+        <span class="technika-label">Dobrá praxe</span>
+        <p>Odkládej si na daň průběžně - klidně 15–20 % z&nbsp;každé přijaté platby stranou na samostatný účet. Pak tě v&nbsp;dubnu nic nepřekvapí.</p>
+      </div>
+
+      <p>Odvody jsou povinná část. Ale podnikání má i&nbsp;další náklady, které se lehce přehlédnou, dokud nepřijde faktura:</p>
+
+      <div class="fin-table">
+        <div class="fin-table-header">
+          <div>Položka</div>
+          <div>Orientační částka / měsíc</div>
+        </div>
+        <div class="fin-table-row"><div>Zdravotní pojištění</div><div>dle roku a&nbsp;typu činnosti <sup>1</sup></div></div>
+        <div class="fin-table-row"><div>Sociální pojištění</div><div>dle roku a&nbsp;typu činnosti <sup>1</sup></div></div>
+        <div class="fin-table-row"><div>Materiál a&nbsp;suroviny</div><div>dle oboru</div></div>
+        <div class="fin-table-row"><div>Balení a&nbsp;expedice</div><div>dle oboru</div></div>
+        <div class="fin-table-row"><div>Účetnictví / software</div><div>300–800 Kč</div></div>
+        <div class="fin-table-row"><div>Marketing (reklama, fotky…)</div><div>dle plánu</div></div>
+        <div class="fin-table-row"><div>Poplatky platformy (Fler, e-shop…)</div><div>dle platformy</div></div>
+        <div class="fin-table-row"><div>Rezerva na daň z&nbsp;příjmu</div><div>~15 % ze zisku</div></div>
+        <div class="fin-table-row total"><div>Minimální fixní měsíční výdaje</div><div>od několika tisíc Kč výš</div></div>
+      </div>
+
+      <p>Není potřeba trefit každou částku na korunu přesně. Finanční plán není smlouva - je to pracovní mapa, která se bude s&nbsp;podnikáním postupně zpřesňovat.</p>
+
+      <h2>Kolik musíš vydělat, aby to dávalo smysl?</h2>
+      <p>Teď přichází ta klíčová otázka. Říká se jí bod zvratu - moment, kdy příjmy pokryjí všechny výdaje a&nbsp;ty začneš skutečně vydělávat. Pod touto hranicí prodáváš de facto se ztrátou nebo na nulu.</p>
+      <p>Výpočet je jednoduchý. Sečti všechny fixní měsíční náklady (odvody + provoz + rezerva na daň) a&nbsp;přidej variabilní náklady na jeden prodaný výrobek nebo službu. Výsledek je minimální příjem, který potřebuješ každý měsíc pokrýt.</p>
+
+      <div class="article-formula">
+        <strong>Příklad výpočtu - tvůrkyně šperků (orientační, čísla jsou ilustrativní)</strong><br><br>
+        Fixní měsíční náklady: odvody 6 562 Kč + účetnictví 500 Kč + poplatky platformy 300 Kč = <strong>7 362 Kč</strong><br>
+        Variabilní náklady na jeden náhrdelník: materiál 120 Kč + balení 30 Kč, náhrdelník se prodává za 590 Kč → zisk na kus <strong>440 Kč</strong><br><br>
+        Bod zvratu: 7 362 Kč ÷ 440 Kč = přibližně <strong>17 náhrdelníků měsíčně</strong> - teprve od 18. kusu začíná skutečný zisk.
+      </div>
+
+      <p>Tohle číslo je tvůj měsíční cíl. Ne ambice - minimální hranice. Vše nad ni je čistý zisk, vše pod ni je ztráta nebo nula.</p>
+
+      <div class="article-callout">
+        <p><strong>Prodávat nestačí.</strong> Aby podnikání dlouhodobě fungovalo, potřebuješ vědět, kolik potřebuješ prodat.</p>
+      </div>
+
+      <h2>Jak sestavit finanční plán, když nevíš, kolik vyděláš</h2>
+      <p>Tohle je nejčastější paralýza začátečnic. Jak mám plánovat příjmy, když netuším, kolik zákaznic přijde? Odpověď je: neplánuješ příjmy - plánuješ scénáře. Tři různé výhledy, se kterými budeš pracovat.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Minimální scénář - přežití</h3>
+            <p>Kolik musím prodat, abych pokryla všechny náklady a&nbsp;nezůstala v&nbsp;minusu? Tohle je tvůj bod zvratu. Nastav si ho jako absolutní minimum pro každý měsíc.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Realistický scénář - stabilita</h3>
+            <p>Kolik reálně prodám, pokud budu aktivně pracovat na prodeji a&nbsp;marketingu? Sem patří cíl, ke kterému pracuješ - pokrytí nákladů plus rozumná odměna za tvůj čas.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Optimistický scénář - růst</h3>
+            <p>Co kdybych měla dobrý měsíc? Kam by šel přebytek - do rezervy, do rozvoje, do marketingu? Plánovat i&nbsp;dobrý scénář tě připraví na to, jak s&nbsp;ním naložit.</p>
+          </div>
+        </div>
+      </div>
+
+      <p>Když si připravíš víc možností dopředu, nejsi pak zaskočená ani slabším měsícem, ani tím, že se začne dařit víc, než jsi čekala. Tyhle tři čísla jsou základ tvého finančního plánu. Nepotřebuješ komplikovaný Excel - potřebuješ vědět, kde je tvoje dno, kde je tvůj cíl a&nbsp;kam míříš v&nbsp;dobrém měsíci.</p>
+
+      <h2>Rezerva - na kterou skoro všichni zapomenou</h2>
+      <p>Finanční rezerva není luxus. Je to polštář, který tě zachrání ve chvíli, kdy přijde slabý měsíc, nemoc, nebo nečekaný výdaj. A&nbsp;v&nbsp;podnikání přijdou - otázka není jestli, ale kdy.</p>
+      <p>Doporučované minimum je tříměsíční polštář fixních nákladů. Pokud jsou tvoje minimální měsíční výdaje 8 000 Kč, cílem rezervy je 24 000 Kč. Nemusíš ji mít hned - ale buduj ji průběžně, třeba 10 % z&nbsp;každé objednávky stranou.</p>
+
+      <div class="technika">
+        <span class="technika-label">Paušální daň - zjednodušená varianta pro začátečnice</span>
+        <p>Pokud tě baví podnikání, ale ne administrativa, zjisti, jestli se ti hodí paušální daň - zjednodušený systém, kdy místo daňového přiznání a&nbsp;samostatných přehledů platíš jednu měsíční částku zahrnující daň i&nbsp;pojistné. Přihlásit se musíš vždy do 10. ledna daného roku, podmínky (limit ročního příjmu, nesplácení dluhů) si ověř na aktuální rok přímo na portálu Finanční správy.</p>
+      </div>
+
+      <h2>Kdy podnikání „dává smysl"?</h2>
+      <p>Na tuhle otázku neexistuje univerzální odpověď - záleží na tom, co od podnikání čekáš. Pro někoho je smyslem hlavní příjem, pro jiného přivýdělek k&nbsp;zaměstnání nebo kreativní svoboda.</p>
+      <p>Ale jedno platí vždy: podnikání dává smysl tehdy, když víš, kolik potřebuješ vydělat - a&nbsp;kdy to víš dopředu, ne zpětně. Čísla nejsou nepřítel. Jsou to informace, které ti pomůžou rozhodovat se lépe. A&nbsp;to je přesně to, k&nbsp;čemu slouží finanční plán. Ne proto, aby tě stresoval. Proto, abys měla přehled.</p>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Vezmi papír a&nbsp;tužku (nebo nový list v&nbsp;tabulce) a&nbsp;spočítej si svůj bod zvratu. Co tě podnikání měsíčně stojí - odvody, provoz, materiál? A&nbsp;kolik výrobků nebo zákaznic potřebuješ, aby tě to pokrylo? Tohle jedno číslo ti pomůže víc než jakýkoliv obecný finanční plán.</p>
+        <p>Možná dnes nevyplníš celý finanční plán. Ale když si spočítáš alespoň svoje měsíční minimum, uděláš pro svoje podnikání mnohem víc, než se na první pohled zdá.</p>
+      </div>
+
+      <div class="article-warning">
+        <span class="warning-label">Pozor na AI a&nbsp;chatboty</span>
+        <p>Dnes jsme si všechny zvykly ptát se chatbotů na všechno - a&nbsp;je to skvělý pomocník. Ale u&nbsp;čísel jako jsou výše odvodů, daňové limity nebo zákonné lhůty buď obezřetná. Chatboty pracují s&nbsp;daty ke svému datu výuky a&nbsp;ta čísla se každý rok mění. Klidně se AI zeptej, jak výpočet funguje, nebo si nech vysvětlit pojmy - ale konkrétní aktuální částky si vždy ověř přímo ze zdrojů uvedených dole.</p>
+      </div>
+
+      <p class="article-ps">Kde je hranice mezi příležitostným příjmem a&nbsp;živností - a&nbsp;co to znamená pro tvoje odvody - najdeš v&nbsp;článku <a href="prilezitostny-prijem-vs-zivnost.html">Příležitostný příjem vs. živnost</a>. A&nbsp;jak správně nastavit cenu výrobku, aby pokryla nejen materiál, ale i&nbsp;tvůj čas, v <a href="cena-tveho-vyrobku.html">Cena tvého výrobku</a>.</p>
+
+      <p class="sources">Zdroje: První rok OSVČ: co vás čeká - iDoklad.cz · Povinnosti OSVČ v&nbsp;prvním roce - Fakturoid · Zahájení podnikání 2025: hlavní a&nbsp;vedlejší činnost - Portál POHODA · Fixní a&nbsp;variabilní náklady - Fakturoid · Bod zvratu: kdy se to zhoupne - Lucie Krausová · Daňová kalkulačka pro OSVČ - Peníze.cz</p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="zivnost-bez-strachu.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Živnost bez strachu</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš si spočítat finanční plán s&nbsp;podporou ostatních?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem pomáháme i&nbsp;s&nbsp;čísly - bez ostychu a&nbsp;bez soudů. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
