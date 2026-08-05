@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak na Stories, které budují vztah - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Stories nejsou o dosahu. Jak pomocí Stories budovat důvěru a vztah se sledujícími, co do nich dávat, a jak fungují reakce a algoritmus.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Jak na Stories, které budují vztah - Rosteme spolu">
+  <meta property="og:description" content="Stories nejsou deník - jsou most mezi tebou a zákaznicí.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/stories-ktere-budujou-vztah.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* Mřížka nápadů na Stories */
+    .idea-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 2rem 0; }
+    .idea-card { background: var(--white); padding: 1.3rem 1.4rem; }
+    .idea-icon { font-size: 1.3rem; display: block; margin-bottom: 0.5rem; }
+    .idea-card h3 { font-family: var(--serif); font-size: 0.98rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
+    .idea-card p { font-size: 0.85rem; line-height: 1.65; color: var(--ink2); margin: 0; }
+
+    /* Techniky */
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    /* Checklist */
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; font-style: italic; }
+    .article-callout strong { color: var(--green); font-style: normal; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .idea-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Jak na Stories, které budují vztah</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím & rostu</span>
+    <h1 class="article-h1">Jak na Stories, které budují vztah</h1>
+    <p class="article-lead">Stories nejsou deník - jsou most mezi tebou a&nbsp;zákaznicí.</p>
+
+    <div class="article-body">
+
+      <p>Každá zákaznice, která u&nbsp;tebe koupila, tě nejdřív sledovala. A&nbsp;každá, která tě sleduje, jednoho dne rozhodne - jestli ti věří dost na to, aby koupila.</p>
+      <p>Je to pár měsíců, co sis sebrala odvahu a&nbsp;rozhodla ses jít naplno do sociálních sítí. Sedneš si, dáš si kafe, otevřeš Instagram - a&nbsp;dumáš. Základna sledujících se pomalu zvětšuje a&nbsp;podle komentářů jsou to opravdu milí lidé. Jenže objednávky stále spočítáš na prstech jedné ruky. Jak se k&nbsp;nim dostat ještě blíž? Jak prolomit tu neviditelnou zeď mezi profilem a&nbsp;skutečným vztahem?</p>
+      <p>Jestli máš pocit, že se potřebuješ dostat víc pod kůži svým sledujícím - čti dál.</p>
+      <p>Už jsi slyšela o různých způsobech, jak využít Stories? Nebo jsi na začátku jako jsem byla kdysi i&nbsp;já - a&nbsp;dáváš tam každodenní guláš, fotku rozdělaného výrobku a&nbsp;přemýšlíš, jestli to vůbec někdo vidí? Oboje je v&nbsp;pořádku. Ale je mezi tím velký rozdíl - a&nbsp;ten rozdíl se jmenuje záměr.</p>
+
+      <h2>Stories nejsou o dosahu - a&nbsp;to je dobrá zpráva</h2>
+      <p>Tohle je první věc, která mi pomohla zbavit se tlaku. Stories nemají přivést nové sledující - na to jsou Reels. Stories jsou pro ty, kteří tě už sledují, a&nbsp;plní tři věci najednou: budují důvěru, prohlubují vztah a&nbsp;otevírají cestu k&nbsp;prodeji.</p>
+      <p>Ne přes reklamu, ne přes dokonalou fotku. Přes opakování. Přes to, že tě lidé vidí pravidelně, cítí kdo jsi - a&nbsp;jednoho dne napíšou.</p>
+      <p>Vztah se na sítích buduje přesně stejně jako v&nbsp;životě - postupně, přes malé momenty, přes sdílení, přes to, že tam prostě jsi. Zákaznice, která tě sleduje tři měsíce a&nbsp;vidí tě každý druhý den v&nbsp;Stories, tě zná jinak než ta, která narazila na tvůj Reels jednou a&nbsp;šla dál. Ta první ví, jak přemýšlíš, co tě baví, jak tvůj výrobek vzniká. A&nbsp;právě ta první ti jednoho dne napíše - nebo rovnou objedná.</p>
+
+      <div class="article-callout">
+        <p>Důvěra nevzniká z&nbsp;jednoho příspěvku. <strong>Vzniká z&nbsp;přítomnosti.</strong></p>
+      </div>
+
+      <p>Představ si to jako kavárnu. Reels jsou výloha - přilákají kolemjdoucí. Stories jsou ten stůl u&nbsp;okna, kde si sednete a&nbsp;dáte si spolu kafe. Kde se doopravdy poznáte. A&nbsp;zákaznice kupuje od někoho, koho zná. Ne od profilu, který jednou viděla.</p>
+
+      <h2>Co tam dát, když nevíš co dát</h2>
+      <p>Největší blok kolem Stories je pocit, že musíš mít obsah. Připravený, smysluplný, hezky nafocený. Přitom Stories fungují přesně naopak - čím víc plánuješ, tím víc to obvykle ztrácí energii. Je to prostor pro to, co právě je. A&nbsp;kategorií, ze kterých stačí vybírat, je víc než dost.</p>
+
+      <div class="idea-grid">
+        <div class="idea-card">
+          <span class="idea-icon">🧵</span>
+          <h3>Zákulisí</h3>
+          <p>Rozpracovaný výrobek, chaos na stole, hledání správného materiálu. To, co sledující nikde jinde nevidí.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">💬</span>
+          <h3>Anketa, otázka, průzkum</h3>
+          <p>Které barvy se vám víc líbí? Co by vás zajímalo víc? Jeden klik od sledující - jedna cenná informace pro tebe.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">📦</span>
+          <h3>Teaser na nový výrobek</h3>
+          <p>Nezveřejňuj hned. Napřed ukaž kousek. Nech je čekat. To je zahřívání publika v&nbsp;praxi.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">🤍</span>
+          <h3>Zpětná vazba od zákaznic</h3>
+          <p>Screenshot zprávy, fotka od zákaznice. Sociální důkaz, který prodává víc než jakákoliv reklama.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">☕</span>
+          <h3>Střípek ze dne</h3>
+          <p>Tohle ráno, tenhle pocit, tahle situace. Lidé nekupují výrobky - kupují tvůj svět.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">📢</span>
+          <h3>Upozornění a&nbsp;novinky</h3>
+          <p>Nový reel, naskladnění oblíbeného výrobku, launching, doporučení. Stories jsou ideální místo, kde to říct jako první.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">✏️</span>
+          <h3>Tip nebo mini návod</h3>
+          <p>Krátká hodnota bez prodeje. Jedna věc, co sledující nevěděla - a&nbsp;teď ví díky tobě.</p>
+        </div>
+        <div class="idea-card">
+          <span class="idea-icon">✨</span>
+          <h3>Tvoje hodnoty a&nbsp;sdílení</h3>
+          <p>Co tě inspiruje, čemu věříš, co tě pohání. Sdílení toho, kdo jsi, buduje loajalitu hlubší než jakýkoliv produkt.</p>
+        </div>
+      </div>
+
+      <p>Já třeba Stories dnes používám skoro na všechno. Výběr příze, rozhodování mezi dvěma variantami, fotka nebo pocit ze dne, který stojí za to říct. Sdílení pocitů má totiž zvláštní sílu - je to takové pustění si někoho trochu blíž. A&nbsp;právě tyhle momenty lidi drží. Za každým Story by měl být záměr. Ne nutně prodejní - ale zájem. Zájem zjistit, co sledující chtějí, jak se rozhodují, jestli se zapojí do ankety, jestli odpoví. Každá tahle reakce je malý win - a&nbsp;zároveň důkaz, že buduješ něco skutečného.</p>
+      <p>A&nbsp;není to náhoda. Lidé mají přirozenou potřebu být součástí něčeho - komunity, procesu, příběhu. Psychologové tomu říkají potřeba sounáležitosti, a&nbsp;je to jedna z&nbsp;nejzákladnějších lidských motivací. Když zapojuješ sledující do rozhodování - jakou barvu, jaký tvar, co dál - nedáváš jim jen obsah. Dáváš jim pocit, že na jejich názoru záleží.</p>
+
+      <div class="article-callout">
+        <p>A&nbsp;to je přesně ten pocit, který <strong>buduje loajální zákaznice.</strong></p>
+      </div>
+
+      <div class="osobni-box">
+        Mám v&nbsp;telefonu seznam nápadů, kam si mimo jiné ukládám i&nbsp;nápady na storiecka. I&nbsp;v&nbsp;období, kdy mám nápadů plnou hlavu, je píšu - protože ono na ně řada dojde. A&nbsp;když pak sedím s&nbsp;telefonem a&nbsp;"nemám co dát" - otevřu seznam. Trvá to třicet vteřin. A&nbsp;Stories jsou venku.
+      </div>
+
+      <h2>Musím ukazovat tvář?</h2>
+      <p>Tohle je můj nárazník, který každý den pěkně leštím. Začínala jsem s&nbsp;postojem - ježíš, kdo je asi tak zvědavý na můj ksicht. A&nbsp;dnes jsem ve fázi kdy si říkám - počkej, ono možná kdybych se natočila... Malé tajemství: párkrát jsem už i&nbsp;natočila Stories - ale než jsem se odhodlala ho sdílet, bylo za zenitem. Ale bude. Dnes už věřím, že bude. To bych na začátku neřekla - takže nikdy neříkej nikdy a&nbsp;malými krůčky k&nbsp;lepším zítřkům.</p>
+      <p>Ale zpátky k&nbsp;tobě. Tvář na kameře buduje vztah nejrychleji - to je fakt. Jenže autentická neznamená bez filtru. Neznamená ukazovat všechno. Stačí aby lidé cítili, jak přemýšlíš. Proč to, co děláš, děláš. Zákulisí výrobku, ruce při práci, hlas ve videu bez tváře, psaný text s&nbsp;osobností - to všechno buduje důvěru. A&nbsp;přiznat nepovedené focení nebo chybu ve Stories neoslabuje tvoji značku. Posiluje ji.</p>
+
+      <div class="technika">
+        <span class="technika-label">Nezapomeň</span>
+        <p>Spousta lidí si Stories pouští bez zvuku, třeba v&nbsp;MHD nebo při uspávání dětí. Titulky jsou proto must have. Pokud mluvíš do kamery bez textu, většina z&nbsp;nich tě přeskočí - ne proto, že je nezajímáš, ale prostě neslyší.</p>
+      </div>
+
+      <h2>Proč nereaguji - a&nbsp;co s&nbsp;tím</h2>
+      <p>Tohle mě taky překvapilo, když jsem to zjistila: Stories se nezobrazují automaticky všem sledujícím stejně. I&nbsp;když tě někdo sleduje, neznamená to, že tě vidí. Instagram je navrhl pro prohlubování vztahů - a&nbsp;funguje to tak, že tvoje Stories se zobrazí výš a&nbsp;častěji těm, kteří s&nbsp;tebou aktivně interagují. Kdo na tebe pravidelně reaguje, klikne na anketu, pošle zprávu - ten tě vidí. Kdo je dlouhodobě pasivní, tě postupně přestane vidět úplně. Algoritmus si pamatuje každou interakci - a&nbsp;každé ticho.</p>
+      <p>Proto nemá smysl dávat Stories a&nbsp;čekat, že to přijde samo. Interakci je potřeba aktivně vyvolávat. A&nbsp;dobrá zpráva je, že stačí opravdu málo - kliknutí na smajlík, tažení posuvného listu, hlasování v&nbsp;anketě. Cokoliv, na co sledující zareaguje, je pro algoritmus signál: tahle dvě konta spolu komunikují, tenhle člověk má zájem. A&nbsp;Instagram začne tvůj obsah tomuto člověku zobrazovat víc.</p>
+      <p>Z&nbsp;praktického hlediska to znamená: ptej se. Dávej do Stories věci, na které jde snadno reagovat - jednoduchá anketa se dvěma možnostmi, otázka s&nbsp;odpovědní nálepkou, hlasování. Čím nižší bariéra pro reakci, tím víc lidí zareaguje. A&nbsp;čím víc lidí zareaguje, tím víc lidí tě bude příště vidět.</p>
+
+      <div class="technika">
+        <span class="technika-label">Víš o tom, že:</span>
+        <p>Nejsilnější signál pro algoritmus Instagramu je soukromá zpráva - DM. Ne lajk, ne uložení, ne komentář. Zpráva. Pokud ti někdo odpoví na Story do DM, Instagram to vyhodnotí jako nejvyšší možný zájem a&nbsp;začne tvůj obsah zobrazovat výš. Zkus místo odkazu napsat: "Napiš mi do zpráv ANO a&nbsp;pošlu ti to přímo." Uvidíš rozdíl.</p>
+      </div>
+
+      <p>Pomáhají i&nbsp;další věci - interaktivní prvky jako ankety, otázky a&nbsp;hlasování přímo v&nbsp;Stories, nebo geolokace, která funguje jako mikrovyhledávač: přidej místo a&nbsp;tvoje Story se může zobrazit i&nbsp;lidem, kteří tě ještě nesledují, ale dané místo znají.</p>
+      <p>A&nbsp;když si dáš tyhle věci dohromady - pravidelnou přítomnost, záměrný obsah a&nbsp;aktivní vyvolávání reakcí - vrátíš se přesně k&nbsp;té trojici, o které jsme mluvily na začátku. Důvěra, vztah, prodej. Ne jako tři oddělené kroky. Jako přirozený výsledek toho, že tam prostě jsi - a&nbsp;že ti na lidech, kteří tě sledují, záleží.</p>
+
+      <h2>A&nbsp;kam s&nbsp;tím, co zmizí za 24 hodin?</h2>
+      <p>Pokus omyl. Tvoji sledující ti to prominou - většina z&nbsp;nás tam taky byla. Co nezveřejníš, to zmizí samo, aniž by to kdokoliv viděl. Co zveřejníš a&nbsp;nevyjde, ti lidi odpustí, protože jsou lidé. A&nbsp;co zveřejníš a&nbsp;funguje to - to si ulož.</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Jak zapnout archivaci a&nbsp;využít ji</span>
+        <ul>
+          <li>Jdi do Nastavení → Soukromí → Příběh a&nbsp;přepni „Uložit do archivu"</li>
+          <li>Od té chvíle se každá Story po 24 hodinách uloží do soukromé složky, kterou vidíš jen ty</li>
+          <li>Z&nbsp;archivu ji znovu přehraješ, přidáš zpátky do Stories nebo nasdílíš jako příspěvek</li>
+          <li>Nebo ji použiješ pro Highlights - a&nbsp;nic dobrého se nemusí ztratit</li>
+        </ul>
+      </div>
+
+      <p>Highlights nad feedem jsou pak místo, kde zůstane to nejlepší trvale. Produkty, reference zákaznic, zákulisí, odpovědi na časté otázky. Kdo přijde na tvůj profil poprvé, projede Highlights a&nbsp;za pět minut ví, kdo jsi. Dobře postavené Highlights jsou jako vstupní dveře do tvého světa - a&nbsp;ty chceš, aby byly otevřené.</p>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Sedm dní, jedna Story za den. Každý den jedna věc z&nbsp;kategorií výše - bez scénáře, bez přípravy. A&nbsp;na konci týdne si řekni: co z&nbsp;toho přineslo zprávy do DM? To je tvůj budoucí obsah.</p>
+      </div>
+
+      <p class="article-ps">Stories jsou součástí většího systému. Jak vypadá celý týdenní rytmus obsahu, najdeš v&nbsp;článku <a href="marketing-pro-zacatecnice.html">Marketing pro začátečnice - IG a&nbsp;FB</a>. A&nbsp;proč je pravidelnost důležitější než dokonalost, se dočteš v <a href="instagram-ktery-te-vidi.html">Instagram, který tě vidí</a>.</p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="instagram-ktery-te-vidi.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Instagram, který tě vidí</span>
+      </a>
+      <a href="popis-produktu.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Popis produktu, který prodává</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš zpětnou vazbu na svoje Stories?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem pomáháme rozjet obsah, který lidi drží u&nbsp;sebe. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
