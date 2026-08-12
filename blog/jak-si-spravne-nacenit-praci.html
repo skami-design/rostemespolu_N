@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jak si správně nacenit práci - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Tvoje cena není číslo, je to zpráva, jak si vážíš své práce. Co všechno patří do ceny výrobku a pět přístupů, jak si ji spočítat.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Jak si správně nacenit práci - Rosteme spolu">
+  <meta property="og:description" content="Tvoje cena není číslo. Je to zpráva, jak si vážíš své práce.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/jak-si-spravne-nacenit-praci.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3.section-h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 2rem 0 0.9rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--pink-l); }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    /* Nákladové karty */
+    .cost-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
+    .cost-card h4 { font-family: var(--sans); font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .cost-card p { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); margin-bottom: 0.9rem; }
+    .cost-card .insight { font-size: 0.85rem; line-height: 1.6; color: var(--green); font-weight: 600; margin: 0; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+
+    /* Metody kalkulace */
+    .method-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.6rem 1.8rem; margin: 1.8rem 0; }
+    .method-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
+    .method-card > p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin-bottom: 1rem; }
+    .method-formula { background: var(--pink-ll); padding: 1rem 1.3rem; margin-bottom: 1.2rem; border-left: 2px solid var(--pink); font-size: 0.87rem; color: var(--ink); line-height: 1.75; font-weight: 600; }
+    .method-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+    .method-grid div { background: var(--white); padding: 0.9rem 1rem; }
+    .method-grid .m-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.4rem; }
+    .method-grid p { font-size: 0.78rem; line-height: 1.55; color: var(--ink2); margin: 0; }
+
+    /* Techniky */
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; font-style: italic; }
+    .article-callout strong { color: var(--green); font-style: normal; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.8; }
+    .article-authors { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .article-author-row { display: flex; align-items: center; gap: 1rem; }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+    @media (max-width: 640px) {
+      .method-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Jak si správně nacenit práci</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím & rostu</span>
+    <h1 class="article-h1">Jak si správně nacenit práci</h1>
+    <p class="article-lead">Tvoje cena není číslo. Je to zpráva, jak si vážíš své práce.</p>
+
+    <div class="article-body">
+
+      <p>Objednávky přibývají. Výrobky se líbí. A&nbsp;přesto ti hlavou běží jedna nepříjemná otázka - co když mám ceny nastavené moc nízko?</p>
+      <p>Sedneš ke kalkulačce. Začneš přidávat materiál, čas, balení, vybavení, marketing. A&nbsp;s&nbsp;každou další položkou roste jedna myšlenka: co když tu cenu spočítám správně - a&nbsp;už si to nikdo nekoupí?</p>
+      <p>Právě tenhle strach drží spoustu tvůrkyň na místě. Ale dobře spočítaná cena neznamená, že budeš drahá. Znamená, že konečně víš, za co si necháváš zaplatit.</p>
+      <p>Ne proto, že by nevěděly, co tvoří - ale proto, že se nenaučily počítat všechno, co do výrobku patří. A&nbsp;výsledkem je cena, která pokryje materiál, ale ne čas. Pokryje čas, ale ne rozvoj. Pokryje rozvoj, ale ne rezervu na špatný měsíc.</p>
+
+      <div class="article-callout">
+        <p>Navýšení nad materiál a&nbsp;práci je <strong>dělící čarou</strong> mezi tím, kdy jde o práci, a&nbsp;kdy o koníček.</p>
+      </div>
+
+      <div class="osobni-box">
+        Když přemýšlím nad cenou výrobku, nesnažím se najít co nejnižší částku. Spíš si pokládám otázku, jestli bych za tuhle cenu chtěla ten výrobek vyrábět znovu.
+      </div>
+
+      <h2>Proč si tvůrkyně podhodnocují práci</h2>
+      <p>Psychologové by řekli, že jde o kombinaci dvou věcí: strachu z&nbsp;odmítnutí a&nbsp;srovnávání se s&nbsp;trhem zdola. Podíváš se, za kolik prodává někdo jiný - a&nbsp;přizpůsobíš se. Jenže ta jiná tvůrkyně možná počítá jinak. Možná má jiné náklady. Možná taky prodělává a&nbsp;ještě to neví.</p>
+      <p>Cena není jen číslo. Je to signál. Příliš nízká cena neřekne zákaznici "jsem dostupná" - řekne jí "nejsem si jistá svou hodnotou." A&nbsp;to se projeví v&nbsp;tom, jak se k&nbsp;tvým výrobkům bude chovat.</p>
+
+      <div class="osobni-box">
+        Zákaznice, která si váží tvé práce, zaplatí správnou cenu. Zákaznice, která hledá nejlevnější, nebude nikdy spokojená - ani kdyby výrobek dostala zdarma.
+      </div>
+
+      <div class="osobni-box">
+        Já se snažím cenu nevymýšlet podle pocitu. Nejdřív si ji spočítám. A&nbsp;teprve potom přemýšlím, jestli odpovídá tomu, co chci svojí tvorbou budovat.
+      </div>
+
+      <h2>Co všechno patří do ceny</h2>
+      <p>Tady je ta část, kde většina kalkulací selhává. Přímé náklady - materiál a&nbsp;čas - jsou jen začátek. Podívejme se na celý obraz.</p>
+
+      <h3 class="section-h3">1. Přímé náklady na výrobek</h3>
+
+      <div class="cost-card">
+        <h4>Materiál</h4>
+        <p>Základní suroviny a&nbsp;komponenty, které tvoří samotný výrobek. Důležité je počítat skutečně spotřebované množství - na gramy nebo metry, nikoli cenu celého balení.</p>
+        <p class="insight">→ Víš přesně, co tě jeden výrobek stojí - a&nbsp;neprodáváš pod sebou.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Zmetky a&nbsp;odpad</h4>
+        <p>Nepodařené kusy, zbytky materiálu, tisk navíc, špatně odlitý kus. Přidej procentní přirážku k&nbsp;ceně materiálu - třeba 5-15 % podle oboru.</p>
+        <p class="insight">→ Neúspěšné pokusy nejsou ztráta - jsou náklad. Zákaznice je platí jako součást ceny, ne ty ze svého.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Balení a&nbsp;expedice</h4>
+        <p>Krabičky, papír, stuhy, štítky, lepicí páska, ochranná výplň, poštovné pokud je zahrnuto v&nbsp;ceně.</p>
+        <p class="insight">→ Zákaznice zažívá unboxing jako součást výrobku - a&nbsp;ty za to neplácáš z&nbsp;vlastní kapsy.</p>
+      </div>
+
+      <h3 class="section-h3">2. Hodnota tvého času a&nbsp;znalostí</h3>
+
+      <div class="cost-card">
+        <h4>Přímá pracovní doba</h4>
+        <p>Čas strávený háčkováním, pájením, šitím, broušením, dokončovací prací. Nastav si hodinovou sazbu - klidně vyšší než minimální mzdu.</p>
+        <p class="insight">→ Tvůj čas má hodnotu. Pracuješ - a&nbsp;za práci se platí.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Know-how a&nbsp;design</h4>
+        <p>Poprvé trvalo navrhnutí vzoru 6 hodin. Podruhé hodinu. Ta ušetřená hodnota se přenáší jako prémie za zkušenost - i&nbsp;když výrobek fyzicky nestojí víc.</p>
+        <p class="insight">→ Zákaznice platí za výsledek a&nbsp;jistotu - ne za hodiny. A&nbsp;ty se odměňuješ za roky praxe.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Autorství</h4>
+        <p>Výrobek je tvůj vlastní návrh - ne kopie existujícího vzoru. Originální design, unikátní řešení, které nevzniklo nikde jinde.</p>
+        <p class="insight">→ Zákaznice kupuje něco, co nemá žádná jiná. Tato hodnota má cenu - a&nbsp;ty ji máš právo účtovat.</p>
+      </div>
+
+      <h3 class="section-h3">3. Provozní a&nbsp;fixní náklady</h3>
+
+      <div class="cost-card">
+        <h4>Opotřebení nástrojů</h4>
+        <p>Háčky, jehly, kleště, tiskárna, počítač. U&nbsp;drobných nástrojů stačí odhadnout počet výrobků za životnost. U&nbsp;strojů a&nbsp;tiskáren funguje lépe přepočet na hodiny provozu.</p>
+        <p class="insight">→ Až bude potřeba koupit nové vybavení, máš na to - protože ses na to průběžně skládala.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Software a&nbsp;licence</h4>
+        <p>Předplatné designových programů (Canva Pro, Adobe), účetní software, e-shopová platforma, doména.</p>
+        <p class="insight">→ Měsíční náklady na provoz se rozprostřou na výrobky - a&nbsp;ty je neplatíš ze zálohy na nájemné.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Energie a&nbsp;voda</h4>
+        <p>Šicí stroj, pec, 3D tiskárna, laminovačka - vše funguje na elektřinu. Kdo oplachuje, suší nebo jinak využívá vodu, zahrne i&nbsp;ji. Přepočítej na hodinu provozu nebo na kus.</p>
+        <p class="insight">→ Energie je tichý náklad, který snadno unikne pozornosti - přitom u&nbsp;výrobních technologií může jít o desítky korun na výrobek.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Odvody a&nbsp;daně</h4>
+        <p>Zdravotní a&nbsp;sociální pojištění, daň z&nbsp;příjmu - měsíční povinné výdaje, které běží bez ohledu na to, kolik jsi prodala.</p>
+        <p class="insight">→ Tyto náklady musí pokrýt tvoje ceny - ne tvůj osobní rozpočet. Jinak pracuješ, ale nevyděláváš.</p>
+      </div>
+
+      <h3 class="section-h3">4. Rozvoj a&nbsp;budoucnost</h3>
+
+      <div class="cost-card">
+        <h4>Marketing</h4>
+        <p>Čas strávený tvorbou obsahu, focením, správou sítí, psaním popisků, odpovídáním na DM - práce, za kterou se neplatíš, ale měla bys.</p>
+        <p class="insight">→ Tvorba obsahu je práce jako každá jiná - a&nbsp;zákaznice díky ní vůbec ví, že existuješ.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Investice do rozvoje</h4>
+        <p>Kurzy, workshopy, nový materiál k&nbsp;vyzkoušení, účast na trzích a&nbsp;výstavách, konzultace s&nbsp;odborníky.</p>
+        <p class="insight">→ Každý výrobek přispívá do fondu budoucího růstu - a&nbsp;ty se nerozvíjíš na dluh.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Inflační rezerva</h4>
+        <p>Malé procento navíc - třeba 3-5 % - jako polštář proti výkyvům cen materiálů. Pokud zdraží příze nebo filamenty, nezdražuješ okamžitě ceník.</p>
+        <p class="insight">→ Ceny materiálů rostou. Tato rezerva tě ochrání před tím, aby každé zdražení od dodavatele znamenalo přepočítávání celého ceníku.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Zisk a&nbsp;rezerva</h4>
+        <p>Čistý zisk na konci kalkulace - procento, které zbyde po všech nákladech. Rezerva na slabé měsíce, nemoc, výpadek poptávky.</p>
+        <p class="insight">→ Bez zisku nemáš z&nbsp;čeho investovat ani z&nbsp;čeho žít. Zisk není bonbón navíc - je základ udržitelného podnikání.</p>
+      </div>
+
+      <div class="osobni-box">
+        Nemusíš mít přesné číslo u&nbsp;každé položky. Ale musíš vědět, že tam je.
+      </div>
+
+      <div class="osobni-box">
+        Nemusím mít všechna čísla přesná hned napoprvé. Důležité je začít je vůbec sledovat. Každá další kalkulace už bude přesnější než ta první.
+      </div>
+
+      <p>Háčkování spolkne hromadu času, za kterou reálně nikdo nezaplatí - pokud ho sama nepojmenuješ a&nbsp;nezahrneš do ceny. Proto jsem si vytvořila vlastní vzorec, kde vycházím z&nbsp;materiálu včetně tzv. zmetků (co se v&nbsp;procesu zničí, odstřižky a&nbsp;podobně), přidám základní cenu za práci podle hodin - a&nbsp;k&nbsp;tomu připočítám procenta zahrnující věci jako autorství, investice do vybavení nebo čas věnovaný sociálním sítím. Není to složité. Ale je to vědomé.</p>
+
+      <h2>Jak to spočítat - přístupy a&nbsp;vzorce</h2>
+      <p>Existuje víc způsobů, jak ke kalkulaci přistoupit. Každý má své výhody i&nbsp;limity - a&nbsp;každý se hodí na trochu jinou situaci. Přehled ti pomůže vybrat ten, který ti sedí nejlíp, nebo je zkombinovat.</p>
+
+      <div class="method-card">
+        <h3>1. Základní handmade vzorec (×2 ×2)</h3>
+        <p>Klasický startovní vzorec pro handmade tvůrkyně. Dvojnásobné navýšení hodnoty pokryje provozní náklady a&nbsp;rezervu - a&nbsp;další navýšení přidá prodejní marži.</p>
+        <div class="method-formula">Materiál + práce = hodnota výrobku<br>Hodnota × 2 = velkoobchodní cena<br>Velkoobchodní × 1,5-2 = prodejní cena</div>
+        <div class="method-grid">
+          <div><span class="m-label">Výhody</span><p>Jednoduchý, rychlý, funguje pro začátek. Počítá s&nbsp;rezervou nad náklady.</p></div>
+          <div><span class="m-label">Nevýhody</span><p>Nepokryje všechny náklady explicitně. Při nízké hodinové sazbě může být cena podhodnocená.</p></div>
+          <div><span class="m-label">Kdy použít</span><p>Na startu, jako rychlý test, nebo pro jednoduché výrobky s&nbsp;jasnou spotřebou materiálu.</p></div>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <h3>2. Nákladová metoda (cost-plus)</h3>
+        <p>Spočítáš všechny náklady - přímé i&nbsp;nepřímé - a&nbsp;přičteš požadovanou marži. Výsledkem je cena, která pokryje výdaje a&nbsp;zajistí výdělek. Nejbezpečnější přístup - nikdy neprodáváš pod náklady.</p>
+        <div class="method-formula">Všechny náklady na výrobek + marže (%) = prodejní cena</div>
+        <div class="method-grid">
+          <div><span class="m-label">Výhody</span><p>Průhledná, bezpečná, dává jistotu, že nevyděláváš na nulu. Snadno upravitelná.</p></div>
+          <div><span class="m-label">Nevýhody</span><p>Vyžaduje pečlivou evidenci nákladů. Neodráží hodnotu pro zákaznici.</p></div>
+          <div><span class="m-label">Kdy použít</span><p>Jako základ každé kalkulace - měla by být výchozím bodem bez ohledu na přístup.</p></div>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <h3>3. Srovnání s&nbsp;konkurencí</h3>
+        <p>Zjistíš, za kolik prodávají jiní tvůrci s&nbsp;podobnými výrobky, a&nbsp;zohledníš to při finálním nastavení ceny. Pomůže ti zorientovat se na trhu - ale nikdy by nemělo být jediným vodítkem. Nevidíš jejich kalkulaci. Nevíš, jestli na výrobku opravdu vydělávají, nebo jen prodávají.</p>
+        <div class="method-grid">
+          <div><span class="m-label">Výhody</span><p>Rychlý přehled o trhu. Pomůže nastavit cenu do přijatelného rozmezí pro zákaznice.</p></div>
+          <div><span class="m-label">Nevýhody</span><p>Nikdy nevíš, jestli konkurence vydělává. Může tě tlačit dolů i&nbsp;tam, kde na to nemáš důvod.</p></div>
+          <div><span class="m-label">Kdy použít</span><p>Pro ověření, že cena dává smysl v&nbsp;kontextu trhu - ne jako základ kalkulace.</p></div>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <h3>4. Hodnotová metoda</h3>
+        <p>Cena odráží hodnotu, kterou výrobek přináší zákaznici - ne jen náklady. Unikátní design, limitovaná edice, silná osobní značka - to vše umožňuje nastavit cenu nad průměr trhu. Tato metoda vyžaduje důvěru ve vlastní práci.</p>
+        <div class="method-grid">
+          <div><span class="m-label">Výhody</span><p>Největší potenciál pro zisk. Posiluje vnímání značky. Přitahuje zákaznice, které si práce váží.</p></div>
+          <div><span class="m-label">Nevýhody</span><p>Vyžaduje silnou značku nebo jasnou jedinečnost. Hůře se obhajuje bez příběhu.</p></div>
+          <div><span class="m-label">Kdy použít</span><p>Když máš vybudovanou komunitu, originální díla nebo výrobky s&nbsp;příběhem.</p></div>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <h3>5. Systém základní sazby + procenta ✦</h3>
+        <p>Tato metoda funguje na všechno - a&nbsp;dá se krásně automatizovat v&nbsp;Excelu. Zadáš materiál, čas a&nbsp;procenta - a&nbsp;tabulka ti na konci vypočítá cenu sama. Stanovíš si základní sazbu za práci a&nbsp;k&nbsp;ní přičítáš procenta za jednotlivé složky podnikání. Výsledná cena je transparentní - a&nbsp;kdykoli víš, co tvoří jakou část.</p>
+        <div class="method-formula">Materiál + základ za práci<br>+ % zisk z&nbsp;výrobku<br>+ % autorství (za vlastní design)<br>+ % investice (nové vybavení, nástroje)<br>+ % marketing (sociální sítě, obsah, focení)<br>+ zmetky zahrnuté v&nbsp;materiálu<br>= výsledná cena</div>
+        <div class="method-grid">
+          <div><span class="m-label">Výhody</span><p>Průhledná, přesná, snadno automatizovatelná. Škáluje se s&nbsp;růstem podnikání.</p></div>
+          <div><span class="m-label">Nevýhody</span><p>Vyžaduje trochu přípravu - nastavení procent a&nbsp;ideálně Excel tabulku.</p></div>
+          <div><span class="m-label">Kdy použít</span><p>Jakmile máš alespoň základní přehled o svých nákladech. Ideální pro dlouhodobé podnikání.</p></div>
+        </div>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Z&nbsp;praxe - 3D tisk</span>
+        <p>Jako každý, kdo s&nbsp;podnikáním začíná, měla jsem zpočátku cenotvorbu velmi zjednodušenou. Výhodou 3D tisku je, že spoustu proměnných vypočítá samotný slicer - jakmile zadáš vstupní cenu filamentu (PLA, TPU, ASA), software ti obratem spočítá čisté materiálové náklady. Tím to ale končit nesmí. Do finální ceny musíš započítat čas strávený tvorbou vlastních návrhů, nákup komerčních licencí k&nbsp;modelům, tiskový odpad a&nbsp;nepovedené kusy, pravidelnou péči o tiskárny, spotřební materiál - a&nbsp;samozřejmě odvody, provoz e-shopu a&nbsp;čas věnovaný sociálním sítím. Spousta práce, která není vidět, ale do ceny patří.</p>
+      </div>
+
+      <h2>Co se mění s&nbsp;časem</h2>
+      <p>Ceny nejsou pevně dané jednou provždy. Mění se, jak rosteš. Nové dovednosti, větší poptávka, silnější značka, lepší vybavení - to vše je důvod cenu přehodnotit. Jednou ročně si sednout a&nbsp;projít kalkulaci je dobrá hygienická praxe, ne projev nestálosti.</p>
+      <p>A&nbsp;pokud se bojíš, jak zákaznice reagují na zdražení - dobré zákaznice to pochopí. Ty, které odejdou kvůli vyšší ceně, nebyly tvými zákaznicemi. Byly zákaznicemi ceny.</p>
+
+      <div class="technika">
+        <span class="technika-label">Z&nbsp;praxe - jak se ceny vyvíjí</span>
+        <p>Na webu se dají dohledat různé návody a&nbsp;tabulky jak nacenit výrobky, ale realita je taková, že správnou cenu nezjistíš bez vlastní praxe. První kalkulace bude nepřesná. Druhá bude lepší. Za rok budeš vědět přesně, kde máš slabá místa - a&nbsp;kde jsi se podhodnocovala.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Vezmi jeden svůj výrobek a&nbsp;projdi si ho touto tabulkou. Kolik tě stojí materiál včetně odpadů? Kolik hodin práce? Co z&nbsp;provozních nákladů do něj patří? Jakou hodnotu přidává tvoje zkušenost a&nbsp;autorství? A&nbsp;pak se zeptej: je moje cena stále správná?</p>
+        <p>Možná zjistíš, že tvoje cena byla správně. A&nbsp;možná zjistíš, že ses doteď podceňovala. Obojí je dobrý výsledek - protože konečně budeš vycházet z&nbsp;čísel, ne z&nbsp;pocitu.</p>
+      </div>
+
+      <p class="article-ps">Jak si sestavit finanční plán a&nbsp;spočítat bod zvratu najdeš v&nbsp;článku <a href="financni-plan.html">Finanční plán na první rok podnikání</a>. A&nbsp;jak o ceně mluvit se zákaznicemi, v <a href="system-objednavek.html">Systém objednávek a&nbsp;komunikace</a>.</p>
+
+      <p class="sources">Zdroje: Cenotvorba pro OSVČ: jak správně stanovit cenu - Průvodce podnikáním (ČSOB) · Cenotvorba pro podnikatele - Fakturoid · Jak stanovit cenu handmade výrobku - Vyrobeno srdcem · Je ruční tvorba drahá? - Mairi.eu · Kalkulace nákladů - iPodnikatel.cz</p>
+
+      <div class="article-authors">
+        <div class="article-author-row">
+          <div class="author-avatar">AK</div>
+          <div class="author-info">
+            <strong>Anna Krýdová</strong>
+            tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+          </div>
+        </div>
+        <div class="article-author-row">
+          <div class="author-avatar">V</div>
+          <div class="author-info">
+            <strong>Veronika Hašplová</strong>
+            tvůrkyně (3D tisk) · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener">@eweria_prints</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="cena-tveho-vyrobku.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Cena tvého výrobku</span>
+      </a>
+      <a href="marketing-pro-zacatecnice.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Marketing pro začátečnice</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš probrat svoji kalkulaci s&nbsp;ostatními?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem pomáháme i&nbsp;s&nbsp;čísly - bez ostychu a&nbsp;bez soudů. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
