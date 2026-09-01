@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistika a&nbsp;expedice v&nbsp;praxi - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Jak vybrat dopravce, nastavit ceny v košíku a nespálit se na smlouvách. Praktický průvodce logistikou a expedicí pro tvůrce a malé e-shopy.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Logistika a expedice v praxi - Rosteme spolu">
+  <meta property="og:description" content="Jak vybrat dopravce, nastavit ceny a nespálit se.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/logistika-a-expedice.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+
+    .cost-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
+    .cost-card h4 { font-family: var(--sans); font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .cost-card p { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); margin-bottom: 0; }
+
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-warning { background: #FBEFEA; border-left: 2px solid #C97A5A; padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .article-warning span.warning-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C97A5A; display: block; margin-bottom: 0.6rem; }
+    .article-warning p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Logistika a&nbsp;expedice v&nbsp;praxi</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím & rostu</span>
+    <h1 class="article-h1">Logistika a&nbsp;expedice v&nbsp;praxi</h1>
+    <p class="article-lead">Jak vybrat dopravce, nastavit ceny a&nbsp;nespálit se.</p>
+
+    <div class="article-body">
+
+      <p>V&nbsp;předchozím článku jsme si detailně rozebrali obalové materiály. Máme tedy zabaleno, krabice jsou připravené k&nbsp;odeslání a&nbsp;teď přichází na řadu druhý, neméně důležitý krok - samotná expedice. Výběr přepravce, správné nastavení cen v&nbsp;košíku a&nbsp;smluvní vztahy s&nbsp;dopravci dokážou ušetřit nejen stovky korun měsíčně, ale především obrovské množství vašeho času a&nbsp;nervů.</p>
+      <p>Trh s&nbsp;doručováním se neustále vyvíjí. To, co platilo před dvěma lety, už je dnes jinak. Pojďme se podrobně podívat na to, jak k&nbsp;logistice přistoupit chytře, abyste svým zákazníkům nabídli to nejlepší, ale zároveň chránili svůj vlastní byznys.</p>
+
+      <h2>Koho nabídnout v&nbsp;košíku: zákazník vs. tvůrce</h2>
+      <p>Základní logistické dilema každého začínajícího e-shopaře zní: kolik dopravců mám vlastně nabízet? Zákazníci pochopitelně milují co nejširší výběr. Někdo pracuje z&nbsp;domova a&nbsp;vyžaduje kurýra s&nbsp;doručením na adresu, jiný se pohybuje po celém městě a&nbsp;preferuje vyzvednutí ve výdejním boxu ve dvě ráno. Pokud v&nbsp;košíku nenajdou svou oblíbenou variantu, mohou nákup nedokončit.</p>
+
+      <div class="article-callout">
+        <p>Nabízejte zákazníkům výběr, ale výhradně z&nbsp;možností, které logisticky vyhovují <strong>vám.</strong></p>
+      </div>
+
+      <p>Pokud bydlíte na vesnici, kde máte po ruce pouze Balíkovnu, a&nbsp;nejbližší podací místo jiného dopravce je 15 kilometrů daleko, nedává smysl ho do nabídky zařazovat a&nbsp;trávit hodiny v&nbsp;autě - čas strávený na cestách s&nbsp;balíčkem vám nikdo nezaplatí a&nbsp;místo toho můžete v&nbsp;dílně tvořit další věci. Ideální stav je vybrat 2 až 3 dopravce, kteří pokrývají různé typy doručení a&nbsp;zároveň pro ně máte podací místo cestou, nebo si pro balíky dojedou přímo k&nbsp;vám do dílny.</p>
+
+      <h2>Konec monopolu jedné sítě: dnešní realita trhu</h2>
+      <p>Dlouhé roky platilo zažité pravidlo: Zásilkovna a&nbsp;Balíkovna jsou určeny pro levné doručování na výdejní místa, zatímco nadnárodní kurýři jako PPL, DPD nebo GLS doručují výhradně domů za vyšší cenu. Tento mýtus už je dnes zcela překonaný.</p>
+
+      <div class="cost-card">
+        <h4>PPL, DPD a&nbsp;GLS</h4>
+        <p>Tyto společnosti v&nbsp;posledních letech masivně zainvestovaly do vlastních sítí výdejních boxů a&nbsp;partnerských míst (ParcelShopy). Dnes už běžně umí doručovat systémem „z&nbsp;boxu do boxu" nebo „z&nbsp;boxu domů". Zásadní informací pro tvůrce je, že u&nbsp;těchto kurýrů je cena doručení na výdejní místo často znatelně levnější než u&nbsp;klasické Zásilkovny nebo Balíkovny.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Magická hranice 5 kg</h4>
+        <p>Levnější sazby u&nbsp;kurýrních společností (DPD, PPL) platí především pro standardní balíčky zhruba do 5 kilogramů. Pokud se vejdete do tohoto limitu, dokážete ušetřit zajímavé peníze.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Těžké a&nbsp;nadrozměrné zásilky</h4>
+        <p>Jakmile začnete odesílat těžší věci, situace se obrací. Váhové příplatky u&nbsp;kurýrů mohou cenu vystřelit strmě nahoru. Tady naopak obrovsky získává Balíkovna, která dokáže za velmi příznivé a&nbsp;fixní ceny přepravit zásilky až do 50 kilogramů.</p>
+      </div>
+
+      <p>Nejlepší je zjistit si, jaká podací místa nebo depa máte ve svém okolí a&nbsp;koho byste si přáli využívat. Následně napište na jejich obchodní oddělení, udělejte si přehlednou tabulku s&nbsp;cenami a&nbsp;možnostmi, které vám nabídli, a&nbsp;celou logistiku si nastavte tak, aby to bylo v&nbsp;první řadě výhodné pro vás.</p>
+
+      <h2>IČO a&nbsp;smlouvy: proč je C2C režim pro e-shopaře past</h2>
+      <p>Jakmile začnete prodávat pravidelně a&nbsp;máte živnostenské oprávnění (IČO), musíte změnit přístup k&nbsp;odesílání. Běžné podávání balíčků „přes aplikaci v&nbsp;mobilu" skrývá obrovské riziko. U&nbsp;většiny společností je klíčové uzavřít oficiální B2B (firemní) smlouvu. Neplatí to ale všude stejně:</p>
+
+      <div class="cost-card">
+        <h4>Zásilkovna</h4>
+        <p>Zde vás možná překvapí, že firemní B2C ceník (odesílání z&nbsp;e-shopu) je často o něco dražší, než když si balíček podáte jako fyzická osoba přes aplikaci. Založení firemního účtu a&nbsp;odesílání přes něj je ale naprosto klíčové kvůli pojištění zásilek, správnému párování faktur a&nbsp;bezproblémovému řešení případných reklamací či ztrát.</p>
+      </div>
+      <div class="cost-card">
+        <h4>PPL a&nbsp;DPD</h4>
+        <p>Tady je smlouva na IČO obrovskou výhodou. Získáte znatelně lepší ceník, který se odvíjí od objemu odeslaných zásilek, automatizovaný tisk štítků a&nbsp;svozy balíků přímo od vašich dveří.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Balíkovna</h4>
+        <p>Česká pošta a&nbsp;její Balíkovna běžně smlouvy s&nbsp;malými tvůrci neuzavírá - k&nbsp;tomu přistupuje až při velmi velkých objemech. Využívá se tedy jejich běžné rozhraní, u&nbsp;kterého se ceny nemění podle drobných váhových rozdílů.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Další možnosti na trhu</h4>
+        <p>Nezapomínejte, že trh je široký. Můžete využít služeb společnosti WE|DO, klasických balíků do ruky či na poštu od České pošty, nebo GLS, které má také velmi hustou síť výdejních míst a&nbsp;dobré ceny pro menší balíky.</p>
+      </div>
+
+      <div class="article-warning">
+        <span class="warning-label">Obrovský pozor na Alzaboxy a&nbsp;nepodnikatelské aplikace</span>
+        <p>Spousta začínajících tvůrců odesílá komerční zboží jako běžný balík od fyzické osoby pro fyzickou osobu (např. přes C2C aplikace do Alzaboxů), aby ušetřili. V&nbsp;obchodních podmínkách těchto služeb je ale komerční zboží výslovně zakázáno. Pokud se balíček ztratí a&nbsp;vy při reklamaci doložíte fakturu za prodané zboží, přepravce vám oprávněně zamítne reklamaci. Firemní režim je jedinou cestou k&nbsp;řádnému pojištění.</p>
+      </div>
+
+      <h2>Cenotvorba: jakou částku ukázat zákazníkovi</h2>
+      <p>Máte vybraného dopravce a&nbsp;znáte své nákupní ceny obalů z&nbsp;minulého článku. Jak to ale nacenit v&nbsp;košíku e-shopu? Vždy pamatujte, že reálný náklad tvoří přeprava + krabice + výplň + páska. Máte několik možností, jak to uchopit:</p>
+
+      <div class="cost-card">
+        <h4>Nejnižší možná doprava</h4>
+        <p>Víte, že vás Balíkovna reálně stojí 79 Kč. Zákazníkovi v&nbsp;košíku nabídnete dopravu přesně za 79 Kč. Náklady na obalové materiály (např. 20 Kč) chytře a&nbsp;nenápadně započítáte přímo do prodejní ceny samotných výrobků.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Dopravné a&nbsp;balné</h4>
+        <p>Cenu přiznáte celou. V&nbsp;košíku uvedete 79 Kč (doprava) + 20 Kč (balné). Můžete to nechat detailně rozepsané, nebo to zkrátka sečíst a&nbsp;uvést konečnou částku 99 Kč pod jednotnou položkou „Dopravné a&nbsp;balné".</p>
+      </div>
+
+      <p>Z&nbsp;psychologického hlediska je pro zákazníka samozřejmě vždy lepší vidět co nejnižší částku za dopravu. Na druhou stranu, zákazníci si velmi často volí přepravce ne podle nejnižší ceny, ale čistě podle toho, s&nbsp;kým jsou dlouhodobě spokojení nebo koho mají nejblíže.</p>
+
+      <div class="osobni-box">
+        Sama mám například na svém e-shopu nastavenou dopravu zdarma pouze u&nbsp;kurýra DPD. A&nbsp;i&nbsp;tak se mi běžně stává, že zákazník tuto výhodu vůbec nevyužije a&nbsp;raději si v&nbsp;košíku zaplatí poštovné u&nbsp;Zásilkovny. Ví totiž, že v&nbsp;okolí bydliště žádný spolehlivý box jiné společnosti nemá, doma by ho kurýr s&nbsp;největší pravděpodobností nezastihl a&nbsp;balíček by mu odvezli na depo do vedlejšího města. Raději si tedy připlatí za komfort vyzvednutí tam, kde mu to vyhovuje.
+      </div>
+
+      <div class="article-warning">
+        <span class="warning-label">Past jménem „Doprava zdarma"</span>
+        <p>Pokud nabízíte dopravu zdarma nad určitou částku, myslete na to, že pokud máte balné schované v&nbsp;položce dopravy, celou tuto částku dotujete z&nbsp;vlastní kapsy. Doprava zdarma navíc nemusí platit pro všechny dopravce v&nbsp;nabídce (jak ukazuje příklad s&nbsp;DPD výše). Je naprosto v&nbsp;pořádku nastavit ji pouze pro jednoho vybraného přepravce a&nbsp;ostatní nechat plně zpoplatněné. Jen pozor, ať je to všude na webu a&nbsp;v&nbsp;košíku jasně a&nbsp;srozumitelně napsáno.</p>
+      </div>
+
+      <h2>Platby a&nbsp;předání: dobírka a&nbsp;osobní odběr</h2>
+      <p>Mezi e-shopaři neustále kolují dohady, zda je povinností nabízet určité platební metody. Není. Je to čistě na vás.</p>
+
+      <div class="cost-card">
+        <h4>Dobírka</h4>
+        <p>Mnoho tvůrců ji vědomě nenabízí. Důvod je prostý - nechcete, aby se stávalo, že zákazník zboží nepřevezme. Zaplatili byste dopravu tam i&nbsp;zpět a&nbsp;museli byste řešit znehodnocené obaly. Platba předem nebo kartou je dnes standard.</p>
+      </div>
+      <div class="cost-card">
+        <h4>Osobní odběr</h4>
+        <p>Pokud máte prodejnu nebo ateliér, je to skvělý benefit. Pokud tvoříte doma, můžete osobní odběr nabídnout také, ale doporučuje se k&nbsp;němu dopsat jasnou formulku: „Výhradně po předchozí domluvě." Omezíte tím nečekané návštěvy a&nbsp;získáte kontrolu nad svým časem.</p>
+      </div>
+
+      <h2>První krůčky za hranice a&nbsp;obalová legislativa</h2>
+      <p>Český trh je často brzy malý a&nbsp;logickým krokem je expandovat na Slovensko. Z&nbsp;pohledu logistiky to dnes už nepředstavuje žádnou překážku. DPD, PPL, Zásilkovna i&nbsp;Balíkovna mají na Slovensko perfektní návaznost a&nbsp;balíček tam dorazí mnohdy stejně rychle jako na druhou stranu České republiky.</p>
+      <p>Skutečnou překážkou při odesílání do zahraničí je legislativa. Jakmile váš balíček s&nbsp;objednávkou fyzicky překročí hranice státu, začínají pro vás platit lokální zákony a&nbsp;vy se stáváte dovozcem obalů na daný trh. Při odesílání na Slovensko tak spadáte přímo pod tamní Zákon o odpadoch č. 79/2015 Z. z. a&nbsp;vzniká vám reálná povinnost registrovat se a&nbsp;řešit poplatky za obalové materiály prostřednictvím slovenského registru obalů.</p>
+      <p>Jde o poměrně rozsáhlé téma, kde lze za neznalost schytat nepříjemné pokuty. Právě proto se budeme této zahraniční byrokracii a&nbsp;povinnostem spojeným s&nbsp;obalovými registry detailně věnovat v&nbsp;některém z&nbsp;našich dalších článků. Zůstaňte s&nbsp;námi, ať vás případná expanze nezaskočí nepřipravené.</p>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Projdi si nabídku dopravců ve svém košíku. Nabízíš je proto, že jsou pro tebe logisticky výhodní, nebo jen proto, že "to tak dělá každý"? A&nbsp;máš oficiální firemní smlouvu tam, kde na ní záleží?</p>
+      </div>
+
+      <p class="article-ps">Jak vybrat správný obal a&nbsp;výplň, se dočteš v&nbsp;článku <a href="kompletni-pruvodce-balenim.html">Kompletní průvodce balením pro tvůrce</a>. A&nbsp;proč je balení víc než jen logistika, v <a href="baleni-jako-soucast-zazitku.html">Balení jako součást zážitku</a>.</p>
+
+      <div class="article-author">
+        <div class="author-avatar">V</div>
+        <div class="author-info">
+          <strong>Veronika Hašplová</strong>
+          tvůrkyně (3D tisk) · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener">@eweria_prints</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="kompletni-pruvodce-balenim.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Kompletní průvodce balením pro tvůrce</span>
+      </a>
+      <a href="reklamace-bez-dramatu.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Reklamace bez dramatu</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Řešíš podobné rozhodování s&nbsp;dopravci?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu sdílíme zkušenosti s&nbsp;dopravci, smlouvami i&nbsp;tím, co se nám osvědčilo v&nbsp;praxi. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
