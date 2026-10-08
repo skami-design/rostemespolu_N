@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time blocking v&nbsp;reálném životě - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Time blocking v učebnicové verzi je hezký, ale reálný den ho rozbije. Jak plánovat podle mikrooken, středních oken a hlubokých bloků - pro mámy, pro zaměstnané i pro obojí najednou.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Time blocking v reálném životě - Rosteme spolu">
+  <meta property="og:description" content="Dobrý plán není ten, který se nikdy nerozbije. Je to ten, ke kterému se dokážeš vrátit.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/time-blocking.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-date { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .diagram-wrap { margin: 1.8rem 0; }
+
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; font-style: italic; }
+    .article-callout strong { color: var(--green); font-style: normal; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0 0 0.6rem; }
+    .technika p:last-child { margin: 0; }
+    .schedule-row { display: flex; gap: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .schedule-row:last-child { border-bottom: none; }
+    .schedule-time { font-weight: 700; color: var(--ink); flex-shrink: 0; width: 6.5rem; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 2.5rem 4rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Time blocking v&nbsp;reálném životě</span>
+    </div>
+
+    <span class="article-eyebrow">Myslím &amp; cítím</span>
+    <span class="article-date">9. 10. 2025</span>
+    <h1 class="article-h1">Time blocking v&nbsp;reálném životě</h1>
+    <p class="article-lead">Přečteš si článek o&nbsp;time managementu, řekneš si „aha, to dává smysl" - a&nbsp;pak přijde den zúčtování s&nbsp;časem a&nbsp;máš hotové sotva priority, a&nbsp;to jen napůl. Problém není v&nbsp;tom, že bys nechtěla být organizovaná. Je v&nbsp;tom, že ti nikdo neukázal, jak to celé nacpat do reálného dne.</p>
+
+    <div class="article-body">
+
+      <h2>Jak time blocking vlastně vypadá</h2>
+      <p>Než ho začneme přizpůsobovat, ukažme si, jak vypadá v&nbsp;učebnicové verzi. Místo nekonečného seznamu úkolů si vyhrazuješ konkrétní části dne pro určitý typ práce. Nejdřív zarezervuješ čas - pak do něj vložíš úkoly. Ne naopak.</p>
+
+      <p>V&nbsp;praxi to může vypadat třeba takhle:</p>
+
+      <div class="technika">
+        <span class="technika-label">Ilustrativní příklad</span>
+        <div class="schedule-row"><span class="schedule-time">8:00-9:00</span> Administrativa - emaily, objednávky, faktury</div>
+        <div class="schedule-row"><span class="schedule-time">9:00-11:00</span> Hluboká práce - tvorba, psaní, soustředěná práce</div>
+        <div class="schedule-row"><span class="schedule-time">11:00-11:30</span> Komunikace - zprávy, odpovědi zákaznicím</div>
+        <div class="schedule-row"><span class="schedule-time">13:00-14:00</span> Obsah a&nbsp;sítě - příspěvky, plánování</div>
+        <div class="schedule-row"><span class="schedule-time">14:00-15:00</span> Rezerva - neplánovaná, schválně volná</div>
+      </div>
+
+      <p>Tohle je jen ilustrativní příklad - v&nbsp;reálném životě si každá okna přizpůsobuje podle svých preferencí a&nbsp;podle toho, jak se dokáže soustředit v&nbsp;různé části dne. V&nbsp;předchozím článku jsme psaly o&nbsp;tom, že dopolední energie není totéž co odpolední - a&nbsp;přesně z&nbsp;toho vychází i&nbsp;to, co a&nbsp;kam si blokuješ. Jenže možná máš děti. Nebo zaměstnání. Nebo obojí. A&nbsp;právě proto teď tenhle princip rozebereme a&nbsp;poskládáme jinak - aby odpovídal životu, který skutečně žiješ.</p>
+
+      <h2>Než začneš blokovat - priorita jako vstup</h2>
+      <p>Než otevřeš kalendář, potřebuješ vědět, co do něj patří. Pokud jsi četla <a href="time-management.html">předchozí článek</a>, svoje tři otázky na priority už znáš. Teď vezmeme vytříděné úkoly a&nbsp;konečně jim najdeme místo v&nbsp;reálném dni.</p>
+
+      <h2>Kde to nejčastěji skřípe - a&nbsp;co s&nbsp;tím</h2>
+      <p>Tyhle situace jsou ilustrativní - tvoje konkrétní verze může vypadat jinak, ale princip bývá podobný. Většina lidí se zasekne na jednom ze tří míst:</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Tři nejčastější zádrhele</span>
+        <ul>
+          <li><strong>Plán bez rezervy.</strong> Naplánuješ bloky na sto procent dostupného času. Pak přijde jedna nečekaná věc - a&nbsp;nemáš kam ji dát. Stačí méně: neblokuj vše, co máš k&nbsp;dispozici. Nech část dne jako buffer - jak velkou, závisí na tom, jak nepředvídatelný tvůj den obvykle je.</li>
+          <li><strong>Nevíš, co dělat v&nbsp;kratších oknech.</strong> Máš deset volných minut - a&nbsp;osm z&nbsp;nich strávíš přemýšlením, co by se dalo stihnout. Klíčové je mít předem připravené úkoly seřazené podle toho, kolik času a&nbsp;soustředění vyžadují.</li>
+          <li><strong>Plán se rozbije a&nbsp;ty to vzdáš.</strong> Z&nbsp;jednoho rozbitého dopoledne se stane katastrofa na celý týden. Stačí jedno: po každém přerušení se zeptej, co je teď nejdůležitější - a&nbsp;odtamtud pokračuj dál. Systém není o&nbsp;dokonalosti. Je o&nbsp;tom mít kam se vrátit.</li>
+        </ul>
+      </div>
+
+      <h2>Tři velikosti oken - základ celého systému</h2>
+      <p>Místo plánování podle hodiny v&nbsp;den plánuj podle toho, co dané okno reálně nabízí - kolik soustředění a&nbsp;klidu v&nbsp;tu chvíli skutečně máš.</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Tři velikosti oken</span>
+        <ul>
+          <li><strong>Mikrookno (5-15 minut)</strong> - krátká odpověď zákaznici, sdílení příspěvku, rychlá objednávka materiálu, příprava podkladů. Věci, které nevyžadují soustředění a&nbsp;dají se přerušit bez ztráty.</li>
+          <li><strong>Střední okno (20-45 minut)</strong> - psaní popisku k&nbsp;výrobku, příprava jednoho příspěvku, lehčí administrativa, plánování obsahu. Věci, které potřebují trochu klidu, ale zvládnou i&nbsp;dítě poblíž.</li>
+          <li><strong>Hluboký blok (60 minut a&nbsp;víc)</strong> - psaní článku, tvorba kolekce, strategické plánování. Pro hluboký blok hledej svoje nejspolehlivější okno - třeba spánek dítěte, školku, hlídání nebo večer po&nbsp;uspání.</li>
+        </ul>
+      </div>
+
+      <div class="article-callout">
+        <p>Dobrý plán není ten, který se nikdy nerozbije. <strong>Je to ten, ke kterému se dokážeš vrátit, když se rozbije.</strong></p>
+      </div>
+
+      <h2>Máma hack: nejspolehlivější okna</h2>
+      <p>Pokud máš doma dítě, neplatí rada „naplánuj hlubokou práci tehdy, když máš jistotu klidu" - protože jistotu klidu někdy nemáš nikdy. Platí spíš: hlubokou práci dávej do nejspolehlivějších oken, která ve svém dni máš. Může to být spánek dítěte, školka, chvíle s&nbsp;partnerem nebo večer po&nbsp;uspání.</p>
+
+      <p>A&nbsp;co když ani to nejspolehlivější okno dnes nevychází? Pak místo vzdání se celého hlubokého bloku vezmi největší úkol a&nbsp;rozděl ho na části, které se vejdou do menšího okna. Psaní článku se rozpadne na: najít téma, napsat osnovu, napsat jeden odstavec, projít a&nbsp;opravit. Každý krok je samostatný - a&nbsp;zvládneš ho i&nbsp;v&nbsp;okně, které bylo původně určené na něco jiného.</p>
+
+      <h3>Modelový den - a&nbsp;co se opravdu stane</h3>
+      <div class="technika">
+        <p><strong>PLÁN:</strong> polední spánek = hluboký blok na tvorbu.</p>
+        <p><strong>REALITA:</strong> dnes neusnulo.</p>
+        <p>Co teď? Ne: „den je v&nbsp;háji." Ale: vyberu jednu část hlubokého úkolu, kterou zvládnu později v&nbsp;kratším nebo středním okně. Přesunu svoji prioritu do nejbližšího spolehlivého bloku - třeba večer. Ostatní jde na parkoviště. A&nbsp;některé věci úplně pustím - ne všechno, co se dnes nestihlo, musí nutně být zítra.</p>
+      </div>
+
+      <div class="osobni-box">
+        Já jsem naštěstí noční sova - a&nbsp;v&nbsp;nejhorším případě mám nosítko, to jistí. Pro mě je ale zásadní jedno: nepracovat na úkor dětí. Když mě potřebují, mají sto procent mojí pozornosti. Moje nejhlavnější bloky proto přicházejí tehdy, když spí nebo si hrají samy. Zároveň mě práce doprovází úplně všude. Někdy na kroužku dělám jednou rukou co mám a&nbsp;druhou diktuju chatovi - a&nbsp;večer z&nbsp;toho skládám příspěvky. AI mi obecně hodně pomáhá v&nbsp;té administrativní části, bez toho by to nešlo.
+      </div>
+
+      <h2>Práce hack: když máš zaměstnání a&nbsp;vlastní projekt</h2>
+      <p>Chodíš do práce a&nbsp;vlastní projekt si plníš bokem - večer, o&nbsp;víkendu, ve chvílích, kdy zbyde chvíle. Tady nejde o&nbsp;nepředvídatelnost, ale o&nbsp;únavu. Po&nbsp;osmi hodinách v&nbsp;práci nemáš vždy energii na dalších pět hodin soustředění - a&nbsp;ani by nebylo správné to od sebe čekat.</p>
+
+      <p>Vlastní projekt nepotřebuje každodenní hodiny navíc. Potřebuje pravidelnost - a&nbsp;ta může mít různé podoby. Někdy fungují lépe dva silné bloky týdně než každodenní únava z&nbsp;malých kousků.</p>
+
+      <p>Jak na to: nejdřív vyznač pevné body - zaměstnání, cesta, péče o&nbsp;rodinu, večeře. Pak najdi svá okna: ráno před prací, oběd, večer, víkendové dopoledne. Ber tato okna jako skutečnou součást svého týdne, ne jako čas, který může pokaždé spolknout něco jiného.</p>
+
+      <p>A&nbsp;ještě jedna věc, která se snadno přehlédne: domácnost a&nbsp;odpočinek nejsou to, co zbyde kolem práce. Jsou to taky bloky. Jedno volné odpoledne týdně bez pracovní ambice je investice do energie, ze které pak čerpáš. Ne ztráta. Plánuj ji vědomě - ne jako výčitku, ale jako nutnou součást systému.</p>
+
+      <h2>A&nbsp;co když máš obojí?</h2>
+      <p>Jsi máma, chodíš do práce a&nbsp;navíc chceš rozvíjet vlastní projekt. Tohle je nejtěžší skládačka ze všech - a&nbsp;není to nereálné, ale je to o&nbsp;vědomých kompromisech.</p>
+
+      <p>Nemůžeš mít hluboké pracovní bloky každý večer. Večery potřebuješ aspoň z&nbsp;části pro děti, pro sebe, pro odpočinek. Ale můžeš mít třeba jeden nebo dva silnější bloky týdně, které si pečlivě ochráníš. A&nbsp;pak mikrookna, která využíváš chytře - ve vlaku, v&nbsp;čekárně, v&nbsp;přestávce na obědě.</p>
+
+      <p>Klíč je neplánovat toho víc, než unese energie, která po&nbsp;všem ostatním zbývá. Nemusíš proto rozblokovat každý den. Jeden týden může vypadat třeba tak, že úterní a&nbsp;čtvrteční večer patří hlubší práci, během cest nebo čekání vyřídíš pár mikroúkolů a&nbsp;ostatní večery zůstanou rodině, domácnosti nebo odpočinku. Není to univerzální rozvrh - jen ukázka, že i&nbsp;dva dobře využité bloky týdně můžou mít větší smysl než snaha pracovat každý den.</p>
+
+      <h2>Nástroje - nejlepší je ten, který opravdu otevřeš</h2>
+      <p>Time blocking funguje na papíře i&nbsp;v&nbsp;aplikaci. Nejlepší nástroj je ten, který skutečně použiješ - ne ten, který vypadá nejlépe na screenshotu. Začni s&nbsp;čímkoliv, co už znáš: papírovým diářem, Google Kalendářem nebo tabulkou. Nejdřív si vytvoř systém. Až potom řeš aplikaci.</p>
+
+      <div class="osobni-box">
+        Já mám všechno v&nbsp;jednom propracovaném tabulkovém systému na Google Sheets - vidím ho aktuálně na mobilu i&nbsp;na počítači. A&nbsp;přesto si každý večer ráda napíšu to-do list na papír. Píšu tam úplně všechno: nákup, objednání lékaře, úprava faktury i&nbsp;příprava kampaně. Pak si to barevně rozdělím podle priorit a&nbsp;jen odškrtávám. Na konci dne se podívám co zbylo, doplním deadliny a&nbsp;jedu dál. Takhle mám pocit, že jsem organizovaně neorganizovaná.
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Vezmi jeden den tohoto týdne a&nbsp;nakresli si záchytné body - vše, co je pevně dané. Pak se podívej na to, co zbývá, a&nbsp;roztřiď to na mikrookna, střední okna a&nbsp;hluboké bloky. Ke každému přiřaď jeden nebo dva úkoly, které do něj reálně patří.</p>
+        <p>Nemusí to být celý týden. Jeden den stačí. A&nbsp;až se plán rozbije - vrať se k&nbsp;němu. To je systém.</p>
+      </div>
+
+      <p class="article-ps">Základy organizace času a&nbsp;práce s&nbsp;prioritami jsme rozebíraly v&nbsp;předchozím článku <a href="time-management.html">Nejde o&nbsp;to stihnout všechno</a>.</p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="time-management.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Nejde o&nbsp;to stihnout všechno</span>
+      </a>
+      <a href="brand-tvuj-pribeh.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Tvůj brand, tvůj příběh</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš si nastavit systém společně s&nbsp;ostatními?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem pomáháme udržet přehled i&nbsp;ve chvílích, kdy toho je moc. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
