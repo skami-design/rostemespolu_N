@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-maily, které pracují za tebe - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Co může malá značka v komunikaci se zákaznicí automatizovat a kde je lepší zůstat osobní. Zákaznická cesta od objednávky po doručení, ukázka šablony a 5 kroků k první šabloně.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="E-maily, které pracují za tebe - Rosteme spolu">
+  <meta property="og:description" content="Automatizuj informace. Personalizuj vztah.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/emaily-ktere-pracuji.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-date { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .diagram-wrap { margin: 1.8rem 0; }
+
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; font-style: italic; }
+    .article-callout strong { color: var(--green); font-style: normal; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0 0 0.6rem; }
+    .technika p:last-child { margin: 0; }
+    .schedule-row { display: flex; gap: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .schedule-row:last-child { border-bottom: none; }
+    .schedule-time { font-weight: 700; color: var(--ink); flex-shrink: 0; width: 6.5rem; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-sources { font-size: 0.78rem; line-height: 1.7; color: var(--muted); margin-top: 1.5rem; }
+    .article-sources a { color: var(--muted); }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 2.5rem 4rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>E-maily, které pracují za tebe</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím &amp; rostu</span>
+    <span class="article-date">20. 10. 2026</span>
+    <h1 class="article-h1">E-maily, které pracují za tebe</h1>
+    <p class="article-lead">Je deset večer. Přišla objednávka. Sedíš a&nbsp;píšeš potvrzení - stejné, které jsi napsala minulý týden. A&nbsp;ten před ním. A&nbsp;ten před tím.</p>
+
+    <div class="article-body">
+
+      <div class="article-callout">
+        <p>Co může malá značka <strong>automatizovat</strong> - a&nbsp;kde je lepší <strong>zůstat osobní</strong>.</p>
+      </div>
+
+      <p>Prodávám přes DM, e-maily přece nepotřebuju. A&nbsp;já chápu, proč to tak můžeš vnímat. Obzvlášť dnes, kdy můžeš mít celou komunikaci se zákaznicí pohodlně v&nbsp;jednom chatu. Proč si přidělávat další práci?</p>
+
+      <p>Jenže e-mail má v&nbsp;podnikání pořád svoje místo. Je přehlednější a&nbsp;formálnější cestou pro zasílání potvrzení objednávek, faktur, platebních údajů nebo informací o&nbsp;doručení. Zároveň ti pomáhá budovat vlastní databázi zákaznických kontaktů, se kterými můžeš dál pracovat - například při vyřizování objednávek, žádostech o&nbsp;zpětnou vazbu nebo, při splnění pravidel pro marketingová sdělení, při zasílání novinek a&nbsp;newsletterů.</p>
+
+      <p>A&nbsp;co je důležité? Nemusíš kvůli tomu hned pořizovat žádný složitý systém.</p>
+
+      <h2>Co to vůbec je a&nbsp;k&nbsp;čemu to slouží</h2>
+
+      <p>E-mailová komunikace v&nbsp;podnikání má dvě hlavní podoby.</p>
+
+      <p><em>Transakční e-maily</em> souvisejí s&nbsp;konkrétní objednávkou nebo jinou akcí zákaznice. Patří sem potvrzení objednávky, platební údaje, faktury nebo informace o&nbsp;odeslání zásilky. Jejich hlavním úkolem je předat důležité informace ve správný čas.</p>
+
+      <p><em>E-mail marketing</em> slouží k&nbsp;udržování kontaktu se zákaznicemi a&nbsp;budování vztahu se značkou. Může jít například o&nbsp;newslettery, novinky, představení kolekcí nebo sezónní nabídky. Na rozdíl od běžné objednávkové komunikace se u&nbsp;něj musíš zabývat také pravidly pro zasílání obchodních sdělení - a&nbsp;to včetně GDPR.</p>
+
+      <p>Zjednodušeně: transakční e-maily (potvrzení objednávky, předání údajů přepravci) posíláš ze zákona v&nbsp;rámci plnění smlouvy - souhlas zákaznice nepotřebuješ. Pokud ale plánuješ zasílat newsletter nebo jiná marketingová sdělení, musíš o&nbsp;souhlas výslovně požádat. Ideální moment? Třeba přímo při odběru nebo v&nbsp;potvrzovacím e-mailu - formou zaškrtávacího políčka, ne předvyplněného.</p>
+
+      <p>V&nbsp;tomto článku se zaměříme především na první oblast - komunikaci, která zákaznici provází od objednávky až po doručení výrobku.</p>
+
+      <div class="technika">
+        <span class="technika-label">Proč to řešit, i&nbsp;když prodávám přes DM?</span>
+        <p>Protože zákaznice, která nakoupí přes Instagram, taky čeká na potvrzení. Taky chce vědět, kdy balíček odchází. Taky ocení zprávu po doručení. Forma se liší - DM místo e-mailu - ale potřeba zákaznice je stejná. A&nbsp;šablona ti pomůže v&nbsp;obou případech.</p>
+      </div>
+
+      <h2>Kde vzniká problém - a&nbsp;jak ho poznat</h2>
+
+      <p>Otevři si svůj poslední e-mail nebo DM konverzaci se zákaznicí. A&nbsp;projdi si ji očima zákaznice, ne tvýma. Kde jsou tiché momenty? Kde zákaznice čekala na zprávu - a&nbsp;žádná nepřišla?</p>
+
+      <p>Představ si, že jsi právě zaplatila objednávku. Peníze odešly z&nbsp;účtu, ale dál se nic neděje. Žádné potvrzení, žádná informace. A&nbsp;tak začneš přemýšlet: Dorazila platba? Ví o&nbsp;mojí objednávce? Kdy se začne vyrábět? A&nbsp;kdy vlastně balíček přijde?</p>
+
+      <p>Přitom často stačí několik jednoduchých zpráv, které zákaznici provedou celým procesem. <em>Objednávka přijata. Platba dorazila, děkuji. Začínám pracovat na tvé zakázce. Balíček zítra odesílám.</em> Taková malá trasovací cesta pomáhá zákaznici orientovat se v&nbsp;tom, co se právě děje. Nemusí se sama připomínat ani přemýšlet, jestli všechno probíhá podle plánu.</p>
+
+      <p>Nejde o&nbsp;to zahltit ji zprávami. Jde o&nbsp;to předat důležité informace ve chvíli, kdy je potřebuje.</p>
+
+      <div class="technika">
+        <span class="technika-label">Jednoduchý test: projdi si svoji zákaznickou cestu</span>
+        <p>Vezmi svoji poslední objednávku a&nbsp;odpověz na každou otázku:</p>
+        <p>Dostala zákaznice potvrzení přijetí objednávky - a&nbsp;věděla, kdy ho má čekat? <strong>Ano / Ne</strong><br>
+        Věděla přesně jak a&nbsp;kdy zaplatit? <strong>Ano / Ne</strong><br>
+        Dostala zprávu, že balíček odchází - dřív než se sama zeptala? <strong>Ano / Ne</strong></p>
+        <p>Každé „Ne“ je místo, kde zákaznice čekala a&nbsp;nevěděla. A&nbsp;nejistota - i&nbsp;když malá - se na výsledném pocitu z&nbsp;nákupu podepíše.</p>
+        <p><em>Zpráva po doručení je bonus navíc - dobrovolná, ale zákaznicemi ceněná.</em></p>
+      </div>
+
+      <p>A&nbsp;tady je ten AHA moment: <em>zákaznice se někdy nevrátí ne proto, že by výrobek nebyl dobrý. Ale proto, že v&nbsp;průběhu cítila nejistotu - a&nbsp;příště si raději koupí od někoho, kde ten pocit neměla.</em> Komunikace kolem objednávky není bonus. Je to součást celého zážitku.</p>
+
+      <h2>Co zákaznice potřebuje slyšet - a&nbsp;kdy</h2>
+
+      <p>Představ si zákaznici, která právě odeslala objednávku. Co se jí honí hlavou? Dostalo to? Zaplatila správně? Kdy přijde? Co když se něco pokazí? Každý e-mail, který v&nbsp;tu chvíli dostane, je odpověď na jednu z&nbsp;těchto otázek - a&nbsp;zákaznice, která má informace, je zákaznice v&nbsp;klidu.</p>
+
+      <div class="technika">
+        <span class="technika-label">Zákaznická cesta krok za krokem</span>
+        <p><strong>1. Objednávka přijata</strong><br>Zákaznice stiskla tlačítko. Čeká na potvrzení, že se vše povedlo a&nbsp;že víš o&nbsp;ní.<br><span style="color:var(--green);font-weight:600">→ Potvrzení přijetí, shrnutí objednávky, co bude dál a&nbsp;do kdy.</span></p>
+        <p><strong>2. Platba</strong><br>Pokud platí převodem, potřebuje vědět přesně kam a&nbsp;do kdy. Pokud kartou, ujistit se, že vše proběhlo.<br><span style="color:var(--green);font-weight:600">→ Číslo účtu, variabilní symbol, termín - nebo potvrzení přijaté platby. Patří sem i&nbsp;faktura, pokud ji zákaznice potřebuje.</span></p>
+        <p><strong>3. Výroba nebo příprava</strong><br>Zákaznice čeká a&nbsp;táže se, jestli vše běží. Krátký update nebo fotka z&nbsp;procesu je malý detail, který hodně znamená.<br><span style="color:var(--green);font-weight:600">→ Nepovinné, ale ceněné - krátká zpráva nebo foto zákulisí.</span></p>
+        <p><strong>4. Odeslání</strong><br>Balíček odchází. Zákaznice to musí vědět dřív, než se sama zeptá. Proaktivní zpráva = důvěra.<br><span style="color:var(--green);font-weight:600">→ Dopravce, sledovací číslo, odhadovaný termín doručení.</span></p>
+        <p><strong>5. Doručení a&nbsp;poděkování</strong><br>Balíček dorazil. Za pár dní - krátká zpráva, upřímné poděkování a&nbsp;přirozená prosba o&nbsp;recenzi nebo sdílení. Nepovinné, ale zákaznicemi ceněné.<br><span style="color:var(--green);font-weight:600">→ Poděkování + jemná žádost o&nbsp;zpětnou vazbu. Ne formulář - věta.</span></p>
+      </div>
+
+      <p>Podívej se na svůj seznam a&nbsp;označ, kde máš mezery. Ne každý krok musíš pokrýt hned - ale každé tiché místo, které identifikuješ, je konkrétní věc, kterou můžeš tento týden opravit. Začni od toho, kde zákaznice čeká nejdéle nebo nejúzkostlivěji. Zpravidla to bývá potvrzení objednávky a&nbsp;oznámení o&nbsp;odeslání.</p>
+
+      <p><em>Jedna dobře napsaná zpráva navíc dokáže zákaznici přeměnit z&nbsp;čekající na těšící se. A&nbsp;to se může pozitivně promítnout do recenzí, doporučení - a&nbsp;do toho, jestli se vrátí.</em></p>
+
+      <h2>Automaticky, nebo osobně?</h2>
+
+      <p>Tohle je otázka, která lidi při slově „automatizace“ nejvíc trápí. Bude to znít jako robot? Zákaznice pozná, že to nepíšu já?</p>
+
+      <p>Záleží na tom, jak šablonu napíšeš. Automatický e-mail, který je teplý, konkrétní a&nbsp;nese tvůj hlas, zákaznici nezklame. Naopak - dostane odpověď rychle, přehledně a&nbsp;s&nbsp;dobrým pocitem. Automatický e-mail, který vypadá jako výstřižek z&nbsp;formuláře, zákaznici ochladí bez ohledu na to, jestli za ním sedíš ty nebo systém.</p>
+
+      <div class="article-callout">
+        <p><strong>Automatizuj informace. Personalizuj vztah.</strong></p>
+      </div>
+
+      <p>Potvrzení objednávky, platební instrukce, číslo zásilky - to jsou informace. Klidně ať běží samy. Poděkování po doručení, reakce na recenzi, odpověď na specifický dotaz - to je vztah. Tam zůstaň osobní.</p>
+
+      <div class="osobni-box">Já mám například pro některé zprávy připravených hned několik variant. Většinou tři. Liší se třeba úvodem nebo zakončením, takže nemusím pokaždé psát všechno od začátku - ale zároveň nemám pocit, že všem posílám jednu a&nbsp;tu samou zprávu. Doplním jméno, upravím potřebné informace a&nbsp;hotovo.</div>
+
+      <div class="article-callout">
+        <p>Šablony nemají za tebe komunikovat. <strong>Mají ti komunikaci usnadnit.</strong></p>
+      </div>
+
+      <h2>Kde začít - podle toho, kde prodáváš</h2>
+
+      <p>Neexistuje jeden správný způsob. Záleží na tom, přes jaký kanál prodáváš a&nbsp;co ti dává smysl právě teď.</p>
+
+      <div class="technika">
+        <span class="technika-label">Prodávám přes DM nebo osobně</span>
+        <p>Nejjednodušší start jsou šablony v&nbsp;poznámkách nebo v&nbsp;Gmailu. Připravíš texty jednou a&nbsp;pak je kopíruješ a&nbsp;doplňuješ - jméno, číslo zásilky, datum. Nic víc nepotřebuješ.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Prodávám na Fleru nebo Etsy</span>
+        <p>Většina platforem posílá základní potvrzení sama - ale zkontroluj si, co přesně tvoje platforma zákaznici posílá a&nbsp;co je potřeba doplnit ručně. Tvůj prostor je zpravidla osobní zpráva při odeslání a&nbsp;krátké poděkování po doručení.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Mám vlastní e-shop</span>
+        <p>Systémové e-maily jsou součástí každé platformy - Shoptet, WooCommerce, ByznysWeb i&nbsp;další. Stačí je jednou projít a&nbsp;přizpůsobit svému tónu. Pozor: zkontroluj, co systémové e-maily skutečně říkají - automatická zpráva, která obsahuje nesprávnou dobu dodání nebo neodpovídá zakázkovému výrobku, může způsobit víc zmatku než žádná zpráva.</p>
+      </div>
+
+      <h2>Co musí každý objednávkový e-mail splňovat</h2>
+
+      <p>Ať ho posíláš ručně nebo automaticky, zákaznice potřebuje vědět tři věci: co se stalo, co bude dál a&nbsp;na koho se obrátit, pokud něco nesedí. Tohle jsou základy, bez kterých dobrý e-mail nestojí.</p>
+
+      <p>A&nbsp;pak je tu tón. Zákaznice malé tvůrkyně očekává jiný jazyk než zákaznice velkého e-shopu. Má ji oslovit člověk, ne systém. Jedna věta navíc - „těším se, až mi dáš vědět, jak se ti to líbí“ - udělá víc než dokonale formátovaný šablonový text.</p>
+
+      <p><em>Jednou napsaná dobrá šablona se vyplatí víckrát než stokrát napsaná průměrná zpráva od nuly.</em></p>
+
+      <h2>Jak taková zpráva vlastně vypadá</h2>
+
+      <p>Celý článek říká, že si máš šablonu napsat. Ale jak taková dobrá zpráva vypadá? Tady je příklad potvrzení objednávky - krátký, lidský a&nbsp;funkční:</p>
+
+      <div class="technika">
+        <span class="technika-label">Ukázka - potvrzení objednávky</span>
+        <p>Ahoj, Jani,</p>
+        <p>moc děkuju za objednávku! Mám ji v&nbsp;pořádku přijatou a&nbsp;těším se, až se pustím do přípravy.</p>
+        <p>Objednala sis: [výrobek]<br>Předpokládané odeslání: [datum]</p>
+        <p>Jakmile balíček odešlu, pošlu ti informace ke sledování zásilky. Kdybys mezitím cokoliv potřebovala, klidně mi napiš.</p>
+        <p>Měj se krásně!</p>
+      </div>
+
+      <p>Proč tato zpráva funguje: potvrzuje přijetí, nastavuje očekávání, říká, co bude dál - a&nbsp;zákaznice ví, na koho se obrátit, aniž by musela sama hledat.</p>
+
+      <h2>Hotový výrobek vs. zakázková výroba</h2>
+
+      <p>Tohle rozlišení je pro spoustu tvůrkyň z&nbsp;naší komunity klíčové. U&nbsp;hotového výrobku je komunikace jednoduchá: potvrzení → platba → odeslání. Zákaznice ví, co dostane, a&nbsp;čeká jen na doručení.</p>
+
+      <p>U&nbsp;zakázkové výroby je situace jiná. Zákaznice čeká déle a&nbsp;má víc otázek - kdy se začne vyrábět, jestli se schvalují detaily, kdy může očekávat dokončení. Právě tady může dobře připravená zpráva ušetřit desítky opakovaných dotazů.</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Navíc pro zakázkovou výrobu</span>
+        <ul>
+          <li><span><strong>Potvrzení platby</strong> - zvlášť pokud zákaznice platí předem, nezapomeň potvrdit, že ti platba dorazila. Je to první věc, na kterou čeká.</span></li>
+          <li><span><strong>Potvrzení detailů</strong> - co přesně vzniká, v&nbsp;jakém provedení, co zákaznice schválila.</span></li>
+          <li><span><strong>Zahájení výroby</strong> - krátká zpráva nebo fotka, že se do toho pustíš.</span></li>
+          <li><span><strong>Průběžný update</strong> - zejména u&nbsp;delší výroby. Zákaznice, která neví, jestli na svou objednávku ještě čeká, se zeptá. Zákaznice, která dostane fotku zákulisí, se těší.</span></li>
+        </ul>
+      </div>
+
+      <h2>Začni za 10 minut</h2>
+
+      <p>Nemusíš nastavovat složité systémy. Šablona sama zprávu neodešle - ale ušetří ti opakované psaní a&nbsp;je prvním krokem k&nbsp;automatizaci, kterou můžeš nastavit později. Tady je nejjednodušší možný start:</p>
+
+      <div class="technika">
+        <span class="technika-label">5 kroků k&nbsp;první šabloně</span>
+        <p><strong>1.</strong> Vyber zprávu, kterou píšeš nejčastěji - nejspíš potvrzení objednávky.</p>
+        <p><strong>2.</strong> Přepiš ji tak, aby obsahovala všechny potřebné informace: co zákaznice objednala, co bude dál a&nbsp;do kdy.</p>
+        <p><strong>3.</strong> Místa, která se mění, označ hranatými závorkami: [jméno], [výrobek], [datum odeslání].</p>
+        <p><strong>4.</strong> Ulož ji - do poznámek v&nbsp;telefonu, do Gmailu (Nastavení → Pokročilé → Šablony), nebo do uložených odpovědí na Instagramu (Nastavení profesionálního účtu → Uložené odpovědi).</p>
+        <p><strong>5.</strong> Při příští objednávce ji vyzkoušej. První použití ti ukáže, co ještě doladit.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Napiš si šablonu té jedné zprávy, kterou píšeš nejčastěji. Nejspíš to bude potvrzení objednávky. Jednou, pořádně, svým jazykem - a&nbsp;ulož ji do poznámek nebo jako koncept v&nbsp;e-mailu. Až ti bude fungovat, přidej oznámení o&nbsp;odeslání. A&nbsp;pak případně poděkování po doručení.</p>
+      </div>
+
+      <p class="article-ps">Sem patří i&nbsp;tato témata: O&nbsp;tom, jak komunikovat se zákaznicí od prvního dotazu po doručení přes DM, jsme psaly v&nbsp;článku <a href="system-objednavek.html">Systém objednávek a&nbsp;komunikace</a>. A&nbsp;jak správně vyřešit reklamaci - v&nbsp;<a href="reklamace-bez-dramatu.html">Reklamace bez dramatu</a>.</p>
+
+      <p class="article-sources">Zdroje: <a href="https://portal.pohoda.cz/pro-podnikatele/jak-zacit-podnikat/aplikace-a-software-pro-podnikani/jak-vest-efektivne-maly-e-shop/" target="_blank" rel="noopener">Jak vést efektivně malý e-shop - portál POHODA</a> · <a href="https://www.live-agent.cz/sablony/potvrzeni/" target="_blank" rel="noopener">Šablony potvrzovacích e-mailů - LiveAgent</a> · <a href="https://blog.byznysweb.cz/2025/01/uprava-auto-emailu/" target="_blank" rel="noopener">Jak upravit automatické e-maily v&nbsp;e-shopu - ByznysWeb Blog</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="eet.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Návrat strašáka jménem EET 2.0</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš se podělit o&nbsp;svoje šablony?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem ukazujeme, jak komunikujeme se zákaznicemi, a&nbsp;ladíme spolu texty, které fungují. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
