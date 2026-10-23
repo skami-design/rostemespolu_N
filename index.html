@@ -480,6 +480,18 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } }
 
+    /* ── ČLENSTVÍ (přehled) ── */
+    .membership { background: var(--white); border-bottom: 1px solid var(--border); text-align: center; }
+    .membership .section-h { margin-bottom: 1rem; }
+    .membership-lead { max-width: 560px; margin: 0 auto 3rem; font-size: 0.98rem; line-height: 1.8; color: var(--ink2); }
+    .mem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); max-width: 980px; margin: 0 auto 2.5rem; text-align: left; }
+    .mem-box { background: var(--white); padding: 2rem 1.8rem; }
+    .mem-box h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 0.2rem; }
+    .mem-price { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+    .mem-price b { font-family: var(--serif); font-size: 1.3rem; color: var(--ink); font-weight: 600; }
+    .mem-box p { font-size: 0.9rem; line-height: 1.7; color: var(--ink2); }
+    @media (max-width: 900px) { .mem-grid { grid-template-columns: 1fr; } }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
@@ -545,7 +557,7 @@
     <ul class="nav-links">
       <li><a href="index.html#about">O nás</a></li>
       <li><a href="clanky.html">Články</a></li>
-      <li><a href="tvorkyně.html">Objevuj tvůrkyně</a></li>
+      <li><a href="clenstvi.html">Členství</a></li>
       <li><a href="#stories">Příběhy</a></li>
       <li><a href="#community" class="nav-cta">Přidej se</a></li>
     </ul>
@@ -559,7 +571,7 @@
     <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
     <a href="#about" class="mobile-link">O nás</a>
     <a href="clanky.html" class="mobile-link">Články</a>
-    <a href="tvorkyně.html" class="mobile-link">Objevuj tvůrkyně</a>
+    <a href="clenstvi.html" class="mobile-link">Členství</a>
     <a href="#stories" class="mobile-link">Příběhy</a>
     <a href="#freebie" class="mobile-link">Průvodce zdarma</a>
     <a href="#community" class="mobile-link mcta">Přidej se</a>
@@ -689,6 +701,19 @@
 
 
 
+  <!-- ČLENSTVÍ -->
+  <section class="membership" id="clenstvi">
+    <span class="eyebrow" style="color:var(--green)">Členství</span>
+    <h2 class="section-h">Tři úrovně, <em>jedna komunita</em></h2>
+    <p class="membership-lead">Do komunity patříš zdarma. Kdo chce víc podpory a&nbsp;znalostí, může si vybrat placenou úroveň.</p>
+    <div class="mem-grid">
+      <div class="mem-box reveal"><h3>Free</h3><div class="mem-price"><b>0&nbsp;Kč</b></div><p>Společná skupina na Instagramu, vzájemná podpora příspěvků a&nbsp;komunitní obsah.</p></div>
+      <div class="mem-box reveal"><h3>Základní</h3><div class="mem-price"><b>120&nbsp;Kč</b> měsíčně</div><p>Skupina s&nbsp;automatickou podporou, sdílení do Stories, prémiové články a&nbsp;sleva na služby Skami Design.</p></div>
+      <div class="mem-box reveal"><h3>VIP</h3><div class="mem-price"><b>190&nbsp;Kč</b> měsíčně</div><p>Nejvyšší podpora, průběžné sdílení všech příspěvků, propagace a&nbsp;banner na webu.</p></div>
+    </div>
+    <a href="clenstvi.html" class="btn-primary">Všechno o členství</a>
+  </section>
+
     <!-- PŘÍBĚHY -->
   <section class="stories" id="stories">
     <div class="stories-header reveal">
@@ -743,7 +768,7 @@
 
   <footer>
     <div class="footer-logo"><img src="logo.png" alt="Rosteme spolu" style="height: 40px; width: auto;"></div>
-    <ul class="footer-links"><li><a href="#about">O nás</a></li><li><a href="#start">Začínám podnikat</a></li><li><a href="#freebie">Průvodce</a></li><li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li></ul>
+    <ul class="footer-links"><li><a href="#about">O nás</a></li><li><a href="#start">Začínám podnikat</a></li><li><a href="#freebie">Průvodce</a></li><li><a href="clenstvi.html">Členství</a></li><li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li></ul>
     <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
   </footer>
 

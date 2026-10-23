@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Členství | Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Tři úrovně členství v komunitě Rosteme spolu: Free, Základní a VIP. Co která obsahuje, kolik stojí a jak se přidat.">
+  <meta property="og:title" content="Členství | Rosteme spolu">
+  <meta property="og:description" content="Free, Základní a VIP. Vyber si úroveň, která ti sedí.">
+  <meta property="og:image" content="og-image.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V72WRVK5K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8V72WRVK5K');
+  </script>
+  <style>
+    :root {
+      --ink:       #3D2D3A;
+      --ink2:      #7A5C6E;
+      --muted:     #A08898;
+      --pink:      #C0A0A5;
+      --pink-l:    #E8D8DC;
+      --pink-ll:   #F8F1F2;
+      --green:     #4E7A60;
+      --green-l:   #D4EDE0;
+      --mint:      #9FD4B0;
+      --off:       #FAF6F0;
+      --white:     #FFFFFF;
+      --border:    #E8E0DC;
+
+      --serif:  'Playfair Display', Georgia, serif;
+      --hand:   'Great Vibes', cursive;
+      --sans:   'Source Sans 3', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.2rem 4rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 1px 0 var(--border); }
+
+    .nav-logo { display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--green); margin-top: -3px; }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; font-weight: 400; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .nav-dropdown { position: relative; }
+    .nav-dropdown > a { display: flex; align-items: center; gap: 0.3rem; }
+    .nav-dropdown > a::after { content: '↓'; font-size: 0.7rem; transition: transform 0.2s; }
+    .nav-dropdown:hover > a::after { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 1rem); left: 50%; transform: translateX(-50%);
+      background: var(--white); border: 1px solid var(--border); min-width: 200px;
+      box-shadow: 0 8px 32px rgba(61,45,58,0.1); opacity: 0; pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s; transform: translateX(-50%) translateY(-8px);
+    }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .dropdown-menu a {
+      display: block; padding: 0.7rem 1.2rem; font-size: 0.8rem; color: var(--ink2);
+      text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase;
+      transition: background 0.15s, color 0.15s; border-bottom: 1px solid var(--border);
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: var(--pink-ll); color: var(--ink); }
+
+    /* ── HAMBURGER ── */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; outline: none; }
+    .hamburger:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--white);
+      z-index: 99; flex-direction: column; align-items: center; justify-content: center;
+      gap: 2.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .mobile-menu.open { display: flex; opacity: 1; pointer-events: all; }
+    .mobile-menu a { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; color: var(--ink); text-decoration: none; transition: color 0.2s; }
+    .mobile-menu a:hover { color: var(--pink); }
+    .mobile-menu .mcta { color: var(--pink) !important; border-bottom: 1px solid var(--pink); }
+    .mobile-menu-close { position: absolute; top: 1.4rem; right: 2rem; background: none; border: none; font-size: 1.4rem; color: var(--ink); cursor: pointer; }
+    .mobile-menu-logo { position: absolute; top: 1.2rem; left: 2rem; }
+    .mobile-menu-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .mobile-menu-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--green); display: block; }
+    section { padding: 6rem 4rem; }
+
+    .eyebrow {
+      font-family: var(--sans); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink);
+      margin-bottom: 1.2rem; display: block;
+    }
+
+    .section-h {
+      font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.2rem;
+    }
+    .section-h em { font-style: italic; color: var(--pink); }
+    .section-h .hw { font-family: var(--hand); font-style: normal; font-size: 1.1em; color: var(--green); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--green); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+
+    /* ── ČLENSTVÍ ── */
+    .page { padding-top: 5.2rem; }
+    .c-hero { text-align: center; padding: 5rem 4rem 2rem; }
+    .c-hero .section-h { margin-bottom: 1rem; }
+    .c-lead { max-width: 620px; margin: 0 auto; color: var(--ink2); font-size: 1.05rem; line-height: 1.8; }
+    .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1080px; margin: 0 auto; padding: 2.5rem 4rem 1rem; box-sizing: content-box; }
+    .tier { background: var(--white); border: 1px solid var(--border); padding: 2.2rem 1.8rem; display: flex; flex-direction: column; }
+    .tier.free { border-top: 4px solid var(--pink-l); }
+    .tier.zakladni { border-top: 4px solid var(--pink); }
+    .tier.vip { border-top: 4px solid var(--green); }
+    .tier h2 { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; margin-bottom: 0.3rem; }
+    .price { font-size: 0.9rem; color: var(--ink2); margin-bottom: 0.4rem; }
+    .price b { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; color: var(--ink); }
+    .for { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.4rem; min-height: 2.8rem; line-height: 1.5; }
+    .tier ul { list-style: none; }
+    .tier li { position: relative; padding-left: 1.6rem; margin-bottom: 0.7rem; font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
+    .tier li::before { content: ""; position: absolute; left: 0.1rem; top: 0.45rem; width: 0.7rem; height: 0.38rem; border-left: 2px solid var(--green); border-bottom: 2px solid var(--green); transform: rotate(-45deg); }
+    .tier .note { margin-top: auto; padding-top: 1rem; font-size: 0.82rem; color: var(--ink2); }
+    .c-sec { max-width: 1080px; margin: 0 auto; padding: 3.5rem 4rem 0; }
+    .c-sec h2.section-h { text-align: center; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .step { background: var(--pink-ll); padding: 1.8rem 1.6rem; }
+    .step .n { display: inline-flex; width: 2rem; height: 2rem; border-radius: 50%; background: var(--green); color: var(--white); align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .step h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .step p, .box p { font-size: 0.93rem; line-height: 1.75; color: var(--ink2); }
+    .box { background: var(--green-l); padding: 1.8rem 2rem; margin-top: 1.5rem; }
+    .box h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .faq { max-width: 740px; margin: 0 auto; }
+    .faq h3 { font-size: 1rem; font-weight: 600; margin-top: 1.5rem; }
+    .faq p { font-size: 0.95rem; line-height: 1.75; color: var(--ink2); margin-top: 0.3rem; }
+    .c-cta { text-align: center; padding: 4rem 1.5rem 5rem; }
+    .c-cta p { color: var(--ink2); margin-bottom: 1.6rem; }
+    .c-btn { display: inline-block; background: var(--green); color: var(--white); text-decoration: none; padding: 0.8rem 1.8rem; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin: 0.3rem; border: 1px solid var(--green); }
+    .c-btn.alt { background: transparent; color: var(--green); }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .c-hero { padding: 3.5rem 1.5rem 1rem; }
+      .tiers { grid-template-columns: 1fr; padding: 1.5rem 1.5rem 0.5rem; }
+      .c-sec { padding: 2.5rem 1.5rem 0; }
+      .steps { grid-template-columns: 1fr; }
+      .for { min-height: 0; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="nav-logo">
+      <a href="index.html" style="text-decoration:none;">
+        <img src="logo.png" alt="Rosteme spolu" style="height: 48px; width: auto;">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">O nás</a></li>
+      <li><a href="clanky.html">Články</a></li>
+      <li><a href="clenstvi.html">Členství</a></li>
+      <li><a href="index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+    <a href="index.html#about" class="mobile-link">O nás</a>
+    <a href="clanky.html" class="mobile-link">Články</a>
+    <a href="clenstvi.html" class="mobile-link">Členství</a>
+    <a href="index.html#community" class="mobile-link mcta">Přidej se</a>
+  </div>
+<main class="page">
+<section class="c-hero">
+<span class="eyebrow" style="color:var(--green)">Členství</span>
+<h1 class="section-h">Tři úrovně, <em>jedna komunita</em></h1>
+<p class="c-lead">Rosteme spolu je místo, kde se handmade tvůrkyně a&nbsp;podnikatelky vzájemně podporují. Vyber si úroveň, která ti sedí, a&nbsp;kdykoli ji můžeš změnit.</p>
+</section>
+
+<section class="tiers" aria-label="Úrovně členství">
+<article class="tier free">
+<h2>Free</h2>
+<div class="price"><b>0&nbsp;Kč</b></div>
+<p class="for">Pro každou, kdo chce komunitu poznat.</p>
+<ul>
+<li>velká společná skupina na Instagramu</li>
+<li>sdílení příspěvků k&nbsp;vzájemné podpoře</li>
+<li>komunitní obsah: články, reels a&nbsp;představení členek</li>
+<li>sdílení tvého příspěvku do Stories komunity 2 až 4× měsíčně</li>
+</ul>
+<p class="note">Do Free patří všechny členky.</p>
+</article>
+
+<article class="tier zakladni">
+<h2>Základní</h2>
+<div class="price"><b>120&nbsp;Kč</b> měsíčně</div>
+<p class="for">Pro tvůrkyně, které chtějí aktivní podporu a&nbsp;znalosti navíc.</p>
+<ul>
+<li>vlastní skupina s&nbsp;automatickou vzájemnou podporou</li>
+<li>komunitní profil reaguje na tvoje příspěvky</li>
+<li>sdílení tvých příspěvků do Stories 4 až 8× měsíčně</li>
+<li>prémiové články na Forendors s&nbsp;akčními listy a&nbsp;checklisty</li>
+<li>pomoc při tvorbě a&nbsp;možnost ovlivnit témata článků</li>
+<li>sleva 10&nbsp;% na služby Skami Design</li>
+<li>propagace na webu</li>
+</ul>
+
+</article>
+
+<article class="tier vip">
+<h2>VIP</h2>
+<div class="price"><b>190&nbsp;Kč</b> měsíčně</div>
+<p class="for">Pro tebe, když chceš nejvyšší podporu a&nbsp;největší viditelnost.</p>
+<ul>
+<li>vše ze Základní</li>
+<li>průběžné sdílení všech tvých příspěvků do Stories</li>
+<li>pravidelné reakce na tvoje Stories</li>
+<li>prioritní podpora a&nbsp;prostor na podrobnější problémy</li>
+<li>propagace na Instagramu a&nbsp;Facebooku</li>
+<li>banner na hlavní stránce webu</li>
+<li>sleva 15&nbsp;% na služby Skami Design</li>
+</ul>
+<p class="note">Vlastní VIP skupina.</p>
+</article>
+</section>
+
+<section class="c-sec">
+<h2 class="section-h">Jak to funguje</h2>
+<div class="steps">
+<div class="step"><span class="n">1</span><h3>Skupiny na Instagramu</h3><p>Všechny skupiny běží na Instagramu, kam už stejně chodíš. Nic nového se instalovat nemusí.</p></div>
+<div class="step"><span class="n">2</span><h3>Platba přes Forendors</h3><p>Forendors slouží jen k&nbsp;platbě a&nbsp;přístupu k&nbsp;prémiovým článkům. Zaregistruješ se tam a&nbsp;vybereš položku podle své úrovně.</p></div>
+<div class="step"><span class="n">3</span><h3>Platíš, jak ti vyhovuje</h3><p>Členství se počítá podle obnovení platby. Kdykoli můžeš úroveň změnit nebo ukončit, stačí nám dát vědět do 7.&nbsp;dne v&nbsp;měsíci.</p></div>
+</div>
+<div class="box">
+<h3>Prémiové články</h3>
+<p>Na Forendors vycházejí hlubší články s&nbsp;akčními listy a&nbsp;checklisty, které ti pomohou věci rovnou zavést do praxe. Zveřejňujeme je v&nbsp;neděli.</p>
+</div>
+</section>
+
+<section class="c-sec">
+<h2 class="section-h">Časté otázky</h2>
+<div class="faq">
+<h3>Musím platit, abych byla součástí komunity?</h3>
+<p>Ne. Free je zdarma a&nbsp;zůstane zdarma. Placené úrovně jsou nadstavba pro ty, které chtějí víc podpory.</p>
+<h3>Mohu úroveň později změnit?</h3>
+<p>Ano. Napiš nám a&nbsp;domluvíme se. Změnu oznam nejpozději do 7.&nbsp;dne v&nbsp;měsíci.</p>
+<h3>Jsem stávající členka, co mám dělat?</h3>
+<p>Napsaly jsme ti soukromou zprávu s&nbsp;tvým zařazením. Placené úrovně se registrují na Forendors během prvního týdne v&nbsp;listopadu.</p>
+</div>
+</section>
+
+<section class="c-cta">
+<h2 class="section-h">Chceš se přidat?</h2>
+<p>Napiš nám na Instagram a&nbsp;poradíme ti, která úroveň ti bude sedět.</p>
+<a class="c-btn" href="https://www.forendors.cz/rostemespolu">Registrace na Forendors</a>
+<a class="c-btn alt" href="https://www.instagram.com/rosteme_spolu_na_sitich/">Napsat nám na Instagram</a>
+</section>
+</main>
+
+  <footer>
+    <div class="footer-logo"><img src="logo.png" alt="Rosteme spolu" style="height: 40px; width: auto;"></div>
+    <ul class="footer-links"><li><a href="index.html#about">O nás</a></li><li><a href="clenstvi.html">Členství</a></li><li><a href="clanky.html">Články</a></li><li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li></ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
+  </footer>
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function closeMenu(){ hamburger.classList.remove('open'); mobileMenu.classList.remove('open'); document.body.style.overflow=''; }
+    hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileMenu.classList.toggle('open'); document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : ''; });
+    document.getElementById('mobileMenuClose').addEventListener('click', closeMenu);
+  </script>
+</body>
+</html>
