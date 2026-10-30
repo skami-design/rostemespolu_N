@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lajky nejsou všechno: která čísla ukazují, že obsah funguje - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Která čísla v Instagram Insights opravdu ukazují, že obsah funguje - a jak je číst podle cíle příspěvku. Dosah, uložení, prokliky, UTM i jednoduchá měsíční kontrola.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Lajky nejsou všechno - Rosteme spolu">
+  <meta property="og:description" content="Příspěvek není dobrý nebo špatný. Je nebo není v souladu se svým cílem.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/lajky-nejsou-vsechno.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-date { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .diagram-wrap { margin: 1.8rem 0; }
+
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; font-style: italic; }
+    .article-callout strong { color: var(--green); font-style: normal; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0 0 0.6rem; }
+    .technika p:last-child { margin: 0; }
+    .schedule-row { display: flex; gap: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .schedule-row:last-child { border-bottom: none; }
+    .schedule-time { font-weight: 700; color: var(--ink); flex-shrink: 0; width: 6.5rem; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-sources { font-size: 0.78rem; line-height: 1.7; color: var(--muted); margin-top: 1.5rem; }
+    .article-sources a { color: var(--muted); }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 2.5rem 4rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    .technika .note { font-size: 0.82rem; color: var(--muted); }
+    .steps { list-style: none; counter-reset: step; margin: 0.4rem 0 0.8rem; }
+    .steps li { counter-increment: step; position: relative; padding-left: 2rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); margin-bottom: 0.5rem; }
+    .steps li::before { content: counter(step); position: absolute; left: 0; top: 0.2rem; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--green); color: var(--white); font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .table-wrap { overflow-x: auto; margin: 1rem 0; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .data-table th { text-align: left; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); padding: 0.5rem 0.7rem; border-bottom: 2px solid var(--green-l); }
+    .data-table td { padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--ink2); line-height: 1.6; vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td:first-child { color: var(--ink); font-weight: 600; }
+    .track .data-table td { font-size: 0.8rem; white-space: nowrap; }
+    .article-note { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.2rem 1.6rem; margin: 1.5rem 0; }
+    .article-note .note-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.5rem; }
+    .article-body .article-note p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+    .compare-grid .technika-label { color: var(--green); }
+    .post-card { border: 1px solid var(--border); padding: 1.3rem 1.6rem; margin: 1.2rem 0; background: var(--white); }
+    .post-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); }
+    .post-title { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin: 0.3rem 0 0.4rem; }
+    .post-goal { font-size: 0.82rem; font-style: italic; color: var(--muted); margin-bottom: 0.8rem; }
+    .post-stats { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.9rem; }
+    .post-stat { background: var(--off); border: 1px solid var(--border); padding: 0.35rem 0.75rem; font-size: 0.75rem; color: var(--ink2); line-height: 1.3; }
+    .post-stat strong { display: block; font-size: 0.95rem; color: var(--ink); }
+    .article-body .post-card .post-eval { font-size: 0.88rem; line-height: 1.75; border-top: 1px solid var(--border); padding-top: 0.8rem; margin: 0; }
+    @media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Lajky nejsou všechno</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím &amp; rostu</span>
+    <span class="article-date">30. 10. 2026</span>
+    <h1 class="article-h1">Lajky nejsou všechno</h1>
+    <p class="article-lead">Je to tady - konečně postneš příspěvek s&nbsp;dobrým pocitem a&nbsp;tvé očekávání roste. Říkáš si, tohle přeci musí s&nbsp;lidma trochu rezonovat. A&nbsp;pak ticho po pěšině. Jiný den nestíháš, tak sestřihneš dva záběry za pochodu a&nbsp;telefon ozvučí IG notifikace ještě před obědem.</p>
+
+    <div class="article-body">
+
+      <div class="article-callout">
+        <p>Která čísla <strong>opravdu ukazují</strong>, že obsah funguje - a&nbsp;jak je číst.</p>
+      </div>
+
+      <p>Přitom dosah mají oba příspěvky podobný. Proč? Co bylo jinak?</p>
+
+      <p>Odpověď není v&nbsp;tom, že jeden příspěvek byl „lepší“. Je v&nbsp;tom, <em>co každý z&nbsp;nich měl za cíl</em> - a&nbsp;jestli ses po zveřejnění dívala na ta správná čísla.</p>
+
+      <p>Instagram Insights nabídne desítky čísel. Nemusíš sledovat všechna. Musíš ale vědět, které z&nbsp;nich mluví k&nbsp;tvému konkrétnímu cíli. Pojďme se na to podívat spolu.</p>
+
+      <h2>Nejdřív cíl, pak čísla</h2>
+
+      <p>Pokud chceš mít z&nbsp;Instagramu hlavní prodejní kanál, stojí za to mít obsah aspoň trochu záměrně plánovaný. A&nbsp;záměr začíná ještě dřív než příspěvek vznikne - jednou otázkou: <em>Co chci tímhle příspěvkem dosáhnout?</em></p>
+
+      <p>Není to filozofická otázka. Je to praktická. Úspěch příspěvku se posuzuje podle jeho účelu - a&nbsp;různé účely se měří různými čísly.</p>
+
+      <div class="technika">
+        <span class="technika-label">Cíl příspěvku → co sledovat</span>
+        <div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Chci…</th><th>Sleduji zejména…</th></tr></thead>
+          <tbody>
+            <tr><td>oslovit nové zákaznice</td><td>dosah, sdílení, návštěvy profilu od nesledujících</td></tr>
+            <tr><td>předat užitečnou informaci</td><td>uložení, sdílení, komentáře k&nbsp;obsahu</td></tr>
+            <tr><td>rozproudit diskusi v&nbsp;komunitě</td><td>komentáře a&nbsp;jejich obsah</td></tr>
+            <tr><td>přivést zákaznice na web nebo do shopu</td><td>prokliky na odkaz, návštěvnost webu</td></tr>
+            <tr><td>podpořit prodej</td><td>poptávky, zprávy s&nbsp;dotazem na produkt, objednávky</td></tr>
+            </tbody>
+        </table></div>
+      </div>
+
+      <p>Neexistuje jedna metrika, která by byla vždy nejdůležitější. Edukační carousel přirozeně sbírá uložení. Reels ze zákulisí budují dosah a&nbsp;komentáře. Produktový příspěvek s&nbsp;výzvou k&nbsp;akci se měří prokliky nebo zprávami. Všechny mohou být úspěšné - každý jinak.</p>
+
+      <div class="article-callout">
+        <p>Příspěvek není dobrý nebo špatný. <strong>Je nebo není v&nbsp;souladu se svým cílem.</strong></p>
+      </div>
+
+      <h2>Základní pojmy: dosah, zhlédnutí, interakce</h2>
+
+      <p>Než se pustíme dál, pojďme si ujasnit tři pojmy, které se v&nbsp;Insights pletou nejčastěji.</p>
+
+      <div class="technika">
+        <span class="technika-label">Tři různé věci</span>
+        <p><strong>Dosah (reach)</strong> - kolik různých účtů tvůj příspěvek vidělo. Každý účet se počítá jednou, i&nbsp;kdyby příspěvek otevřela vícekrát. (Jeden člověk může mít víc účtů - Instagram měří účty, ne fyzické osoby.)</p>
+        <p><strong>Zhlédnutí</strong> - celkový počet zobrazení příspěvku, na rozdíl od dosahu zahrnuje i&nbsp;opakovaná zobrazení od stejného účtu. Zhlédnutí proto mohou být stejná nebo vyšší než dosah. Způsob započítávání závisí na formátu obsahu a&nbsp;Instagram své označení i&nbsp;způsob měření průběžně upravuje - konkrétní pojmenování metriky v&nbsp;aplikaci se proto může lišit.</p>
+        <p><strong>Interakce (engagement)</strong> - souhrnný pojem pro lajky, komentáře, uložení, sdílení a&nbsp;prokliky. Různé platformy a&nbsp;nástroje ho počítají různě - vždy si ověř, co konkrétní číslo zahrnuje.</p>
+      </div>
+
+      <div class="article-note">
+        <span class="note-label">Podpůrné komunity a&nbsp;statistiky</span>
+        <p>Jsi-li součástí skupin nebo vláken, kde si podnikatelky navzájem aktivně podporují obsah - uložení za uložení, srdíčko za srdíčko - ber to v&nbsp;potaz při čtení svých čísel. Vzájemná podpora má v&nbsp;komunitě své místo a&nbsp;může přinášet skutečné vztahy, spolupráce i&nbsp;zákaznice. Jen je dobré rozlišovat mezi reakcí, která vznikla díky domluvené podpoře, a&nbsp;reakcí člověka, kterého obsah zaujal spontánně. Obojí má svou hodnotu, ale při vyhodnocování zájmu o&nbsp;tvé produkty ti každá říká něco jiného.</p>
+      </div>
+
+      <h3>Proč absolutní čísla nestačí</h3>
+
+      <p>Dva příspěvky vedle sebe:</p>
+
+      <div class="technika">
+        <div class="compare-grid">
+          <div><span class="technika-label">Příspěvek A</span><p>Dosah: <strong>200</strong><br>Uložení: <strong>20</strong><br>Míra uložení: <strong>10 %</strong></p></div>
+          <div><span class="technika-label">Příspěvek B</span><p>Dosah: <strong>2 000</strong><br>Uložení: <strong>30</strong><br>Míra uložení: <strong>1,5 %</strong></p></div>
+        </div>
+      </div>
+
+      <p>Příspěvek B má víc uložení v&nbsp;absolutním čísle. Ale příspěvek A&nbsp;zasáhl desetkrát větší podíl lidí, kteří ho viděli. Ani jedno číslo ale samo o&nbsp;sobě nerozhoduje - záleží vždy na cíli. Pokud chtěl příspěvek B oslovit nové publikum a&nbsp;podařilo se, byl úspěšný i&nbsp;s&nbsp;nižší mírou uložení. Porovnávej proto vždy v&nbsp;kontextu: absolutní číslo + míra + cíl příspěvku.</p>
+
+      <div class="technika">
+        <span class="technika-label">Jak vypočítat míru interakce</span>
+        <p><strong>Míra uložení (%) = (počet uložení ÷ dosah příspěvku) × 100</strong></p>
+        <p>Příklad: příspěvek má dosah 200 účtů a&nbsp;20 uložení.</p>
+        <p><em>(20 ÷ 200) × 100 = <strong>10 %</strong></em></p>
+        <p>Na každých 100 dosažených účtů připadá 10 uložení.</p>
+        <p>Stejným způsobem vypočítáš míru libovolné interakce - stačí vyměnit počet uložení za počet sdílení, lajků nebo komentářů.</p>
+        <p class="note"><em>Poznámka: jde o&nbsp;poměr počtu interakcí k&nbsp;dosahu, nikoliv nutně o&nbsp;procento unikátních lidí, kteří interakci provedli.</em></p>
+      </div>
+
+      <h2>Co která metrika může naznačovat</h2>
+
+      <p>Tady je přehled nejdůležitějších metrik. Záměrně uvádíme, co mohou - ale nemusí - znamenat. Čísla ukazují chování, ne myšlenky zákaznice.</p>
+
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>Metrika</th><th>Může naznačovat…</th><th>Neznamená automaticky…</th></tr></thead>
+        <tbody>
+            <tr><td>Uložení</td><td>obsah byl dost hodnotný, aby se k&nbsp;němu chtěla vrátit; inspiroval ji; produkt si uložila pro pozdější rozhodnutí</td><td>nákupní zájem; že si obsah přečetla celý</td></tr>
+            <tr><td>Sdílení</td><td>obsah stálo za to ukázat dál; zasáhl emoci nebo řeší konkrétní problém</td><td>doporučení značky; lidé sdílejí z&nbsp;různých důvodů</td></tr>
+            <tr><td>Návštěva profilu</td><td>příspěvek ji zaujal dost, aby šla zjistit víc</td><td>zájem o&nbsp;nákup; může odejít hned po prvním pohledu</td></tr>
+            <tr><td>Proklik na odkaz</td><td>zájem o&nbsp;to, co je za odkazem</td><td>úmysl koupit; proklik a&nbsp;objednávka jsou dva různé kroky</td></tr>
+            <tr><td>Přímá zpráva (DM)</td><td>aktivní zájem - vyžaduje větší úsilí než lajk</td><td>automaticky obchodní poptávku; obsah zprávy záleží: dotaz na cenu ≠ reakce na vtipné video</td></tr>
+            <tr><td>Lajk</td><td>příspěvek zaujal a&nbsp;kladně zareagovala</td><td>nic víc - ale ani nic méně; u&nbsp;komunitního obsahu může být relevantním signálem</td></tr>
+            <tr><td>Komentář</td><td>obsah ji zaujal natolik, aby napsala; u&nbsp;emojí méně, u&nbsp;věcné reakce víc</td><td>zájem o&nbsp;produkt; komentáře jsou různé kvality</td></tr>
+            </tbody>
+      </table></div>
+
+      <h2>Kde konkrétní čísla najdeš</h2>
+
+      <h3>Instagram Insights</h3>
+
+      <div class="technika">
+        <span class="technika-label">Statistiky konkrétního příspěvku</span>
+        <ol class="steps">
+          <li>Otevři Instagram a&nbsp;jdi na svůj profil.</li>
+          <li>Klepni na příspěvek, jehož statistiky chceš vidět.</li>
+          <li>Pod příspěvkem najdi možnost zobrazit statistiky příspěvku.</li>
+          <li>Uvidíš dosah, zhlédnutí, interakce (lajky, komentáře, uložení, sdílení) a&nbsp;aktivity na profilu (návštěvy profilu, prokliky).</li>
+        </ol>
+        <p class="note"><em>Nutná podmínka: firemní účet nebo účet tvůrce. Přechod z&nbsp;osobního účtu je zdarma (Nastavení → Typ účtu). Důležité: statistiky se začnou sbírat od chvíle přepnutí - Insights nezpřístupní starší příspěvky zpětně. Pro dlouhodobé sledování si čísla průběžně zaznamenávej - Instagram uchovává statistiky příspěvků po omezenou dobu, která se může lišit.</em></p>
+      </div>
+
+      <h3>Meta Business Suite</h3>
+
+      <p>Meta Business Suite (dostupné na <em>business.facebook.com</em>) je vhodné pro přehled více příspěvků na desktopu. Umožňuje vidět výkonnost obsahu v&nbsp;tabulce a&nbsp;porovnávat příspěvky mezi sebou. Konkrétní dostupné metriky se mohou lišit podle verze rozhraní.</p>
+
+      <div class="article-note">
+        <span class="note-label">Prokliky na odkaz v&nbsp;biu</span>
+        <p>Prokliky na odkaz v&nbsp;biu jsou v&nbsp;Insights dostupné jako celkový údaj za profil, ne přiřazené ke konkrétnímu příspěvku. Pokud chceš vědět, po kterém příspěvku prokliky vzrostly, sleduj celkové číslo v&nbsp;den zveřejnění a&nbsp;porovnej ho s&nbsp;předchozím obdobím.</p>
+      </div>
+
+      <h3>Linktree a&nbsp;podobné služby</h3>
+
+      <p>Linktree (linktree.com) nebo bio.site umožňují mít v&nbsp;biu více odkazů najednou a&nbsp;sledovat, kolikrát na každý z&nbsp;nich někdo klikl. Bezplatná verze zobrazuje celkový počet kliků a&nbsp;denní přehled - bez podrobnějších demografických dat.</p>
+
+      <div class="article-note">
+        <span class="note-label">Klik ≠ objednávka</span>
+        <p>Nárůst kliků po zveřejnění příspěvku naznačuje zájem. Ale korelace neprokazuje přímou příčinu a&nbsp;kliknutí samo o&nbsp;sobě nevypovídá nic o&nbsp;tom, co zákaznice na stránce udělala. Pro sledování objednávek nebo návštěv produktové stránky potřebuješ analytiku na vlastním webu.</p>
+      </div>
+
+      <h3>Google Analytics 4 a&nbsp;UTM parametry</h3>
+
+      <p>Pokud máš vlastní web s&nbsp;Google Analytics 4, můžeš sledovat návštěvnost přicházející z&nbsp;Instagramu. Pozor na jednu záludnost: část zákaznic přichází přes Instagram aplikaci, která může skrýt odkazující zdroj - a&nbsp;návštěva se v&nbsp;GA4 zobrazí jako přímá (<em>direct / none</em>), ne jako Instagram. Zdroj „instagram / referral“ tedy zachytí jen část reálné návštěvnosti z&nbsp;Instagramu.</p>
+
+      <p>Spolehlivější řešení jsou UTM parametry - vlastní označení, které přidáš přímo do URL odkazu v&nbsp;biu. Odkaz pak vypadá například takto: <em>mojesignacka.cz/?utm_source=instagram&amp;utm_medium=bio</em>. GA4 toto označení přečte nezávisle na tom, přes jaký prohlížeč zákaznice přišla.</p>
+
+      <div class="article-note">
+        <span class="note-label">UTM a&nbsp;konkrétní příspěvek</span>
+        <p>UTM parametry spolehlivě identifikují Instagram jako zdroj návštěvy. Pokud ale chceš vědět, který konkrétní příspěvek návštěvu přivedl, potřebuješ pro každý příspěvek jiný odkaz - například s&nbsp;parametrem <em>utm_content</em>. Jeden statický odkaz v&nbsp;biu tuhle informaci nedá.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Nástroje v&nbsp;kostce</span>
+        <p>Instagram Insights (zdarma, základní přehled, přímo v&nbsp;aplikaci) → Meta Business Suite (zdarma, vhodné pro přehled více příspěvků na desktopu) → Linktree nebo bio.site (kliknutí na jednotlivé bio odkazy) → Google Analytics 4 s&nbsp;UTM parametry (co zákaznice dělá na webu po příchodu z&nbsp;Instagramu).</p>
+      </div>
+
+      <h2>Tři příspěvky, tři cíle: ukázka z&nbsp;praxe</h2>
+
+      <p>Karolína vyrábí svíčky z&nbsp;přírodního vosku. Za jeden měsíc zveřejnila tři různé příspěvky. Nepůjde nám o&nbsp;to, který byl nejlepší - ale o&nbsp;to, jak se výsledky čtou podle účelu.</p>
+
+      <div class="post-card">
+        <div class="post-label">Příspěvek 1 - edukační carousel</div>
+        <div class="post-title">„5 věcí, které nevíš o&nbsp;přírodním vosku“</div>
+        <div class="post-goal">Cíl: předat užitečnou informaci, dostat se k&nbsp;novému publiku</div>
+        <div class="post-stats"><div class="post-stat"><strong>320</strong>dosah</div><div class="post-stat"><strong>28</strong>uložení</div><div class="post-stat"><strong>9 %</strong>míra uložení</div><div class="post-stat"><strong>12</strong>sdílení</div><div class="post-stat"><strong>3</strong>komentáře</div></div>
+        <p class="post-eval">Dosah není ohromující, ale skoro každá desátá zákaznice, která příspěvek viděla, si ho uložila. Dvanáct sdílení naznačuje, že obsah stál za přeposlání. Výsledky naznačují, že příspěvek svůj účel naplňoval. Bude pracovat dál pokaždé, když si ho zákaznice otevře ze záložek.</p>
+      </div>
+
+      <div class="post-card">
+        <div class="post-label">Příspěvek 2 - Reels ze zákulisí</div>
+        <div class="post-title">Záběry z&nbsp;míchání a&nbsp;lití vosku</div>
+        <div class="post-goal">Cíl: ukázat zákulisí značky, oslovit nové sledující</div>
+        <div class="post-stats"><div class="post-stat"><strong>1 840</strong>dosah</div><div class="post-stat"><strong>14</strong>uložení</div><div class="post-stat"><strong>22</strong>komentáře</div><div class="post-stat"><strong>+18</strong>nových sledujících</div><div class="post-stat"><strong>8</strong>prokliků</div></div>
+        <p class="post-eval">Výrazně vyšší dosah než u&nbsp;ostatních příspěvků. Komentáře byly věcné: dotazy na vosk, zájem o&nbsp;proces. Uložení je nižší, ale to odpovídá formátu - zákulisní video se více sleduje a&nbsp;komentuje, než ukládá. Výsledky odpovídají cíli oslovit nové publikum.</p>
+      </div>
+
+      <div class="post-card">
+        <div class="post-label">Příspěvek 3 - produktový příspěvek</div>
+        <div class="post-title">„Vánoční svíčka s&nbsp;vůní jehličí je zpátky“</div>
+        <div class="post-goal">Cíl: přivést zákaznice k&nbsp;objednávce nebo poptávce</div>
+        <div class="post-stats"><div class="post-stat"><strong>180</strong>dosah</div><div class="post-stat"><strong>6</strong>uložení</div><div class="post-stat"><strong>31</strong>prokliků na odkaz</div><div class="post-stat"><strong>3</strong>přímé zprávy</div></div>
+        <p class="post-eval">Nejnižší dosah ze tří příspěvků. V&nbsp;době zveřejnění produktového příspěvku Karolína zaznamenala 31 kliknutí na odkaz v&nbsp;biu. To může naznačovat zvýšený zájem, ale bez přesnějšího měření nevíme, kolik kliknutí vyvolal právě tento příspěvek. (Kliknutí sledovala přes Linktree; Instagram tato čísla ke konkrétnímu příspěvku automaticky nepřiřazuje.) Ze tří DM se dvě týkaly dostupnosti a&nbsp;ceny. Pokud z&nbsp;nich vzešly objednávky, byl tento příspěvek obchodně nejvýnosnější - navzdory nejnižšímu dosahu.</p>
+      </div>
+
+      <div class="article-callout">
+        <p>Kdybychom hodnotily jen dosah, vyhrál by Reels. Kdybychom hodnotily jen uložení, vyhrál by carousel. Ale každý příspěvek měl jiný cíl - a&nbsp;podle svého cíle byl úspěšný jinak. <strong>Takhle se čtou statistiky.</strong></p>
+      </div>
+
+      <div class="article-note">
+        <span class="note-label">Ne každý nákup jde dohledat</span>
+        <p>Zákaznice mohla Karolíninu svíčku poprvé vidět v&nbsp;srpnu, uložit Reels v&nbsp;říjnu a&nbsp;objednat v&nbsp;listopadu - bez jediného prokliku na odkaz. Čísla zachytí přímé akce, ale ne celé rozhodovací cesty. Pravidelná přítomnost a&nbsp;konzistentní obsah tohle tiché rozhodování ovlivňují, i&nbsp;když se to v&nbsp;Insights neukáže.</p>
+      </div>
+
+      <h2>Jak výsledky vyhodnocovat a&nbsp;co měnit</h2>
+
+      <h3>Hledej trendy, ne jednorázová čísla</h3>
+
+      <p>Jeden příspěvek nic nerozhodne. Ani měsíc sám o&nbsp;sobě není definitivní odpověď - výsledky závisí na velikosti účtu, typu produktu, sezóně, frekvenci přispívání i&nbsp;na tom, co zrovna cílová skupina řeší. Čtyři týdny jsou dobrý interval pro první kontrolu a&nbsp;hledání vzorců. Nejsou ale přepínač.</p>
+
+      <p>Hledej opakující se trendy: které typy příspěvků dlouhodobě přinášejí uložení? Po kterých roste počet sledujících? Které přicházely s&nbsp;dotazy na produkt? Jeden měsíc naznačí směr - několik měsíců ho potvrdí nebo vyvrátí.</p>
+
+      <div class="article-note">
+        <span class="note-label">Nízká čísla nemusí být neúspěch</span>
+        <p>Nízký počet zpráv nebo prokliků nemusí být problém - pokud ten příspěvek sledoval jiný cíl. Edukační carousel bez prokliků, ale se spoustou uložení splnil svůj účel. Nehodnoť ho za to, čím neměl být.</p>
+      </div>
+
+      <h3>Jak přistupovat ke změnám</h3>
+
+      <p>Pokud výsledky neodpovídají cíli, není jedno správné pořadí kroků - problém může být v&nbsp;tématu, v&nbsp;hooku, ve vizuálním zpracování, ve výzvě k&nbsp;akci nebo v&nbsp;tom, že obsah míří na jiné publikum, než máš. Místo mechanického opravování zkus tenhle přístup:</p>
+
+      <div class="technika">
+        <span class="technika-label">Pět kroků k&nbsp;lepšímu příspěvku příště</span>
+        <ol class="steps">
+          <li><strong>Podívej se na výsledky konkrétně</strong> - nízký dosah? Nízká uložení? Žádné DM? Každý symptom naznačuje něco jiného.</li>
+          <li><strong>Urči, co pravděpodobně nefungovalo</strong> - hook nezastavil scroll? Obsah byl příliš obecný? Výzva k&nbsp;akci chyběla nebo byla nejasná?</li>
+          <li><strong>Vytvoř hypotézu</strong> - „Myslím, že příspěvek nezískal uložení, protože návod byl příliš stručný a&nbsp;nedal zákaznici důvod se vrátit.“</li>
+          <li><strong>Změň jednu konkrétní věc</strong> - jen jednu. Jinak nevíš, co pomohlo.</li>
+          <li><strong>Porovnej výsledek s&nbsp;dalšími relevantními příspěvky</strong> - ne s&nbsp;jedním předchozím, ale s&nbsp;více příspěvky stejného typu a&nbsp;cíle.</li>
+        </ol>
+      </div>
+
+      <p>Tohle není přesná věda. Je to záměrné experimentování - a&nbsp;právě to tě naučí, co funguje pro tvou konkrétní značku a&nbsp;tvé konkrétní publikum.</p>
+
+      <h2>Měsíční kontrola: čtyři otázky a&nbsp;jedna tabulka</h2>
+
+      <p>Navrhujeme jednoduchý systém, který zvládne i&nbsp;tvůrkyně, která se statistikami teprve začíná. Netrvá déle než dvacet minut měsíčně.</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Začni vždy touto otázkou</span>
+        <p style="font-family:var(--serif);font-size:1rem;color:var(--ink);margin:0 0 0.6rem">Co jsem chtěla svými příspěvky tento měsíc dokázat?</p>
+        <p style="font-size:0.88rem;color:var(--ink2);margin:0 0 0.8rem">Teprve pak kontroluj odpovídající metriky:</p>
+        <ul>
+          <li><span>Která čísla mi pomohou poznat, jestli se to povedlo?</span></li>
+          <li><span>Co z&nbsp;těch čísel mohu reálně vyvodit - a&nbsp;co nevím?</span></li>
+          <li><span>Co mají moje nejlepší příspěvky tohoto měsíce společného?</span></li>
+          <li><span>Co na základě výsledků udělám příště jinak?</span></li>
+        </ul>
+      </div>
+
+      <h3>Jednoduchá tabulka pro sledování</h3>
+
+      <p>Pokud chceš vidět trendy v&nbsp;čase, stačí si výsledky průběžně zapisovat. Insights mazají starší data - tvoje záznamy ne.</p>
+
+      <div class="technika track">
+        <div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Datum</th><th>Typ obsahu</th><th>Cíl</th><th>Dosah</th><th>Hlavní metrika</th><th>Výsledek</th><th>Co zkusím příště</th></tr></thead>
+          <tbody>
+            <tr><td>12. 10.</td><td>Edukační carousel</td><td>Předat užitečnou informaci</td><td>320</td><td>28 uložení (9 %)</td><td>Odpovídá cíli</td><td>Delší carousel, víc kroků</td></tr>
+            <tr><td>18. 10.</td><td>Reels - zákulisí</td><td>Oslovit nové publikum</td><td>1 840</td><td>+18 sledujících</td><td>Odpovídá cíli</td><td>Přidat CTA na konec</td></tr>
+            <tr><td>25. 10.</td><td>Produktový příspěvek</td><td>Podpořit prodej</td><td>180</td><td>31 prokliků, 3 DM</td><td>Odpovídá cíli</td><td>Zkusit carousel místo fota</td></tr>
+            </tbody>
+        </table></div>
+      </div>
+
+      <p>Tabulka nemusí být složitá - Google Sheets nebo papír stačí. Jde o&nbsp;to, abys za tři měsíce viděla vzorec, ne jen poslední čísla.</p>
+
+      <div class="article-callout">
+        <p>Statistiky nejsou odpovědi. Jsou otázky, které ti pomáhají ptát se líp. Každé číslo říká: tohle se stalo. <strong>Na tobě je, abys pochopila proč - a&nbsp;co s&nbsp;tím příště uděláš.</strong></p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Založ si jednoduchou tabulku - v&nbsp;Google Sheets nebo na papíře - a&nbsp;zapiš do ní své poslední tři příspěvky. U&nbsp;každého si doplň, jaký měl cíl a&nbsp;které jedno číslo k&nbsp;tomu cíli patří. Už teď možná uvidíš první vzorec.</p>
+      </div>
+
+      <p class="article-ps">Sem patří i&nbsp;tato témata: <a href="maly-dosah-mala-hodnota.html">Malý dosah neznamená malou hodnotu</a> · <a href="proc-moje-prispevky-nikdo-nevidi.html">Proč moje příspěvky nikdo nevidí?</a> · <a href="tvorim-pro-cloveka.html">Přestaň tvořit pro algoritmus</a> · <a href="vizualni-hook-ktery-zastavi-scroll.html">Vizuální hook, který zastaví scroll</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="automatizace-male-znacky.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Automatizace pro malé značky</span>
+      </a>
+      <a href="../clanky.html" class="next">
+        <span class="nav-label">Zpět na přehled →</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chceš své statistiky probrat s&nbsp;ostatními?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem pomáháme číst čísla, ladit obsah a&nbsp;hledat, co funguje právě pro tvou značku. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>

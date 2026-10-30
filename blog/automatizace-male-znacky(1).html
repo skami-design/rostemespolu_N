@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automatizace pro malé značky - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Co všechno se dá nastavit jednou a pak nechat pracovat bez tebe - provozní a marketingové e-maily, automatické odpovědi, Manychat, MailerLite a nástroje pro malé značky.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Automatizace pro malé značky - Rosteme spolu">
+  <meta property="og:description" content="Automatizace neznamená dělat víc. Znamená nedělat pořád dokola to samé.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/automatizace-male-znacky.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-date { font-family: var(--sans); font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .diagram-wrap { margin: 1.8rem 0; }
+
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; font-style: italic; }
+    .article-callout strong { color: var(--green); font-style: normal; }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0 0 0.6rem; }
+    .technika p:last-child { margin: 0; }
+    .schedule-row { display: flex; gap: 1rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); padding: 0.4rem 0; border-bottom: 1px solid var(--border); }
+    .schedule-row:last-child { border-bottom: none; }
+    .schedule-time { font-weight: 700; color: var(--ink); flex-shrink: 0; width: 6.5rem; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-sources { font-size: 0.78rem; line-height: 1.7; color: var(--muted); margin-top: 1.5rem; }
+    .article-sources a { color: var(--muted); }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { display: flex; align-items: center; justify-content: space-between; padding: 2.5rem 4rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    .tag-pill { display: inline-block; font-family: var(--sans); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.15rem 0.6rem; margin-bottom: 0.5rem; }
+    .tag-provozni { background: var(--green-l); color: var(--green); }
+    .tag-marketing { background: var(--pink-l); color: var(--ink2); }
+    .technika .example { font-size: 0.85rem; font-style: italic; color: var(--muted); border-top: 1px solid var(--border); padding-top: 0.6rem; margin-top: 0.6rem; }
+    .technika .note { font-size: 0.82rem; color: var(--muted); }
+    .steps { list-style: none; counter-reset: step; margin: 0.4rem 0 0.8rem; }
+    .steps li { counter-increment: step; position: relative; padding-left: 2rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); margin-bottom: 0.5rem; }
+    .steps li::before { content: counter(step); position: absolute; left: 0; top: 0.2rem; width: 1.3rem; height: 1.3rem; border-radius: 50%; background: var(--green); color: var(--white); font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+    .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.5rem 0; }
+    .tool-card { background: var(--off); padding: 1.2rem 1.4rem; }
+    .tool-name { font-family: var(--serif); font-size: 1rem; font-weight: 600; color: var(--ink); }
+    .tool-tag { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin: 0.2rem 0 0.5rem; }
+    .article-body .tool-card p { font-size: 0.85rem; line-height: 1.7; margin-bottom: 0.5rem; }
+    .tool-card a { font-size: 0.8rem; }
+    .article-warning { background: #F7EEDF; border-left: 2px solid #C4722A; padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .article-warning .warning-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C4722A; display: block; margin-bottom: 0.6rem; }
+    .article-body .article-warning p { font-size: 0.9rem; line-height: 1.8; margin: 0 0 0.7rem; }
+    .article-body .article-warning p:last-child { margin: 0; }
+    @media (max-width: 600px) { .tools-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Automatizace pro malé značky</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím &amp; rostu</span>
+    <span class="article-date">27. 10. 2026</span>
+    <h1 class="article-h1">Automatizace pro malé značky</h1>
+    <p class="article-lead">Začínáš den jako každý jiný. Uděláš si kafe a&nbsp;vrhneš se na odpovědi zákaznicím. Když konečně zvedneš hlavu, zjistíš, že jsou dvě hodiny pryč, kafe studené a&nbsp;ty už jsi přitom dávno měla pracovat na potvrzených objednávkách.</p>
+
+    <div class="article-body">
+
+      <div class="article-callout">
+        <p>Co všechno se dá <strong>nastavit jednou</strong> - a&nbsp;pak nechat pracovat bez tebe.</p>
+      </div>
+
+      <p>Poznáváš se? Tak čti dál. Možná víme, jak ti trochu ulevit.</p>
+
+      <p>Automatizace. Slovo, které zní tak trochu neosobně. <em>„To přece není můj styl,“</em> řekneš si a&nbsp;jdeš dál.</p>
+
+      <p>Ale co když to tak úplně není?</p>
+
+      <p>To, že za tebe některé zprávy odešle systém, ještě neznamená, že tvoje komunikace musí být chladná nebo neosobní. Vždyť obsah těch zpráv tvoříš pořád ty. Jen je nemusíš pokaždé znovu psát a&nbsp;odesílat.</p>
+
+      <p>Automatizace není jen pro ty, kdo posílají newsletter. A&nbsp;není to jen záležitost e-shopů. Je to nástroj, který využiješ, ať prodáváš přes Instagram, vedeš malý e-shop nebo přijímáš zakázky přes DM. Klíčové je vědět, co všechno automatizovat jde - a&nbsp;pak si vybrat, co z&nbsp;toho dává smysl pro tebe teď.</p>
+
+      <div class="article-callout">
+        <p>Automatizace neznamená dělat víc. <strong>Znamená nedělat pořád dokola to samé.</strong></p>
+      </div>
+
+      <h2>Jak automatizace funguje</h2>
+
+      <p>Základní princip je vždy stejný: nastavíš spouštěč a&nbsp;akci. Spouštěč je věc, která se stane - zákaznice si koupí, někdo se přihlásí k&nbsp;newsletteru, uplyne pět dní od objednávky, někdo napíše klíčové slovo do komentáře. Akce je to, co se automaticky provede: odešle se email, přijde DM, zákaznice se přidá do skupiny kontaktů.</p>
+
+      <p>K&nbsp;tomu se někdy přidá podmínka (pokud zákaznice nakoupila víc než jednou, udělej tohle - jinak tamto) nebo časové zpoždění (pošli email tři dny po doručení zásilky). Takhle jednoduché to ve svém základu je.</p>
+
+      <h2>Emailová automatizace - přehled možností</h2>
+
+      <p><em>Emaily se v&nbsp;automatizaci dělí do dvou různých kategorií - a&nbsp;je důležité je neplést dohromady, protože se liší nejen obsahem, ale i&nbsp;pravidly pro zasílání.</em></p>
+
+      <div class="article-callout">
+        <p style="font-style:normal;margin-bottom:0.8rem"><strong>Provozní emaily</strong> jsou ty, které zákaznice dostane v&nbsp;přímé souvislosti s&nbsp;objednávkou nebo jiným smluvním úkonem - potvrzení, informace o&nbsp;platbě, zásilce nebo doručení. Slouží k&nbsp;informování, zákaznice je očekává a&nbsp;na jejich zasílání nepotřebuješ souhlas s&nbsp;obchodními sděleními. Pozor ale: ne každý email odeslaný po nákupu je automaticky provozní. Doporučení dalšího výrobku nebo nabídka doplňkové služby jsou marketingová sdělení i&nbsp;tehdy, když přijdou po objednávce.</p>
+        <p style="font-style:normal"><strong>Marketingové emaily</strong> jsou newslettery, uvítací sekvence, nabídky produktů, opětovné oslovení - a&nbsp;právě zmíněná doporučení. Zpravidla zákaznice musí dát souhlas předem. Česká legislativa ale umožňuje za splnění zákonných podmínek zasílat nabídky vlastních podobných výrobků nebo služeb i&nbsp;stávajícím zákaznicím bez zvláštního souhlasu. Pravidla jsou tu specifická a&nbsp;při automatizaci je snadné na ně zapomenout - ověř si je přímo na webu <a href="https://www.uoou.cz/zasilani-obchodnich-sdeleni/ds-4428" target="_blank" rel="noopener">ÚOOÚ k&nbsp;zasílání obchodních sdělení</a>, nebo se poraď s&nbsp;odborníkem.</p>
+      </div>
+
+      <p>Teď se podívejme na konkrétní situace, které se dají automatizovat - a&nbsp;pro koho jsou relevantní.</p>
+
+      <div class="technika">
+        <span class="tag-pill tag-provozni">Provozní</span><span class="technika-label">Potvrzení objednávky a&nbsp;komunikace kolem zásilky</span>
+        <p>Potvrzení objednávky, informace o&nbsp;platbě, zpráva o&nbsp;odeslání zásilky, notifikace o&nbsp;doručení. Tyhle emaily zákaznice čeká - a&nbsp;pokud přijdou automaticky ve správný čas, buduje to důvěru bez toho, abys na cokoliv musela myslet.</p>
+        <p class="example">Hodí se pro: každou, kdo přijímá objednávky - ať přes e-shop, formulář nebo DM s&nbsp;navazujícím systémem.</p>
+      </div>
+
+      <div class="technika">
+        <span class="tag-pill tag-provozni">Provozní</span><span class="technika-label">Automatické doručení digitálního produktu</span>
+        <p>Prodáváš PDF návod, vzor nebo jiný digitální produkt? Po zaplacení zákaznice dostane email s&nbsp;odkazem ke stažení automaticky - bez toho, abys ji musela ručně obesílat. Tohle je jedna z&nbsp;nejpraktičtějších automatizací vůbec.</p>
+        <p class="example">Hodí se pro: každou, kdo prodává digitální produkty - e-booky, šablony, návody, vzory.</p>
+      </div>
+
+      <div class="technika">
+        <span class="tag-pill tag-provozni">Provozní</span><span class="technika-label">Potvrzení přijetí dotazu nebo poptávky</span>
+        <p>Zákaznice ti napíše přes kontaktní formulář nebo projeví zájem o&nbsp;zakázku. Automatické potvrzení, že jsi zprávu dostala a&nbsp;kdy se ozveš, jí dá jistotu - a&nbsp;tebe osvobodí od tlaku odpovídat okamžitě.</p>
+        <p class="example">Hodí se pro: každou, kdo přijímá zakázky na míru nebo dotazy přes web.</p>
+      </div>
+
+      <div class="technika">
+        <span class="tag-pill tag-marketing">Marketingové</span><span class="technika-label">Uvítací sekvence po přihlášení k&nbsp;newsletteru</span>
+        <p>Nová odběratelka se přihlásí a&nbsp;dostane uvítací email - nebo sérii dvou tří zpráv během prvního týdne. Tady je pozornost nejvyšší. Je to ideální čas říct jí, kdo jsi a&nbsp;co u&nbsp;tebe najde. Uvítací email nemusí být komplikovaný - stačí krátké představení a&nbsp;ukázka jedné věci, na které ti záleží.</p>
+        <p class="example">Hodí se pro: každou, kdo newsletter má nebo plánuje mít.</p>
+      </div>
+
+      <div class="technika">
+        <span class="tag-pill tag-marketing">Marketingové</span><span class="technika-label">Opuštěný košík</span>
+        <p>Zákaznice si prohlíží e-shop, přidá zboží do košíku - a&nbsp;pak zavře okno. Automatická připomínka ji může jemně oslovit a&nbsp;nabídnout pomoc. Jestli a&nbsp;kdy jde tuhle zprávu odeslat, závisí na tom, jestli e-shop zákaznicinu emailovou adresu má - například z&nbsp;rozepsané objednávky nebo přihlášení - a&nbsp;jaké má nastavení daná platforma. Časování stojí za testování, neexistuje jedno správné řešení pro všechny.</p>
+        <p class="example">Hodí se pro: e-shopy, kde zákaznice zanechá emailovou adresu ještě před dokončením objednávky.</p>
+      </div>
+
+      <div class="technika">
+        <span class="tag-pill tag-marketing">Marketingové</span><span class="technika-label">Re-engagement - probuzení neaktivního seznamu</span>
+        <p>Jednou za čas se vyplatí poslat krátkou zprávu těm, kdo tvoje emaily dlouho neotevírají. Buď se probudí, nebo jim dáš možnost odhlásit se. Odebírání neaktivních kontaktů zlepšuje doručitelnost - tedy šanci, že tvoje emaily budou vůbec vidět.</p>
+        <p class="example">Hodí se pro: každou, kdo má emailový seznam a&nbsp;záleží jí na jeho zdraví.</p>
+      </div>
+
+      <h2>Automatizace na sociálních sítích - víc než jen plánování</h2>
+
+      <p>Automatizace na sítích má tři různé roviny, a&nbsp;je důležité je od sebe odlišit - nejde o&nbsp;stejnou funkci ani stejný nástroj.</p>
+
+      <div class="technika">
+        <span class="technika-label">Plánování obsahu</span>
+        <p>Připravíš příspěvky dopředu a&nbsp;necháš je vyjít v&nbsp;nastavený čas. Nemusíš být u&nbsp;počítače každý den - obsah jde ven podle plánu. Funguje pro posty do feedu, karusely i&nbsp;Reels.</p>
+        <p>Některé nástroje plánování a&nbsp;automatické publikování stories umožňují - dostupné funkce se ale mohou lišit, proto vždy ověř aktuální podmínky u&nbsp;toho, který používáš. A&nbsp;i&nbsp;bez automatického publikování se dá ušetřit: připravíš si koncept, text a&nbsp;vizuál dopředu a&nbsp;v&nbsp;momentě, kdy ho chceš sdílet, jen odklikneš. I&nbsp;takové malé urychlení se počítá.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Automatická odpověď na zprávu</span>
+        <p>Zákaznice ti napíše do DM nebo přes Messenger a&nbsp;automaticky dostane potvrzení přijetí zprávy s&nbsp;informací, kdy se jí ozveš. Nastavíš to přímo v&nbsp;Meta Business Suite - bez žádného externího nástroje.</p>
+        <p>Hodí se to hlavně ve chvílích, kdy nejsi hned dostupná - jsi na dovolené, máš ještě jiné zaměstnání nebo brigádu, nebo prostě chceš dát zákaznici vědět co nejdřív, že se k&nbsp;tobě zpráva dostala. Jedna věc ale platí vždy: čas, který v&nbsp;té zprávě slíbíš, dodržet. Raději nastav realistický časový rámec - třeba do dvou pracovních dnů - než optimistický, který pak nestihneš.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Automatizace podle interakce - komentář nebo DM spustí akci</span>
+        <p>Tady se otevírají další zajímavé možnosti. Zákaznice napíše do komentáře klíčové slovo - třeba <em>MATERIÁL</em> - a&nbsp;automaticky jí přijde DM s&nbsp;odkazem na seznam materiálů. Nebo napíše do DM <em>CENA</em> a&nbsp;dostane automatickou odpověď s&nbsp;ceníkem.</p>
+        <p>Tyhle automatizace fungují přes nástroje jako <strong>Manychat</strong>, který se propojuje s&nbsp;Instagramem a&nbsp;Facebookem. Spouštěče mohou být komentář pod postem nebo Reelem, příchozí zpráva nebo reakce na stories. Platí ale pravidla Mety - automatizované zprávy mají svá omezení a&nbsp;je potřeba se v&nbsp;nich orientovat, než začneš.</p>
+        <p class="example">Příklad využití: zveřejníš Reel s&nbsp;návodem a&nbsp;napíšeš „Chceš seznam materiálu? Napiš do komentáře MATERIÁL.“ Každá, kdo napíše, dostane odkaz automaticky do DM. Ty přitom nemusíš nic dělat.</p>
+      </div>
+
+      <h2>Jak nastavit první automatizaci - tři konkrétní příklady</h2>
+
+      <p>Teorie je fajn, ale praktické kroky jsou lepší. Tady jsou tři postupy, které můžeš zkusit ještě dnes.</p>
+
+      <div class="technika">
+        <span class="technika-label">Příklad A&nbsp;- Automatická odpověď na zprávy přes Meta Business Suite</span>
+        <ol class="steps">
+          <li>Otevři <strong>Meta Business Suite</strong> a&nbsp;vyber svou stránku nebo účet.</li>
+          <li>Přejdi do sekce <strong>Doručená pošta</strong> (Inbox) a&nbsp;najdi <strong>Automatizace</strong> (Automations).</li>
+          <li>Vyber <strong>Okamžitá odpověď</strong> (Instant reply).</li>
+          <li>Zvol, pro které kanály automatizace platí (Messenger, Instagram DM nebo obojí).</li>
+          <li>Napiš zprávu - například: <em>„Děkuju za zprávu! Na zakázky odpovídám zpravidla do dvou pracovních dnů.“</em></li>
+          <li>Ulož, zapni a&nbsp;vyzkoušej z&nbsp;jiného účtu.</li>
+        </ol>
+        <p class="note">Názvy položek se mohou lišit podle jazyka rozhraní a&nbsp;aktuální verze. Aktuální nápověda je vždy na <a href="https://www.facebook.com/business/help" target="_blank" rel="noopener">Facebook Business Help Centre</a>.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Příklad B - Automatické DM po komentáři na Instagramu (Manychat)</span>
+        <ol class="steps">
+          <li>Vytvoř účet na <a href="https://manychat.com" target="_blank" rel="noopener">Manychat.com</a> a&nbsp;propoj ho se svým instagramovým účtem (musí být profesionální nebo firemní).</li>
+          <li>Vytvoř novou automatizaci a&nbsp;jako spouštěč zvol <strong>Komentář pod příspěvkem nebo Reelem</strong>.</li>
+          <li>Vyber konkrétní příspěvek nebo nastav pravidlo pro všechny posty.</li>
+          <li>Nastav klíčové slovo, které automatizaci spustí - například <em>MATERIÁL</em>.</li>
+          <li>Připrav zprávu, která se zákaznici odešle do DM, a&nbsp;přidej odkaz nebo odpověď.</li>
+          <li>Otestuj automatizaci ze svého druhého účtu nebo požádej kamarádku.</li>
+        </ol>
+        <p class="note">Doručení zpráv podléhá pravidlům Instagramu a&nbsp;Mety. Aktuální podmínky najdeš v&nbsp;<a href="https://manychat.com/help" target="_blank" rel="noopener">nápovědě Manychatu</a>.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Příklad C - Uvítací email v&nbsp;MailerLite</span>
+        <ol class="steps">
+          <li>Přihlas se do <a href="https://mailerlite.com" target="_blank" rel="noopener">MailerLite</a> a&nbsp;v&nbsp;sekci <strong>Subscribers → Groups</strong> vytvoř novou skupinu - například <em>„Odběratelky newsletteru“</em>.</li>
+          <li>Přejdi do <strong>Sites → Forms</strong> (nebo <strong>Forms</strong> v&nbsp;hlavním menu) a&nbsp;vytvoř nový formulář. V&nbsp;nastavení ho propoj s&nbsp;právě vytvořenou skupinou.</li>
+          <li>V&nbsp;levém menu otevři <strong>Automations</strong> a&nbsp;klikni na <strong>Create new automation</strong>.</li>
+          <li>Jako spouštěč (trigger) zvol <strong>„When subscriber joins a&nbsp;group“</strong> a&nbsp;vyber svou skupinu.</li>
+          <li>Přidej akci <strong>Send email</strong> a&nbsp;napiš uvítací zprávu: předmět, jméno odesílatele a&nbsp;obsah. Nemusí být dlouhá - krátké představení a&nbsp;jedna věc, na které ti záleží, stačí.</li>
+          <li>Automatizaci aktivuj kliknutím na <strong>Start automation</strong> (nebo přepnutím do stavu Active).</li>
+          <li>Otestuj: přihlas se přes formulář testovací emailovou adresou a&nbsp;ověř, že uvítací email dorazí.</li>
+        </ol>
+        <p class="note">Pokud máš u&nbsp;formuláře zapnuté potvrzení přihlášení (double opt-in), musí čtenářka nejprve potvrdit svou adresu kliknutím na potvrzovací email - teprve pak se spustí navazující automatizace. Zkontroluj toto nastavení přímo v&nbsp;nastavení formuláře. Rozhraní MailerLite prošlo v&nbsp;posledních letech několika aktualizacemi - pokud některý název položky nesedí, zkontroluj aktuální <a href="https://www.mailerlite.com/help" target="_blank" rel="noopener">nápovědu MailerLite</a>. Postup platí pro novou verzi platformy (dashboard.mailerlite.com).</p>
+      </div>
+
+      <h2>Nástroje - co použít a&nbsp;kde zjistit aktuální ceny</h2>
+
+      <p>Aktuální podmínky a&nbsp;limity vždy ověř přímo u&nbsp;každého nástroje - ceny se mění.</p>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-name">MailerLite</div>
+          <div class="tool-tag">Email · má bezplatný plán</div>
+          <p>Přehledné rozhraní, automatizace dostupná i&nbsp;v&nbsp;bezplatném plánu. Zahrnuje také editor landing pages a&nbsp;přihlašovacích formulářů.</p>
+          <a href="https://www.mailerlite.com/pricing" target="_blank" rel="noopener">Aktuální ceník →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Flodesk</div>
+          <div class="tool-tag">Email · placené, fixní cena</div>
+          <p>Zaměřený na vizuálně propracované emaily. Fixní cena bez ohledu na počet odběratelek - výhodné, když seznam roste. Na start může být dražší, pro rozjetou značku zajímavé.</p>
+          <a href="https://flodesk.com/pricing" target="_blank" rel="noopener">Aktuální ceník →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Mailchimp</div>
+          <div class="tool-tag">Email · má bezplatný plán</div>
+          <p>Nejznámější platforma. Dobrá volba, pokud ji tvůj e-shop nativně propojuje (Shopify, WooCommerce). Bezplatný plán je omezený, ceny pak rostou rychleji než u&nbsp;konkurence.</p>
+          <a href="https://mailchimp.com/pricing" target="_blank" rel="noopener">Aktuální ceník →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Meta Business Suite</div>
+          <div class="tool-tag">Sítě · zdarma</div>
+          <p>Nativní plánovač a&nbsp;automatizace zpráv přímo od Mety. Plánování feedu, okamžité odpovědi, rozhraní je trochu krkolomné, ale spolehlivé a&nbsp;bez poplatků.</p>
+          <a href="https://business.facebook.com" target="_blank" rel="noopener">Otevřít →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Manychat</div>
+          <div class="tool-tag">Sítě · má bezplatný plán</div>
+          <p>Nástroj pro automatizaci komentářů a&nbsp;DM na Instagramu a&nbsp;Facebooku. Klíčová slova, spouštěče, flow - bezplatná verze pokryje základní scénáře.</p>
+          <a href="https://manychat.com/pricing" target="_blank" rel="noopener">Aktuální ceník →</a>
+        </div>
+        <div class="tool-card">
+          <div class="tool-name">Later / Buffer / Metricool</div>
+          <div class="tool-tag">Sítě · mají bezplatné plány</div>
+          <p>Alternativy k&nbsp;Meta Suite s&nbsp;přehlednějším kalendářovým pohledem. Metricool navíc přidává analytiku. Každý má svůj limit na bezplatném plánu - podívej se na aktuální podmínky přímo u&nbsp;každého.</p>
+          <a href="https://later.com/pricing" target="_blank" rel="noopener">Later</a> · <a href="https://buffer.com/pricing" target="_blank" rel="noopener">Buffer</a> · <a href="https://metricool.com/prices" target="_blank" rel="noopener">Metricool</a>
+        </div>
+      </div>
+
+      <div class="article-callout">
+        <p style="font-style:normal"><strong>Jedna věc navíc:</strong> Pokud tě automatizace začne bavit a&nbsp;chceš propojovat různé nástroje dohromady - zákaznice vyplní formulář → zápis do tabulky → tvůrkyni přijde upozornění → zákaznici dorazí potvrzení - podívej se na <a href="https://make.com" target="_blank" rel="noopener">Make</a> nebo <a href="https://zapier.com" target="_blank" rel="noopener">Zapier</a>. Obojí má bezplatné plány a&nbsp;funguje jako most mezi nástroji, které spolu samy nekomunikují. To je ale další úroveň - na start to nepotřebuješ.</p>
+      </div>
+
+      <h2>Co se může pokazit - a&nbsp;jak tomu předejít</h2>
+
+      <div class="article-warning">
+        <span class="warning-label">Na co si dát pozor</span>
+        <p><strong>Hned v&nbsp;první zprávě tlačíš na prodej.</strong> Pokud se zákaznice přihlásila proto, aby tě poznala nebo získala užitečný obsah, příliš rychlá prodejní nabídka ji může odradit. Nejdřív se představ - a&nbsp;teprve pak cokoliv nabízej.</p>
+        <p><strong>Píšeš na seznam, ne na jednu čtenářku.</strong> I&nbsp;automatický email musí znít osobně. Záleží na tom, jak ho napíšeš - ne na tom, že ho posílá stroj.</p>
+        <p><strong>Netestuješ před spuštěním.</strong> Co když se odešle špatný odkaz? Co když zákaznice dostane zprávu dvakrát? Co když email odejde, přestože objednávka byla zrušená? Tohle jsou chyby, které malé značce uškodit mohou. Každou automatizaci vždy nejdřív vyzkoušej ze svého druhého účtu nebo testovací adresy.</p>
+        <p><strong>Nastavíš a&nbsp;zapomeneš.</strong> Automatizace potřebuje jednou za čas projít. Pokud se změní sortiment, ceny nebo zaměření značky, staré zprávy mohou posílat zastaralé informace.</p>
+        <p><strong>Na sítích plánuješ, ale nereaguješ.</strong> Naplánovaný obsah bez odpovídání na komentáře a&nbsp;zprávy přichází o&nbsp;část příležitostí k&nbsp;budování vztahu se zákaznicemi. Automatizace ušetří čas na tvorbu - ale aktivní přítomnost zůstává na tobě.</p>
+        <p><strong>Prodáváš přes Instagram bez e-shopu - a&nbsp;čekáš víc, než automatizace umí.</strong> Zpráva v&nbsp;DM sama o&nbsp;sobě nevytvoří objednávku, fakturu ani záznam v&nbsp;evidenci. K&nbsp;tomu potřebuješ navazující systém nebo propojení. Automatizace komunikaci ulehčí, ale nenahradí celý proces.</p>
+      </div>
+
+      <h2>Na závěr</h2>
+
+      <p>Projdi si seznam výše a&nbsp;vyber jednu věc, která by ti teď nejvíc ušetřila čas nebo energii. Ne tu nejambicióznější - tu nejbližší. Spusť ji, ověř, že funguje. A&nbsp;teprve pak přidávej další.</p>
+
+      <p>Automatizace není cíl. Je to nástroj, který ti má uvolnit ruce na to, co systém nezvládne: tvorbu, zákaznice a&nbsp;přítomnost.</p>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Vyber jednu automatizaci z&nbsp;článku - tu nejbližší, ne nejambicióznější. Nastav ji, otestuj ze svého druhého účtu nebo testovací adresy a&nbsp;nech ji týden běžet. Pak se podívej, kolik času ti vrátila.</p>
+      </div>
+
+      <p class="article-ps">Sem patří i&nbsp;tato témata: <a href="emaily-ktere-pracuji.html">E-maily, které pracují za tebe</a> · <a href="system-objednavek.html">Systém objednávek a&nbsp;komunikace</a> · <a href="instagram-ktery-te-vidi.html">Instagram, který tě vidí</a> · <a href="tvorim-pro-cloveka.html">Přestaň tvořit pro algoritmus</a></p>
+
+      <div class="article-author">
+        <div class="author-avatar">AK</div>
+        <div class="author-info">
+          <strong>Anna Krýdová</strong>
+          tvůrkyně · <a href="https://instagram.com/crochamia" target="_blank" rel="noopener">@crochamia</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="pocit-viny-mama-prace.html">
+        <span class="nav-label">← Předchozí</span>
+        <span class="nav-title">Pocit viny: máma vs. práce</span>
+      </a>
+      <a href="lajky-nejsou-vsechno.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Lajky nejsou všechno</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Co už máš zautomatizované ty?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si sdílíme nástroje, nastavení i&nbsp;to, co se nám osvědčilo - ať nemusí každá začínat od nuly. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
