@@ -7,10 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <meta name="description" content="EET 2.0 startuje v lednu 2027. Kdo musí evidovat, kdo má výjimku (e-shopy!), důležité termíny a co si zařídit - srozumitelně a bez paniky.">
+  <meta name="description" content="EET 2.0 startuje 1. ledna 2027. Kdo musí evidovat, kdo má výjimku, kdy evidovat a kdy ne, termíny a checklist - aktualizováno k 3. 11. 2026.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="Návrat strašáka jménem EET 2.0: Kdo, kdy a jak? - Rosteme spolu">
-  <meta property="og:description" content="Termíny, výjimky a checklist k EET 2.0 - průvodce v chillu.">
+  <meta property="og:description" content="Rozhoduje způsob a místo zaplacení, ne způsob objednání. Průvodce EET 2.0 v chillu.">
   <link rel="canonical" href="https://rostemespolu.site/blog/eet.html">
   <link rel="icon" type="image/png" href="../favicon.png">
   <style>
@@ -99,6 +99,28 @@
     .footer-links a:hover { color: var(--pink); }
     .footer-copy { font-size: 0.75rem; color: var(--muted); }
     .footer-copy a { color: var(--pink); text-decoration: none; }
+    .technika .note { font-size: 0.82rem; color: var(--muted); }
+    .article-formula { background: var(--pink-ll); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--pink); font-family: var(--serif); font-size: 1.05rem; color: var(--ink); line-height: 1.8; font-style: italic; }
+    .article-note { background: var(--off); border-left: 2px solid var(--border); padding: 1.1rem 1.5rem; margin: 1.5rem 0; }
+    .article-body .article-note p { font-size: 0.88rem; line-height: 1.75; color: var(--ink2); margin: 0 0 0.5rem; }
+    .article-body .article-note p:last-child { margin: 0; }
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0 0.4rem; }
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .data-table th { text-align: left; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); padding: 0.5rem 0.7rem; border-bottom: 2px solid var(--green-l); }
+    .data-table td { padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--border); color: var(--ink2); line-height: 1.6; vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td.ano { color: var(--ink); font-weight: 700; white-space: nowrap; }
+    .data-table td.ne { color: var(--green); font-weight: 700; white-space: nowrap; }
+    .table-note { font-size: 0.8rem; font-style: italic; color: var(--muted); margin-bottom: 1.5rem; }
+    .step { display: flex; gap: 1.1rem; margin: 0 0 1.6rem; }
+    .step-num { flex-shrink: 0; width: 1.9rem; height: 1.9rem; border-radius: 50%; background: var(--green); color: var(--white); font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 0.15rem; }
+    .article-body .step-body p { margin-bottom: 0.6rem; }
+    .article-body .step-body ul { margin: 0.2rem 0 0.7rem 1.3rem; }
+    .article-body .step-body li { font-size: 0.93rem; line-height: 1.75; color: var(--ink2); }
+    .article-body ul.plain { margin: 0.4rem 0 1.1rem 1.3rem; }
+    .article-body ul.plain li { font-size: 0.95rem; line-height: 1.85; color: var(--ink2); margin-bottom: 0.4rem; }
+    .article-sources ul { list-style: none; margin: 0.4rem 0 0; }
+    .article-sources li { margin-bottom: 0.25rem; }
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
@@ -133,89 +155,280 @@
     </div>
 
     <span class="article-eyebrow">Začínám podnikat</span>
-    <span class="article-date">16. 10. 2026</span>
+    <span class="article-date">Původně publikováno 16. 10. 2026 · Aktualizováno 3. 11. 2026</span>
     <h1 class="article-h1">Návrat strašáka jménem EET 2.0: Kdo, kdy a&nbsp;jak? (Průvodce v&nbsp;chillu)</h1>
-    <p class="article-lead">Elektronická evidence tržeb (EET) je téma, ze kterého mnohým podnikatelům naskakuje husí kůže. Tento starý známý systém se nám však vrací na scénu, a&nbsp;proto je namístě podívat se na něj bez zbytečné paniky a&nbsp;s&nbsp;čistou hlavou. Přechod na nová pravidla se dá zvládnout krok za krokem tak, aby váš byznys běžel v&nbsp;klidu dál. Stát tentokrát slibuje modernější a&nbsp;jednodušší systém, takzvané EET 2.0.<sup>1</sup> Pojďme si ho rozklíčovat srozumitelně a&nbsp;lidskou řečí.</p>
+    <p class="article-lead">Elektronická evidence tržeb (EET) je téma, ze kterého mnohým podnikatelům naskakuje husí kůže. Tento starý známý systém se nám však vrací na scénu, a&nbsp;proto je namístě podívat se na něj bez zbytečné paniky a&nbsp;s&nbsp;čistou hlavou.</p>
 
     <div class="article-body">
 
+      <p>Přechod na nová pravidla se dá zvládnout krok za krokem tak, aby váš byznys běžel v&nbsp;klidu dál. Stát tentokrát slibuje modernější a&nbsp;jednodušší systém, takzvané EET 2.0.</p>
+
+      <p>Pojďme si ho rozklíčovat srozumitelně a&nbsp;lidskou řečí.</p>
+
       <h2>1. Návrat starého známého aneb Co je vlastně EET 2.0</h2>
 
-      <p>Pro ty z&nbsp;vás, kdo podnikání rozjeli nedávno a&nbsp;tuhle zkratku neznají - znamená to Elektronická evidence tržeb. Původní verzi u&nbsp;nás stát zrušil na konci roku 2022. Nyní se ale systém vrací jako EET 2.0 a&nbsp;legislativní kolečko je už v&nbsp;cílové rovince (zákon v&nbsp;září 2026 podepsal prezident).<sup>1</sup></p>
+      <p>Pro ty z&nbsp;vás, kdo podnikání rozjeli nedávno a&nbsp;tuhle zkratku neznají - znamená to Elektronická evidence tržeb. Původní verzi u&nbsp;nás stát zrušil na konci roku 2022.</p>
 
-      <p>Účel z&nbsp;pohledu státu zůstává stejný: narovnat podnikatelské prostředí a&nbsp;pohlídat si férový výběr daní. Ministerstvo financí ale slibuje, že to nebude krok zpět, nýbrž technologicky pokročilejší verze uzpůsobená dnešní digitální době. A&nbsp;jedna naprosto skvělá zpráva hned na úvod, kterou musíme vypíchnout:</p>
+      <p>Nyní se ale systém vrací jako EET 2.0 a&nbsp;legislativní kolečko už je dokončené. Zákon v&nbsp;září 2026 podepsal prezident a&nbsp;7. října 2026 byl vyhlášen ve Sbírce zákonů jako <strong>zákon č. 180/2026 Sb.</strong> Nová pravidla evidence tržeb začnou platit od 1. ledna 2027.</p>
 
-      <div class="article-callout">
-        <p><strong>Konec povinných papírových účtenek!</strong> Dále také nebudete muset mít na provozovně vylepené ty otravné informační cedule.<sup>1</sup></p>
+      <p>Účel z&nbsp;pohledu státu zůstává stejný: narovnat podnikatelské prostředí a&nbsp;pohlídat si férový výběr daní. Ministerstvo financí ale slibuje, že to nebude krok zpět, nýbrž technologicky pokročilejší verze uzpůsobená dnešní digitální době.</p>
+
+      <p>A&nbsp;jedna naprosto skvělá zpráva hned na úvod, kterou musíme vypíchnout:</p>
+
+      <div class="article-formula"><strong>Konec povinných papírových účtenek!</strong> Dále také nebudete muset mít na provozovně vylepené ty otravné informační cedule.</div>
+
+      <div class="article-note">
+        <p>Jen malá poznámka, abychom si rozuměli. EET sice nevyžaduje tisk účtenky, ale pokud vás zákazník požádá o&nbsp;doklad o&nbsp;nákupu, povinnost ho vystavit vám může ukládat jiný zákon, například zákon o&nbsp;ochraně spotřebitele. To se nemění.</p>
       </div>
 
       <h2>2. Od kdy to vypukne? (Timeline, ať vám neujede vlak)</h2>
 
-      <p>Tady jsou ty nejdůležitější termíny. Určitě si je hned hoďte do svých kalendářů, ať vás na konci roku nic nepřekvapí:</p>
+      <p>Tady jsou ty nejdůležitější termíny. Určitě si je hned hoďte do svých kalendářů, ať vás na konci roku nic nepřekvapí.</p>
 
       <div class="technika">
         <span class="technika-label">Termíny do kalendáře</span>
-        <div class="schedule-row"><span class="schedule-time">1. 11. 2026</span><span>Finanční správa na Daňovém portálu v&nbsp;rámci informační schránky (DIS+) zpřístupní generování pokladních certifikátů. Od tohoto data si vše můžete začít připravovat.</span></div>
-        <div class="schedule-row"><span class="schedule-time">1. 12. 2026</span><span>Bude spuštěna státní aplikace s&nbsp;názvem „MOJE eet“. Aplikace má být bezplatná a&nbsp;stát ji nabídne jako jedno z&nbsp;řešení.<sup>2</sup></span></div>
-        <div class="schedule-row"><span class="schedule-time">1. 1. 2027</span><span>Tady to začíná naostro. Oficiální zahájení provozu EET 2.0 s&nbsp;tím, že leden bude fungovat jako takový zkušební, pilotní měsíc.</span></div>
+        <p><strong>2. 11. 2026 - Příprava v&nbsp;DIS+ už běží!</strong><br>Finanční správa zpřístupnila na Daňovém portálu v&nbsp;rámci informační schránky DIS+ nové funkce EET. Už nyní si můžete evidenci aktivovat, oznámit své evidenční jednotky a&nbsp;vygenerovat pokladní certifikát. Nemusíte tedy čekat až do prosince.</p>
+        <p><strong>1. 12. 2026 - Spuštění státní aplikace MOJE eet</strong><br>Podle harmonogramu bude spuštěna státní aplikace s&nbsp;názvem „MOJE eet“. Aplikace má být bezplatná a&nbsp;stát ji nabídne jako jedno z&nbsp;řešení zejména pro malé podnikatele. Půjde o&nbsp;webovou aplikaci, takže nebudete muset nutně pořizovat speciální pokladnu.</p>
+        <p><strong>1. 1. 2027 - Tady to začíná naostro</strong><br>Oficiální zahájení provozu EET 2.0. Leden bude fungovat jako takový zkušební, pilotní měsíc.</p>
+      </div>
+
+      <div class="article-note">
+        <p><strong>Pozor ale na jednu důležitou věc!</strong> Pilotní měsíc neznamená, že nemusíte evidovat. Povinnost vzniká už od 1. ledna 2027. Finanční správa však oznámila, že během ledna nebude plnění těchto povinností vymáhat, aby podnikatelé měli prostor všechno doladit.</p>
+        <p>Od února už se počítá s&nbsp;běžným provozem bez tohoto úvodního uvolnění.</p>
       </div>
 
       <h2>3. Koho se EET týká (a&nbsp;kdo je v&nbsp;suchu)</h2>
 
-      <p>Tohle je pro všechny podnikatele mega důležité, protože se pravidla trochu mění. Nová povinnost dopadne na fyzické i&nbsp;právnické osoby, které přijímají takzvané „kontaktní platby“.</p>
+      <p>Tohle je pro všechny podnikatele mega důležité, protože se pravidla trochu mění.</p>
 
-      <div class="checklist">
-        <span class="checklist-label">Kdo a&nbsp;co musí evidovat</span>
-        <ul>
-          <li><span>Úhrady v&nbsp;hotovosti, platby platební kartou (např. přes terminál), QR platby i&nbsp;papírové stravenky, pokud k&nbsp;nim dochází <strong>při osobním kontaktu se zákazníkem nebo přímo u&nbsp;vás na provozovně</strong>.</span></li>
-          <li><span>Evidovat se budou jen základní informace o&nbsp;tržbě v&nbsp;jednom on-line režimu, nebude se už řešit složité vykazování částek DPH jako dřív.<sup>2</sup></span></li>
-        </ul>
+      <p>Nová povinnost dopadne na fyzické i&nbsp;právnické osoby, které přijímají takzvané <strong>„kontaktní platby“</strong> z&nbsp;podnikání.</p>
+
+      <p>A&nbsp;právě tady nastává jedna zásadní změna oproti staré EET.</p>
+
+      <p>Tentokrát totiž nejde jen o&nbsp;hotovost. Rozhodující je především to, kde a&nbsp;jak zákazník zaplatí.</p>
+
+      <h3>Kdo a&nbsp;co musí evidovat</h3>
+
+      <ul class="plain">
+        <li>Úhrady v&nbsp;hotovosti, platby platební kartou (např. přes terminál), QR platby i&nbsp;papírové stravenky, pokud k&nbsp;nim dochází při osobním kontaktu se zákazníkem nebo přímo u&nbsp;vás na provozovně.</li>
+        <li>Evidovat se budou jen základní informace o&nbsp;tržbě v&nbsp;jednom online režimu. Nebude se už řešit složité vykazování částek DPH jako dřív.</li>
+      </ul>
+
+      <p><strong>A&nbsp;teď to nejdůležitější:</strong></p>
+
+      <p>Pokud zákazník stojí před vámi na trhu, v&nbsp;obchodě nebo si osobně přebírá výrobek a&nbsp;zároveň vám na místě zaplatí, jde zpravidla o&nbsp;kontaktní platbu.</p>
+
+      <p>Je úplně jedno, jestli vytáhne peněženku, přiloží kartu k&nbsp;terminálu nebo naskenuje QR kód a&nbsp;pošle vám peníze na účet.</p>
+
+      <p>Všechny tyto platby budete muset evidovat, pokud se na vás nevztahuje zákonná výjimka.</p>
+
+      <p><strong>Hotovost má navíc svoje zvláštní pravidlo.</strong> Ta podléhá evidenci i&nbsp;bez osobního kontaktu, pokud jde o&nbsp;příjem z&nbsp;podnikání a&nbsp;neplatí některá ze zákonných výjimek.</p>
+
+      <h3>Kdo má výjimku</h3>
+
+      <div class="technika">
+        <span class="technika-label">Platby na dálku</span>
+        <p>Pokud máte e-shop a&nbsp;zákazník vám platí klasickým převodem na účet nebo platební kartou přes online platební bránu, bez fyzického kontaktu s&nbsp;vámi a&nbsp;mimo vaši provozovnu, EET se na takovou platbu vztahovat nebude!</p>
+        <p>Pro spoustu e-shopařů obrovská úleva.</p>
+        <p>Platí to i&nbsp;pro platby QR kódem na webu e-shopu nebo na faktuře, kterou zákazník uhradí z&nbsp;domova.</p>
+        <p><strong>Samotné osobní předání výrobku ještě neznamená EET.</strong> Pokud vám zákazník zaplatí předem online a&nbsp;následně si objednávku osobně vyzvedne, znovu už nic neevidujete.</p>
       </div>
 
       <div class="technika">
-        <span class="technika-label">Kdo má výjimku</span>
-        <p><strong>Platby na dálku:</strong> Pokud máte e-shop a&nbsp;zákazník vám platí klasickým převodem na účet nebo platební kartou přes bránu on-line (bez vašeho fyzického kontaktu), EET se na to vztahovat nebude!<sup>3</sup> Pro spoustu e-shopařů obrovská úleva.</p>
-        <p><strong>Komunitní akce:</strong> Typické neziskové a&nbsp;komunitní akce, plesy, slavnosti či drobné podnikání spolků dostanou výjimku a&nbsp;do režimu EET nespadnou.<sup>3</sup></p>
-        <p><strong>Režim EET OFF:</strong> Podnikatelé, kteří jsou v&nbsp;1. pásmu paušální daně (s&nbsp;ročními příjmy do 1 milionu Kč), se mohou evidenci úplně vyhnout. Bude to ale za příplatek - k&nbsp;paušální dani se měsíčně připlatí navíc zhruba 1 400 až 1 500 Kč (podle finálních tabulek).</p>
+        <span class="technika-label">Komunitní akce</span>
+        <p>Typické neziskové a&nbsp;komunitní akce, plesy nebo slavnosti mohou zůstat mimo režim EET, pokud jde o&nbsp;nepodnikatelskou činnost pořadatele. Zákon pamatuje také na drobnou vedlejší podnikatelskou činnost veřejně prospěšných poplatníků, například některých spolků.</p>
+        <p>Ale pozor! Tady není výjimka automatická pro každého, kdo se akce účastní.</p>
+        <p>Pokud například jako živnostnice prodáváte vlastní výrobky na obecním jarmarku, vaše tržby zpravidla EET podléhat budou. A&nbsp;to i&nbsp;přesto, že samotnou akci pořádá nezisková organizace.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Režim EET OFF</span>
+        <p>Podnikatelé, kteří jsou v&nbsp;1. pásmu paušální daně a&nbsp;splňují podmínku příjmů ze samostatné činnosti do 1 milionu Kč za předchozí zdaňovací období, se mohou evidenci úplně vyhnout.</p>
+        <p>Bude to ale za příplatek - k&nbsp;měsíční paušální záloze si připlatí přesně <strong>1 400 Kč</strong>.</p>
+        <p>Pozor, nejde o&nbsp;automatickou výjimku. Do tohoto režimu se musíte sami přihlásit. Pro rok 2027 je termín oznámení do 11. ledna 2027.</p>
+        <p>A&nbsp;ještě jedna věc, která se často plete: <strong>paušální daň není totéž co výdajový paušál.</strong></p>
+        <p>Pokud například podnikáte a&nbsp;v&nbsp;daňovém přiznání uplatňujete 60% výdajový paušál, neznamená to, že automaticky splňujete podmínky EET OFF. Musíte být skutečně v&nbsp;paušálním režimu.</p>
       </div>
 
       <h2>4. Má malý podnikatel nějakou výhodu? A&nbsp;jak to funguje na trhu?</h2>
 
       <p>Možná si říkáte: <em>„Jsem malá ryba, dělám pár zakázek měsíčně, to si jako fakt musím kupovat obří pokladnu za dvacet tisíc?“</em></p>
 
-      <p>Klid! Trh i&nbsp;legislativa se naštěstí poučily z&nbsp;minula. Tady je pár důvodů, proč jako malý podnikatel máte vlastně docela výhodu:</p>
+      <p><strong>Klid!</strong></p>
 
-      <p><strong>Trh se o&nbsp;vás popere:</strong> Firmy vědí, že malých živnostníků je nejvíc, a&nbsp;proto nabízejí tzv. „Freemium“ modely nebo Lite verze aplikací úplně zdarma. Nepotřebujete drahou mašinu, stačí chytrý telefon.</p>
+      <p>Trh i&nbsp;legislativa se naštěstí poučily z&nbsp;minula. Tady je pár důvodů, proč jako malý podnikatel můžete mít situaci o&nbsp;něco jednodušší:</p>
 
-      <p><strong>Konec tisku:</strong> Konec povinnosti tisknout účtenky znamená úsporu za tiskárny a&nbsp;ruličky. Zákazníkovi stačí ukázat QR kód nebo poslat účtenku na e-mail.</p>
+      <h3>Trh se o&nbsp;vás popere</h3>
 
-      <p><strong>Daňová sleva 5 000 Kč:</strong> Stát nabízí jednorázovou slevu na dani jako kompenzaci nákladů.<sup>4</sup> Pokud si vystačíte s&nbsp;free aplikací, můžete na tom ve finále finančně vydělat.</p>
+      <p>Firmy vědí, že malých živnostníků je spousta, a&nbsp;proto se objevují i&nbsp;jednoduché aplikace, Lite verze nebo tzv. „Freemium“ modely. Některé funkce mohou být zdarma, jiné placené.</p>
 
-      <p>Aby stát zavedení trochu osladil, přináší i&nbsp;další daňové úlevy: spropitné v&nbsp;gastronomii bude zcela osvobozeno od daně z&nbsp;příjmů i&nbsp;odvodů (až do výše 7 % tržeb ze stravovacích služeb)<sup>4</sup> a&nbsp;DPH na nealkoholické nápoje v&nbsp;gastru se snižuje na 12 %.</p>
+      <p>A&nbsp;pokud nechcete řešit komerční pokladní systém, stát připravuje vlastní bezplatnou aplikaci MOJE eet, určenou zejména pro drobné podnikatele s&nbsp;menším počtem transakcí a&nbsp;nejvýše dvěma evidenčními jednotkami.</p>
+
+      <p>Nepotřebujete tedy drahou mašinu, v&nbsp;řadě případů vám postačí chytrý telefon.</p>
+
+      <h3>Konec tisku</h3>
+
+      <p>Konec povinnosti tisknout účtenky pro účely EET znamená úsporu za tiskárny a&nbsp;ruličky.</p>
+
+      <p>Pokud zákazník doklad potřebuje, můžete mu ho vystavit i&nbsp;elektronicky, například ve formátu PDF a&nbsp;poslat na e-mail.</p>
+
+      <p>Důležité je, že evidence tržby a&nbsp;vystavení dokladu zákazníkovi jsou dvě rozdílné věci.</p>
+
+      <h3>Daňová sleva až 5 000 Kč</h3>
+
+      <p>Stát nabízí jednorázovou slevu na dani jako kompenzaci nákladů spojených se zavedením evidence.</p>
+
+      <p>Ale tady pozor - nejde o&nbsp;automatických 5 000 Kč pro každého podnikatele.</p>
+
+      <p>Slevu mohou uplatnit fyzické osoby, kterým vznikla povinnost evidovat tržby, a&nbsp;to za zdaňovací období, ve kterém povinně zaevidují první tržbu. Její skutečná výše závisí na zákonném výpočtu podle základu daně ze samostatné činnosti a&nbsp;základní slevy na poplatníka.</p>
+
+      <p>Může tedy být nižší než 5 000 Kč, nebo dokonce nulová.</p>
+
+      <p>Nejde o&nbsp;příspěvek, který vám stát automaticky pošle na účet, ale o&nbsp;slevu na dani, kterou lze využít pouze při splnění podmínek.</p>
+
+      <p>Aby stát zavedení trochu osladil, přináší i&nbsp;další daňové úlevy. Například dobrovolné spropitné zaměstnanců ve stravovacích službách bude za stanovených podmínek osvobozeno od daně z&nbsp;příjmů i&nbsp;pojistného, a&nbsp;to v&nbsp;zákonem určených mezích navázaných na 7 % měsíčních příjmů zaměstnavatele ze stravovacích služeb.</p>
+
+      <p>DPH na nealkoholické nápoje podávané v&nbsp;rámci stravovacích služeb se zároveň snižuje na 12 %.</p>
+
+      <h2>A&nbsp;teď prakticky: Kdy musím evidovat a&nbsp;kdy ne?</h2>
+
+      <p>Tohle je podle mě jedna z&nbsp;nejdůležitějších věcí, kterou by si měl každý malý podnikatel ujasnit.</p>
+
+      <p>Představte si, že vyrábíte dekorace, šperky, svíčky nebo jiné vlastní výrobky. Prodáváte přes e-shop, občas vyrazíte na jarmark a&nbsp;někdy předáváte zakázky osobně.</p>
+
+      <p>Jak to tedy bude vypadat od roku 2027?</p>
+
+      <div class="table-wrap"><table class="data-table">
+        <thead><tr><th>Situace</th><th>Musím evidovat v&nbsp;EET?</th></tr></thead>
+        <tbody>
+            <tr><td>Prodám výrobek na trhu a&nbsp;zákazník zaplatí hotově</td><td class="ano">ANO</td></tr>
+            <tr><td>Na trhu přijmu platbu kartou přes terminál</td><td class="ano">ANO</td></tr>
+            <tr><td>Zákazník na trhu naskenuje QR kód a&nbsp;zaplatí převodem</td><td class="ano">ANO</td></tr>
+            <tr><td>Zákazník si přijde pro zakázku a&nbsp;zaplatí při převzetí</td><td class="ano">ANO</td></tr>
+            <tr><td>Zákazník zaplatí objednávku předem přes online platební bránu e-shopu</td><td class="ne">NE</td></tr>
+            <tr><td>Zákazník uhradí fakturu převodem z&nbsp;domova</td><td class="ne">NE</td></tr>
+            <tr><td>Zákazník zaplatí předem online a&nbsp;výrobek si později osobně vyzvedne</td><td class="ne">NE</td></tr>
+            <tr><td>Zákazník si převezme výrobek a&nbsp;až později z&nbsp;domova uhradí fakturu</td><td class="ne">NE</td></tr>
+            <tr><td>Zákazník zaplatí při osobním převzetí kartou</td><td class="ano">ANO</td></tr>
+            <tr><td>Zákazník zaplatí běžnou dobírku prostřednictvím provozovatele poštovní služby, který vám peníze pošle na účet</td><td class="ne">NE</td></tr>
+            </tbody>
+      </table></div>
+      <p class="table-note">Příklady platí pro běžné podnikatelské tržby, pokud se na ně nevztahuje zvláštní zákonná výjimka.</p>
+
+      <div class="article-formula">Zapamatujte si jednu jednoduchou věc: Rozhoduje způsob a&nbsp;místo zaplacení, ne způsob objednání.</div>
+
+      <p>Je tedy úplně jedno, jestli zákazník objednal přes e-shop, Instagram, Facebook nebo vám napsal zprávu.</p>
+
+      <p>Pokud platí při osobním kontaktu, zpravidla jde o&nbsp;evidovanou tržbu.</p>
+
+      <p>Pokud platí bezhotovostně na dálku, bez osobního kontaktu a&nbsp;mimo vaši provozovnu, platba evidenci zpravidla nepodléhá.</p>
+
+      <p>A&nbsp;ještě jedna drobnost: pro EET neexistuje obecná hranice obratu, pod kterou by drobný živnostník automaticky evidovat nemusel. I&nbsp;když jedete na jarmark jen několikrát ročně a&nbsp;prodáte pár výrobků, může se vás povinnost týkat.</p>
 
       <h2>5. Co všechno si musíte zařídit (Checklist)</h2>
 
-      <p>Dáme si to postupně, krok za krokem:</p>
+      <p>Dáme si to postupně, krok za krokem.</p>
 
-      <div class="technika">
-        <span class="technika-label">Krok za krokem</span>
-        <p><strong>1. Získat přístup do DIS+:</strong> Základem je Daňová informační schránka. Tam si oznámíte své provozovny (evidenční jednotky).</p>
-        <p><strong>2. Pokladní certifikát:</strong> Od listopadu 2026 ho v&nbsp;této schránce vygenerujete a&nbsp;následně stáhnete.<sup>5</sup> Tento certifikát je váš digitální podpis, který zajistí bezpečné odeslání dat o&nbsp;tržbách státu.<sup>5</sup></p>
-        <p><strong>3. Vyřešit si hardware a&nbsp;software:</strong> Musíte mít chytrý telefon, tablet, nebo klasickou pokladnu. Důležité je stabilní připojení k&nbsp;internetu. Pro menší živnostníky bude stačit státní aplikace (zdarma). Pokud už používáte profesionální pokladní systém, vývojáři by vám měli nahrát aktualizaci zdarma v&nbsp;rámci vaší licence.<sup>2</sup></p>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <p><strong>Zjistěte, jestli se vás EET opravdu týká</strong></p>
+          <p>Nejdřív si projděte, jakým způsobem přijímáte platby.</p>
+          <p>Pokud máte pouze e-shop a&nbsp;zákazníci platí výhradně online na dálku, bezhotovostně a&nbsp;mimo vaši provozovnu, kvůli těmto platbám EET řešit nemusíte.</p>
+          <p>Pokud ale prodáváte na trzích, přijímáte platby při osobním odběru nebo máte kamennou provozovnu, je potřeba se připravit.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <p><strong>Získat přístup do DIS+</strong></p>
+          <p>Základem je Daňová informační schránka (DIS+) na portálu MOJE daně.</p>
+          <p>Přihlásit se můžete například prostřednictvím Identity občana nebo datové schránky.</p>
+          <p>Po přihlášení zvolíte možnost <strong>„AKTIVOVAT EET“</strong>. Tím se vám zpřístupní sekce pro evidenci tržeb.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <p><strong>Oznámit své evidenční jednotky</strong></p>
+          <p>V&nbsp;DIS+ uvedete místa nebo prostředky, jejichž prostřednictvím uskutečňujete tržby.</p>
+          <p>Může jít například o:</p>
+          <ul>
+            <li>kamennou prodejnu,</li>
+            <li>mobilní stánek,</li>
+            <li>internetový obchod,</li>
+            <li>nebo přímo vás jako podnikatele, pokud přijímáte platby mimo vlastní provozovnu.</li>
+          </ul>
+          <p>Pozor na jednu zajímavost pro e-shopaře!</p>
+          <p>Pokud provozujete e-shop a&nbsp;zároveň prodáváte na trzích, kde přijímáte evidované tržby, budete zpravidla oznamovat i&nbsp;e-shop jako evidenční jednotku. A&nbsp;to přesto, že samotné online platby přes e-shop evidenci nepodléhají.</p>
+          <p>Neznamená to tedy, že začnete evidovat úplně všechny online objednávky. Jen musíte mít správně oznámené své evidenční jednotky.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <p><strong>Pokladní certifikát</strong></p>
+          <p>Od listopadu 2026 ho v&nbsp;této schránce vygenerujete a&nbsp;následně stáhnete.</p>
+          <p>Tento certifikát slouží k&nbsp;elektronickému podepisování datových zpráv, které vaše pokladní zařízení odesílá finanční správě.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <p><strong>Vyřešit si hardware a&nbsp;software</strong></p>
+          <p>Můžete používat chytrý telefon, tablet nebo klasickou pokladnu. Důležité je mít vhodné připojení k&nbsp;internetu.</p>
+          <p>Pro menší živnostníky s&nbsp;jednodušším provozem může stačit státní webová aplikace zdarma.</p>
+          <p>Pokud už používáte profesionální pokladní systém, ověřte si u&nbsp;dodavatele, zda bude připravený na EET 2.0. U&nbsp;některých systémů může postačit aktualizace softwaru.</p>
+          <p>Jestli bude aktualizace zdarma, záleží na konkrétním dodavateli a&nbsp;podmínkách vaší licence.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <p><strong>Všechno si vyzkoušet ještě před lednem</strong></p>
+          <p>A&nbsp;tohle opravdu doporučuji nepodcenit.</p>
+          <p>Vyzkoušejte si vytvoření tržby, její odeslání a&nbsp;případně také vystavení dokladu. Ideálně ještě před první skutečnou evidovanou platbou.</p>
+          <p>A&nbsp;co když vám na jarmarku vypadne internet?</p>
+          <p>Nemusíte hned balit stánek a&nbsp;jezdit domů.</p>
+          <p>Při výpadku internetového připojení můžete pokračovat v&nbsp;prodeji a&nbsp;tržby odeslat dodatečně po obnovení spojení, bez zbytečného odkladu, nejpozději však do 48 hodin.</p>
+          <p>U&nbsp;poruchy samotného zařízení je potřeba závadu co nejrychleji odstranit a&nbsp;neodeslané tržby následně doplnit podle zákonných pravidel.</p>
+          <p>Určitě se proto vyplatí mít předem jasno, jak vaše aplikace takové situace řeší.</p>
+        </div>
       </div>
 
       <h2>Závěrem…</h2>
 
-      <p>Může se to zdát jako velká spousta nové byrokracie, ale ve finále půjde jen o&nbsp;pár úvodních technických nastavení a&nbsp;pak už by to mělo běžet tak nějak samo na pozadí. Pokud se připravíte včas, leden 2027 vás rozhodně nezaskočí.</p>
+      <p>Může se to zdát jako velká spousta nové byrokracie, ale ve finále půjde hlavně o&nbsp;úvodní technická nastavení a&nbsp;následnou evidenci plateb, které pod nová pravidla spadají.</p>
+
+      <p>Pro někoho, kdo prodává výhradně přes e-shop a&nbsp;přijímá pouze online platby na dálku, se nemusí změnit prakticky nic.</p>
+
+      <p>Naopak pro ty z&nbsp;nás, kdo vyrážíme na trhy, jarmarky nebo předáváme zakázky osobně s&nbsp;platbou na místě, bude potřeba se na nový systém připravit.</p>
+
+      <p>Dobrou zprávou je, že dnes už nemusíme automaticky pořizovat drahé pokladny a&nbsp;tiskárny jako v&nbsp;minulosti.</p>
+
+      <p>Pokud se připravíte včas, leden 2027 vás rozhodně nezaskočí.</p>
 
       <div class="article-tip">
         <h3>Výzva na tento týden</h3>
-        <p>Přihlaste se do Daňové informační schránky (DIS+) a&nbsp;zkontrolujte, jestli tam máte oznámené všechny své provozovny. A&nbsp;rovnou si do kalendáře zapište 1. listopadu - den, kdy si můžete stáhnout pokladní certifikát.</p>
+        <p>Přihlaste se do Daňové informační schránky (DIS+) a&nbsp;zjistěte, jestli se vás evidence tržeb týká.</p>
+        <p>Pokud ano, můžete si už nyní aktivovat EET, oznámit své evidenční jednotky a&nbsp;získat pokladní certifikát.</p>
+        <p>A&nbsp;rovnou si do kalendáře zapište 1. prosince - den plánovaného spuštění bezplatné státní aplikace MOJE eet.</p>
+        <p><strong>Protože čím dříve si v&nbsp;tom uděláme pořádek, tím méně nás toho bude v&nbsp;lednu stresovat.</strong></p>
       </div>
 
       <p class="article-ps">Sem patří i&nbsp;tato témata: <a href="zivnost-bez-strachu.html">Živnost bez strachu</a> · <a href="nez-se-vrhnete-na-urady.html">Než se vrhneš na úřady</a> · <a href="prilezitostny-prijem-vs-zivnost.html">Příležitostný příjem vs. živnost</a> · <a href="podnikani-na-vedlejsi-cinnost.html">Podnikání na vedlejší činnost</a></p>
 
-      <p class="article-sources">Zdroje a&nbsp;užitečné odkazy: <sup>1</sup> Ministerstvo financí ČR: Tisková zpráva ke schválení zákona EET 2.0 (mfcr.cz) · <sup>2</sup> Finanční správa ČR: Harmonogram spuštění a&nbsp;informace k&nbsp;aplikaci MOJE eet (financnisprava.cz) · <sup>3</sup> Metodický pokyn MF ČR: Specifikace výjimek a&nbsp;vliv na e-commerce (etrzby.cz) · <sup>4</sup> Ministerstvo financí ČR: Přehled daňových úlev a&nbsp;kompenzací (mfcr.cz) · <sup>5</sup> Portál MOJE daně (DIS+): Průvodce k&nbsp;certifikátům (mojedane.cz)</p>
+      <div class="article-sources">Zdroje a&nbsp;užitečné odkazy:
+        <ul>
+          <li><a href="https://e-sbirka.gov.cz/sb/2026/180?zalozka=text" target="_blank" rel="noopener">Zákon č. 180/2026 Sb. - oficiální znění v&nbsp;e-Sbírce</a></li>
+          <li><a href="https://eet.gov.cz/cs/koho-se-eet-tyka/kdo-musi-evidovat-trzby" target="_blank" rel="noopener">Finanční správa - Kdo musí evidovat tržby?</a></li>
+          <li><a href="https://eet.gov.cz/cs/koho-se-eet-tyka/co-je-z-evidence-trzeb-vyjmuto" target="_blank" rel="noopener">Finanční správa - Co je z&nbsp;evidence tržeb vyjmuto?</a></li>
+          <li><a href="https://eet.gov.cz/cs/zacinam-s-eet/prakticke-informace" target="_blank" rel="noopener">Finanční správa - Praktické informace k&nbsp;EET</a></li>
+          <li><a href="https://eet.gov.cz/cs/eet-off/co-je-rezim-eet-off" target="_blank" rel="noopener">Finanční správa - EET OFF</a></li>
+          <li><a href="https://eet.gov.cz/cs/pro-media/tiskove-zpravy/2026/eet-2-0-podnikatele-se-jiz-mohou-prihlasit-k-evide-1386" target="_blank" rel="noopener">Finanční správa - Registrace a&nbsp;certifikáty od listopadu 2026</a></li>
+        </ul>
+        <p style="margin-top:0.8rem;font-style:italic">Informace jsou aktualizované k&nbsp;3. listopadu 2026. Článek slouží jako srozumitelný průvodce a&nbsp;nenahrazuje individuální daňové poradenství.</p>
+      </div>
 
       <div class="article-author">
         <div class="author-avatar">V</div>
