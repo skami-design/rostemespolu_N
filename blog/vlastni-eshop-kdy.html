@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vlastní e-shop: Kdy už ti Instagram a tržiště nestačí? — Rosteme spolu</title>
+  <meta name="description" content="Jak poznat správný čas, spočítat náklady a rozhodnout se bez zbytečného rizika. Pět signálů, dvě tabulky a konkrétní počítání pro začínající tvůrkyni.">
+  <meta name="keywords" content="vlastní e-shop, kdy e-shop, e-shop pro tvůrkyni, e-shop náklady, Shoptet, e-shop vs tržiště, e-shop vs Fler, e-shop vs Etsy, jak vybrat e-shop platformu, e-shop pro začátečníky, e-shop kalkulace, obchodní podmínky, GDPR e-shop, bezpečnost výrobků GPSR, identifikovaná osoba, e-shop legislativa">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vlastní e-shop: Kdy už ti Instagram a tržiště nestačí? — Rosteme spolu">
+  <meta property="og:description" content="Jak poznat správný čas, spočítat náklady a rozhodnout se bez zbytečného rizika.">
+  <meta property="og:image" content="../img/thumb-vlastni-eshop-kdy.jpg">
+  <meta property="og:url" content="https://rostemespolu.site/blog/vlastni-eshop-kdy.html">
+  <meta property="og:type" content="article">
+
+  <!-- Fonty -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="GBWxB9JLnxFi2Q9zJ9gSAeNnG91HGtv_mCsW0yfDiP4">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V72WRVK5K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8V72WRVK5K');
+  </script>
+
+  <!-- Sdílené styly -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ── Layout článku ── */
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 5rem;
+    }
+
+    .article-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .article-eyebrow a { color: var(--muted); text-decoration: none; }
+    .article-eyebrow a:hover { color: var(--ink); }
+
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .article-subtitle {
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: var(--ink2);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-author-photo {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--pink-l);
+      flex-shrink: 0;
+    }
+    .article-author-name { font-size: 0.88rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+    .article-author-role { font-size: 0.75rem; color: var(--muted); }
+    .article-author-role a { color: var(--green); text-decoration: none; }
+    .article-author-role a:hover { color: var(--ink); }
+    .article-date { margin-left: auto; font-size: 0.78rem; color: var(--muted); }
+
+    .article-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      text-decoration: none;
+      margin-bottom: 0.75rem;
+    }
+    .t-zacinama { background: #f3e8ff; color: #6b21a8; }
+
+    /* Tělo článku */
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2.25rem 0 0.75rem;
+      line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .article-body p {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--ink2);
+      margin-bottom: 1.1rem;
+    }
+    .article-body ul,
+    .article-body ol {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--ink2);
+      padding-left: 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+    .article-body li { margin-bottom: 0.4rem; }
+    .article-body strong { color: var(--ink); }
+    .article-body em { font-style: italic; color: var(--muted); font-size: 0.9rem; }
+
+    /* Tabulky */
+    .fee-table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .fee-table th {
+      font-family: var(--serif);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      background: var(--pink-ll);
+      color: var(--ink);
+      border-bottom: 2px solid var(--border);
+    }
+    .fee-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink2);
+      vertical-align: top;
+    }
+    .fee-table tr:last-child td { border-bottom: none; }
+    .fee-table tr.total-row td {
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--pink-ll);
+      border-top: 2px solid var(--border);
+    }
+    .fee-table .highlight-row td {
+      font-weight: 600;
+      color: var(--ink);
+      background: rgba(var(--green-rgb, 80,160,100), 0.07);
+    }
+    .fee-table-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    /* Info boxy */
+    .tip-box {
+      background: var(--pink-ll);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+    }
+    .tip-box strong { color: var(--ink); display: block; margin-bottom: 0.3rem; }
+
+    .warn-box {
+      background: #fff8e1;
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+    }
+    .warn-box strong { color: var(--ink); display: block; margin-bottom: 0.3rem; }
+
+    /* CTA box */
+    .call-to-action-box {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin: 2.5rem 0;
+    }
+    .call-to-action-box h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .call-to-action-box p,
+    .call-to-action-box li {
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+    }
+    .call-to-action-box ul { padding-left: 1.25rem; margin: 0.75rem 0 0; }
+    .call-to-action-box li { margin-bottom: 0.4rem; }
+
+    /* Co dál */
+    .continue-box {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .continue-box h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .continue-box ul { list-style: none; padding: 0; margin: 0; }
+    .continue-box li {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .continue-box li:last-child { border-bottom: none; }
+    .continue-box a { color: var(--green); font-weight: 600; text-decoration: none; }
+    .continue-box a:hover { color: var(--ink); }
+
+    /* Teaser pro srovnávač */
+    .teaser-box {
+      background: linear-gradient(135deg, var(--pink-ll) 0%, #f0f9ff 100%);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem 2rem;
+      margin: 2.5rem 0;
+      text-align: center;
+    }
+    .teaser-box h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .teaser-box p { font-size: 0.9rem; color: var(--ink2); line-height: 1.7; margin-bottom: 1rem; }
+    .teaser-box .coming-soon {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--white);
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+    }
+
+    /* Redakční poznámka + zdroje */
+    .article-note {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .article-sources { margin-top: 1.5rem; font-size: 0.82rem; color: var(--muted); }
+    .article-sources h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .article-sources ol { padding-left: 1.25rem; margin: 0; }
+    .article-sources li { margin-bottom: 0.3rem; }
+    .article-sources a { color: var(--muted); }
+    .article-sources a:hover { color: var(--ink); }
+
+    /* Autor pod článkem */
+    .article-author-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: var(--pink-ll);
+      border-radius: 10px;
+    }
+    .article-author-footer img {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 680px) {
+      .article-wrap { padding: 2rem 1.5rem 4rem; }
+      .article-meta { gap: 0.75rem; }
+      .article-date { margin-left: 0; }
+    }
+  </style>
+</head>
+<body class="blog-level">
+
+  <!-- Nav se vloží automaticky -->
+
+  <main>
+    <div class="article-wrap">
+
+      <p class="article-eyebrow">
+        <a href="../blog.html">Blog</a> → <a href="../blog.html?rubrika=zacinama-podnikat">Začínáme podnikat</a>
+      </p>
+
+      <a href="../blog.html?rubrika=zacinama-podnikat" class="article-tag t-zacinama">Začínáme podnikat</a>
+
+      <h1 class="article-title">Vlastní e-shop: Kdy už ti Instagram a tržiště nestačí?</h1>
+      <p class="article-subtitle">Jak poznat správný čas, spočítat náklady a rozhodnout se bez zbytečného rizika.</p>
+
+      <div class="article-meta">
+        <img src="../foto-verca.jpg" alt="Veronika Hašplová" class="article-author-photo" onerror="this.style.background='var(--pink-l)'">
+        <div>
+          <div class="article-author-name">Veronika Hašplová</div>
+          <div class="article-author-role">Tvůrkyně a autorka · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener">@eweria_prints</a></div>
+        </div>
+        <div class="article-date">Aktualizováno: listopad 2026</div>
+      </div>
+
+      <div class="article-body">
+
+        <p>Možná to znáš.</p>
+        <p>Ráno ti přijde objednávka přes Instagram. Odpoledne někdo napíše na Facebook, jestli máš výrobek ještě skladem. Večer se ozve zákaznice, která by chtěla stejný produkt, ale v jiné barvě.</p>
+        <p>A mezi tím vším hledáš v konverzacích, kdo už zaplatil, komu jsi slíbila odeslání a jestli jsi náhodou poslední kus neprodala na Fleru.</p>
+        <p>Najednou máš pocit, že místo tvoření provozuješ malé zákaznické centrum.</p>
+        <p><strong>Právě to může být chvíle, kdy začne dávat smysl vlastní e-shop.</strong></p>
+        <p>Ale pozor. E-shop není kouzelná krabička, do které nahraješ výrobky a druhý den se probudíš do záplavy objednávek. Pojďme si ukázat, kdy se skutečně vyplatí, co tě bude stát a kdy je naopak lepší ještě počkat.</p>
+
+        <!-- 1 -->
+        <h2>1. Pět signálů, že nastal čas přemýšlet o e-shopu</h2>
+
+        <h3>1. Objednávky už nestíháš řešit přes zprávy</h3>
+        <p>Pokud každý večer trávíš hodinu dohledáváním adres, plateb a požadovaných variant, e-shop ti může výrazně ulehčit práci. Zákaznice si sama vybere výrobek, barvu, způsob dopravy i platby. Ty dostaneš objednávku se všemi potřebnými údaji na jednom místě — a místo dalšího vypisování zpráv se můžeš věnovat tomu, co tě původně přivedlo k podnikání: tvorbě.</p>
+
+        <h3>2. Prodáváš pravidelně, ne jen občas</h3>
+        <p>Jedna povedená vánoční sezóna ještě nemusí znamenat, že potřebuješ vlastní e-shop. Pokud ale objednávky přicházejí pravidelně několik měsíců po sobě, máš mnohem lepší představu o tom, co zákazníci chtějí — a hlavně dokážeš lépe odhadnout, jestli se ti měsíční provozní náklady vyplatí.</p>
+
+        <h3>3. Chceš budovat vlastní značku</h3>
+        <p>Na tržišti jsi jednou z mnoha prodejkyň. Na vlastním e-shopu můžeš zákaznicím představit celý svůj příběh, styl tvorby i hodnoty, na kterých značku stavíš. Můžeš upravit vzhled stránek, připravovat tematické kolekce, pracovat s obsahem a postupně budovat prostředí, které si zákaznice spojí právě s tebou. To je důležité zejména tehdy, pokud nechceš konkurovat pouze cenou.</p>
+
+        <h3>4. Chceš mít větší kontrolu nad zákaznickou zkušeností</h3>
+        <p>Na tržištích se musíš řídit pravidly platformy — ta může změnit poplatky, způsob zobrazování výrobků nebo podmínky prodeje. Na vlastním e-shopu máš větší kontrolu nad tím, jak produkty prezentuješ, jaké dopravce nabídneš a jak bude celý nákup probíhat.</p>
+
+        <h3>5. Provize z tržišť už tvoří významnou část tvých nákladů</h3>
+        <p>Pokud každý měsíc odvádíš stovky nebo tisíce korun na provizích, je rozumné začít porovnávat, kolik by tě stál vlastní e-shop. Jenže tady přichází jeden důležitý háček.</p>
+
+        <div class="warn-box">
+          <strong>⚠️ Nižší poplatky automaticky neznamenají vyšší zisk.</strong>
+          Na tržišti zákazníci tvoje výrobky aktivně hledají. Na vlastním e-shopu si návštěvnost musíš zajistit sama — a to stojí čas nebo peníze za reklamu.
+        </div>
+
+        <!-- 2 -->
+        <h2>2. Co ti vlastní e-shop skutečně přinese?</h2>
+
+        <h3>Přehlednější objednávky</h3>
+        <p>Zákaznice si vybere výrobek, variantu, způsob platby a dopravu. Objednávka se uloží do administrace a ty máš všechny důležité informace na jednom místě. Nemusíš dohledávat, jestli si paní Jana objednala růžovou, nebo béžovou variantu a jestli už poslala adresu.</p>
+
+        <h3>Automatizace</h3>
+        <p>E-shop ti může usnadnit potvrzování objednávek, vystavování dokladů, správu zásob nebo předávání údajů dopravcům. Rozsah automatizace záleží na konkrétní platformě a používaných doplňcích — ale i několik jednoduchých funkcí ti může ušetřit spoustu opakující se práce.</p>
+
+        <h3>Vlastní značka a zákaznické vztahy</h3>
+        <p>Na e-shopu máš větší kontrolu nad prezentací produktů, obsahem i komunikací. Můžeš zákaznicím nabídnout související výrobky, představovat novinky a postupně budovat dlouhodobý vztah — samozřejmě při dodržení pravidel ochrany osobních údajů.</p>
+
+        <h3>Lepší možnosti růstu</h3>
+        <p>Pokud plánuješ rozšiřovat sortiment, pracovat s větším počtem variant nebo prodávat prostřednictvím více kanálů, může ti vlastní e-shop posloužit jako hlavní centrum podnikání. Nemusí to ale být hned na začátku.</p>
+
+        <div class="tip-box">
+          <strong>Důležité:</strong>
+          E-shop by měl řešit skutečné potřeby tvého podnikání — ne jen dobře vypadat na vizitce.
+        </div>
+
+        <!-- 3 -->
+        <h2>3. Kolik tě bude vlastní e-shop stát?</h2>
+        <p>Dnes nemusíš investovat desítky tisíc korun do programování vlastního webu. Existují hotová e-shopová řešení — Shoptet, E-shop rychle, Upgates — u kterých si pronajímáš připravený systém. Vybereš si vzhled, nahraješ výrobky, nastavíš dopravu a platby a můžeš začít prodávat.</p>
+        <p>To ale neznamená, že bude provoz úplně zdarma. Jaké náklady je potřeba započítat? Měsíční pronájem e-shopu, doménu, případné placené doplňky, poplatky platební brány a propagaci. Nezapomeň také na jednorázovou pomoc s nastavením, grafiku, fotografie nebo úpravy vzhledu. A samozřejmě na svůj čas.</p>
+
+        <div class="fee-table-wrap">
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Náklad</th>
+                <th>Modelová částka za měsíc</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Pronájem e-shopu</td>
+                <td>500 Kč</td>
+              </tr>
+              <tr>
+                <td>Doména (rozpočítaná na měsíc)</td>
+                <td>25 Kč</td>
+              </tr>
+              <tr>
+                <td>Placené doplňky</td>
+                <td>100 Kč</td>
+              </tr>
+              <tr>
+                <td>Základní reklama</td>
+                <td>1 000 Kč</td>
+              </tr>
+              <tr class="total-row">
+                <td>Celkem fixní náklady</td>
+                <td>1 625 Kč</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>K tomu připočítej transakční poplatky platební brány — například modelových 1,2 % z přijatých plateb.</p>
+
+        <div class="warn-box">
+          <strong>⚠️ Cena e-shopu není jen měsíční tarif</strong>
+          Pokud si pořídíš levný tarif, ale každou další funkci musíš dokupovat zvlášť, může být výsledný provoz dražší než u vyššího tarifu, který už vše potřebné obsahuje. Porovnej vždy celkové náklady.
+        </div>
+
+        <!-- 4 -->
+        <h2>4. Kdy se e-shop vyplatí finančně? Pojďme počítat.</h2>
+        <p>Představ si, že prodáváš výrobky na tržišti, kde za provize a související poplatky zaplatíš v průměru 12 % z obratu. Nejde o konkrétní sazbu Fleru ani Etsy — jde o modelovou průměrnou nákladovost tržiště. Na vlastním e-shopu máš fixní náklady 1 625 Kč měsíčně a modelový transakční poplatek 1,2 %.</p>
+
+        <div class="fee-table-wrap">
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Měsíční obrat</th>
+                <th>Tržiště (12 %)</th>
+                <th>Vlastní e-shop</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5 000 Kč</td>
+                <td>600 Kč</td>
+                <td>1 685 Kč</td>
+              </tr>
+              <tr>
+                <td>10 000 Kč</td>
+                <td>1 200 Kč</td>
+                <td>1 745 Kč</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>≈ 15 050 Kč (bod zvratu)</td>
+                <td>≈ 1 806 Kč</td>
+                <td>≈ 1 806 Kč</td>
+              </tr>
+              <tr>
+                <td>20 000 Kč</td>
+                <td>2 400 Kč</td>
+                <td>1 865 Kč</td>
+              </tr>
+              <tr>
+                <td>30 000 Kč</td>
+                <td>3 600 Kč</td>
+                <td>1 985 Kč</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fee-table-note">Modelové srovnání nákladů na prodejní kanál. Nezahrnuje výrobu, balení, dopravu, daně ani rozdílnou časovou náročnost. U tržiště předpokládáme průměrnou sazbu 12 % bez dalších fixních nákladů. U e-shopu jsou v rozpočtu zahrnuty i modelové náklady na reklamu.</p>
+
+        <p>Nákladový bod zvratu v tomto příkladu vychází přibližně na <strong>15 050 Kč měsíčního obratu</strong>. Od této hranice začíná být vlastní e-shop z hlediska uvedených nákladů levnější než tržiště.</p>
+
+        <div class="warn-box">
+          <strong>⚠️ Tohle je pouze matematika, nikoli záruka</strong>
+          Představ si, že při obratu 20 000 Kč vychází e-shop o 535 Kč levněji. Ale pokud budeš potřebovat investovat do reklamy o dalších 600 Kč více, celá výhoda se vytratí. A stejně tak nemůžeš automaticky předpokládat, že všechny objednávky z tržiště získáš i na vlastním webu.
+        </div>
+
+        <!-- 5 -->
+        <h2>5. A co když mám jen pár objednávek měsíčně?</h2>
+        <p>Pak se vůbec nic neděje. Vlastní e-shop nemusíš zakládat jen proto, že ho mají ostatní. Pokud prodáváš několik výrobků měsíčně, objednávky zvládáš pohodlně přes zprávy a zákaznice jsou spokojené, může ti tento způsob zatím úplně stačit.</p>
+        <p>Naopak pokud vyrábíš produkty na zakázku, máš hodně variant nebo potřebuješ přehledně prezentovat celý sortiment, může e-shop dávat smysl i při menším obratu.</p>
+
+        <div class="tip-box">
+          <strong>E-shop nemusí být jen způsob, jak ušetřit na provizích.</strong>
+          Může být způsobem, jak ušetřit vlastní čas. A ten má při podnikání často mnohem větší hodnotu, než si na začátku připouštíme.
+        </div>
+
+        <h3>Spočítej si také hodnotu svého času</h3>
+        <p>Představ si, že ti vyřizování objednávek přes zprávy zabere deset hodin měsíčně. Po spuštění e-shopu se tato práce zkrátí třeba na šest hodin. Ušetříš čtyři hodiny. Pokud si hodnotu svého času pro vlastní rozhodování stanovíš například na 200 Kč za hodinu, jde o 800 Kč měsíčně. Nejde o automatickou úsporu peněz na účtu — ale jsou to čtyři hodiny, které můžeš využít na výrobu, focení nebo marketing.</p>
+
+        <!-- 6 -->
+        <h2>6. Musím při založení e-shopu opustit Fler nebo Etsy?</h2>
+        <p>Vůbec ne. A ve většině případů by to ani nebyl dobrý nápad. Jednotlivé prodejní kanály se mohou krásně doplňovat — na Instagramu ukazuješ zákulisí tvorby, na trzích oslovovuješ zákazníky osobně, přes Fler získáváš nové objednávky a na vlastním e-shopu buduješ svou značku.</p>
+        <p>Důležité ale je, aby ses v objednávkách a skladových zásobách dokázala vyznat.</p>
+
+        <div class="warn-box">
+          <strong>⚠️ Pozor na skladové zásoby</strong>
+          Pokud prodáváš stejné výrobky na více místech, je potřeba mít přehled o dostupnosti. U menšího sortimentu si možná vystačíš s jednoduchou tabulkou. Při větším množství objednávek už může dávat smysl systém, který dokáže zásoby mezi kanály synchronizovat. Pozor také na pravidla jednotlivých tržišť — některá mohou omezovat přesměrování zákazníků mimo platformu.
+        </div>
+
+        <!-- 7 -->
+        <h2>7. Jak poznat, že je tvůj e-shop připravený na spuštění?</h2>
+
+        <h3>Základem je funkční nákupní proces</h3>
+        <p>Zákaznice musí být schopná výrobek najít, vybrat správnou variantu, vložit ho do košíku a objednávku dokončit. Zní to jako samozřejmost — jenže právě při nastavování variant, dopravy nebo plateb se občas objeví chyba, které si při běžném prohlížení nevšimneš.</p>
+
+        <h3>Otestuj si vlastní objednávku</h3>
+        <p>Před spuštěním projdi celý proces jako zákaznice. Zkontroluj, zda fungují varianty výrobků, ceny, doprava, platby a potvrzovací e-maily. Vyzkoušej také zobrazení na mobilním telefonu — krásný e-shop na velkém monitoru ti příliš nepomůže, pokud na mobilu zákaznice nenajde tlačítko pro dokončení objednávky.</p>
+
+        <h3>Připrav si základní obsah</h3>
+        <p>Nemusíš mít hned desítky článků a profesionální katalog o stovkách produktů. Ale obchod by měl působit důvěryhodně: kvalitní fotografie, srozumitelné popisky, informace o značce, kontaktní údaje a přehledné informace o dopravě a platbách. A hlavně správně nastavené ceny.</p>
+
+        <!-- 8 -->
+        <h2>8. Než e-shop spustíš, nezapomeň na legislativu</h2>
+        <p>Vlastní e-shop znamená větší svobodu, ale také větší odpovědnost.</p>
+
+        <h3>Identifikace podnikatele</h3>
+        <p>Zákaznice musí vědět, od koho nakupuje a jak tě může kontaktovat. Na e-shopu proto potřebuješ správně uvést identifikační a kontaktní údaje.</p>
+
+        <h3>Obchodní podmínky</h3>
+        <p>Obchodní podmínky by měly srozumitelně vysvětlovat pravidla nákupu, platby, dodání, reklamací a dalších důležitých situací. Nestačí je pouze zkopírovat z jiného e-shopu — podmínky musí odpovídat tvému skutečnému způsobu prodeje a platným pravidlům.</p>
+
+        <h3>Odstoupení od smlouvy a reklamace</h3>
+        <p>Při běžném online nákupu má spotřebitel zpravidla právo odstoupit od smlouvy do 14 dnů. <strong>To, že výrobek vyrábíš ručně nebo až po objednávce, ještě automaticky neznamená, že jej zákazník nemůže vrátit.</strong> Záleží na konkrétním charakteru výrobku a zákonných podmínkách výjimky. Reklamace musí být zpravidla vyřízena do 30 dnů.</p>
+
+        <h3>Ochrana osobních údajů (GDPR)</h3>
+        <p>Při provozu e-shopu budeš zpracovávat osobní údaje zákaznic — jména, adresy, e-maily, informace o objednávkách. Proto musíš dodržovat pravidla GDPR a správně informovat o tom, jak s osobními údaji nakládáš. To, že máš e-mail zákaznice kvůli objednávce, ještě neznamená, že jí můžeš automaticky posílat libovolnou reklamu.</p>
+
+        <h3>Cookies a slevové akce</h3>
+        <p>Pokud využíváš analytické nebo reklamní technologie, můžeš potřebovat souhlas návštěvníků s ukládáním netechnických cookies. Při slevových akcích (Black Friday, výprodeje) musíš zpravidla uvádět také nejnižší cenu, za kterou jsi výrobek nabízela v předchozích 30 dnech.</p>
+
+        <h3>Bezpečnost výrobků (GPSR) a DPH</h3>
+        <p>Podle typu produktu musíš splnit příslušné požadavky na bezpečnost a označování. Nařízení GPSR může vyžadovat informace o výrobci přímo v online nabídce. U hraček nebo výrobků pro děti mohou platit další specifické požadavky. Pokud začneš využívat placenou reklamu od zahraničních společností (Meta, Google), může ti jako neplátci DPH vzniknout povinnost registrace jako identifikovaná osoba. Totéž téma podrobněji rozebíráme v průvodci <a href="jak-prodavat-na-etsy.html" style="color:var(--green)">prodejem na Etsy</a>.</p>
+
+        <div class="warn-box">
+          <strong>⚠️ Právní záležitosti vyřeš před spuštěním</strong>
+          Tento přehled má obecný charakter a nenahrazuje individuální odborné posouzení. Doporučujeme konzultaci s účetní nebo právníkem před spuštěním prodeje.
+        </div>
+
+        <!-- 9 -->
+        <h2>9. Jakou e-shopovou platformu tedy vybrat?</h2>
+        <p>Shoptet? E-shop rychle? Upgates? Webnode? Nebo WooCommerce? Každá platforma nabízí něco jiného — rozdíly nejsou jen v ceně, ale také v jednoduchosti ovládání, možnostech úprav, dopravcích, platebních branách a doplňcích.</p>
+        <p>Zaměř se na to, co skutečně potřebuješ. Pokud vyrábíš šperky ve dvaceti barevných variantách, bude pro tebe klíčové jednoduché nastavení variant. Pokud prodáváš personalizované výrobky, budeš potřebovat vlastní pole pro zadání jména nebo textu.</p>
+
+        <div class="tip-box">
+          <strong>Vybrat e-shop jen podle nejlevnějšího tarifu může být podobně zrádné jako koupit nejlevnější tiskárnu</strong> a pak zjistit, kolik stojí náplně. Vždy porovnej celkové náklady — tarif, doplňky, platební brány a propagaci dohromady.
+        </div>
+
+        <!-- Teaser srovnávač -->
+        <div class="teaser-box">
+          <h3>🧮 Srovnávač e-shopových platforem</h3>
+          <p>Připravujeme podrobné srovnání e-shopových řešení dostupných v Česku — Shoptet, E-shop rychle, Upgates, Webnode a další. Součástí bude interaktivní kalkulačka, ve které si nastavíš vlastní počet objednávek, průměrnou hodnotu nákupu a rozpočet.</p>
+          <span class="coming-soon">Brzy dostupné pro členky</span>
+        </div>
+
+        <!-- 10 -->
+        <h2>10. Takže kdy je ten správný čas?</h2>
+        <p>Možná čekáš konkrétní odpověď. Při deseti objednávkách? Při obratu 15 000 Kč? Nebo až ve chvíli, kdy máš tisíc sledujících?</p>
+        <p>Jenže žádná univerzální hranice neexistuje.</p>
+        <p><strong>Správný čas na vlastní e-shop přichází tehdy, když ti pomůže vyřešit skutečný problém nebo podpoří další růst tvého podnikání.</strong></p>
+        <p>Může jít o příliš mnoho objednávek přes zprávy, potřebu automatizace, budování značky nebo snahu snížit náklady na prodej. A pokud zatím žádný takový problém nemáš, není důvod spěchat.</p>
+        <p>Vlastní e-shop není podnikatelská medaile za dosažený obrat. Je to nástroj. A stejně jako u každého jiného nástroje záleží především na tom, jestli ho skutečně potřebuješ.</p>
+
+        <!-- Závěr -->
+        <h2>Závěrem: E-shop ti má práci ulehčit, ne přidělat.</h2>
+        <p>Možná se při čtení tohoto článku utvrdíš v tom, že nastal správný čas na vlastní e-shop. A možná zjistíš, že ti zatím současný způsob prodeje úplně vyhovuje. Obojí je v pořádku.</p>
+        <p>Nejdůležitější není mít co nejmodernější web, nejdražší tarif nebo desítky automatizací. Důležité je mít takový systém, který odpovídá tvému podnikání a pomáhá ti ho rozvíjet.</p>
+        <p><strong>Smyslem vlastního e-shopu je vytvořit si prostor, ve kterém budeš mít nad svým podnikáním větší kontrolu, ušetříš čas a budeš se moci věnovat tomu, co tě skutečně baví.</strong></p>
+
+        <!-- Výzva -->
+        <div class="call-to-action-box">
+          <h3>✦ Výzva na tento týden</h3>
+          <p>Než se pustíš do zakládání e-shopu, zkus si spočítat tři věci:</p>
+          <ul>
+            <li>Kolik měsíčně zaplatíš za současné prodejní kanály.</li>
+            <li>Kolik času trávíš vyřizováním objednávek a komunikací.</li>
+            <li>Kolik by tě stál vlastní e-shop včetně všech doplňků, plateb a propagace.</li>
+          </ul>
+          <p style="margin-top:0.75rem; font-size:0.88rem; opacity:0.75;">Pak si polož jednoduchou otázku: <strong style="color:var(--white)">Co mi vlastní e-shop skutečně přinese?</strong> Pokud na ni máš jasnou odpověď, jsi na dobré cestě.</p>
+        </div>
+
+        <!-- Co dál -->
+        <div class="continue-box">
+          <h3>Kam pokračovat?</h3>
+          <ul>
+            <li>→ <a href="kde-zacit-prodavat.html">Kde začít prodávat své výrobky?</a> Přehled možností pro začínající tvůrkyně — Fler, Instagram, trhy, Etsy nebo e-shop.</li>
+            <li>→ <a href="jak-prodavat-na-etsy.html">Jak začít prodávat na Etsy?</a> Praktický návod na zahraniční prodej — poplatky, SEO, doprava, daně.</li>
+            <li>→ <a href="srovnavac-eshopovych-platform.html">Srovnání e-shopových platforem</a> — připravovaný průvodce a kalkulačka pro výběr vhodného řešení. <em style="font-style:italic; font-size:0.85rem;">(brzy)</em></li>
+          </ul>
+        </div>
+
+        <!-- Redakční poznámka -->
+        <div class="article-note">
+          <strong>Redakční poznámka:</strong> Finanční příklady v článku jsou modelové a neslouží jako aktuální ceník e-shopových platforem nebo platebních bran. Právní a daňové informace mají obecný charakter a nenahrazují individuální odborné posouzení. Aktualizováno: listopad 2026.
+        </div>
+
+        <!-- Zdroje -->
+        <div class="article-sources">
+          <h4>Zdroje a užitečné odkazy</h4>
+          <ol>
+            <li><a href="https://coi.gov.cz/pro-podnikatele/informace-pro-prodejce-zbozi-a-sluzeb/informacni-povinnosti-prodejce-2/" target="_blank" rel="noopener">ČOI – informační povinnosti prodejce</a></li>
+            <li><a href="https://coi.gov.cz/faq/a-kdy-mohu-od-smlouvy-odstoupit-13/" target="_blank" rel="noopener">ČOI – odstoupení od smlouvy</a></li>
+            <li><a href="https://coi.gov.cz/pro-podnikatele/informace-pro-prodejce-zbozi-a-sluzeb/reklamace-zbozi-a-sluzeb/" target="_blank" rel="noopener">ČOI – reklamace zboží a služeb</a></li>
+            <li><a href="https://coi.gov.cz/slevy/" target="_blank" rel="noopener">ČOI – pravidla pro slevové akce</a></li>
+            <li><a href="https://uoou.gov.cz/verejnost/qa-otazky-a-odpovedi/cookies" target="_blank" rel="noopener">ÚOOÚ – cookies</a></li>
+            <li><a href="https://financnisprava.gov.cz/" target="_blank" rel="noopener">Finanční správa ČR</a></li>
+          </ol>
+        </div>
+
+      </div><!-- /.article-body -->
+
+      <!-- Autor pod článkem -->
+      <div class="article-author-footer">
+        <img src="../foto-verca.jpg" alt="Veronika Hašplová" onerror="this.style.display='none'">
+        <div>
+          <div class="article-author-name">Veronika Hašplová</div>
+          <div class="article-author-role">Tvůrkyně a autorka · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener" style="color:var(--green)">@eweria_prints</a></div>
+        </div>
+      </div>
+
+    </div><!-- /.article-wrap -->
+  </main>
+
+  <!-- Footer a nav se vloží automaticky -->
+  <script src="../components.js" data-root=".."></script>
+
+</body>
+</html>

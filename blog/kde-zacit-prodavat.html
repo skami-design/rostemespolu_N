@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kde začít prodávat své výrobky? Od prvního zákazníka až po vlastní e-shop — Rosteme spolu</title>
+  <meta name="description" content="Fler, Instagram, trhy, Etsy nebo vlastní e-shop? Průvodce bez zbytečných přešlapů — jak poznat, která prodejní cesta je právě pro tebe ta správná.">
+  <meta name="keywords" content="kde začít prodávat, prodej výrobků, Fler, Etsy, Allegro, Instagram prodej, Facebook prodej, fyzické trhy, jarmark, e-shop, živnost, handmade prodej, tržiště, prodejní kanály, první zákazník, ruční výroba, jak prodávat online">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kde začít prodávat své výrobky? Od prvního zákazníka až po vlastní e-shop — Rosteme spolu">
+  <meta property="og:description" content="Fler, Instagram, trhy, Etsy nebo vlastní e-shop? Průvodce bez zbytečných přešlapů — jak poznat, která prodejní cesta je právě pro tebe ta správná.">
+  <meta property="og:image" content="../img/thumb-kde-zacit-prodavat.jpg">
+  <meta property="og:url" content="https://rostemespolu.site/blog/kde-zacit-prodavat.html">
+  <meta property="og:type" content="article">
+
+  <!-- Fonty -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V72WRVK5K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8V72WRVK5K');
+  </script>
+
+  <!-- Sdílené styly -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* Layout článku */
+    .article-layout {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3rem 2rem 5rem;
+    }
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 16/7;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 2.5rem;
+      background: var(--pink-ll);
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .article-tag {
+      font-size: 0.54rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.6rem;
+      border-radius: 12px;
+    }
+    .article-date {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .article-author {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .article-av {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--pink-l);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .article-av img { width: 100%; height: 100%; object-fit: cover; }
+    .article-h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .article-subtitle {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+    .article-perex {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--ink2);
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      font-style: italic;
+    }
+
+    /* Obsah článku */
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 2.2rem 0 0.8rem;
+    }
+    .article-body h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1.6rem 0 0.6rem;
+    }
+    .article-body p {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: var(--ink2);
+      margin-bottom: 1.2rem;
+    }
+    .article-body ul, .article-body ol {
+      padding-left: 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .article-body li {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--ink2);
+      margin-bottom: 0.4rem;
+    }
+    .article-body strong { color: var(--ink); font-weight: 600; }
+    .article-body a {
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+    .article-body a:hover { color: var(--ink); }
+    .article-body blockquote {
+      border-left: 3px solid var(--pink);
+      padding: 0.8rem 1.2rem;
+      margin: 1.5rem 0;
+      background: var(--pink-ll);
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+      color: var(--ink2);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    /* Srovnávací tabulka */
+    .article-body .compare-table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+    .article-body th {
+      font-family: var(--serif);
+      font-weight: 600;
+      background: var(--pink-ll);
+      color: var(--ink);
+      text-align: left;
+      padding: 0.7rem 0.9rem;
+      border-bottom: 2px solid var(--border);
+      white-space: nowrap;
+    }
+    .article-body td {
+      padding: 0.6rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink2);
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+    .article-body tr:nth-child(even) td { background: rgba(255,255,255,0.4); }
+
+    /* Zvýraznění — výzva / tip box */
+    .tip-box {
+      background: var(--pink-ll);
+      border-left: 4px solid var(--pink);
+      border-radius: 0 6px 6px 0;
+      padding: 1.2rem 1.4rem;
+      margin: 1.75rem 0;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+    }
+    .tip-box strong { color: var(--ink); }
+
+    /* Výzva na tento týden */
+    .call-to-action-box {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 2rem 2rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .call-to-action-box h2 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white) !important;
+      margin-bottom: 0.75rem !important;
+      margin-top: 0 !important;
+    }
+    .call-to-action-box p {
+      color: rgba(255,255,255,0.85) !important;
+      font-size: 0.92rem !important;
+      margin-bottom: 0.75rem !important;
+    }
+
+    /* Kam pokračovat */
+    .continue-box {
+      background: rgba(255,255,255,0.75);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+    }
+    .continue-box h3 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0 0 0.75rem;
+    }
+    .continue-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .continue-box li {
+      font-size: 0.88rem;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink2);
+    }
+    .continue-box li:last-child { border-bottom: none; }
+    .continue-box a { color: var(--green); font-weight: 600; text-decoration: none; }
+    .continue-box a:hover { text-decoration: underline; }
+
+    /* Poznámka redakce + zdroje */
+    .article-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-style: italic;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .article-sources {
+      margin-top: 1rem;
+    }
+    .article-sources h4 {
+      font-family: var(--serif);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      font-style: normal;
+    }
+    .article-sources ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin: 0;
+    }
+    .article-sources li {
+      font-size: 0.78rem;
+      line-height: 1.6;
+      color: var(--muted);
+      font-style: normal;
+      margin-bottom: 0.2rem;
+    }
+    .article-sources a { color: var(--green); }
+
+    /* Patička článku */
+    .article-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .article-author-box {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .article-author-photo {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--pink-l);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .article-author-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .article-author-name {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .article-author-role { font-size: 0.72rem; color: var(--muted); }
+
+    /* Zpět na články */
+    .article-back {
+      margin-bottom: 2rem;
+    }
+    .article-back a {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .article-back a:hover { color: var(--ink); }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .article-layout { padding: 2rem 1.2rem 4rem; }
+      .article-h1 { font-size: 1.6rem; }
+      .article-body th, .article-body td { font-size: 0.78rem; padding: 0.5rem 0.6rem; }
+    }
+  </style>
+</head>
+<body class="blog-level">
+
+  <!-- Nav se vloží automaticky -->
+
+  <div class="article-layout">
+
+    <!-- Zpět -->
+    <div class="article-back">
+      <a href="../clanky.html">← Všechny články</a>
+    </div>
+
+    <!-- Meta -->
+    <div class="article-meta">
+      <span class="article-tag t-zacinama">Začínáme podnikat</span>
+      <span class="article-date">1. 11. 2026</span>
+      <span class="article-author">
+        <span class="article-av">
+          <img src="../foto-verca.jpg" alt="Veronika Hašplová" onerror="this.style.display='none'">
+        </span>
+        Veronika Hašplová
+      </span>
+    </div>
+
+    <!-- Nadpis -->
+    <h1 class="article-h1">Kde začít prodávat své výrobky? Od prvního zákazníka až po vlastní e-shop</h1>
+    <p class="article-subtitle">Průvodce bez zbytečných přešlapů</p>
+
+    <!-- Perex -->
+    <p class="article-perex">
+      Fler, Instagram, fyzické trhy, Etsy nebo rovnou vlastní e-shop? Možností je dnes tolik, že než si je všechny projdeš, stihneš vyrobit další kolekci. Dobrá zpráva je, že nemusíš být všude — a nemusíš hned investovat tisíce do webu.
+    </p>
+
+    <!-- Obsah -->
+    <div class="article-body">
+
+      <p>Vyrobila jsi první produkt, nafotila ho, pochlubila se kamarádkám a teď přichází ta velká otázka: <strong>kde ho vlastně začít prodávat?</strong></p>
+      <p>Stačí Instagram? Mám si založit facebookovou skupinu? Co ten Fler, o kterém všichni mluví? A nebylo by jednodušší rovnou spustit vlastní e-shop?</p>
+      <p>Pojďme se společně podívat, kde můžeš své výrobky prodávat, jaké výhody a nevýhody jednotlivé možnosti mají a hlavně jak poznat, která cesta je právě pro tebe ta správná.</p>
+
+      <h2>1. Každá jsme nějak začínala. A žádná cesta není špatná.</h2>
+
+      <p>Neexistuje totiž univerzální návod, podle kterého bys měla nejdřív nasbírat 500 sledujících, potom založit Fler a při sté objednávce slavnostně spustit e-shop. Záleží na tom, co vyrábíš, kolik máš času, jaký máš rozpočet a především komu chceš prodávat.</p>
+
+      <p><strong>Než začneš řešit jednotlivé platformy, polož si tři otázky:</strong></p>
+      <ul>
+        <li><strong>Kdo je můj zákazník?</strong> Maminky hledající originální dárky? Milovnice ruční tvorby? Lidé, kteří chtějí něco praktického do domácnosti?</li>
+        <li><strong>Jak lidé moje výrobky nejlépe poznají?</strong> Potřebují si je prohlédnout naživo, nebo je dokáže zaujmout pěkná fotografie a dobrý popis?</li>
+        <li><strong>Kolik času chci prodeji věnovat?</strong> Protože vyrábět produkty je jedna věc. Odpovídat na zprávy, balit objednávky, řešit dopravu a reklamace je věc druhá.</li>
+      </ul>
+
+      <h3>Malá, ale důležitá odbočka: Potřebuji už živnost?</h3>
+
+      <p>Možná tě napadlo, že nejdřív zkusíš něco prodat a papírování budeš řešit až později. Tady je ale potřeba rozlišovat mezi příležitostným prodejem a podnikáním.</p>
+      <p>Pokud výrobky cíleně vyrábíš za účelem prodeje a plánuješ v této činnosti pokračovat, může jít o podnikání, i když zatím prodáš jen několik kusů. <strong>Rozhodující není počet objednávek ani to, jestli tě tvorba uživí. Důležitý je charakter činnosti, její soustavnost a záměr dosahovat zisku.</strong></p>
+      <p>Soustavnost neznamená, že musíš prodávat každý den — i sezónní činnost může být podnikáním. V takovém případě zpravidla potřebuješ příslušné živnostenské oprávnění. Samotné IČO je identifikační číslo, nikoli povolení k podnikání.</p>
+
+      <h2>2. První zákazníci: rodina, kamarádky a nejbližší okolí</h2>
+
+      <p>Úplně první objednávka často nepřijde od neznámého člověka z internetu. Přijde od kamarádky, sousedky nebo kolegyně, která viděla, co vyrábíš. A to je naprosto v pořádku.</p>
+      <p>Prodej ve svém okolí je skvělý způsob, jak zjistit, jestli o tvoje výrobky vůbec někdo stojí. Můžeš si vyzkoušet komunikaci se zákazníkem, balení objednávky, předání výrobku i samotné naceňování.</p>
+
+      <blockquote>
+        Ochota zaplatit je při ověřování produktu důležitější než počet pochval. „To je nádherné, určitě bys to měla prodávat!" ještě automaticky neznamená, že by si daný výrobek někdo skutečně koupil za cenu, kterou potřebuješ.
+      </blockquote>
+
+      <p>Nejbližší okolí má omezený dosah a bývá při hodnocení příliš shovívavé. Ber první objednávky jako cenný začátek, ale postupně zkus oslovit i lidi, kteří tě osobně neznají. A neboj se říct si o odpovídající cenu — to, že je zákaznice tvoje kamarádka, ještě neznamená, že musíš pracovat za cenu materiálu.</p>
+
+      <h2>3. Facebook a Instagram: stránka, skupina nebo obojí?</h2>
+
+      <p>Sociální sítě jsou pro malé tvůrkyně jednou z nejdostupnějších cest, jak začít budovat značku. Jenže pak přijde první dilema — mám prodávat přes osobní profil, facebookovou stránku, skupinu, nebo Instagram?</p>
+
+      <h3>Facebooková stránka: tvoje malá firemní vizitka</h3>
+      <p>Pokud chceš svou tvorbu prezentovat pod vlastní značkou, facebooková stránka je dobrým základem. Umožňuje profesionálnější prezentaci, veřejnou dostupnost, možnost propagace a oddělení podnikání od soukromého života. Bez pravidelného obsahu ale může mít omezený dosah.</p>
+
+      <h3>Facebooková skupina: místo, kde vzniká komunita</h3>
+      <p>Skupina je vhodná tehdy, když chceš kolem své tvorby budovat komunitu — nabídnout přednostní přístup k novinkám, hlasování o barvách nebo rezervace limitovaných výrobků. <strong>Skupina ale není automaticky lepší prodejní kanál než stránka.</strong> Vlastní skupinu bych zakládala až ve chvíli, kdy budeš mít kolem značky aktivní zákazníky, kteří mají důvod se do ní vracet.</p>
+
+      <h3>Instagram: když za tebe mluví fotografie</h3>
+      <p>Instagram je vhodný pro výrobky, které dokážeš dobře vizuálně prezentovat — šperky, dekorace, háčkované výrobky, keramika, svíčky. Velkou výhodou je možnost ukázat i proces výroby. Lidé totiž často nekupují jen samotný výrobek — kupují příběh, osobní přístup a pocit, že podporují konkrétního člověka. A právě v tom mají malé značky obrovskou výhodu.</p>
+
+      <p>Pokud začínáš úplně od nuly, vytvoř si facebookovou stránku a instagramový profil pod stejným názvem značky. Nemusíš na obou sítích vytvářet úplně jiný obsah — vyber si jednu jako hlavní a druhou využívej jako doplňkovou.</p>
+
+      <div class="tip-box">
+        <strong>Pozor:</strong> Samotný prodej přes zprávy tě nezbavuje podnikatelských a spotřebitelských povinností. Pokud prodáváš jako podnikatelka, musíš zákaznici poskytnout potřebné informace o nákupu stejně jako při jiném prodeji na dálku.
+      </div>
+
+      <h2>4. Fyzické trhy: když chceš vidět reakce zákazníků naživo</h2>
+
+      <p>Trhy a jarmarky mají jednu obrovskou výhodu — zákazníci si mohou výrobek prohlédnout, osahat a okamžitě se rozhodnout. A ty zase zjistíš, co je skutečně zaujme. Někdy tě dokonce překvapí, že produkt, který na Instagramu skoro nikoho nezajímal, se na trhu stane bestsellerem.</p>
+
+      <p>Nevýhodou jsou čas a náklady. Prodej na trhu totiž nezačíná ve chvíli, kdy otevřeš stánek — začíná už několik dní předem přípravou zásob, cenovek, dopravy a prezentace. Romantická představa o příjemném sobotním jarmarku se může snadno proměnit ve dvanáctihodinovou směnu.</p>
+
+      <h3>Kolik tě může stát jeden trh?</h3>
+      <p>Cena za prodejní místo se výrazně liší podle lokality, délky akce a návštěvnosti — orientačně od 500 do 3 000 Kč za den.</p>
+
+      <div class="tip-box">
+        <strong>Příklad z praxe:</strong> Zaplatíš za místo 1 000 Kč a tvoje výrobky mají průměrnou příspěvkovou marži 40 %. Aby ses dostala alespoň na nulu v nákladech za místo, musíš utržit: <strong>1 000 ÷ 0,40 = 2 500 Kč</strong>. Pokud připočítáš dopravu a další náklady (např. 600 Kč), potřebuješ tržbu 4 000 Kč jen na pokrytí nákladů. Vždy si spočítej, kolik skutečně potřebuješ prodat.
+      </div>
+
+      <p>Nehodnoť úspěch trhu jen podle tržby. Sleduj také, které výrobky se prodávaly, na co se lidé ptali a kolik nových zákazníků tě začalo sledovat. I slabší prodejní den může přinést užitečné zkušenosti — jen by se z toho neměl stát pravidelný a drahý koníček.</p>
+
+      <h2>5. Fler, Allegro a Etsy: prodej bez vlastního e-shopu</h2>
+
+      <p>Máš první objednávky ze sociálních sítí, ale nechceš zatím investovat do vlastního e-shopu? Právě tady přicházejí na řadu online tržiště. Vytvoříš si prodejní účet, vystavíš výrobky a zákazníci je mohou nakupovat prostřednictvím zavedené platformy. <strong>Tržiště ti poskytne prostor a přístup k potenciálním zákazníkům. Nezaručí ti, že si někdo vybere právě tvoje výrobky.</strong></p>
+
+      <h3>Fler: pro milovnice handmade tvorby</h3>
+      <p>Fler patří mezi known české platformy zaměřené na ručně vyráběné produkty, autorskou tvorbu a kreativní výrobky. Základní vystavení je zdarma, platforma má publikum, které cíleně hledá originální tvorbu. Fler podle svého zveřejněného ceníku účtuje provizi 11 % z ceny výrobku a servisní poplatek za realizovanou objednávku (u objednávky 201–500 Kč činí 12 Kč). Důležité: provizi automaticky připočítává k ceně, kterou jako prodávající zadáš.</p>
+
+      <h3>Allegro: velké tržiště, ale také velká konkurence</h3>
+      <p>Allegro je vhodné pro ty, kdo chtějí oslovit širší zákaznickou základnu. Není primárně zaměřeno na handmade — najdeš zde prakticky všechno, od elektroniky po dekorace. Základní vystavení je zpravidla zdarma, provize se liší podle kategorie. Pozor: může se počítat i z částky za dopravu a je potřeba připočítat náklady na propagaci a dopravní programy.</p>
+
+      <h3>Etsy: když chceš vyrazit za hranice</h3>
+      <p>Etsy je mezinárodní tržiště zaměřené na autorskou tvorbu, ruční výrobky, vintage předměty a kreativní materiály. Největší výhoda je přístup k zahraničním zákazníkům z celého světa. Jenže s velkým trhem přichází velká konkurence — nesoutěžíš jen s českými tvůrkyněmi, ale s prodejci z celého světa. Kvalitní fotografie, dobré popisky a správně zvolená klíčová slova jsou proto velmi důležité.</p>
+      <p>Na rozdíl od Fleru zaplatíš nejen provizi, ale také poplatek za vystavení výrobku, poplatky za zpracování plateb a případně reklamu. Počítej také se zahraniční dopravou, komunikací se zákazníky a případnými reklamacemi.</p>
+      <p>Chceš vědět víc? Připravily jsme samostatný průvodce <em>Jak začít prodávat na Etsy? Od založení obchodu až po první objednávku</em>.</p>
+
+      <h2>6. Jak se jednotlivé prodejní kanály liší?</h2>
+
+      <div class="compare-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Prodejní kanál</th>
+              <th>Hlavní výhoda</th>
+              <th>Hlavní nevýhoda</th>
+              <th>Pro koho se hodí</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Rodina a okolí</strong></td>
+              <td>Snadný start a zpětná vazba</td>
+              <td>Omezený dosah</td>
+              <td>První testování výrobků</td>
+            </tr>
+            <tr>
+              <td><strong>Facebook a Instagram</strong></td>
+              <td>Budování značky a komunity</td>
+              <td>Čas na obsah a komunikaci</td>
+              <td>Vizuální produkty a malé značky</td>
+            </tr>
+            <tr>
+              <td><strong>Trhy a jarmarky</strong></td>
+              <td>Osobní kontakt se zákazníky</td>
+              <td>Čas a náklady na účast</td>
+              <td>Výrobky, které vyniknou naživo</td>
+            </tr>
+            <tr>
+              <td><strong>Fler</strong></td>
+              <td>Handmade zákazníci v ČR</td>
+              <td>Provize a konkurence</td>
+              <td>Autorská a ruční tvorba</td>
+            </tr>
+            <tr>
+              <td><strong>Allegro</strong></td>
+              <td>Širší zákaznický trh</td>
+              <td>Cenová konkurence</td>
+              <td>Široce prodejné produkty</td>
+            </tr>
+            <tr>
+              <td><strong>Etsy</strong></td>
+              <td>Zahraniční zákazníci</td>
+              <td>Poplatky a zahraniční logistika</td>
+              <td>Originální výrobky pro zahraničí</td>
+            </tr>
+            <tr>
+              <td><strong>Vlastní e-shop</strong></td>
+              <td>Kontrola nad značkou a prodejem</td>
+              <td>Náklady a získávání návštěvnosti</td>
+              <td>Značky připravené na vlastní systém</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Tabulka samozřejmě neznamená, že si musíš vybrat jen jednu možnost. Většina úspěšně fungujících malých značek postupně kombinuje více prodejních cest.</p>
+
+      <h2>7. Na co si dát pozor, ať prodáváš kdekoliv?</h2>
+
+      <p>Ať prodáváš prostřednictvím Instagramu, tržiště nebo vlastního e-shopu, některé povinnosti tě neminou — zejména pokud prodáváš jako podnikatelka spotřebitelům. Musíš myslet na správné informace o prodejci a produktu, bezpečnost výrobků, reklamace a pravidla nákupu. Při prodeji na dálku je důležité také právo spotřebitele na odstoupení od smlouvy (u běžného nákupu zpravidla 14 dnů, s výjimkami).</p>
+
+      <h3>Pozor na placenou reklamu a zahraniční služby</h3>
+      <p>Možná si říkáš, že nejsi plátce DPH, takže se tě tato daň netýká. Jenže pokud jako podnikatelka začneš využívat zpoplatněné služby zahraničních společností — reklamu od Meta nebo Google — může ti vzniknout povinnost registrace jako <strong>identifikovaná osoba k DPH</strong>. Totéž může platit u některých služeb zahraničních tržišť. Identifikovaná osoba přitom není automaticky běžným plátcem DPH — jde o zvláštní režim s konkrétními povinnostmi. Ověř si tuto otázku ještě předtím, než začneš využívat placené zahraniční služby.</p>
+
+      <h2>8. Tak kde tedy začít?</h2>
+
+      <p>Neexistuje jedna konkrétní platforma, na které musíš začít prodávat. Záleží na tom, v jaké fázi jsi:</p>
+      <ul>
+        <li><strong>Teprve ověřuješ zájem?</strong> Začni ve svém okolí, na sociálních sítích nebo na menším lokálním trhu.</li>
+        <li><strong>Máš připravený sortiment a chceš prodávat bez vlastního e-shopu?</strong> Podívej se na Fler nebo jiné vhodné tržiště.</li>
+        <li><strong>Láká tě zahraniční trh?</strong> Podívej se podrobněji na Etsy.</li>
+        <li><strong>Objednávky přicházejí pravidelně a správa ti zabírá stále více času?</strong> Možná nastal okamžik zamyslet se nad vlastním e-shopem.</li>
+      </ul>
+
+      <p>Důležité je začít tam, kde se cítíš jistě, a postupně přidávat další cesty. Nesnaž se být od prvního dne na pěti platformách, pokud pak nebudeš mít čas vyrábět.</p>
+
+      <h2>Závěrem: nemusíš být všude — stačí začít správně</h2>
+
+      <p>Začátky podnikání bývají plné otázek. Je úplně normální, že zatím nevíš, jestli pro tebe bude lepší Fler, Instagram, trhy nebo vlastní e-shop. Důležité je, že se nemusíš rozhodnout jednou provždy. To, co ti vyhovuje dnes, může být za rok úplně jinak.</p>
+
+      <p><strong>Úspěšné podnikání totiž není o tom, kolik prodejních kanálů používáš. Je o tom, jestli ti přinášejí zákazníky, dávají ekonomický smysl a umožňují ti dělat to, co tě baví.</strong></p>
+
+      <div class="call-to-action-box">
+        <h2>Výzva na tento týden</h2>
+        <p>Vyber si maximálně dva prodejní kanály, které chceš vyzkoušet nebo rozvíjet. U každého si napiš:</p>
+        <ul style="color: rgba(255,255,255,0.85); font-size: 0.92rem; padding-left: 1.4rem;">
+          <li>Koho tam chceš oslovit</li>
+          <li>Kolik času mu můžeš věnovat</li>
+          <li>Jak poznáš, že funguje</li>
+        </ul>
+        <p>Nemusíš hned všechno měnit. Někdy je největší posun právě v tom, že si konečně uděláš jasno.</p>
+      </div>
+
+      <div class="continue-box">
+        <h3>Kam pokračovat?</h3>
+        <ul>
+          <li>→ <a href="jak-prodavat-na-etsy.html">Jak začít prodávat na Etsy?</a> Praktický průvodce od založení obchodu až po první objednávku.</li>
+          <li>→ <a href="vlastni-eshop-kdy.html">Vlastní e-shop: kdy už ti Instagram a tržiště nestačí?</a> Jak poznat správný čas, spočítat náklady a rozhodnout se bez zbytečného rizika.</li>
+        </ul>
+      </div>
+
+      <div class="article-note">
+        <p><em>Poznámka redakce: Údaje o platformách vycházejí z jejich zveřejněných podmínek dostupných v listopadu 2026. Poplatky se mohou měnit. Uvedené příklady nákladů jsou orientační a právní informace mají obecný charakter.</em></p>
+        <div class="article-sources">
+          <h4>Zdroje a užitečné odkazy:</h4>
+          <ul>
+            <li><a href="https://www.fler.cz/napoveda?cat=4&id=2&scat=4" target="_blank" rel="noopener">Fler – provize a servisní poplatky</a></li>
+            <li><a href="https://help.allegro.com/cs/fees/cs" target="_blank" rel="noopener">Allegro – ceník pro prodejce</a></li>
+            <li><a href="https://help.etsy.com/hc/en-us/articles/115014483627-What-are-the-Fees-and-Taxes-for-Selling-on-Etsy" target="_blank" rel="noopener">Etsy – poplatky a daně</a></li>
+            <li><a href="https://financnisprava.gov.cz/" target="_blank" rel="noopener">Finanční správa ČR</a></li>
+            <li><a href="https://coi.gov.cz/" target="_blank" rel="noopener">Česká obchodní inspekce</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Patička článku -->
+    <div class="article-footer">
+      <div class="article-author-box">
+        <div class="article-author-photo">
+          <img src="../foto-verca.jpg" alt="Veronika Hašplová" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <div class="article-author-name">Veronika Hašplová</div>
+          <div class="article-author-role">Tvůrkyně a autorka · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener" style="color:var(--green)">@eweria_prints</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer a nav se vloží automaticky -->
+  <script src="../components.js" data-root=".."></script>
+
+</body>
+</html>

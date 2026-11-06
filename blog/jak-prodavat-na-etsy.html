@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Jak začít prodávat na Etsy? Průvodce od založení obchodu až po první objednávku — Rosteme spolu</title>
+  <meta name="description" content="Od prvního vystaveného výrobku až po první zahraniční zákaznici. Bez zbytečného tápání. Průvodce pro českou tvůrkyni — poplatky, SEO, doprava, daně.">
+  <meta name="keywords" content="jak prodávat na Etsy, Etsy pro začátečníky, jak založit Etsy obchod, Etsy poplatky, Etsy průvodce, Etsy SEO, prodej na Etsy z Česka, Etsy klíčová slova, doprava na Etsy, Etsy DPH, identifikovaná osoba, GPSR, první objednávka Etsy, Etsy 2024, handmade Etsy, digitální produkty Etsy">
+
+  <!-- Fonty -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../favicon.png">
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="GBWxB9JLnxFi2Q9zJ9gSAeNnG91HGtv_mCsW0yfDiP4">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V72WRVK5K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8V72WRVK5K');
+  </script>
+
+  <!-- Sdílené styly -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ── Layout článku ── */
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 5rem;
+    }
+
+    /* Hlavička */
+    .article-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .article-eyebrow a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .article-eyebrow a:hover { color: var(--ink); }
+
+    .article-title {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 4vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .article-subtitle {
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: var(--ink2);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* Meta lišta */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+    .article-author-photo {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--pink-l);
+      flex-shrink: 0;
+    }
+    .article-author-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+    .article-author-role {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .article-author-role a {
+      color: var(--green);
+      text-decoration: none;
+    }
+    .article-author-role a:hover { color: var(--ink); }
+    .article-date {
+      margin-left: auto;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Rubrika tag */
+    .article-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+      text-decoration: none;
+      margin-bottom: 0.75rem;
+    }
+    .t-zacinama { background: #f3e8ff; color: #6b21a8; }
+
+    /* Tělo článku */
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 2.25rem 0 0.75rem;
+      line-height: 1.3;
+    }
+    .article-body h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .article-body p {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--ink2);
+      margin-bottom: 1.1rem;
+    }
+    .article-body ul,
+    .article-body ol {
+      font-size: 0.97rem;
+      line-height: 1.85;
+      color: var(--ink2);
+      padding-left: 1.5rem;
+      margin-bottom: 1.1rem;
+    }
+    .article-body li { margin-bottom: 0.4rem; }
+    .article-body strong { color: var(--ink); }
+
+    /* Tabulky poplatků */
+    .fee-table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .fee-table th {
+      font-family: var(--serif);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      background: var(--pink-ll);
+      color: var(--ink);
+      border-bottom: 2px solid var(--border);
+    }
+    .fee-table td {
+      padding: 0.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--ink2);
+      vertical-align: top;
+    }
+    .fee-table tr:last-child td { border-bottom: none; }
+    .fee-table tr.total-row td {
+      font-weight: 700;
+      color: var(--ink);
+      background: var(--pink-ll);
+      border-top: 2px solid var(--border);
+    }
+
+    /* Tip / info box */
+    .tip-box {
+      background: var(--pink-ll);
+      border-left: 3px solid var(--pink);
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+    }
+    .tip-box strong { color: var(--ink); display: block; margin-bottom: 0.3rem; }
+
+    /* Varování / upozornění */
+    .warn-box {
+      background: #fff8e1;
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+    }
+    .warn-box strong { color: var(--ink); display: block; margin-bottom: 0.3rem; }
+
+    /* Výzva — tmavý CTA box */
+    .call-to-action-box {
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 2rem 2.25rem;
+      margin: 2.5rem 0;
+    }
+    .call-to-action-box h3 {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .call-to-action-box p,
+    .call-to-action-box li {
+      font-size: 0.93rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.85);
+    }
+    .call-to-action-box ul {
+      padding-left: 1.25rem;
+      margin: 0.75rem 0 0;
+    }
+    .call-to-action-box li { margin-bottom: 0.4rem; }
+
+    /* Co dál box */
+    .continue-box {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem 1.75rem;
+      margin: 2.5rem 0;
+    }
+    .continue-box h3 {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .continue-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .continue-box li {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink2);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .continue-box li:last-child { border-bottom: none; }
+    .continue-box a {
+      color: var(--green);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .continue-box a:hover { color: var(--ink); }
+
+    /* Bonus box */
+    .bonus-box {
+      background: var(--mint);
+      border-radius: 10px;
+      padding: 1.25rem 1.75rem;
+      margin: 2rem 0;
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+    .bonus-box strong { font-size: 1rem; display: block; margin-bottom: 0.3rem; }
+
+    /* Redakční poznámka */
+    .article-note {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* Zdroje */
+    .article-sources {
+      margin-top: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .article-sources h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+    .article-sources ol {
+      padding-left: 1.25rem;
+      margin: 0;
+    }
+    .article-sources li { margin-bottom: 0.3rem; }
+    .article-sources a { color: var(--muted); }
+    .article-sources a:hover { color: var(--ink); }
+
+    /* Autor pod článkem */
+    .article-author-footer {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding: 1.5rem;
+      background: var(--pink-ll);
+      border-radius: 10px;
+    }
+    .article-author-footer img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 680px) {
+      .article-wrap { padding: 2rem 1.5rem 4rem; }
+      .article-meta { gap: 0.75rem; }
+      .article-date { margin-left: 0; }
+    }
+  </style>
+</head>
+<body class="blog-level">
+
+  <!-- Nav se vloží automaticky -->
+
+  <main>
+    <div class="article-wrap">
+
+      <!-- Rubrika + titulek -->
+      <p class="article-eyebrow">
+        <a href="../blog.html">Blog</a> → <a href="../blog.html?rubrika=zacinama-podnikat">Začínáme podnikat</a>
+      </p>
+
+      <a href="../blog.html?rubrika=zacinama-podnikat" class="article-tag t-zacinama">Začínáme podnikat</a>
+
+      <h1 class="article-title">Jak začít prodávat na Etsy?<br>Průvodce od založení obchodu až po první objednávku</h1>
+      <p class="article-subtitle">Od prvního vystaveného výrobku až po první zahraniční zákaznici. Bez zbytečného tápání.</p>
+
+      <!-- Meta -->
+      <div class="article-meta">
+        <img src="../foto-verca.jpg" alt="Veronika Hašplová" class="article-author-photo" onerror="this.style.background='var(--pink-l)'">
+        <div>
+          <div class="article-author-name">Veronika Hašplová</div>
+          <div class="article-author-role">Tvůrkyně a autorka · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener">@eweria_prints</a></div>
+        </div>
+        <div class="article-date">Aktualizováno: listopad 2026</div>
+      </div>
+
+      <!-- Tělo článku -->
+      <div class="article-body">
+
+        <!-- 1 -->
+        <h2>1. Co je Etsy a proč by tě mělo zajímat?</h2>
+        <p>Etsy je globální online tržiště, které se od ostatních platforem liší jednou zásadní věcí: zákazníci tam aktivně hledají něco originálního. Nejdou tam pro nejlevnější produkt — jdou tam pro příběh, pro ruční práci, pro věc, kterou nenajdou v supermarketu.</p>
+        <p>Pro českou tvůrkyni to znamená přímý přístup k milionům zákazníků z celého světa — zejména z USA, Německa, Velké Británie a Austrálie — kteří jsou ochotní za kvalitu zaplatit. Etsy má přes 90 milionů aktivních kupujících. Fler má statisíce. Je to prostě jiná liga.</p>
+        <p>Ale — a to je důležité — Etsy není bezplatná výkladní skříň. Má poplatky, pravidla a algoritmy. Než si tam otevřeš obchod, stojí za to vědět, do čeho jdeš.</p>
+
+        <!-- 2 -->
+        <h2>2. Co můžeš na Etsy prodávat?</h2>
+        <p>Etsy má jasná pravidla o tom, co je na platformě povoleno. Prodávat lze:</p>
+        <ul>
+          <li><strong>Ručně vyráběné výrobky</strong> — musí být tvořeny nebo navrženy samotným prodejcem. Pokud výrobu deleguješ, musíš to v obchodě uvést a splnit podmínky pro výrobní partnery.</li>
+          <li><strong>Digitální produkty</strong> — printables, šablony, SVG soubory, digitální ilustrace. Po zaplacení si zákazník stáhne soubor sám — bez dopravy, bez balení.</li>
+          <li><strong>Vintage zboží</strong> — předměty starší než 20 let.</li>
+          <li><strong>Craft supplies</strong> — materiály a pomůcky pro tvorbu.</li>
+        </ul>
+        <p>Důležité upozornění ke <strong>3D tisku</strong>: samotný 3D tisk je na Etsy povolený, pokud jsou soubory nebo výrobky tvoje vlastní tvorba. Prodej modelů, které jsi stáhla z jiných platforem (Thingiverse, Printables apod.), je porušením autorských práv a podmínek Etsy. Vždy zkontroluj licenci modelu.</p>
+
+        <!-- 3 -->
+        <h2>3. Jak si založit obchod — krok za krokem</h2>
+        <p>Celý proces zakládání obchodu zabere zhruba hodinu, pokud máš připravené základní informace a alespoň jednu fotku výrobku.</p>
+        <ol>
+          <li><strong>Základní informace o obchodě:</strong> přejdi na etsy.com/sell a klikni na „Začít".</li>
+          <li><strong>Vytvoř si Etsy účet</strong> (nebo se přihlas přes Google/Apple).</li>
+          <li><strong>Nastav jazyk, zemi a měnu.</strong> Doporučuji angličtinu jako primární jazyk obchodu — získáš tím mnohem větší dosah. Země: Česká republika. Měna: EUR nebo USD dle toho, na jaký trh míříš primárně.</li>
+          <li><strong>Zvol název obchodu.</strong> Musí být unikátní, 4–20 znaků, bez mezer. Přemysli to — název se dá později změnit, ale je to komplikace.</li>
+          <li><strong>Nastav platby:</strong> Etsy Payments je jediný povolený způsob přijímání plateb. Budeš potřebovat bankovní účet (CZK nebo EUR) a doklad totožnosti pro ověření.</li>
+          <li><strong>Přidej profilový banner a fotografii obchodu</strong> — zákazník si udělá první dojem dřív, než si přečte jediné slovo.</li>
+          <li><strong>Vlož první výrobek</strong> — bez toho obchod nemůžeš publikovat.</li>
+        </ol>
+
+        <!-- 4 -->
+        <h2>4. Jak vystavit první výrobek</h2>
+        <p>Správně vystavený výrobek = zákazník ho najde a chce ho koupit. To jsou dvě různé věci a obě se musíš naučit.</p>
+
+        <h3>Fotografie</h3>
+        <p>Fotky jsou tvůj největší prodejní nástroj. Na Etsy platí: bez skvělé fotky prodáváš zbytečně. Foť na bílém nebo neutrálním pozadí, v přirozeném denním světle, z více úhlů. Přidej i fotku s měřítkem (ruka, mince) a ideálně lifestyle záběr — jak výrobek vypadá „v akci".</p>
+
+        <h3>Název výrobku</h3>
+        <p>Název slouží primárně pro vyhledávání, ne pro estetiku. Dej do něj klíčová slova, která by zákazník zadal do vyhledávače. Místo „Háčkovaný medvídek Jana" piš „Handmade Crochet Bear — Stuffed Animal Toy, Baby Shower Gift".</p>
+
+        <h3>Klíčová slova (Tags)</h3>
+        <p>Máš 13 tagů — využij všechny. Piš fráze, ne jednotlivá slova. Přemýšlej jako zákazník: co by zadal do vyhledávání? Kombinuj obecné („crochet gift") i specifické („personalized baby toy").</p>
+
+        <h3>Popisek výrobku</h3>
+        <p>Prvních 160 znaků je nejdůležitějších — zobrazují se ve výsledcích vyhledávačů. Popiš materiál, rozměry, varianty, dobu výroby a co dělá tvůj výrobek výjimečným. Piš v angličtině — nebo nabídni češtinu i angličtinu v jednom listingu.</p>
+
+        <h3>Varianty</h3>
+        <p>Pokud nabízíš výrobek v různých barvách, velikostech nebo materiálech, nastav varianty. Každá varianta může mít vlastní cenu a sklad. Zákazník si pak vybere přímo v listingu.</p>
+
+        <!-- 5 -->
+        <h2>5. Kolik tě Etsy skutečně stojí?</h2>
+        <p>Než nastavíš ceny, musíš přesně vědět, co si Etsy bere. Překvapení přijde vždy ve chvíli, kdy zíráš na výpis.</p>
+
+        <div class="fee-table-wrap">
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Poplatek</th>
+                <th>Výše</th>
+                <th>Kdy se platí</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Poplatek za vystavení</td>
+                <td>0,20 USD</td>
+                <td>Za každý výrobek, obnovuje se každé 4 měsíce nebo po prodeji</td>
+              </tr>
+              <tr>
+                <td>Provize z prodeje</td>
+                <td>6,5 %</td>
+                <td>Z celkové ceny (cena výrobku + doprava + balení)</td>
+              </tr>
+              <tr>
+                <td>Poplatek za zpracování platby</td>
+                <td>4 % + 0,30 EUR</td>
+                <td>Z každé transakce (Etsy Payments)</td>
+              </tr>
+              <tr>
+                <td>Offsite Ads (volitelné/povinné)</td>
+                <td>12–15 %</td>
+                <td>Pouze při prodeji přes reklamy mimo Etsy; povinné po překročení 10 000 USD ročního obratu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="warn-box">
+          <strong>⚠️ Pozor na Offsite Ads</strong>
+          Etsy automaticky zapíná reklamu za tebe. Pokud tvůj roční obrat nepřekročí 10 000 USD, můžeš se z Offsite Ads odhlásit. Pokud ho překročí, je to povinné a Etsy ti strhne 12 % z každého prodeje přes tuto reklamu. Zkontroluj si nastavení hned po otevření obchodu.
+        </div>
+
+        <!-- 6 -->
+        <h2>6. Kolik ti zůstane z výrobku za 500 Kč?</h2>
+        <p>Pojďme si to ukázat na konkrétním příkladu. Výrobek prodáváš za 500 Kč (přibližně 20 EUR), zákazník platí dopravu zvlášť.</p>
+
+        <div class="fee-table-wrap">
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Položka</th>
+                <th>Částka</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cena výrobku</td>
+                <td>500,00 Kč</td>
+              </tr>
+              <tr>
+                <td>− Poplatek za vystavení (0,20 USD ≈ 4,50 Kč)</td>
+                <td>− 4,50 Kč</td>
+              </tr>
+              <tr>
+                <td>− Provize Etsy (6,5 %)</td>
+                <td>− 32,50 Kč</td>
+              </tr>
+              <tr>
+                <td>− Zpracování platby (4 % + 0,30 EUR ≈ 7,40 Kč)</td>
+                <td>− 27,40 Kč</td>
+              </tr>
+              <tr class="total-row">
+                <td>Zbývá po poplatcích Etsy</td>
+                <td>≈ 435,60 Kč</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>To vypadá docela dobře — jenže poplatky Etsy jsou teprve začátek. Přičti náklady na výrobu:</p>
+
+        <div class="fee-table-wrap">
+          <table class="fee-table">
+            <thead>
+              <tr>
+                <th>Náklad</th>
+                <th>Příklad</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Materiál</td>
+                <td>140 Kč</td>
+              </tr>
+              <tr>
+                <td>Obalový materiál</td>
+                <td>20 Kč</td>
+              </tr>
+              <tr>
+                <td>Doprava (zásilka do zahraničí)</td>
+                <td>90 Kč</td>
+              </tr>
+              <tr>
+                <td>Tvá práce (1 hod × 100 Kč)</td>
+                <td>100 Kč</td>
+              </tr>
+              <tr class="total-row">
+                <td>Čistý zisk</td>
+                <td>≈ 86 Kč</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>A pokud by se výrobek prodal přes Offsite Ads (dalších 15 %), zisk se smrsknout na zhruba 11 Kč. Za hodinu práce. Proto je nastavení ceny absolutně klíčové.</p>
+
+        <!-- 7 -->
+        <h2>7. Jak nastavit cenu, abys na Etsy skutečně vydělávala?</h2>
+        <p>Základní pravidlo: <strong>cena musí pokrýt všechny náklady a tvou práci, a ještě přinést zisk</strong>. Nestačí pokrýt materiál.</p>
+        <p>Vzorec, který funguje:</p>
+
+        <div class="tip-box">
+          <strong>Vzorec pro cenu:</strong>
+          (Materiál + Obaly + Doprava + Tvá práce) × 2–3 = minimální prodejní cena<br><br>
+          Čím víc je tvůj výrobek originální, zpracovaný a fotografovaný, tím víš k číslu ×3 (a výš). Nesnižuj cenu proto, že se bojíš, že je „moc drahá" — zákazník na Etsy cenu čeká, levná věc ho spíš odradí.
+        </div>
+
+        <p>Porovnej svou cenu s konkurencí — ale nepodceňuj se. Pokud je tvůj výrobek lepší nebo jiný, cena může (a má) být vyšší.</p>
+
+        <!-- 8 -->
+        <h2>8. Jak funguje doprava do zahraničí?</h2>
+        <p>Doprava je pro mnoho českých tvůrkyň největší neznámá. Dobrá zpráva: není tak složitá, jak vypadá.</p>
+
+        <h3>Kam začít posílat?</h3>
+        <p>Začni se zeměmi, které jsou logisticky jednoduché a zákaznicky silné: <strong>Německo, Slovensko, Rakousko, Polsko</strong>. Jsou blízko, ceny dopravy jsou rozumné a zákazníci jsou zvyklí nakupovat online.</p>
+
+        <h3>Přepravní profily</h3>
+        <p>V Etsy nastavíš přepravní profily — jednou nastavíš ceny dopravy pro různé destinace a pak je přiřazuješ k výrobkům. Nemusíš to řešit u každého listingu znovu.</p>
+
+        <h3>Důležité: doba výroby ≠ doba dopravy</h3>
+        <p>V listingu nastavíš zvlášť <em>dobu výroby</em> (jak dlouho trvá výrobek připravit) a zvlášť <em>dobu dopravy</em>. Zákazník pak vidí realistický termín doručení. Podceněný termín = zklamaný zákazník = špatné hodnocení.</p>
+
+        <h3>Zásilky mimo EU</h3>
+        <p>Při zásilkách do zemí mimo EU (USA, UK, Austrálie) budeš muset vyplnit celní formulář (CN22 nebo CN23). Česká pošta i přepravci to většinou zvládají na přepážce nebo online. Na zásilku uváděj reálnou hodnotu — podcenění je celní podvod.</p>
+
+        <!-- 9 -->
+        <h2>9. Etsy a DPH: co musíš vědět jako česká tvůrkyně</h2>
+        <p>Daňová stránka prodeje na Etsy je téma, které mnohé tvůrkyně odrazuje. Přitom základní pravidla jsou jasná — stačí je znát.</p>
+
+        <h3>Identifikovaná osoba</h3>
+        <p>Pokud platíš Etsy poplatky (což platíš, jakmile si otevřeš obchod), přijímáš zahraniční digitální službu od firmy mimo ČR. To tě za určitých podmínek může učinit <strong>identifikovanou osobou</strong> k DPH. Nejsi plátce DPH, ale máš povinnost přiznat DPH z přijatých zahraničních služeb. Poraď se s účetní nebo daňovým poradcem — pravidla se mění.</p>
+
+        <h3>Limit 10 000 EUR</h3>
+        <p>Pokud tvůj roční obrat z prodeje digitálního zboží zákazníkům v EU přesáhne 10 000 EUR, musíš odvádět DPH v zemi zákazníka. Pro fyzické zboží se tato hranice neuplatňuje stejně — ale i tam platí pravidla každé cílové země. Sleduj svůj obrat a zeptej se účetní, až se blížíš k tomuto limitu.</p>
+
+        <h3>OSS (One Stop Shop)</h3>
+        <p>Pokud prodáváš digitální produkty do více zemí EU a překročíš limit, OSS ti umožní odvádět DPH z jednoho místa — přes portál Finanční správy ČR, namísto registrace v každé zemi zvlášť.</p>
+
+        <div class="warn-box">
+          <strong>⚠️ Toto není daňové poradenství</strong>
+          Daňová pravidla se mění a závisí na tvé konkrétní situaci. Tento článek slouží jako orientační přehled — pro závazné informace se obrať na daňového poradce nebo účetní.
+        </div>
+
+        <!-- 10 -->
+        <h2>10. Bezpečnost výrobků (GPSR) a vrácení zboží</h2>
+
+        <h3>Nařízení GPSR</h3>
+        <p>Od prosince 2024 platí v EU nové nařízení o obecné bezpečnosti výrobků (GPSR). Jako prodejce do EU musíš zajistit, aby tvé výrobky splňovaly bezpečnostní požadavky, a uvést kontaktní informace v listinzích viditelně pro zákazníka. Pro ručně vyráběné výrobky to typicky znamená: neprodávej hračky pro děti do 3 let bez odpovídajícího testování a neuváděj nepravdivé informace o materiálech.</p>
+
+        <h3>Vrácení zboží</h3>
+        <p>V EU mají zákazníci právo na vrácení zboží do 14 dnů bez udání důvodu (právo na odstoupení od smlouvy). Výjimky platí pro výrobky zhotovené na míru nebo hygienické produkty. Nastav si v Etsy jasné podmínky vrácení — zákazník je musí vidět před nákupem.</p>
+
+        <!-- 11 -->
+        <h2>11. Jak získat první zákazníky</h2>
+        <p>Nový obchod na Etsy je jako nový stánek na tržišti — musíš se nejdřív zaplnit a pak teprve čekat zákazníky. Algoritmus Etsy upřednostňuje obchody, které prodávají a dostávají dobré hodnocení.</p>
+
+        <h3>Začni kvalitní nabídkou</h3>
+        <p>Než začneš propagovat, ujisti se, že tvůj obchod vypadá profesionálně: skvělé fotky, vyplněný profil, popis obchodu, jasné podmínky. Zákazník, který přijde přes reklamu na nedopracovaný obchod, odejde a ty zaplatíš za kliknutí.</p>
+
+        <h3>SEO — vyhledávání v Etsy</h3>
+        <p>Etsy je vyhledávač. Většina zákazníků nenajde tvůj obchod přes doporučení, ale přes vyhledávání. Věnuj čas klíčovým slovům v názvech výrobků a tazích. Používej nástroje jako Marmalead nebo eRank pro analýzu hledanosti.</p>
+
+        <h3>Sociální sítě</h3>
+        <p>Instagram, Pinterest a TikTok jsou nejlepší přirozené kanály pro Etsy prodejce. Ukazuj proces tvorby, zákulisí, hotové výrobky. Každý příspěvek s odkazem na obchod je potenciální zákazník.</p>
+
+        <h3>Reklama — až po ověření</h3>
+        <p>Etsy Ads (placená reklama uvnitř Etsy) spusť teprve tehdy, až budeš mít alespoň 5–10 listingů s dobrými fotkami a texty. Utrácet za reklamu, která vede na nepřipravený obchod, je zbytečné plýtvání.</p>
+
+        <!-- 12 -->
+        <h2>12. První objednávka: co se stane?</h2>
+        <p>Přišlo ti první oznámení o objednávce — gratulace! Co teď?</p>
+        <ol>
+          <li><strong>Zkontroluj objednávku</strong> — zákazník, adresa, poznámky k objednávce, varianta výrobku.</li>
+          <li><strong>Potvrzení zákazníkovi</strong> — Etsy to dělá automaticky, ale osobní zpráva udělá dobrý dojem: „Děkuji za objednávku, výrobek připravím do X dní."</li>
+          <li><strong>Připrav zásilku</strong> — zabal pečlivě, přidej poděkování nebo vizitkuq.</li>
+          <li><strong>Přidej tracking číslo</strong> — v Etsy označíš zásilku jako odeslanou a vložíš číslo sledování. Zákazník dostane automatické oznámení.</li>
+          <li><strong>Výplata</strong> — u nových obchodů Etsy zadržuje výplatu přibližně 14 dní jako bezpečnostní opatření. Po prvních úspěšných prodejích se interval zkrátí.</li>
+        </ol>
+
+        <!-- 13 -->
+        <h2>13. Nejčastější chyby začínajících prodejkyň na Etsy</h2>
+        <ul>
+          <li><strong>Podcenění poplatků</strong> — nastavíš cenu bez kalkulace a pak zjistíš, že vyděláváš méně než v práci na hodinu.</li>
+          <li><strong>Nekvalitní fotografie</strong> — zákazník nemůže výrobek osahat. Fotka je vše. Jedna špatná fotka = žádný prodej.</li>
+          <li><strong>Špatně nastavená doprava</strong> — příliš nízká = doplácíš ty. Příliš vysoká = zákazník odejde.</li>
+          <li><strong>Chybějící klíčová slova</strong> — výrobek bez klíčových slov zákazník nenajde, i když je skvělý.</li>
+          <li><strong>Nedostatečné informace v listingu</strong> — zákazník se ptá na věci, které měly být v popisku. Každá otázka je promarněná příležitost k prodeji.</li>
+          <li><strong>Ignorování daňových a právních povinností</strong> — GPSR, DPH, identifikovaná osoba. Nezájmem to nezmizí.</li>
+          <li><strong>Příliš rychlé spuštění reklamy</strong> — reklama zesílí to, co je v obchodě. Pokud je obchod nepřipravený, reklama jen urychlí plýtvání peněz.</li>
+        </ul>
+
+        <!-- 14 -->
+        <h2>14. Vyplatí se Etsy začínající tvůrkyni?</h2>
+        <p><strong>Kdy ano:</strong> Máš výrobky s jasnou přidanou hodnotou (originální design, řemeslné zpracování, niche produkt), umíš nebo se chceš naučit anglicky, jsi ochotná investovat čas do fotografií a SEO, a chceš prodávat i mimo Česko.</p>
+        <p><strong>Kdy ještě počkat:</strong> Nemáš ujasněnou kalkulaci nákladů, fotky nejsou na úrovni (Etsy je vizuální platforma), nebo očekáváš okamžité výsledky — Etsy je maraton, ne sprint.</p>
+        <p>Etsy pro začínající tvůrkyni může být skvělý první mezinárodní krok — ale jen pokud do toho vstoupíš připravená.</p>
+
+        <!-- Závěr -->
+        <h2>Závěr</h2>
+        <p>Etsy není zkratka k snadnému výdělku. Je to platforma, která odměňuje tvůrkyně, které své řemeslo berou vážně — fotí poctivě, píší klíčová slova promyšleně, počítají ceny realisticky a budují obchod postupně.</p>
+        <p>Ale pro českou tvůrkyni s dobrým výrobkem a trpělivostí je Etsy jedna z nejlepších cest, jak oslovit zákazníky z celého světa. A to stojí za to.</p>
+
+        <!-- Výzva -->
+        <div class="call-to-action-box">
+          <h3>✦ Výzva na tento týden</h3>
+          <p>Než otevřeš obchod (nebo než zoptimalizuješ ten stávající), udělej tuto přípravu:</p>
+          <ul>
+            <li>Vyber 3–5 výrobků, které bys na Etsy chtěla prodávat.</li>
+            <li>Spočítej si pro každý z nich náklady + poplatky + cenu práce. Vyjde ti čistý zisk?</li>
+            <li>Zjisti dopravní možnosti a ceny pro Německo a USA.</li>
+          </ul>
+          <p style="margin-top:0.75rem; font-size:0.88rem; opacity:0.75;">Teprve potom má smysl obchod zakládat — nebo ho otevřít naplno.</p>
+        </div>
+
+        <!-- Co dál -->
+        <div class="continue-box">
+          <h3>Co dál?</h3>
+          <ul>
+            <li>→ <a href="kde-zacit-prodavat.html">Kde začít prodávat své výrobky?</a> Fler, Instagram, trhy nebo Etsy? Přehled prodejních kanálů od prvního zákazníka.</li>
+            <li>→ <a href="vlastni-eshop-kdy.html">Vlastní e-shop: kdy už ti Instagram a tržiště nestačí?</a> Jak poznat správný čas, spočítat náklady a rozhodnout se bez zbytečného rizika.</li>
+          </ul>
+        </div>
+
+        <!-- Bonus -->
+        <div class="bonus-box">
+          <strong>🎁 Bonus pro členky Rosteme spolu</strong>
+          Kalkulačka poplatků Etsy — zadáš cenu výrobku, materiál, práci a dopravní náklady, kalkulačka ti ukáže čistý zisk i s různými scénáři (s Offsite Ads / bez). <em>Připravujeme pro členky — sleduj novinky v komunitě.</em>
+        </div>
+
+        <!-- Redakční poznámka -->
+        <div class="article-note">
+          <strong>Redakční poznámka:</strong> Tento článek byl aktualizován v listopadu 2026 a odpovídá aktuálním podmínkám platformy Etsy. Poplatky a pravidla se mohou měnit — vždy ověř aktuální podmínky přímo na <a href="https://www.etsy.com/legal/fees/" target="_blank" rel="noopener">etsy.com/legal/fees</a>. Daňové informace slouží pouze jako orientační přehled a nenahrazují individuální poradenství.
+        </div>
+
+        <!-- Zdroje -->
+        <div class="article-sources">
+          <h4>Zdroje</h4>
+          <ol>
+            <li><a href="https://help.etsy.com/hc/en-us/articles/465000332207" target="_blank" rel="noopener">Etsy Help: Fees &amp; Payments Policy</a></li>
+            <li><a href="https://help.etsy.com/hc/en-us/articles/115015463428" target="_blank" rel="noopener">Etsy Help: Seller Policy — Handmade Items</a></li>
+            <li><a href="https://help.etsy.com/hc/en-us/articles/360000346508" target="_blank" rel="noopener">Etsy Help: Getting Paid with Etsy Payments</a></li>
+            <li><a href="https://help.etsy.com/hc/en-us/articles/115015587467" target="_blank" rel="noopener">Etsy Help: Offsite Ads</a></li>
+            <li><a href="https://www.financnisprava.cz/cs/dane/dane/dan-z-pridane-hodnoty/oss" target="_blank" rel="noopener">Finanční správa ČR: OSS — One Stop Shop</a></li>
+            <li><a href="https://eur-lex.europa.eu/legal-content/CS/TXT/?uri=CELEX%3A32023R0988" target="_blank" rel="noopener">Nařízení EU 2023/988 — obecná bezpečnost výrobků (GPSR)</a></li>
+            <li><a href="https://www.coi.cz/pro-podnikatele/povinnosti-prodejce/" target="_blank" rel="noopener">ČOI: Povinnosti prodejce</a></li>
+          </ol>
+        </div>
+
+      </div><!-- /.article-body -->
+
+      <!-- Autor pod článkem -->
+      <div class="article-author-footer">
+        <img src="../foto-verca.jpg" alt="Veronika Hašplová" onerror="this.style.display='none'">
+        <div>
+          <div class="article-author-name">Veronika Hašplová</div>
+          <div class="article-author-role">Tvůrkyně a autorka · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener" style="color:var(--green)">@eweria_prints</a></div>
+        </div>
+      </div>
+
+    </div><!-- /.article-wrap -->
+  </main>
+
+  <!-- Footer a nav se vloží automaticky -->
+  <script src="../components.js" data-root=".."></script>
+
+</body>
+</html>
