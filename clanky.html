@@ -3,541 +3,318 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Články - Rosteme spolu</title>
+
+  <title>Články — Rosteme spolu</title>
+  <meta name="description" content="Tipy, rady a inspirace pro tvůrkyně a maminky, které chtějí růst. Podnikání, tvoření, mindset a komunita.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Články — Rosteme spolu">
+  <meta property="og:description" content="Tipy, rady a inspirace pro tvůrkyně a maminky.">
+  <meta property="og:url" content="https://rostemespolu.site/clanky.html">
+  <meta property="og:type" content="website">
+
+  <!-- Fonty -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <meta name="description" content="Články pro ženy, které budují vlastní podnikání. Začínám podnikat, Tvořím & rostu, Myslím & cítím, Rosteme spolu.">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Google Search Console -->
+  <meta name="google-site-verification" content="GBWxB9JLnxFi2Q9zJ9gSAeNnG91HGtv_mCsW0yfDiP4">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V72WRVK5K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8V72WRVK5K');
+  </script>
+
+  <!-- Sdílené styly -->
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    :root {
-      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
-      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
-      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
-      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
-      --serif: 'Playfair Display', Georgia, serif;
-      --hand: 'Allura', cursive;
-      --sans: 'Source Sans 3', sans-serif;
-
-      /* Rubrika barvy — shodné s IG systémem */
-      --r1-bg: #FAF6F0; --r1-text: #3D2D3A; /* Začínám podnikat — off-white */
-      --r2-bg: #4E7A60; --r2-text: #FFFFFF; /* Tvořím & rostu — tmavá zelená */
-      --r3-bg: #3D2D3A; --r3-text: #FFFFFF; /* Myslím & cítím — tmavá fialová */
-      --r4-bg: #C0A0A5; --r4-text: #FFFFFF; /* Rosteme spolu — mauve */
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between;
-      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+    /* Hero přehledu článků */
+    .clanky-hero {
+      padding: 3.5rem 3rem 2.5rem;
+      background: rgba(255,255,255,0.65);
       border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(2px);
     }
-    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
-    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
-    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--pink); }
-    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
-
-    /* HERO */
-    .blog-hero {
-      padding: 8rem 4rem 4rem;
-      background: var(--off);
-      border-bottom: 1px solid var(--border);
+    .clanky-hero-inner {
+      max-width: 820px;
     }
-    .blog-hero-inner { max-width: 720px; }
-    .blog-hero .eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 1rem; }
-    .blog-hero h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; color: var(--ink); margin-bottom: 0.8rem; line-height: 1.2; }
-    .blog-hero p { font-size: 1rem; line-height: 1.8; color: var(--ink2); max-width: 520px; }
 
-    /* FILTER */
-    .filter-bar {
-      padding: 2rem 4rem;
-      display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;
+    /* Filtrovací lišta rubriky */
+    .clanky-filter {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      padding: 1.5rem 3rem;
+      background: rgba(255,255,255,0.5);
       border-bottom: 1px solid var(--border);
-      position: sticky; top: 68px; background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(8px); z-index: 50;
+      position: sticky;
+      top: 60px;
+      z-index: 50;
+      backdrop-filter: blur(6px);
     }
     .filter-btn {
-      font-family: var(--sans); font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 0.45rem 1.1rem; border: 1px solid var(--border);
-      background: var(--white); color: var(--muted);
-      cursor: pointer; transition: all 0.2s; white-space: nowrap;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all .18s;
     }
     .filter-btn:hover { border-color: var(--pink); color: var(--ink); }
-    .filter-btn.active { border-color: transparent; }
-    .filter-btn[data-filter="vse"].active { background: var(--ink); color: var(--white); border-color: var(--ink); }
-    .filter-btn[data-filter="zacin"].active { background: var(--r1-bg); color: var(--r1-text); border-color: var(--r1-text); }
-    .filter-btn[data-filter="tvorim"].active { background: var(--r2-bg); color: var(--r2-text); border-color: var(--r2-text); }
-    .filter-btn[data-filter="myslim"].active { background: var(--r3-bg); color: var(--r3-text); border-color: var(--r3-text); }
-    .filter-btn[data-filter="rosteme"].active { background: var(--r4-bg); color: var(--r4-text); border-color: var(--r4-text); }
+    .filter-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    .filter-btn[data-rubrika="zacinama-podnikat"].active  { background: #4E7A60; border-color: #4E7A60; }
+    .filter-btn[data-rubrika="cenotvorba-finance"].active { background: #5A3D6B; border-color: #5A3D6B; }
+    .filter-btn[data-rubrika="site-marketing"].active     { background: #C0A0A5; border-color: #C0A0A5; }
+    .filter-btn[data-rubrika="brand-prezentace"].active   { background: #7A5C6E; border-color: #7A5C6E; }
+    .filter-btn[data-rubrika="mindset-produktivita"].active { background: #3A6B50; border-color: #3A6B50; }
+    .filter-btn[data-rubrika="sezonni-specialy"].active   { background: #8C5A1A; border-color: #8C5A1A; }
 
-    /* GRID */
-    .blog-grid-wrap { padding: 3rem 4rem 5rem; }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border);
+    /* Mřížka karet */
+    .clanky-grid-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 3rem 5rem;
     }
-    .blog-card {
-      background: var(--white); padding: 1.8rem;
-      display: flex; flex-direction: column; gap: 0.8rem;
-      transition: background 0.2s;
-      text-decoration: none; color: inherit;
+    .clanky-empty {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
-    .blog-card:hover { background: var(--off); }
-    .blog-card.hidden { display: none; }
-    .blog-card.upcoming { opacity: 0.45; pointer-events: none; cursor: default; }
 
-    .rubrika-badge {
-      display: inline-block; font-family: var(--sans);
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 0.25rem 0.7rem;
-      align-self: flex-start;
+    /* Vyhledávač */
+    .clanky-search-wrap {
+      padding: 1.2rem 3rem 0;
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .badge-zacin   { background: var(--r1-bg); color: var(--r1-text); border: 1px solid var(--border); }
-    .badge-tvorim  { background: var(--r2-bg); color: var(--r2-text); }
-    .badge-myslim  { background: var(--r3-bg); color: var(--r3-text); }
-    .badge-rosteme { background: var(--r4-bg); color: var(--r4-text); }
-
-    .blog-card h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
-    .blog-card p { font-size: 0.85rem; line-height: 1.7; color: var(--ink2); flex: 1; }
-    .card-link { font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pink); margin-top: 0.4rem; }
-    .upcoming .card-link { color: var(--muted); }
-
-    /* FOOTER */
-    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
-    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
-    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
-    .footer-links { display: flex; gap: 2rem; list-style: none; }
-    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--pink); }
-    .footer-copy { font-size: 0.75rem; color: var(--muted); }
-    .footer-copy a { color: var(--pink); text-decoration: none; }
-
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      .blog-hero { padding: 6rem 1.5rem 2.5rem; }
-      .filter-bar { padding: 1.2rem 1.5rem; top: 60px; }
-      .blog-grid-wrap { padding: 2rem 1.5rem 4rem; }
-      .blog-grid { grid-template-columns: 1fr; }
-      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    .clanky-search {
+      width: 100%;
+      padding: 0.65rem 1.1rem 0.65rem 2.6rem;
+      border: 1.5px solid var(--border);
+      border-radius: 24px;
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.8) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") no-repeat 0.85rem center;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .18s;
+      box-sizing: border-box;
     }
-    @media (min-width: 901px) and (max-width: 1200px) {
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .clanky-search:focus { border-color: var(--pink); }
+    .clanky-search::placeholder { color: var(--muted); }
+    .search-no-results {
+      text-align: center;
+      padding: 3rem 2rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Badge Nové */
+    .card { position: relative; }
+    .badge-nove {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      background: var(--pink);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Responsivita */
+    @media (max-width: 700px) {
+      .clanky-hero { padding: 2.5rem 1.5rem 2rem; }
+      .clanky-filter { padding: 1rem 1.5rem; top: 56px; }
+      .clanky-grid-wrap { padding: 2rem 1.5rem 4rem; }
+      .clanky-search-wrap { padding: 1rem 1.5rem 0; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <div class="nav-logo">
-      <a href="index.html">
-        <span class="r">Rosteme</span>
-        <span class="s">spolu</span>
-      </a>
-    </div>
-        <ul class="nav-links">
-      <li><a href="index.html#about">O&nbsp;nás</a></li>
-      <li><a href="clanky.html" class="active">Články</a></li>
-      <li><a href="clenstvi.html">Členství</a></li>
-      <li><a href="index.html#community" class="nav-cta">Přidej se</a></li>
-    </ul>
-  </nav>
+  <!-- Nav se vloží automaticky -->
 
-  <div class="blog-hero">
-    <div class="blog-hero-inner">
-      <span class="eyebrow">Rosteme spolu</span>
-      <h1>Články, které ti pomůžou růst</h1>
-      <p>Praktické texty pro ženy, které budují vlastní podnikání - ať teprve začínají, nebo už jedou a&nbsp;potřebují popostrčit dál.</p>
+  <!-- Hero -->
+  <section class="clanky-hero">
+    <div class="clanky-hero-inner">
+      <p class="h-eyebrow">Komunita → Články</p>
+      <h1 class="h-title">Tipy, inspirace&nbsp;&amp; příběhy</h1>
+      <p class="h-sub">Pro tvůrkyně a maminky, které chtějí růst — v podnikání i v životě.</p>
     </div>
+  </section>
+
+  <!-- Vyhledávač -->
+  <div class="clanky-search-wrap">
+    <input type="search" class="clanky-search" id="clanky-search" placeholder="Hledat v článcích…" autocomplete="off">
   </div>
 
-  <div class="filter-bar">
-    <button class="filter-btn active" data-filter="vse">Vše</button>
-    <button class="filter-btn" data-filter="zacin">Začínám podnikat</button>
-    <button class="filter-btn" data-filter="tvorim">Tvořím & rostu</button>
-    <button class="filter-btn" data-filter="myslim">Myslím & cítím</button>
-    <button class="filter-btn" data-filter="rosteme">Rosteme spolu</button>
+  <!-- Filtry rubriky -->
+  <div class="clanky-filter">
+    <button class="filter-btn active" data-rubrika="vse">Vše</button>
+    <button class="filter-btn" data-rubrika="zacinama-podnikat">Začínáme podnikat</button>
+    <button class="filter-btn" data-rubrika="cenotvorba-finance">Cenotvorba a finance</button>
+    <button class="filter-btn" data-rubrika="site-marketing">Sítě a marketing</button>
+    <button class="filter-btn" data-rubrika="brand-prezentace">Brand a prezentace</button>
+    <button class="filter-btn" data-rubrika="mindset-produktivita">Mindset a produktivita</button>
+    <button class="filter-btn" data-rubrika="sezonni-specialy">Sezónní speciály</button>
   </div>
 
-  <div class="blog-grid-wrap">
-    <div class="blog-grid" id="blogGrid">
+  <!-- Interaktivní nástroj — srovnávač -->
+  <div style="max-width:1100px;margin:0 auto;padding:2rem 3rem 0;">
+    <a href="blog/srovnavac-eshopovych-platform.html" style="display:flex;align-items:center;gap:1.2rem;background:var(--ink);color:var(--white);border-radius:12px;padding:1.1rem 1.5rem;text-decoration:none;transition:opacity .18s;" onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
+      <span style="font-size:1.6rem;flex-shrink:0;">🧮</span>
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:600;margin-bottom:0.15rem;">Srovnávač e-shopových platforem</div>
+        <div style="font-size:0.78rem;opacity:.75;font-family:'Source Sans 3',sans-serif;">Interaktivní průvodce · Shoptet, Upgates, Webnode a další · Kalkulačka nákladů</div>
+      </div>
+      <span style="margin-left:auto;font-size:0.85rem;opacity:.7;flex-shrink:0;">Otevřít →</span>
+    </a>
+  </div>
 
-      <a class="blog-card" data-rubric="zacin" href="blog/prilezitostny-prijem-vs-zivnost.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>Příležitostný příjem vs. živnost</h3>
-        <p>Do 50 000 Kč bez daně - ale pozor. Limit není jediné kritérium. Jak poznat, kdy už podnikáš.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/podnikani-na-vedlejsi-cinnost.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>Podnikání na vedlejší činnost</h3>
-        <p>Rodičovská, zaměstnání, studium - jak funguje vedlejší činnost a&nbsp;jak pracovat s&nbsp;kapacitou, kterou reálně máš.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/nez-se-vrhnete-na-urady.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>Než se vrhneš na úřady</h3>
-        <p>Všechno, co potřebuješ vědět o&nbsp;živnosti a&nbsp;papírování - než se do toho pustíš.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/zivnost-bez-strachu.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>Živnost bez strachu</h3>
-        <p>Krok za krokem: jak si založit živnost bez paniky a&nbsp;zbytečných chyb.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/financni-plan.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>Finanční plán na první rok podnikání</h3>
-        <p>Kolik potřebuješ vydělat, aby to dávalo smysl? Bod zvratu, odvody a&nbsp;tři scénáře, se kterými budeš pracovat.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/perfekcionismus.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Perfekcionismus, který tě brzdí</h3>
-        <p>Čekáš na správný čas. Mezitím ostatní prodávají. Jak poznat rozdíl mezi péčí o&nbsp;kvalitu a&nbsp;pastí.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/jak-si-verit.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Jak si věřit, i&nbsp;když tě nikdo nezná</h3>
-        <p>Začínáš od nuly. Ale tvoje práce má hodnotu. Sebedůvěra nepřijde dřív, než začneš.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/impostor-syndrom.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Impostor syndrom: přestanu o&nbsp;sobě někdy pochybovat?</h3>
-        <p>Zažilo ho až 70 % lidí. U&nbsp;podnikatelek obzvlášť. Jak ho pojmenovat - a&nbsp;jak mu ubírat prostor.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/nejsi-neorganizovana.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Nejsi neorganizovaná. Jen organizuješ víc životů najednou.</h3>
-        <p>Mentální nálož, otevřené záložky v&nbsp;hlavě a&nbsp;pocit že nestíháš. Jak z&nbsp;toho ven.</p>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/time-management.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Nejde o&nbsp;to stihnout všechno</h3>
-        <p>Time management není o&nbsp;tom stihnout víc. Je o&nbsp;tom rozhodnout líp - čemu dáš svůj omezený čas.</p>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/time-blocking.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Time blocking v&nbsp;reálném životě</h3>
-        <p>Mikrookna, střední okna, hluboké bloky - a&nbsp;co dělat, když se plán stejně rozbije.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/brand-tvuj-pribeh.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Tvůj brand, tvůj příběh</h3>
-        <p>Proč brand není jen logo - a&nbsp;jak najít vlastní příběh, který zákaznice zaujme.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/cena-tveho-vyrobku.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Cena tvého výrobku</h3>
-        <p>Jak nastavit cenu, za kterou se neomlouváš - a&nbsp;která ti přinese skutečný zisk.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/jak-si-spravne-nacenit-praci.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Jak si správně nacenit práci</h3>
-        <p>Co všechno patří do ceny a&nbsp;pět přístupů, jak si ji spočítat - od rychlého vzorce po systém sazby a&nbsp;procent.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/marketing-pro-zacatecnice.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Marketing pro začátečnice na sociálních sítích</h3>
-        <p>Prodej není o&nbsp;počtu příspěvků. Je o&nbsp;důvěře - 4P, Instagram vs Facebook a&nbsp;čtyři pilíře obsahu.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/instagram-ktery-te-vidi.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Instagram, který tě vidí</h3>
-        <p>Obsah, který pracuje i&nbsp;když ty ne. Jak přitahovat zákaznice bez vyhoření.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/stories-ktere-budujou-vztah.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Jak na Stories, které budují vztah</h3>
-        <p>Stories nejsou o&nbsp;dosahu - jsou o&nbsp;důvěře. Co do nich dávat, jak fungují reakce a&nbsp;algoritmus.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/proc-moje-prispevky-nikdo-nevidi.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Proč moje příspěvky nikdo nevidí?</h3>
-        <p>Algoritmus není tvůj nepřítel, jen mluví jiným jazykem. Krátká diagnostika a&nbsp;co dělat jinak hned teď.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/maly-dosah-mala-hodnota.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Malý dosah neznamená malou hodnotu</h3>
-        <p>Dosah ti neřekne, jestli byl příspěvek úspěšný - co sledovat místo něj a&nbsp;proč existují tiché zákaznice.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/vizualni-hook-ktery-zastavi-scroll.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Vizuální hook, který zastaví scroll</h3>
-        <p>Hook není o&nbsp;tom být hezčí. Je o&nbsp;tom být jasnější - cover reelu, test zmenšení fotky a&nbsp;co nedělat.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/logo-neni-brand.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Logo není brand</h3>
-        <p>Logo pomáhá značku identifikovat, ne vysvětlit. Co má dobré logo splňovat a&nbsp;proč mít i&nbsp;vektorovou verzi.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/vizualni-konzistence-napric-kanaly.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Konzistence napříč kanály</h3>
-        <p>Barvy nemusí být identické, ale musí ladit - Instagram, web, balení i&nbsp;tón komunikace jako jedna rodina.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/canva-pro-tvurkyne.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Canva pro tvůrkyně</h3>
-        <p>Jak si zjednodušit tvorbu obsahu - vlastní šablony, mobilní tvorba a&nbsp;proč nemusíš znát celou Canvu.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/popis-produktu.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Popis produktu, který prodává</h3>
-        <p>Přestaň psát co věc je - začni psát co přinese. Vlastnosti vs. přínosy a&nbsp;checklist před zveřejněním.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/baleni-jako-soucast-zazitku.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Balení jako součást zážitku</h3>
-        <p>Jak proměnit krabičku v&nbsp;emoci - unboxing zážitek, který podtrhne tvůj brand.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/kompletni-pruvodce-balenim.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Kompletní průvodce balením pro tvůrce</h3>
-        <p>Krabice, výplně, skladování i&nbsp;kalkulace nákladů - praktický návod, jak chránit produkty, peněženku i&nbsp;nervy.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/logistika-a-expedice.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Logistika a&nbsp;expedice v&nbsp;praxi</h3>
-        <p>Jak vybrat dopravce, nastavit ceny v&nbsp;košíku a&nbsp;nespálit se na smlouvách nebo dopravě zdarma.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/zahranicni-expanze-bez-pokut.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Zahraniční expanze bez pokut</h3>
-        <p>Obalová legislativa (nejen) pro Slovensko - EPR, zplnomocněný zástupce a&nbsp;výjimka do 100 kg.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/reklamace-bez-dramatu.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Reklamace bez dramatu</h3>
-        <p>Jak zákaznici vyslechnout, vyřešit problém a&nbsp;přitom ji neztratit - HEART model krok za krokem.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/system-objednavek.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Systém objednávek a&nbsp;komunikace</h3>
-        <p>Od prvního dotazu po doručení - jak na to, aby zákaznice cítila péči v&nbsp;každém kroku.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/proc-komunita-porazi-feed.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Proč komunita poráží perfektní feed</h3>
-        <p>Tisíc sledujících, kteří tě mlčky přejedou, ti neprodá ani jeden výrobek. Dvacet lidí, kteří tě znají - ti prodají všechno.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/spoluprace-mezi-tvorkynimi.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Spolupráce mezi tvůrkyněmi</h3>
-        <p>Nové zákaznice bez reklamy - 8 typů spolupráce, jak oslovit partnerku a&nbsp;jak to nastavit férově.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/proc-male-znacky-nevydelavaji.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Proč většina malých značek nevydělává</h3>
-        <p>Tvoříš naplno - ale objednávky nepřicházejí. Kde je ten druhý sloupec, který chybí.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/jak-prestat-podhodnocovat.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Jak přestat podhodnocovat svou práci</h3>
-        <p>Cena není jen číslo - je to zpráva, co si o&nbsp;sobě myslíš. Jak si říct za práci to, co si zaslouží.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/prvni-zakaznice.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>První zákaznice</h3>
-        <p>Kde hledat první zákaznice a&nbsp;proč začít blíž, než si myslíš.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="rosteme" href="blog/den-deti.html">
-        <span class="rubrika-badge badge-rosteme">Rosteme spolu</span>
-        <h3>Dětský den - tipy na dárky</h3>
-        <p>Dárek, za kterým stojí člověk. Inspirace od tvůrkyň, které tvoří s&nbsp;příběhem.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="rosteme" href="blog/den-otcu.html">
-        <span class="rubrika-badge badge-rosteme">Rosteme spolu</span>
-        <h3>Den otců - dárky pro muže s&nbsp;příběhem</h3>
-        <p>Nejlepší dárek ke Dni otců není nejdražší - je to ten, za kterým cítí člověka.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="rosteme" href="blog/konec-skolniho-roku.html">
-        <span class="rubrika-badge badge-rosteme">Rosteme spolu</span>
-        <h3>Děkuji, paní učitelko</h3>
-        <p>Proč si paní učitelka zaslouží víc než kytku - a&nbsp;jak najít dárek, který opravdu zůstane.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/ai-dobry-sluha.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>AI - dobrý sluha nebo zlý pán?</h3>
-        <p>Jak chytře využít umělou inteligenci v&nbsp;podnikání - bez iluzí, bez strachu.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="rosteme" href="blog/halloween.html">
-        <span class="rubrika-badge badge-rosteme">Rosteme spolu</span>
-        <h3>Halloween: odkud přišel a&nbsp;co s&nbsp;ním dokážeš</h3>
-        <p>Dva tisíce let starý příběh o&nbsp;tmě a&nbsp;světle - a&nbsp;jak z&nbsp;jeho symbolů udělat sezónní tvorbu, která pořád nese tvůj rukopis.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="rosteme" href="blog/dusicky.html">
-        <span class="rubrika-badge badge-rosteme">Rosteme spolu</span>
-        <h3>Dušičky, Všichni svatí a&nbsp;Día de los Muertos</h3>
-        <p>Tichá svíčka na hrobě, španělské marcipánové kosti i&nbsp;mexická oslava života. Jak po světě vzpomínáme na ty, kteří tu už nejsou.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/tvorim-pro-cloveka.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Přestaň tvořit pro algoritmus</h3>
-        <p>Algoritmus není nepřítel, je to velká třídička. Rychlá diagnóza obsahu a&nbsp;jedna otázka, kterou si polož před každým příspěvkem.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="zacin" href="blog/eet.html">
-        <span class="rubrika-badge badge-zacin">Začínám podnikat</span>
-        <h3>Návrat strašáka jménem EET 2.0</h3>
-        <p>Od ledna 2027 se EET vrací. Kdo musí evidovat, kdo má výjimku a&nbsp;co si zařídit - bez paniky a&nbsp;lidskou řečí.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/emaily-ktere-pracuji.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>E-maily, které pracují za tebe</h3>
-        <p>Co může malá značka automatizovat a&nbsp;kde je lepší zůstat osobní. Zákaznická cesta od objednávky po doručení a&nbsp;první šablona za 10 minut.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="myslim" href="blog/pocit-viny-mama-prace.html">
-        <span class="rubrika-badge badge-myslim">Myslím & cítím</span>
-        <h3>Pocit viny: máma vs. práce</h3>
-        <p>Při práci myslíš na dítě, při dítěti na práci. Odkud pocit viny přichází, co ti říká - a&nbsp;co s&nbsp;ním reálně jde dělat.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/automatizace-male-znacky.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Automatizace pro malé značky</h3>
-        <p>Co se dá nastavit jednou a&nbsp;pak nechat pracovat bez tebe. E-maily, automatické odpovědi, Manychat i&nbsp;přehled nástrojů.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="tvorim" href="blog/lajky-nejsou-vsechno.html">
-        <span class="rubrika-badge badge-tvorim">Tvořím & rostu</span>
-        <h3>Lajky nejsou všechno</h3>
-        <p>Která čísla opravdu ukazují, že obsah funguje - a&nbsp;jak je číst podle cíle příspěvku. Včetně jednoduché měsíční kontroly.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
-      <a class="blog-card" data-rubric="rosteme" href="blog/vanoce-s-dusi.html">
-        <span class="rubrika-badge badge-rosteme">Rosteme spolu</span>
-        <h3>Vánoce s&nbsp;duší</h3>
-        <p>Proč dát letos šanci dárkům od malých tvůrkyň. Příběhy z&nbsp;komunity a&nbsp;hodnota, která není vidět na cenovce.</p>
-        <span class="card-link">Číst více →</span>
-      </a>
-
+  <!-- Mřížka článků (načtena z articles.json) -->
+  <div class="clanky-grid-wrap">
+    <div class="cards" id="clanky-grid">
+      <!-- JS doplní -->
+      <div class="clanky-empty">Načítám články…</div>
     </div>
   </div>
 
-  <footer>
-    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
-        <ul class="footer-links">
-      <li><a href="index.html">Domů</a></li>
-      <li><a href="clanky.html">Články</a></li>
-      <li><a href="clenstvi.html">Členství</a></li>
-      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
-    </ul>
-    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://skami.design">Skami Design</a></p>
-  </footer>
+  <!-- Footer a nav se vloží automaticky -->
+  <script src="components.js"></script>
 
   <script>
-    const btns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.blog-card');
+    /* ── Načtení a vykreslení článků ── */
+    const RUBRIKA_LABEL = {
+      'zacinama-podnikat':   'Začínáme podnikat',
+      'cenotvorba-finance':  'Cenotvorba a finance',
+      'site-marketing':      'Sítě a marketing',
+      'brand-prezentace':    'Brand a prezentace',
+      'mindset-produktivita':'Mindset a produktivita',
+      'sezonni-specialy':    'Sezónní speciály',
+    };
+    const RUBRIKA_CLASS = {
+      'zacinama-podnikat':   't-zacinama',
+      'cenotvorba-finance':  't-cenotvorba',
+      'site-marketing':      't-site',
+      'brand-prezentace':    't-brand',
+      'mindset-produktivita':'t-mindset',
+      'sezonni-specialy':    't-sezonni',
+    };
 
-    btns.forEach(btn => {
+    function formatDate(iso) {
+      if (!iso) return '';
+      const [y, m, d] = iso.split('-');
+      return `${parseInt(d)}. ${parseInt(m)}. ${y}`;
+    }
+
+    function renderCard(a, isNewest) {
+      const tagClass = RUBRIKA_CLASS[a.rubrika] || '';
+      const tagLabel = RUBRIKA_LABEL[a.rubrika] || a.rubrika;
+      const thumb = a.thumb
+        ? `<img src="${a.thumb}" alt="${a.titulek}" class="card-img" loading="lazy" onerror="this.style.display='none'">`
+        : `<div class="card-img" style="background:var(--pink-ll);aspect-ratio:16/9;"></div>`;
+      const badge = isNewest ? `<span class="badge-nove">Nové</span>` : '';
+      return `
+        <a class="card" href="${a.url}" data-rubrika="${a.rubrika}">
+          ${badge}
+          ${thumb}
+          <div class="card-body">
+            <span class="ctag ${tagClass}">${tagLabel}</span>
+            <h3 class="card-title">${a.titulek}</h3>
+            <p class="card-perex">${a.perex}</p>
+            <span class="card-date">${formatDate(a.datum)}</span>
+          </div>
+        </a>`;
+    }
+
+    let allArticles = [];
+    let activeRubrika = 'vse';
+    let searchQuery = '';
+
+    function matchesSearch(a, q) {
+      if (!q) return true;
+      const haystack = [
+        a.titulek || '',
+        a.perex || '',
+        ...(a.klicova_slova || [])
+      ].join(' ').toLowerCase();
+      return q.toLowerCase().split(/\s+/).every(word => haystack.includes(word));
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('clanky-grid');
+      let filtered = activeRubrika === 'vse'
+        ? allArticles
+        : allArticles.filter(a => a.rubrika === activeRubrika);
+      if (searchQuery) {
+        filtered = filtered.filter(a => matchesSearch(a, searchQuery));
+      }
+
+      if (filtered.length === 0) {
+        const msg = searchQuery
+          ? `Žádný článek neodpovídá hledání „${searchQuery}".`
+          : 'Žádné články v této rubrice zatím nejsou.';
+        grid.innerHTML = `<div class="search-no-results">${msg}</div>`;
+        return;
+      }
+      // Nejnovější článek (index 0 v celém seřazeném poli) dostane badge
+      const newestId = allArticles[0]?.id;
+      grid.innerHTML = filtered.map(a => renderCard(a, a.id === newestId)).join('');
+    }
+
+    async function loadClanky() {
+      try {
+        const res = await fetch('articles.json');
+        const data = await res.json();
+        // Seřadit od nejnovějšího; nejnovější vždy první
+        allArticles = (data.articles || []).sort((a, b) =>
+          (b.datum || '').localeCompare(a.datum || '')
+        );
+        renderGrid();
+      } catch (e) {
+        document.getElementById('clanky-grid').innerHTML =
+          '<div class="clanky-empty">Články se nepodařilo načíst.</div>';
+      }
+    }
+
+    // Filtrace rubrikou
+    document.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
-        btns.forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          if (filter === 'vse' || card.dataset.rubric === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
+        activeRubrika = btn.dataset.rubrika;
+        renderGrid();
       });
     });
+
+    // Vyhledávání
+    document.getElementById('clanky-search').addEventListener('input', e => {
+      searchQuery = e.target.value.trim();
+      renderGrid();
+    });
+
+    loadClanky();
   </script>
 
 </body>
