@@ -1,55 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rostemespolu.site/</loc></url>
-  <url><loc>https://rostemespolu.site/clanky.html</loc></url>
-  <url><loc>https://rostemespolu.site/clenstvi.html</loc></url>
-  <url><loc>https://rostemespolu.site/faze-byznysu.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/ai-dobry-sluha.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/automatizace-male-znacky.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/baleni-jako-soucast-zazitku.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/brand-tvuj-pribeh.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/canva-pro-tvurkyne.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/cena-tveho-vyrobku.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/den-deti.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/den-otcu.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/dusicky.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/eet.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/emaily-ktere-pracuji.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/financni-plan.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/halloween.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/impostor-syndrom.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/instagram-ktery-te-vidi.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/jak-prestat-podhodnocovat.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/jak-si-spravne-nacenit-praci.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/jak-si-verit.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/kompletni-pruvodce-balenim.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/konec-skolniho-roku.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/lajky-nejsou-vsechno.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/logistika-a-expedice.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/logo-neni-brand.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/maly-dosah-mala-hodnota.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/marketing-pro-zacatecnice.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/nejsi-neorganizovana.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/nez-se-vrhnete-na-urady.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/perfekcionismus.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/pocit-viny-mama-prace.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/podnikani-na-vedlejsi-cinnost.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/popis-produktu.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/prilezitostny-prijem-vs-zivnost.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/proc-komunita-porazi-feed.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/proc-male-znacky-nevydelavaji.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/proc-moje-prispevky-nikdo-nevidi.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/prvni-zakaznice.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/reklamace-bez-dramatu.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/spoluprace-mezi-tvorkynimi.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/stories-ktere-budujou-vztah.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/system-objednavek.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/time-blocking.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/time-management.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/tvorim-pro-cloveka.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/vanoce-s-dusi.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/vizualni-hook-ktery-zastavi-scroll.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/vizualni-konzistence-napric-kanaly.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/zahranicni-expanze-bez-pokut.html</loc></url>
-  <url><loc>https://rostemespolu.site/blog/zivnost-bez-strachu.html</loc></url>
+
+  <!-- Hlavní stránky -->
+  <url>
+    <loc>https://rostemespolu.site/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rostemespolu.site/clanky.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Články — Verča (nové, listopad 2026) -->
+  <url>
+    <loc>https://rostemespolu.site/blog/vlastni-eshop-kdy.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rostemespolu.site/blog/jak-prodavat-na-etsy.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rostemespolu.site/blog/kde-zacit-prodavat.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Interaktivní nástroj -->
+  <url>
+    <loc>https://rostemespolu.site/blog/srovnavac-eshopovych-platform.html</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Články — Začínám podnikat -->
+  <url><loc>https://rostemespolu.site/blog/prilezitostny-prijem-vs-zivnost.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/podnikani-na-vedlejsi-cinnost.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/nez-se-vrhnete-na-urady.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/zivnost-bez-strachu.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/financni-plan.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/prvni-zakaznice.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/ai-dobry-sluha.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Články — Myslím & cítím -->
+  <url><loc>https://rostemespolu.site/blog/perfekcionismus.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/jak-si-verit.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/impostor-syndrom.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/nejsi-neorganizovana.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/time-management.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/time-blocking.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/brand-tvuj-pribeh.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Články — Tvořím & rostu -->
+  <url><loc>https://rostemespolu.site/blog/cena-tveho-vyrobku.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/jak-si-spravne-nacenit-praci.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/marketing-pro-zacatecnice.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/instagram-ktery-te-vidi.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/stories-ktere-budujou-vztah.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/proc-moje-prispevky-nikdo-nevidi.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/maly-dosah-mala-hodnota.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/vizualni-hook-ktery-zastavi-scroll.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/logo-neni-brand.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/vizualni-konzistence-napric-kanaly.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/canva-pro-tvurkyne.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/popis-produktu.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/baleni-jako-soucast-zazitku.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/kompletni-pruvodce-balenim.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/logistika-a-expedice.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/zahranicni-expanze-bez-pokut.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/reklamace-bez-dramatu.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/system-objednavek.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/proc-komunita-porazi-feed.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/spoluprace-mezi-tvorkynimi.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/proc-male-znacky-nevydelavaji.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/jak-prestat-podhodnocovat.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
+  <!-- Články — Rosteme spolu -->
+  <url><loc>https://rostemespolu.site/blog/den-deti.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/den-otcu.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/konec-skolniho-roku.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+
 </urlset>
