@@ -49,12 +49,14 @@
   <url><loc>https://rostemespolu.site/blog/financni-plan.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/prvni-zakaznice.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/ai-dobry-sluha.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/eet.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 
   <!-- Články — Myslím & cítím -->
   <url><loc>https://rostemespolu.site/blog/perfekcionismus.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/jak-si-verit.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/impostor-syndrom.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/nejsi-neorganizovana.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/pocit-viny-mama-prace.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/time-management.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/time-blocking.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/brand-tvuj-pribeh.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
@@ -82,10 +84,17 @@
   <url><loc>https://rostemespolu.site/blog/spoluprace-mezi-tvorkynimi.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/proc-male-znacky-nevydelavaji.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/jak-prestat-podhodnocovat.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/automatizace-male-znacky.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/emaily-ktere-pracuji.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/lajky-nejsou-vsechno.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/tvorim-pro-cloveka.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 
   <!-- Články — Rosteme spolu -->
   <url><loc>https://rostemespolu.site/blog/den-deti.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/den-otcu.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
   <url><loc>https://rostemespolu.site/blog/konec-skolniho-roku.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/halloween.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/dusicky.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://rostemespolu.site/blog/vanoce-s-dusi.html</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
 
 </urlset>
