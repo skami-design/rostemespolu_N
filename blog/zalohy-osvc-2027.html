@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zálohy OSVČ 2027: kompletní průvodce - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Přesné částky záloh na sociální a&nbsp;zdravotní pojištění OSVČ pro rok 2027, úlevy pro začínající podnikatelky, pravidla pro vedlejší činnost při péči o&nbsp;dítě - a&nbsp;kde si vše ověřit v&nbsp;zákonech.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Zálohy OSVČ 2027: kompletní průvodce - Rosteme spolu">
+  <meta property="og:description" content="Přesné částky pro rok 2027, nejčastější chytáky a&nbsp;přímé odkazy na zákony a&nbsp;úřady.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/zalohy-osvc-2027.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-date { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin-bottom: 0.6rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .article-body ul { margin: 0 0 1.1rem 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .article-body ul li { font-size: 0.95rem; line-height: 1.8; color: var(--ink2); padding-left: 1.2rem; position: relative; }
+    .article-body ul li::before { content: "·"; color: var(--pink); font-weight: 700; position: absolute; left: 0; }
+
+    /* Fin table */
+    .fin-table { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.5rem 0; }
+    .fin-table-header { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1px; background: var(--border); }
+    .fin-table-header div { background: var(--off); padding: 0.7rem 1.2rem; font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .fin-table-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1px; background: var(--border); }
+    .fin-table-row div { background: var(--white); padding: 0.8rem 1.2rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); }
+    .fin-table-row div:last-child { color: var(--ink); font-weight: 600; text-align: right; }
+    .fin-table-row.total div { background: var(--pink-ll); font-weight: 700; color: var(--ink); }
+
+    /* Cost card */
+    .cost-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
+    .cost-card h4 { font-family: var(--sans); font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .cost-card p { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); margin-bottom: 0.9rem; }
+    .cost-card .insight { font-size: 0.85rem; line-height: 1.6; color: var(--green); font-weight: 600; margin: 0; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+
+    /* Techniky */
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    /* Checklist */
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin: 0; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; padding-left: 0; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; position: static; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-warning { background: #FBEFEA; border-left: 2px solid #C97A5A; padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .article-warning span.warning-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C97A5A; display: block; margin-bottom: 0.6rem; }
+    .article-warning p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.8; }
+    .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .fin-table-header, .fin-table-row { grid-template-columns: 1fr; }
+      .fin-table-row div:last-child { text-align: left; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Zálohy OSVČ 2027</span>
+    </div>
+
+    <span class="article-eyebrow">Začínám podnikat</span>
+    <span class="article-date">9. 11. 2026</span>
+    <h1 class="article-h1">Zálohy OSVČ 2027: kompletní průvodce pro začátečnice i&nbsp;maminky</h1>
+    <p class="article-lead">Přesné částky pro rok 2027, nejčastější chytáky - a&nbsp;hlavně, kde si to všechno ověřit v&nbsp;zákonech.</p>
+
+    <div class="article-body">
+
+      <p>Ahoj, tady Verča! S&nbsp;Míšou a&nbsp;Aničkou pro vás v&nbsp;rámci naší komunity Rosteme spolu neustále hlídáme novinky ze světa podnikání. Odvody na sociální a&nbsp;zdravotní pojištění umí potrápit nejen začátečnice, ale i&nbsp;ostřílené maminky, které balancují byznys a&nbsp;péči o&nbsp;děti. Připravily jsme proto tento přehledný článek, ve&nbsp;kterém najdeš přesné částky pro rok 2027, vysvětlení nejčastějších chytáků a&nbsp;hlavně - přímé odkazy na úřady a&nbsp;zákony, aby sis vždycky věděla, o&nbsp;co se opřít.</p>
+
+      <h2>Standardní odvody pro hlavní činnost (2027)</h2>
+      <p>Pokud je podnikání tvou hlavní samostatnou výdělečnou činností a&nbsp;nevztahuje se na tebe žádná výjimka, měsíční minimum se pro rok 2027 opět zvyšuje.</p>
+
+      <div class="fin-table">
+        <div class="fin-table-header"><div>Odvod</div><div>Měsíčně</div></div>
+        <div class="fin-table-row"><div>Sociální pojištění</div><div>5 281 Kč</div></div>
+        <div class="fin-table-row"><div>Zdravotní pojištění</div><div>3 488 Kč</div></div>
+        <div class="fin-table-row total"><div>Celkem</div><div>8 769 Kč</div></div>
+      </div>
+
+      <h2>Začínající OSVČ: úlevy v&nbsp;prvních letech</h2>
+      <p>Stát nabízí začínajícím podnikatelkám výrazné úlevy na sociálním pojištění (pokud nejsi v&nbsp;paušálním režimu). Je ale důležité rozlišovat snížené minimální pojistné a&nbsp;možnost dočasně neplatit měsíční zálohy.</p>
+
+      <div class="cost-card">
+        <h4>Pauza 20 let</h4>
+        <p>Pokud jsi v&nbsp;předchozích 20 kalendářních letech nepodnikala, můžeš při zahájení hlavní činnosti využít v&nbsp;roce zahájení a&nbsp;následujících dvou kalendářních letech snížený minimální vyměřovací základ.</p>
+        <p class="insight">Minimální sociální záloha pro rok 2027 činí 3 772 Kč.</p>
+      </div>
+
+      <div class="cost-card">
+        <h4>Pauza 5 let</h4>
+        <p>Pokud jsi v&nbsp;předchozích pěti kalendářních letech nevykonávala samostatnou výdělečnou činnost a&nbsp;splňuješ zákonné podmínky, nemusíš v&nbsp;roce zahájení a&nbsp;v&nbsp;bezprostředně následujícím kalendářním roce platit pravidelné zálohy na sociální pojištění.</p>
+        <p class="insight">Tvoje měsíční záloha tak může být 0 Kč.</p>
+      </div>
+
+      <div class="article-callout">
+        <p><strong>A&nbsp;pozor, obě úlevy se mohou kombinovat!</strong> Pokud splňuješ podmínku 20 let, můžeš první dva kalendářní roky využívat nulové zálohy a&nbsp;ve&nbsp;třetím roce ještě snížené minimum.</p>
+      </div>
+
+      <p>Nulové zálohy ale neznamenají odpuštěné sociální pojištění. Po&nbsp;podání ročního přehledu ti může vzniknout doplatek.</p>
+      <p>U&nbsp;zdravotního pojištění automatická dvouletá úleva pro začínající OSVČ neexistuje. Pokud se na tebe vztahuje minimální vyměřovací základ, platíš minimální zdravotní zálohu 3 488 Kč. Pokud však patříš mezi státní pojištěnky nebo splňuješ jinou zákonnou výjimku, může být situace odlišná.</p>
+
+      <h2>Podnikání jako vedlejší činnost (mateřská a&nbsp;rodičovská)</h2>
+      <p>Při zaměstnání, pobírání peněžité pomoci v&nbsp;mateřství (PPM) nebo rodičovského příspěvku může být tvoje podnikání pro účely sociálního pojištění vedlejší činností. Vždy ale záleží na splnění konkrétních zákonných podmínek.</p>
+
+      <div class="cost-card">
+        <h4>V&nbsp;1. roce podnikání</h4>
+        <p>Pokud zahajuješ vedlejší činnost a&nbsp;dosud ti nevznikla povinnost platit sociální zálohy, zpravidla je neplatíš. U&nbsp;zdravotního pojištění můžeš mít zálohy také 0 Kč, například pokud za tebe po&nbsp;celý kalendářní měsíc platí pojistné stát.</p>
+        <p class="insight">To, že je záloha nulová, ale neznamená, že se platbě úplně vyhneš - skutečnou výši odvodů určí až tvůj daňový základ v&nbsp;ročním přehledu.</p>
+      </div>
+
+      <div class="cost-card">
+        <h4>V&nbsp;dalších letech</h4>
+        <p>Minimální záloha na sociální pojištění u&nbsp;vedlejší činnosti činí v&nbsp;roce 2027 <strong>1 660 Kč</strong>. Povinné sociální pojištění zpravidla neplatíš, pokud tvůj daňový základ za celý rok 2027 nedosáhne rozhodné částky <strong>123 992 Kč</strong> a&nbsp;nepřihlásíš se k&nbsp;pojištění dobrovolně. Pokud podnikáš pouze část roku, limit se za stanovených podmínek poměrně snižuje, a&nbsp;to o&nbsp;10 333 Kč za každý příslušný kalendářní měsíc bez výkonu činnosti.</p>
+        <p class="insight">Povinnost platit zálohy se posuzuje podle zákonných pravidel a&nbsp;výsledků předchozího přehledu.</p>
+      </div>
+
+      <p>U&nbsp;zdravotního pojištění platí od&nbsp;roku 2026 důležitá novinka. Pokud za tebe po&nbsp;celý kalendářní měsíc hradí zdravotní pojištění stát, nemusíš jako OSVČ během tohoto měsíce platit zálohy, a&nbsp;to ani v&nbsp;dalších letech podnikání. Skutečné pojistné doplatíš až podle daňového základu po&nbsp;podání ročního přehledu.</p>
+      <p>Pokud máš nulový nebo záporný daňový základ a&nbsp;nevztahuje se na tebe minimální vyměřovací základ, pojistné z&nbsp;podnikání zpravidla nevznikne.</p>
+
+      <div class="article-warning">
+        <span class="warning-label">Pozor chyták</span>
+        <p><strong>Rodičák do 3 let, ale vedlejší činnost do 4 let!</strong> Možná si říkáš: rodičovský příspěvek se pro děti narozené od&nbsp;roku 2024 zkrátil na 3 roky, co bude s&nbsp;mým podnikáním pak? Pro účely sociálního pojištění se zatím nic nemění. Českou správu sociálního zabezpečení (ČSSZ) zajímá zákon o&nbsp;důchodovém pojištění, který nadále definuje vedlejší činnost mimo jiné jako osobní péči o&nbsp;dítě mladší 4 let. Pro OSSZ tedy můžeš zůstat OSVČ na vedlejší činnost až do čtvrtých narozenin dítěte, pokud splňuješ zákonné podmínky.</p>
+      </div>
+
+      <p>Pokud už nepobíráš rodičovský příspěvek, je potřeba péči o&nbsp;dítě doložit ČSSZ předepsaným čestným prohlášením. Tento důvod vedlejší činnosti může za stejné období uplatnit pouze jeden z&nbsp;rodičů.</p>
+
+      <div class="article-warning">
+        <span class="warning-label">Druhý chyták</span>
+        <p><strong>Past 4 let vs. 7 let.</strong> Zákon o&nbsp;důchodovém pojištění a&nbsp;zákon o&nbsp;veřejném zdravotním pojištění stanovují odlišná pravidla pro péči o&nbsp;dítě. Může tak nastat situace, kdy jsi z&nbsp;pohledu ČSSZ na hlavní činnosti, ale u&nbsp;zdravotní pojišťovny nemusíš platit minimální zálohy.</p>
+      </div>
+
+      <div class="cost-card">
+        <h4>Sociální pojištění (ČSSZ)</h4>
+        <p>Vedlejší činnost z&nbsp;titulu péče o&nbsp;dítě končí dosažením 4 let věku dítěte (pokud už nepobíráš rodičovský příspěvek). Pokud nemáš jiný důvod vedlejší činnosti, například zaměstnání splňující zákonné podmínky, stává se z&nbsp;tvého podnikání hlavní činnost.</p>
+        <p class="insight">Zpravidla tak musíš začít hradit minimální měsíční zálohy 5 281 Kč, pokud se na tebe nevztahuje některá z&nbsp;úlev.</p>
+      </div>
+
+      <div class="cost-card">
+        <h4>Zdravotní pojištění (VZP a&nbsp;další)</h4>
+        <p>Pokud osobně a&nbsp;řádně pečuješ alespoň o&nbsp;jedno dítě mladší 7 let a&nbsp;splňuješ zákonné podmínky, můžeš být zařazena mezi státní pojištěnky. Od&nbsp;roku 2026 už neplatí dřívější možnost péče o&nbsp;dvě děti do 15 let ani omezení docházky dítěte do školky na čtyři hodiny denně. Zároveň můžeš při splnění podmínek podnikat nebo pracovat.</p>
+        <p class="insight">Důležité je tuto skutečnost včas oznámit zdravotní pojišťovně, protože zařazení do&nbsp;této kategorie nelze provést zpětně.</p>
+      </div>
+
+      <h2>Novinka: vedlejší činnost u&nbsp;sociálního pojištění až do&nbsp;7 let dítěte?</h2>
+      <p>A&nbsp;máme pro vás ještě jednu zajímavou novinku, kterou s&nbsp;Míšou a&nbsp;Aničkou bedlivě sledujeme!</p>
+      <p>Na konci září 2026 byl předložen poslanecký návrh zákona, který by mohl podnikajícím maminkám výrazně ulevit. Počítá totiž s&nbsp;tím, že by se hranice pro vedlejší činnost u&nbsp;sociálního pojištění prodloužila ze současných 4 až na 7 let věku dítěte.</p>
+      <p>A&nbsp;to není všechno! Návrh také počítá se snížením minimálního vyměřovacího základu na 25&nbsp;% průměrné mzdy pro některé rodiče, kteří začali podnikat během péče o&nbsp;dítě a&nbsp;následně přejdou na hlavní činnost. Tato úleva by se při splnění dalších podmínek vztahovala na rok přechodu a&nbsp;následující dva kalendářní roky.</p>
+
+      <div class="osobni-box">Má to ale háček. Vláda návrh 26. října 2026 odmítla, protože se obává mimo jiné negativních dopadů na budoucí důchody rodičů. Poslanci však mohou návrh schválit i&nbsp;přes nesouhlas vlády.</div>
+
+      <p>Změny by podle návrhu mohly začít platit už od&nbsp;1. ledna 2027, zatím ale nejsou schválené. Do&nbsp;té doby platí současná hranice 4 let. S&nbsp;Míšou a&nbsp;Aničkou budeme další vývoj sledovat a&nbsp;dáme vám vědět, pokud se pravidla změní!</p>
+      <p>Průběh projednávání můžeš sledovat přímo zde: <a href="https://www.psp.cz/sqw/historie.sqw?o=10&t=327" target="_blank" rel="noopener">Poslanecká sněmovna - sněmovní tisk č. 327</a>.</p>
+
+      <h2>Splatnosti plateb: kdy peníze odeslat?</h2>
+
+      <div class="checklist">
+        <span class="checklist-label">Termíny k&nbsp;pohlídání</span>
+        <ul>
+          <li>Sociální pojištění je splatné do&nbsp;konce kalendářního měsíce, za který platíš (např. za březen do&nbsp;31. března).</li>
+          <li>Zdravotní pojištění je splatné vždy do&nbsp;8. dne následujícího měsíce (např. za březen do&nbsp;8. dubna).</li>
+          <li>Pokud termín vyjde na víkend či svátek, posouvá se na nejbližší pracovní den.</li>
+          <li>Případné doplatky z&nbsp;ročních přehledů musíš uhradit do&nbsp;8 dnů od&nbsp;jejich podání.</li>
+        </ul>
+      </div>
+
+      <h2>Kde tyto informace ověřit v&nbsp;zákonech?</h2>
+      <p>Nenech se zmást radami z&nbsp;internetových diskusí, vždy je nejlepší nahlédnout přímo do&nbsp;aktuální legislativy nebo na oficiální weby institucí.</p>
+
+      <div class="technika">
+        <span class="technika-label">Užitečné odkazy</span>
+        <p><strong>ČSSZ:</strong> detaily k&nbsp;vedlejší činnosti a&nbsp;slevám pro začínající OSVČ najdeš přímo na webu <a href="https://www.cssz.cz/" target="_blank" rel="noopener">cssz.cz</a>. Řídí se zákonem č. 155/1995 Sb., o&nbsp;důchodovém pojištění (§ 9), a&nbsp;zákonem č. 589/1992 Sb., o&nbsp;pojistném na sociální zabezpečení.<br><br><strong>Zdravotní pojišťovny:</strong> podmínky pro státní pojištěnky (osoby pečující o&nbsp;dítě do&nbsp;7 let) definuje zákon č. 48/1997 Sb., o&nbsp;veřejném zdravotním pojištění (§ 7). Výpočet pojistného upravuje také zákon č. 592/1992 Sb.<br><br><strong>MPSV:</strong> všeobecné informace o&nbsp;dávkách (PPM, rodičovský příspěvek) najdeš na <a href="https://www.mpsv.cz/" target="_blank" rel="noopener">mpsv.cz</a>.<br><br><strong>Poslanecká sněmovna:</strong> aktuální stav připravované změny vedlejší činnosti při péči o&nbsp;dítě můžeš sledovat u&nbsp;sněmovního tisku č. 327.</p>
+      </div>
+
+      <div class="article-tip">
+        <h3>Výzva na tento týden</h3>
+        <p>Zjisti si, do&nbsp;které kategorie přesně patříš - hlavní činnost, vedlejší s&nbsp;úlevou, nebo vedlejší z&nbsp;titulu péče o&nbsp;dítě. Pak si do&nbsp;kalendáře zapiš nejbližší termín splatnosti zálohy, ať tě nepřekvapí.</p>
+        <p>Přejeme vám co nejméně byrokratických zádrhelů a&nbsp;úspěšný rok 2027! A&nbsp;hlavně - pokud si nejsi jistá, nebojte se obrátit přímo na příslušnou OSSZ, zdravotní pojišťovnu nebo daňového poradce. Každá podnikatelka může mít trochu jinou situaci a&nbsp;vyplatí se mít jistotu, že postupuješ správně.</p>
+      </div>
+
+      <p class="article-ps">Teprve se do&nbsp;podnikání chystáš? Přečti si <a href="zivnost-bez-strachu.html">Živnost bez strachu</a> nebo <a href="podnikani-na-vedlejsi-cinnost.html">Podnikání na vedlejší činnost</a>. A&nbsp;pokud si ještě nejsi jistá, jestli už tvůj přivýdělek je živnost, mrkni na <a href="prilezitostny-prijem-vs-zivnost.html">Příležitostný příjem vs. živnost</a>.</p>
+
+      <p class="sources">Zdroje: <a href="https://www.cssz.cz/" target="_blank" rel="noopener">Česká správa sociálního zabezpečení</a> · <a href="https://www.mpsv.cz/" target="_blank" rel="noopener">Ministerstvo práce a&nbsp;sociálních věcí</a> · <a href="https://www.psp.cz/sqw/historie.sqw?o=10&t=327" target="_blank" rel="noopener">Poslanecká sněmovna - sněmovní tisk č. 327</a> · zákon č. 155/1995 Sb., zákon č. 589/1992 Sb., zákon č. 48/1997 Sb., zákon č. 592/1992 Sb.</p>
+
+      <div class="article-author">
+        <div class="author-avatar">V</div>
+        <div class="author-info">
+          <strong>Veronika Hašplová</strong>
+          tvůrkyně (3D tisk) · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener">@eweria_prints</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="../clanky.html">
+        <span class="nav-label">← Zpět na přehled</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+      <a href="vlastni-eshop-kdy.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Vlastní e-shop: kdy už ti Instagram nestačí?</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Řešíš podobné papírování?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem radíme i&nbsp;s&nbsp;odvody a&nbsp;administrativou. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
