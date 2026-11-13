@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Co si vzít na trh? Praktický průvodce - Rosteme spolu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Allura&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="Praktický průvodce pro první trh: co zjistit od pořadatele, jak vybavit stánek, platby a EET 2.0, doklady, krabička poslední záchrany a rychlý checklist k odškrtání.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Co si vzít na trh? Praktický průvodce - Rosteme spolu">
+  <meta property="og:description" content="Co si připravit, co zabalit a na co nezapomenout - aby ti na trhu nic důležitého nechybělo.">
+  <link rel="canonical" href="https://rostemespolu.site/blog/co-si-vzit-na-trh.html">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <style>
+    :root {
+      --ink: #3D2D3A; --ink2: #7A5C6E; --muted: #A08898;
+      --pink: #C0A0A5; --pink-l: #E8D8DC; --pink-ll: #F8F1F2;
+      --green: #4E7A60; --green-l: #D4EDE0; --mint: #9FD4B0;
+      --off: #FAF6F0; --white: #FFFFFF; --border: #E8E0DC;
+      --serif: 'Playfair Display', Georgia, serif;
+      --hand: 'Allura', cursive;
+      --sans: 'Source Sans 3', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--ink); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 4rem; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+    .nav-logo a { text-decoration: none; display: flex; flex-direction: column; line-height: 1; }
+    .nav-logo .r { font-family: var(--serif); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; }
+    .nav-logo .s { font-family: var(--hand); font-size: 1.3rem; color: var(--mint); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { font-family: var(--sans); font-size: 0.82rem; color: var(--ink2); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta { color: var(--pink) !important; border-bottom: 1px solid var(--mint); padding-bottom: 1px; }
+    .article-page { max-width: 720px; margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .breadcrumb { font-family: var(--sans); font-size: 0.75rem; color: var(--muted); margin-bottom: 2.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--pink); }
+    .breadcrumb span { color: var(--border); }
+    .article-eyebrow { font-family: var(--sans); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: block; }
+    .article-date { font-family: var(--sans); font-size: 0.78rem; color: var(--muted); margin-bottom: 0.6rem; display: block; }
+    .article-h1 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.5rem; }
+    .article-lead { font-size: 1.05rem; line-height: 1.85; color: var(--ink2); border-left: 2px solid var(--pink); padding-left: 1.5rem; margin-bottom: 3rem; font-style: italic; }
+    .article-body h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--ink); margin: 2.5rem 0 0.8rem; }
+    .article-body h3 { font-family: var(--serif); font-size: 1.1rem; font-weight: 600; color: var(--ink); margin: 1.6rem 0 0.6rem; }
+    .article-body p { font-size: 0.95rem; line-height: 1.9; color: var(--ink2); margin-bottom: 1.1rem; }
+    .article-body a { color: var(--green); text-decoration: none; border-bottom: 1px solid var(--mint); transition: color 0.2s; }
+    .article-body a:hover { color: var(--ink); }
+    .article-body ul { margin: 0 0 1.1rem 0; padding-left: 0; list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .article-body ul li { font-size: 0.95rem; line-height: 1.8; color: var(--ink2); padding-left: 1.2rem; position: relative; }
+    .article-body ul li::before { content: "·"; color: var(--pink); font-weight: 700; position: absolute; left: 0; }
+
+    /* Fin table */
+    .fin-table { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 1.5rem 0; }
+    .fin-table-header { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1px; background: var(--border); }
+    .fin-table-header div { background: var(--off); padding: 0.7rem 1.2rem; font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); }
+    .fin-table-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 1px; background: var(--border); }
+    .fin-table-row div { background: var(--white); padding: 0.8rem 1.2rem; font-size: 0.88rem; line-height: 1.6; color: var(--ink2); }
+    .fin-table-row div:last-child { color: var(--ink); font-weight: 600; text-align: right; }
+    .fin-table-row.total div { background: var(--pink-ll); font-weight: 700; color: var(--ink); }
+
+    /* Cost card */
+    .cost-card { border: 1px solid var(--border); border-radius: 10px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
+    .cost-card h4 { font-family: var(--sans); font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .cost-card p { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); margin-bottom: 0.9rem; }
+    .cost-card .insight { font-size: 0.85rem; line-height: 1.6; color: var(--green); font-weight: 600; margin: 0; padding-top: 0.9rem; border-top: 1px solid var(--border); }
+
+    /* Techniky */
+    .technika { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .technika-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--pink); display: block; margin-bottom: 0.6rem; }
+    .technika p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+
+    /* Checklist */
+    .checklist { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .checklist-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); display: block; margin-bottom: 0.8rem; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin: 0; }
+    .checklist li { font-size: 0.88rem; line-height: 1.7; color: var(--ink2); display: flex; gap: 0.7rem; align-items: flex-start; padding-left: 0; }
+    .checklist li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; position: static; }
+
+    .article-callout { background: var(--green-l); padding: 1.6rem 2rem; margin: 2rem 0; border-left: 2px solid var(--green); }
+    .article-callout p { margin: 0; color: var(--ink); font-size: 0.95rem; line-height: 1.8; }
+    .article-callout strong { color: var(--green); }
+    .osobni-box { background: var(--pink-ll); border-left: 2px solid var(--pink); padding: 1.4rem 1.8rem; margin: 1.5rem 0; font-size: 0.92rem; line-height: 1.85; color: var(--ink2); font-style: italic; }
+    .article-warning { background: #FBEFEA; border-left: 2px solid #C97A5A; padding: 1.4rem 1.8rem; margin: 1.5rem 0; }
+    .article-warning span.warning-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #C97A5A; display: block; margin-bottom: 0.6rem; }
+    .article-warning p { font-size: 0.9rem; line-height: 1.8; color: var(--ink2); margin: 0; }
+    .article-tip { background: var(--off); border: 1px solid var(--border); padding: 1.6rem 2rem; margin-top: 2.5rem; }
+    .article-tip h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; color: var(--ink); margin-bottom: 0.5rem; }
+    .article-tip p { margin: 0 0 0.5rem; font-size: 0.9rem; line-height: 1.75; color: var(--ink2); }
+    .article-tip p:last-child { margin: 0; }
+    .legal-box { background: var(--off); border: 1px solid var(--border); padding: 1.4rem 1.8rem; margin-top: 2.5rem; }
+    .legal-label { font-family: var(--sans); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.8rem; }
+    .article-body .legal-box p { font-size: 0.8rem; line-height: 1.7; color: var(--muted); margin-bottom: 0.7rem; }
+    .article-body .legal-box p:last-child { margin-bottom: 0; }
+    .article-body .legal-box a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    sup { font-size: 0.65em; line-height: 0; }
+    .article-body ul ul { margin-top: 0.5rem; }
+    .article-ps { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+    .article-ps a { color: var(--pink); border-bottom: 1px solid var(--pink-l); }
+    .sources { font-size: 0.78rem; color: var(--muted); margin-top: 0.8rem; line-height: 1.8; }
+    .sources a { color: var(--muted); border-bottom: 1px solid var(--border); }
+    .article-author { display: flex; align-items: center; gap: 1rem; padding: 1.5rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+    .author-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--pink-l); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1rem; color: var(--ink); flex-shrink: 0; }
+    .author-info { font-size: 0.82rem; line-height: 1.5; color: var(--muted); }
+    .author-info strong { font-weight: 600; color: var(--ink); display: block; }
+    .author-info a { color: var(--pink); text-decoration: none; border: none; }
+    .article-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin-top: 3rem; }
+    .article-nav a { background: var(--white); padding: 1.5rem; text-decoration: none; border: none; transition: background 0.2s; }
+    .article-nav a:hover { background: var(--pink-ll); }
+    .article-nav a.next { border-left: 1px solid var(--border); text-align: right; }
+    .nav-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 0.3rem; }
+    .nav-title { font-family: var(--serif); font-size: 0.95rem; color: var(--ink); }
+    .article-cta { background: var(--ink); padding: 3rem 2rem; margin-top: 4rem; text-align: center; }
+    .article-cta h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--white); margin-bottom: 0.8rem; }
+    .article-cta p { color: rgba(249,247,245,0.6); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .btn-primary { background: var(--pink); color: var(--white); padding: 0.85rem 2.2rem; font-family: var(--sans); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; display: inline-block; border: none; }
+    .btn-primary:hover { background: var(--white); color: var(--ink); }
+    footer { background: var(--off); padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; border-top: 1px solid var(--border); }
+    .footer-logo .r { font-family: var(--serif); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.2em; color: var(--ink); text-transform: uppercase; display: block; }
+    .footer-logo .s { font-family: var(--hand); font-size: 1.2rem; color: var(--mint); display: block; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a { font-size: 0.78rem; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-copy { font-size: 0.75rem; color: var(--muted); }
+    .footer-copy a { color: var(--pink); text-decoration: none; }
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .article-page { padding: 5rem 1.5rem 3rem; }
+      .fin-table-header, .fin-table-row { grid-template-columns: 1fr; }
+      .fin-table-row div:last-child { text-align: left; }
+      .article-nav { grid-template-columns: 1fr; }
+      .article-nav a.next { border-left: none; border-top: 1px solid var(--border); text-align: left; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <a href="../index.html">
+        <span class="r">Rosteme</span>
+        <span class="s">spolu</span>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="../index.html#about">O&nbsp;nás</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="../index.html#community" class="nav-cta">Přidej se</a></li>
+    </ul>
+  </nav>
+
+  <div class="article-page">
+    <div class="breadcrumb">
+      <a href="../index.html">Domů</a><span>/</span>
+      <a href="../clanky.html">Články</a><span>/</span>
+      <span>Co si vzít na trh?</span>
+    </div>
+
+    <span class="article-eyebrow">Tvořím &amp; rostu</span>
+    <span class="article-date">13. 11. 2026</span>
+    <h1 class="article-h1">Co si vzít na trh? Praktický průvodce, aby ti nic důležitého nechybělo</h1>
+    <p class="article-lead">Na první trh se dá připravit bez stresu - stačí vědět, co budeš potřebovat, a&nbsp;nenechávat všechno na poslední večer.</p>
+
+    <div class="article-body">
+      <p>Máš vyrobené produkty, potvrzenou účast na trhu a&nbsp;v&nbsp;hlavě už si představuješ, jak bude tvůj stánek vypadat. Jenže čím víc se blíží den konání, tím víc otázek přibývá. Vejde se všechno do auta? Budeš mít dost drobných? Co když začne pršet? A&nbsp;co všechno vlastně potřebuješ kromě samotných výrobků?</p>
+      <p>Na první trh se dá připravit bez zbytečného stresu. Nemusíš mít nejdražší vybavení ani dokonale sladěný stánek. Mnohem důležitější je vědět, co budeš potřebovat, a&nbsp;nenechávat všechno na poslední večer.</p>
+      <p>Pojďme si společně projít, co si připravit, co zabalit a&nbsp;na co nezapomenout. Přidáme i&nbsp;pár tipů z&nbsp;vlastní zkušenosti.</p>
+
+      <h2>1. Nejdřív zjisti, co tě na místě čeká</h2>
+      <p>Než začneš skládat výrobky do krabic, vrať se k&nbsp;informacím od pořadatele. Právě tady můžeš předejít řadě nepříjemných překvapení.</p>
+      <p>Ověř si především:</p>
+      <ul>
+        <li><strong>Velikost prodejního místa:</strong> Kolik prostoru budeš mít k&nbsp;dispozici?</li>
+        <li><strong>Vybavení:</strong> Dostaneš stůl, židli nebo celý stánek? Nebo si vše musíš přivézt?</li>
+        <li><strong>Elektřinu:</strong> Bude k&nbsp;dispozici a&nbsp;je zahrnutá v&nbsp;ceně?</li>
+        <li><strong>Příjezd a&nbsp;parkování:</strong> Kde můžeš vyložit věci a&nbsp;jak daleko je budeš muset nosit?</li>
+        <li><strong>Časový harmonogram:</strong> Kdy můžeš začít připravovat stánek a&nbsp;kdy musí být hotový?</li>
+        <li><strong>Podmínky prodejců:</strong> Má pořadatel pravidla pro vzhled stánku, jeho ukotvení nebo sortiment?</li>
+        <li><strong>Zázemí:</strong> Jsou na místě toalety, občerstvení nebo doprovodný program pro děti?</li>
+      </ul>
+      <p>U&nbsp;venkovních trhů sleduj také předpověď počasí. Déšť není jediný problém. Nepříjemný může být i&nbsp;silný vítr, přímé slunce nebo nízká teplota.</p>
+      <p>Pokud jedeš na vícedenní trhy dál od domova, nezapomeň včas vyřešit také ubytování.</p>
+
+      <h3>Dej o&nbsp;své účasti vědět</h3>
+      <p>Jakmile máš účast potvrzenou, nezapomeň o&nbsp;ní informovat své zákazníky. Sdílej na sociálních sítích nebo e-shopu, kde a&nbsp;kdy tě mohou navštívit a&nbsp;co si u&nbsp;tebe budou moci koupit.</p>
+      <p>Možná právě díky tomu dorazí někdo, kdo tvoji tvorbu sleduje už delší dobu, ale zatím neměl příležitost si výrobky prohlédnout osobně.</p>
+
+      <div class="technika">
+        <span class="technika-label">Náš tip</span>
+        <p>Všechny důležité informace od pořadatele si ulož do telefonu. V&nbsp;den trhu tak nebudeš složitě hledat staré e-maily.</p>
+      </div>
+
+      <h2>2. Výrobky: neber všechno, co doma najdeš</h2>
+      <p>Když jedeš na trh poprvé, je lákavé vzít úplně všechno. Člověk nikdy neví, co se bude líbit.</p>
+      <p>Jenže příliš velký sortiment může znamenat hodně práce s&nbsp;přepravou, nepřehledný stánek a&nbsp;zásoby, které budeš celý den jen přesouvat.</p>
+      <p>Zkus si výrobky rozdělit do několika skupin:</p>
+      <ul>
+        <li><strong>Nejprodávanější výrobky:</strong> Pokud už prodáváš přes e-shop nebo sociální sítě, podívej se, co zákazníci kupují nejčastěji.</li>
+        <li><strong>Menší a&nbsp;cenově dostupnější výrobky:</strong> Drobnosti, které si lidé mohou koupit jen tak pro radost nebo jako malý dárek.</li>
+        <li><strong>Výraznější výrobky:</strong> Větší nebo propracovanější produkty, které zaujmou už z&nbsp;dálky a&nbsp;představí tvoji tvorbu.</li>
+        <li><strong>Sezónní nabídka:</strong> Na vánočních trzích budou lidé hledat něco jiného než na jarním jarmarku nebo dětské akci.</li>
+      </ul>
+
+      <h3>Kolik kusů si připravit?</h3>
+      <p>Univerzální číslo neexistuje. Záleží na délce trhu, očekávané návštěvnosti, cenách i&nbsp;velikosti výrobků.</p>
+      <p>A&nbsp;ani zkušenosti z&nbsp;předchozích akcí nejsou vždy zárukou. Sama mám vyzkoušené, že se mi na každém trhu prodává trochu jiný sortiment. Někde jdou na odbyt drobnosti, jinde překvapí výrobky, které se na předchozích akcích téměř neprodávaly.</p>
+      <p>Proto je někdy těžké odhadnout, čeho vzít více a&nbsp;čeho méně.</p>
+      <p>Před zabalením každý výrobek zkontroluj. Ujisti se, že je dokončený, čistý, nepoškozený a&nbsp;má případné potřebné štítky či bezpečnostní informace.</p>
+      <p>Pokud máš nové produkty a&nbsp;plánuješ je nabízet také na e-shopu, <strong>nezapomeň je před zabalením nafotit</strong>. Ušetříš si práci po návratu, kdy už některé výrobky možná ani nebudeš mít.</p>
+
+      <h3>Výprodejová bedna? Proč ne!</h3>
+      <p>Na trhy občas beru také samostatnou bednu s&nbsp;výprodejovými výrobky.</p>
+      <p>Najdou se v&nbsp;ní například produkty druhé jakosti, drobnosti s&nbsp;kosmetickou vadou nebo výrobky, které už neplánuji dál nabízet na e-shopu.</p>
+      <p>Ty pak prodávám s&nbsp;výraznější slevou. Zákazníci mají možnost pořídit něco za příznivější cenu a&nbsp;já zase uvolním místo pro nové výrobky.</p>
+
+      <div class="article-warning">
+        <span class="warning-label">Pozor</span>
+        <p>Vždy musí být jasně uvedeno, proč je výrobek zlevněný. Pokud má vadu, zákazník by o&nbsp;ní měl vědět ještě před nákupem. Výprodej navíc není způsob, jak se zbavit odpovědnosti za výrobek nebo prodávat nebezpečné zboží.</p>
+      </div>
+
+      <div class="technika">
+        <span class="technika-label">Náš tip</span>
+        <p>Sepiš si, kolik kusů jednotlivých výrobků vezeš. Po návratu jednoduše zjistíš, co se prodalo, a&nbsp;nebudeš muset spoléhat jen na paměť.</p>
+      </div>
+
+      <h2>3. Vybavení stánku: nemusí být drahé, ale musí fungovat</h2>
+      <p>Stánek je tvoje malá prodejna. A&nbsp;stejně jako v&nbsp;obchodě záleží na tom, aby se v&nbsp;ní zákazníci dokázali zorientovat.</p>
+      <p>Základem jsou stůl, případně přístřešek, ubrus a&nbsp;něco, na čem výrobky vystavíš.</p>
+
+      <h3>Mysli na různé výšky</h3>
+      <p>Když položíš všechny produkty naplocho na stůl, mnoho z&nbsp;nich snadno zanikne. Pomůže jednoduchý stojánek, polička, bedýnka nebo podstavec.</p>
+      <p>Nemusíš hned pořizovat profesionální vybavení. I&nbsp;obyčejná pevná krabice schovaná pod ubrusem dokáže vytvořit další úroveň pro vystavení zboží.</p>
+      <p>Podobné výrobky umísti k&nbsp;sobě a&nbsp;nezahlcuj stůl dekoracemi. Zákazník by měl během několika vteřin pochopit, co prodáváš.</p>
+      <p>Podle sortimentu se může hodit také malé zrcátko, stojan na šperky nebo osvětlení, zvlášť pokud prodáváš na zimních či večerních trzích.</p>
+
+      <h3>Mysli také na praktickou stránku</h3>
+      <p>Budeš potřebovat místo pro zásoby, obalový materiál, pokladničku a&nbsp;osobní věci.</p>
+      <p>Ideální je mít menší prostor, kde můžeš zákazníkovi pohodlně zabalit nákup, aniž bys musela přesouvat vystavené výrobky.</p>
+      <p>Zásoby můžeš mít v&nbsp;přepravkách pod stolem. Ubrus sahající až k&nbsp;zemi je zároveň dokáže schovat.</p>
+
+      <h3>Co když bude pršet nebo foukat?</h3>
+      <p>U&nbsp;venkovních trhů je zásadní bezpečné ukotvení stanu podle pokynů výrobce, pořadatele a&nbsp;aktuálního počasí.</p>
+      <p>Mysli také na ochranu výrobků. Některé materiály nesnášejí vlhkost, jiné mohou být citlivé na vysoké teploty nebo přímé slunce.</p>
+      <p>Hodit se mohou boční stěny stanu, ochranná plachta nebo uzavíratelné přepravky.</p>
+
+      <div class="technika">
+        <span class="technika-label">Náš tip</span>
+        <p>Pokud máš možnost, sestav si stánek předem doma a&nbsp;vyfoť si jeho uspořádání. Na trhu pak nebudeš muset všechno vymýšlet znovu.</p>
+      </div>
+
+      <h2>4. Přeprava výrobků: jak dostat všechno bezpečně na místo</h2>
+      <p>Při plánování stánku snadno zapomeneme na jednu věc - všechno vybavení a&nbsp;výrobky je potřeba na trh také dopravit.</p>
+      <p>Předem si rozmysli, kolik prostoru v&nbsp;autě zaberou stoly, stan, přepravky a&nbsp;ostatní vybavení.</p>
+      <p>Křehké výrobky zabal tak, aby se během převozu nepoškodily. Hodit se mohou pevné krabice, oddělovače nebo ochranné výplně. Celý náklad v&nbsp;autě bezpečně zajisti.</p>
+      <p>Pokud musíš věci přenášet z&nbsp;parkoviště na větší vzdálenost, oceníš skládací přepravní vozík nebo rudl.</p>
+      <p>Při pravidelném ježdění na trhy se také vyplatí používat stále stejné, označené přepravky. Například zvlášť na výrobky, vybavení stánku, obalový materiál a&nbsp;další pomůcky.</p>
+      <p>Díky tomu budeš na místě přesně vědět, kde co hledat.</p>
+
+      <h2>5. Platby a&nbsp;cenovky: drobnosti, které jsou důležitější než dekorace</h2>
+      <p>Krásně připravený stánek je skvělý začátek. Jenže když si zákazník vybere výrobek a&nbsp;ty mu nebudeš mít jak vrátit, radost může rychle vystřídat nepříjemná situace.</p>
+
+      <h3>Hotovost na vracení</h3>
+      <p>Připrav si především mince a&nbsp;menší bankovky. Přemýšlej podle svých cen.</p>
+      <p>Pokud prodáváš výrobky za 79 nebo 129 Kč, budeš potřebovat jiné množství mincí než při cenách 250 nebo 500 Kč.</p>
+      <p>Hotovost ulož do pokladničky nebo uzavíratelné ledvinky. Poznamenej si také počáteční částku na vracení, abys po skončení trhu mohla snadno spočítat skutečnou hotovostní tržbu.</p>
+
+      <h3>Platby kartou - terminál nebo mobilní aplikace</h3>
+      <p>Dnes už nemusíš mít nutně klasický platební terminál, abys mohla zákazníkům nabídnout bezhotovostní platby.</p>
+      <p>Existují také mobilní platební řešení, například <strong>Cvak</strong>, která umožňují přijímat platby pomocí telefonu a&nbsp;NFC nebo QR technologie.</p>
+      <p>Předem si ověř, co konkrétní služba podporuje, jaké má poplatky a&nbsp;zda potřebuješ další vybavení.</p>
+      <p>Výhodou těchto řešení je, že nemusíš pořizovat klasický terminál a&nbsp;úspěšné provedení platby vidíš přímo v&nbsp;aplikaci.</p>
+      <p>Před trhem si ale vše vyzkoušej a&nbsp;zkontroluj případné aktualizace.</p>
+
+      <h3>QR platby: pozor na potvrzení od zákazníka</h3>
+      <p>Platby prostřednictvím QR kódu jsou jednoduché a&nbsp;oblíbené. Mají ale jedno úskalí.</p>
+      <p>Od některých dalších tvůrců jsem slyšela zkušenosti, kdy zákazník na místě zadal platbu, ukázal potvrzení, odnesl si výrobek, ale peníze nakonec nedorazily.</p>
+      <p>Jak je to možné?</p>
+      <p>Samotné načtení QR kódu ještě neznamená zaplacení. QR kód pouze předvyplní platební příkaz. Pokud platba zůstane čekající na zpracování, může ji zákazník za určitých podmínek ještě zrušit.</p>
+      <p>To ale neznamená, že by bylo možné jednoduše stornovat každou již provedenou okamžitou platbu.</p>
+
+      <div class="article-callout">
+        <p><strong>Nejbezpečnější je ověřit si připsání peněz ve vlastním bankovnictví.</strong> Nespoléhej pouze na obrazovku zákazníkova telefonu. Pokud platbu nemůžeš ověřit, nabídni jiný způsob úhrady.</p>
+      </div>
+
+      <h3>Viditelné ceny</h3>
+      <p>Každý zákazník by měl snadno zjistit, kolik výrobek stojí. Použij cenovky přímo u&nbsp;výrobků nebo přehledný ceník.</p>
+      <p>Pokud prodáváš různé velikosti či provedení, musí být zřejmé, ke které variantě cena patří.</p>
+      <p>Hodí se také malá cedulka s&nbsp;informací, jakými způsoby lze u&nbsp;tebe zaplatit.</p>
+
+      <div class="article-warning">
+        <span class="warning-label">Pozor na EET 2.0 <sup>1</sup></span>
+        <p>Od 1. ledna 2027 začíná v&nbsp;České republice nová elektronická evidence tržeb. Při splnění zákonných podmínek se bude týkat také kontaktních plateb na trzích, a&nbsp;to včetně hotovosti, platebních karet nebo QR plateb. Existují však i&nbsp;zákonné výjimky. Pokud plánuješ prodej v&nbsp;roce 2027, ověř si, zda se tě evidence týká. Podrobnosti najdeš v&nbsp;našem samostatném článku <a href="eet.html">Návrat strašáka jménem EET 2.0</a>.</p>
+      </div>
+
+      <h2>6. Doklady a&nbsp;povinnosti: co nezapomenout zkontrolovat</h2>
+      <p>Při podnikatelském prodeji na trzích nestačí mít pouze připravené výrobky a&nbsp;cenovky.</p>
+
+      <h3>Označení prodejního místa <sup>2</sup></h3>
+      <p>Běžný dočasný prodejní stánek zpravidla spadá mezi mobilní provozovny. Takové prodejní místo musí být zvenčí viditelně označeno.</p>
+      <p>Na označení mobilní provozovny nezapomeň uvést:</p>
+      <ul>
+        <li>jméno a&nbsp;příjmení podnikatele nebo název společnosti,</li>
+        <li>IČO,</li>
+        <li>adresu sídla,</li>
+        <li>jméno a&nbsp;příjmení osoby odpovědné za činnost provozovny.</li>
+      </ul>
+      <p>U&nbsp;mobilní provozovny nemusíš povinně uvádět prodejní dobu.</p>
+
+      <h3>Doklady o&nbsp;koupi a&nbsp;reklamace <sup>3</sup></h3>
+      <p>Připrav si také možnost vystavit zákazníkovi na žádost doklad o&nbsp;koupi.</p>
+      <p>Ten musí obsahovat předepsané identifikační údaje prodejce, datum prodeje, označení prodaného zboží a&nbsp;jeho cenu.</p>
+      <p>Pokud prodáváš výrobek s&nbsp;vadou nebo jiným omezením, musí být tato skutečnost na dokladu také uvedena.</p>
+      <p>Pamatuj, že i&nbsp;při prodeji na trhu má zákazník svá spotřebitelská práva a&nbsp;může uplatnit reklamaci. Výprodejová cena sama o&nbsp;sobě neznamená, že za výrobek neneseš odpovědnost.</p>
+
+      <h3>Bezpečnost a&nbsp;označení výrobků <sup>4</sup></h3>
+      <p>Pokud vyrábíš a&nbsp;prodáváš vlastní výrobky, musíš myslet také na jejich bezpečnost.</p>
+      <p>Podle druhu výrobku se uplatní pravidla obecné bezpečnosti výrobků (GPSR) a&nbsp;případně další zvláštní předpisy.</p>
+      <p>Zkontroluj zejména identifikaci výrobků, údaje o&nbsp;výrobci včetně kontaktních údajů, bezpečnostní upozornění a&nbsp;případné návody. Výrobce musí také splnit další povinnosti, například v&nbsp;oblasti posouzení rizik a&nbsp;příslušné dokumentace.</p>
+      <p>Zvláštní pravidla platí například pro hračky, kosmetiku nebo potraviny.</p>
+      <p>Nezapomeň také ověřit podmínky pořadatele a&nbsp;případný místní tržní řád.</p>
+
+      <h2>7. Balení výrobků a&nbsp;malé připomenutí tvé značky</h2>
+      <p>Co uděláš ve chvíli, kdy si zákazník vybere tři výrobky a&nbsp;bude si je chtít odnést?</p>
+      <p>Právě na balení se při přípravách snadno zapomíná.</p>
+      <p>Připrav si papírové tašky, sáčky, krabičky nebo ochranný materiál podle toho, jaký sortiment prodáváš.</p>
+      <p>Křehké výrobky potřebují jiné balení než textilní doplňky nebo drobné dekorace. Mysli také na různé velikosti nákupů.</p>
+      <p>Pokud máš vlastní e-shop nebo sociální sítě, můžeš k&nbsp;výrobku přiložit vizitku, děkovnou kartičku nebo kartičku s&nbsp;QR kódem.</p>
+      <p>Nemusíš zákazníkům přidávat hromadu reklamních letáků. Stačí jednoduchá informace, kde tě mohou najít a&nbsp;kde si od tebe mohou objednat znovu.</p>
+      <p>Hezkým detailem může být i&nbsp;vlastní razítko na papírovém sáčku nebo drobný dárek k&nbsp;nákupu. Není to nutnost a&nbsp;nemusíš kvůli tomu zbytečně navyšovat náklady.</p>
+      <p>Trh totiž nemusí být jen místem jednorázového prodeje. Může to být příležitost představit svoji značku a&nbsp;získat zákazníky, kteří se k&nbsp;tobě později vrátí.</p>
+
+      <h2>8. Krabička poslední záchrany</h2>
+      <p>Tohle je vybavení, které možná celý den nepoužiješ. Ale když ho budeš potřebovat, budeš ráda, že ho máš.</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Co patří do krabičky</span>
+        <ul>
+          <li>nůžky a&nbsp;lepicí pásku</li>
+          <li>stahovací pásky nebo provázek</li>
+          <li>kolíčky a&nbsp;svorky</li>
+          <li>fix, propisku a&nbsp;prázdné cenovky</li>
+          <li>gumičky a&nbsp;zavírací špendlíky</li>
+          <li>papírové a&nbsp;vlhčené ubrousky</li>
+          <li>pytel na odpadky</li>
+          <li>nabíjecí kabel a&nbsp;powerbanku</li>
+        </ul>
+      </div>
+
+      <p>Podle typu stánku přidej také základní nářadí, prodlužovačku nebo náhradní baterie do osvětlení.</p>
+      <p>Je to zdánlivá maličkost. Jenže právě obyčejná lepicí páska může zachránit utrženou cenovku a&nbsp;kolíčky ubrus, který se rozhodl odletět.</p>
+
+      <div class="technika">
+        <span class="technika-label">Náš tip</span>
+        <p>Krabičku po každém trhu doplň a&nbsp;nech ji připravenou na další akci.</p>
+      </div>
+
+      <h2>9. Nezapomeň na sebe. A&nbsp;co když s&nbsp;tebou pojedou děti?</h2>
+      <p>Při balení výrobků se snadno stane, že na posledním místě seznamu zůstane samotná prodávající.</p>
+      <p>Přitom tě může čekat několik hodin stání, komunikace se zákazníky a&nbsp;přenášení krabic.</p>
+      <p>Nezapomeň si proto připravit pití, jídlo, pohodlné boty, vhodné oblečení, základní hygienické potřeby a&nbsp;případně židli.</p>
+      <p>Podle počasí se může hodit také termoska, teplá deka nebo podsedák, sluneční brýle či opalovací krém.</p>
+      <p>Pokud můžeš, domluv si někoho na vystřídání. I&nbsp;krátká přestávka na jídlo nebo toaletu je důležitá.</p>
+
+      <h3>Když s&nbsp;tebou na trh vyrazí i&nbsp;děti</h3>
+      <div class="osobni-box">Na trhy jezdíme společně jako rodina. Někdy vyrážím jen já s&nbsp;dětmi, jindy se k&nbsp;nám přidá i&nbsp;manžel. Občas jezdíme také s&nbsp;kamarádkou a&nbsp;jejími dětmi. A&nbsp;protože mám tři děti, vím, že příprava na trh se tím trochu rozšíří. 😄</div>
+      <p>Kromě svých věcí nezapomeň přibalit:</p>
+      <ul>
+        <li>náhradní oblečení podle počasí,</li>
+        <li>dostatek pití a&nbsp;svačin,</li>
+        <li>oblíbenou hračku, knížku nebo omalovánky,</li>
+        <li>pastelky či jiné jednoduché tvoření,</li>
+        <li>něco, čím se děti zabaví během klidnějších chvil.</li>
+      </ul>
+      <p>Předem si zjisti, jestli je na trhu připravený doprovodný program pro děti. Někde bývají dílničky, soutěže, kolotoče nebo další aktivity.</p>
+      <p>A&nbsp;pokud se chystáš na celodenní akci, zvaž, jestli s&nbsp;tebou nemůže jet ještě někdo další. Prodávat, komunikovat se zákazníky a&nbsp;zároveň hlídat děti je někdy docela náročná disciplína.</p>
+      <p><strong>Malé upozornění z&nbsp;vlastní zkušenosti:</strong> Pokud je na místě spousta lákadel, může se snadno stát, že za kolotoče, dobroty a&nbsp;další „nezbytnosti" utratíme víc, než na stánku vyděláme. 😄 Ber to samozřejmě s&nbsp;nadsázkou, ale rodinný rozpočet na zábavu se někdy hodí!</p>
+
+      <h3>Malá dílnička jako příjemné zpestření</h3>
+      <p>Pokud máš prostor, můžeš u&nbsp;svého stánku připravit také jednoduchou tvořivou dílničku pro děti.</p>
+      <p>Sama občas takové malé tvoření na trzích připravuji. Zabaví se nejen moje děti, ale i&nbsp;děti návštěvníků.</p>
+      <p>A&nbsp;má to ještě jednu příjemnou výhodu. Zatímco si děti tvoří, jejich rodiče se často zastaví, prohlédnou si výrobky a&nbsp;seznámí se s&nbsp;mojí tvorbou.</p>
+      <p>Nemusí to být nic složitého. Stačí jednoduchá aktivita, kterou děti zvládnou během několika minut.</p>
+      <p>Jen si předem ověř, že máš pro dílničku dostatek místa a&nbsp;pořadatel s&nbsp;ní souhlasí. Používej bezpečné, věkově vhodné pomůcky a&nbsp;počítej s&nbsp;dohledem rodičů. Dílnička nemá nahrazovat hlídání dětí.</p>
+      <p>Někdy totiž právě taková drobnost pomůže vytvořit příjemnou atmosféru, díky které si lidé tvůj stánek zapamatují.</p>
+
+      <h2>10. Po trhu si všechno poznamenej</h2>
+      <p>Každý trh ti dá zkušenosti, které žádný článek úplně nenahradí.</p>
+      <p>Sama mám vyzkoušené, že se mi na různých trzích prodává odlišný sortiment. A&nbsp;někdy mě výsledky opravdu překvapí.</p>
+      <p>To, co bylo na jedné akci nejprodávanějším výrobkem, nemusí na další zaujmout skoro nikoho. Záleží na místě, návštěvnících, ročním období i&nbsp;celkové atmosféře.</p>
+      <p>Proto se nesnaž po každém trhu okamžitě vyřazovat výrobky, které se zrovna neprodávaly. Jeden neúspěšný den ještě nic neznamená.</p>
+
+      <h3>Co si po trhu poznamenat?</h3>
+      <p>Během prodeje si podle možností zaznamenávej, co se prodalo, za kolik a&nbsp;jakým způsobem zákazník platil. Může ti stačit jednoduchý zápisník nebo tabulka v&nbsp;telefonu.</p>
+      <p>Po návratu si pak udělej krátké vyhodnocení:</p>
+      <ul>
+        <li>Kolik jsi utržila a&nbsp;jaké jsi měla náklady?</li>
+        <li>Které výrobky se prodávaly nejvíc?</li>
+        <li>Jaké způsoby platby zákazníci využívali?</li>
+        <li>Na co se nejčastěji ptali?</li>
+        <li>Co ti na trhu chybělo a&nbsp;co bys příště udělala jinak?</li>
+      </ul>
+
+      <div class="article-callout">
+        <p><strong>Tržba není totéž co zisk.</strong> Z&nbsp;vydělaných peněz musíš odečíst náklady na výrobky, poplatek za stánek, dopravu a&nbsp;další výdaje. Mysli také na hodnotu svého času.</p>
+      </div>
+
+      <p>A&nbsp;pokud se něco neprodávalo podle tvých představ, neznamená to hned, že je výrobek špatný. Každý trh má jiné návštěvníky a&nbsp;někdy si tvoje nabídka zkrátka nesedne s&nbsp;publikem.</p>
+
+      <h2>11. Rychlý seznam: co si zabalit na trh</h2>
+      <p>Aby ses před odjezdem nemusela vracet ke každé kapitole, připravily jsme pro tebe stručný přehled věcí, na které je dobré nezapomenout.</p>
+
+      <div class="checklist">
+        <span class="checklist-label">Výrobky a&nbsp;zásoby</span>
+        <ul>
+          <li>Hotové a&nbsp;zkontrolované výrobky</li>
+          <li>Zásoby nejprodávanějších produktů</li>
+          <li>Výprodejové výrobky, pokud je nabízíš</li>
+          <li>Cenovky a&nbsp;přehledný ceník</li>
+          <li>Potřebné štítky a&nbsp;informace k&nbsp;výrobkům</li>
+          <li>Seznam přivezených zásob</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Vybavení stánku</span>
+        <ul>
+          <li>Stůl, židle a&nbsp;ubrus</li>
+          <li>Stan včetně odpovídajícího ukotvení</li>
+          <li>Stojánky, poličky a&nbsp;podstavce</li>
+          <li>Banner nebo označení značky</li>
+          <li>Osvětlení, případně prodlužovačka</li>
+          <li>Přepravky a&nbsp;ochrana proti počasí</li>
+          <li>Přepravní vozík podle potřeby</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Platby a&nbsp;dokumenty</span>
+        <ul>
+          <li>Hotovost na vracení a&nbsp;pokladnička</li>
+          <li>Platební terminál nebo mobilní platební aplikace</li>
+          <li>QR kód pro platby, pokud ho používáš</li>
+          <li>Cedulka s&nbsp;možnostmi placení</li>
+          <li>Telefon, nabíječka a&nbsp;powerbanka</li>
+          <li>Možnost vystavit doklad o&nbsp;koupi</li>
+          <li>Povinné označení provozovny</li>
+          <li>Potřebné dokumenty a&nbsp;vyřešená evidence tržeb</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Balení a&nbsp;propagace</span>
+        <ul>
+          <li>Tašky, sáčky nebo krabičky</li>
+          <li>Ochranný obalový materiál</li>
+          <li>Vizitky a&nbsp;děkovné kartičky</li>
+          <li>QR kód na e-shop nebo sociální sítě</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Krabička poslední záchrany</span>
+        <ul>
+          <li>Nůžky, lepicí páska, provázek</li>
+          <li>Stahovací pásky, kolíčky a&nbsp;svorky</li>
+          <li>Propisky, fixy, prázdné cenovky</li>
+          <li>Kapesníky a&nbsp;vlhčené ubrousky</li>
+          <li>Pytle na odpadky</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Osobní věci</span>
+        <ul>
+          <li>Pití a&nbsp;svačina</li>
+          <li>Pohodlné boty a&nbsp;vhodné oblečení</li>
+          <li>Ochrana proti slunci, dešti nebo zimě</li>
+          <li>Hygienické potřeby a&nbsp;osobní léky</li>
+          <li>Peněženka, klíče a&nbsp;telefon</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Pokud jedou i&nbsp;děti</span>
+        <ul>
+          <li>Náhradní oblečení</li>
+          <li>Pití a&nbsp;svačiny</li>
+          <li>Hračky, omalovánky nebo tvoření</li>
+          <li>Případné vybavení malé dílničky</li>
+        </ul>
+      </div>
+
+      <div class="checklist">
+        <span class="checklist-label">Organizace</span>
+        <ul>
+          <li>Adresa a&nbsp;kontakt na pořadatele</li>
+          <li>Čas příjezdu a&nbsp;informace o&nbsp;parkování</li>
+          <li>Zkontrolovaná předpověď počasí</li>
+          <li>Domluvený pomocník nebo střídání</li>
+        </ul>
+      </div>
+
+      <p>Tento seznam ber jako základ. Některé věci možná vůbec nebudeš potřebovat, jiné si naopak postupně doplníš podle vlastních zkušeností a&nbsp;výrobků, které prodáváš.</p>
+
+      <h2>Na první trh nemusíš být dokonale připravená</h2>
+      <p>Nemusíš mít nejkrásnější stánek ze všech. Nemusíš vlastnit profesionální stojany ani mít zásoby na několik měsíců dopředu.</p>
+      <p>Důležité je mít připravené to podstatné, představit své výrobky srozumitelně a&nbsp;nebát se postupně zlepšovat.</p>
+      <p>A&nbsp;nezapomeň si celý den také užít. Trhy nejsou jen o&nbsp;tom, kolik prodáš. Jsou také o&nbsp;setkávání, rozhovorech a&nbsp;možnosti ukázat lidem něco, co jsi sama vytvořila.</p>
+      <p>Každý další trh ti ukáže něco nového. A&nbsp;z&nbsp;věcí, nad kterými teď dlouho přemýšlíš, se časem stane rutina.</p>
+
+      <div class="article-tip">
+        <h3>Chceš si přípravu ještě víc usnadnit?</h3>
+        <p>Pokud už víš, co si na trh připravit, ale chceš mít všechno hezky pohromadě a&nbsp;nic důležitého neřešit na poslední chvíli, chystáme pro tebe praktické pokračování na <strong>Forendors</strong>.</p>
+        <p>Bude v&nbsp;něm: kompletní odškrtávací checklist věcí na trh, časový plán příprav, příklady balení do přepravek a&nbsp;uspořádání stánku, řešení nečekaných situací a&nbsp;jednoduché podklady pro evidenci zásob, tržeb a&nbsp;nákladů.</p>
+        <p>Získáš tak pomůcky, které si můžeš upravit podle sebe a&nbsp;používat při každém dalším trhu.</p>
+        <p><strong>Protože dobrá příprava ti nechá víc prostoru na to nejdůležitější - tvoje výrobky a&nbsp;zákazníky.</strong></p>
+      </div>
+
+      <p class="article-ps">Zvažuješ, kde všude prodávat kromě trhů? Mrkni na <a href="kde-zacit-prodavat.html">Kde začít prodávat? Fler, Etsy nebo vlastní e-shop</a>. Na&nbsp;trhy se hodí i&nbsp;další témata: <a href="kompletni-pruvodce-balenim.html">Kompletní průvodce balením pro tvůrce</a>, <a href="logistika-a-expedice.html">Logistika a&nbsp;expedice v&nbsp;praxi</a> a&nbsp;<a href="eet.html">Návrat strašáka jménem EET 2.0</a>.</p>
+
+      <div class="legal-box">
+        <span class="legal-label">Použité právní předpisy</span>
+        <p><sup>1</sup> <strong>Zákon č. 180/2026 Sb., o&nbsp;evidenci tržeb</strong> - pravidla nové elektronické evidence tržeb EET 2.0, účinné od 1. ledna 2027. Podrobné informace zveřejňuje Ministerstvo financí na oficiálním webu <a href="https://www.eet.gov.cz" target="_blank" rel="noopener">eet.gov.cz</a>.</p>
+        <p><sup>2</sup> <strong>Zákon č. 455/1991 Sb., o&nbsp;živnostenském podnikání (živnostenský zákon)</strong> - § 17 odst. 2, 3, 7 a&nbsp;8. Vymezení mobilní provozovny, oprávněnost jejího umístění a&nbsp;povinné označení.</p>
+        <p><sup>3</sup> <strong>Zákon č. 634/1992 Sb., o&nbsp;ochraně spotřebitele</strong> - zejména § 16 odst. 1 a&nbsp;3. Povinnost vydat na žádost doklad o&nbsp;koupi a&nbsp;uvést na něm případné vady nebo omezení výrobku. Další ustanovení upravují spotřebitelská práva a&nbsp;informace o&nbsp;cenách.</p>
+        <p><sup>4</sup> <strong>Nařízení Evropského parlamentu a&nbsp;Rady (EU) 2023/988 o&nbsp;obecné bezpečnosti výrobků (GPSR)</strong> - zejména článek 9. Povinnosti výrobce týkající se bezpečnosti výrobků, jejich identifikace, kontaktních údajů, dokumentace a&nbsp;potřebných bezpečnostních informací.</p>
+      </div>
+
+      <div class="article-author">
+        <div class="author-avatar">V</div>
+        <div class="author-info">
+          <strong>Veronika Hašplová</strong>
+          tvůrkyně (3D tisk) · <a href="https://instagram.com/eweria_prints" target="_blank" rel="noopener">@eweria_prints</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="article-nav">
+      <a href="../clanky.html">
+        <span class="nav-label">← Zpět na přehled</span>
+        <span class="nav-title">Všechny články</span>
+      </a>
+      <a href="zalohy-osvc-2027.html" class="next">
+        <span class="nav-label">Další →</span>
+        <span class="nav-title">Zálohy OSVČ 2027</span>
+      </a>
+    </div>
+
+    <div class="article-cta">
+      <h3>Chystáš se na první trh?</h3>
+      <p>V&nbsp;komunitě Rosteme spolu si navzájem radíme i&nbsp;s&nbsp;odvody a&nbsp;administrativou. Přidej se.</p>
+      <a href="../index.html#community" class="btn-primary">Přidej se ke komunitě</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo"><span class="r">Rosteme</span><span class="s">spolu</span></div>
+    <ul class="footer-links">
+      <li><a href="../index.html">Domů</a></li>
+      <li><a href="../clanky.html">Články</a></li>
+      <li><a href="https://instagram.com/rosteme_spolu_na_sitich">Instagram</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Rosteme spolu · Design <a href="https://www.skami.cz">Skami Design</a></p>
+  </footer>
+
+</body>
+</html>
